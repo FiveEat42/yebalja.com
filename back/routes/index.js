@@ -5,7 +5,6 @@ const path = require('path');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // res.render('index', { title: 'Express' });
   res.send(express.static(path.join(__dirname, '../../front/build/index.html')));
 });
 
