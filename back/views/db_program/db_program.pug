@@ -1,0 +1,47 @@
+extends ../layout
+
+
+block content
+  form(action='/api/admin/db/program/insert', method='post')
+    div
+      div.col
+        label 프로그램명
+      div.col
+        input(type='text',name='program_title',placeholder='프로그램 제목',value='42seoul(테스트)').form-control
+      div.col
+        label 프로그램 설명
+      div.col
+        textarea(name="program_content", placeholder='프로그램 설명',cols="30", rows="3").form-control
+      div.col
+        label 프로그램 요약 설명
+      div.col
+        textarea(name="program_summary_content", placeholder='프로그램 요약 설명',cols="30", rows="2").form-control
+      div.col
+        label 프로그램 혜택
+        textarea(name="program_benefit", placeholder='프로그램 혜택',cols="30", rows="1").form-control
+      div.col
+        label 프로그램 언어
+        input(type='text',name='program_language', placeholder='프로그램 언어').form-control
+    button(type="submit", class='btn btn-primary', style="padding=5px").row-sm-1.my-1 추가
+  table.table
+    thead
+    -for (let key in db[0])
+      th #{key}
+    th 수정
+    th 삭제
+    each row,row_key in db
+      tr
+      each val, key in row
+        -
+          if (typeof(val) === 'object' && val )
+            val = val.toLocaleDateString();
+        td #{val}
+      td
+        form(action="/api/admin/db/program/update", method='get')
+          input(type='hidden', name='program_id', value=row.program_id)
+          input(type='submit', value='update', class='btn btn-secondary')
+      td
+        form(action="/api/admin/db/program/delete", method='post')
+          input(type='hidden', name='program_id', value=row.program_id)
+          input(type='submit', value='delete', class='btn btn-danger')
+

@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let adminRouter = require('./routes/admin')
 let db_gisuRouter = require('./routes/db_gisu')
+let db_programRouter = require('./routes/db_program')
 
 var app = express();
 
@@ -26,7 +27,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/admin',adminRouter);
 app.use('/api/admin/db/gisu',db_gisuRouter);
-
+app.use('/api/admin/db/program', db_programRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
