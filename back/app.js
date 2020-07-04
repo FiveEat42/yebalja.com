@@ -6,7 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-let dbRouter = require('./routes/db')
+let adminRouter = require('./routes/admin')
+let db_gisuRouter = require('./routes/db_gisu')
 
 var app = express();
 
@@ -23,7 +24,8 @@ app.use(express.static(path.join(__dirname, '../front/build')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/db', dbRouter);
+app.use('/api/admin',adminRouter);
+app.use('/api/admin/db/gisu',db_gisuRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

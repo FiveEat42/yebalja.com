@@ -1,7 +1,7 @@
-extends layout
+extends ../layout
 
 block content
-  form(action='/db/insert', method='post')
+  form(action='/api/admin/db/gisu/insert', method='post')
     div(class="form-row")
       div.col
         label 프로그램명
@@ -39,11 +39,11 @@ block content
             val = val.toLocaleDateString();
         td #{val}
       td
-        form(action="/db/edit", method='post')
+        form(action="/api/admin/db/gisu/edit", method='post')
           input(type='hidden', name='id', value=row.id)
           input(type='submit', value='edit', class='btn btn-secondary')
       td
-        form(action="/db/delete", method='post')
+        form(action="/api/admin/db/gisu/delete", method='post')
           input(type='hidden', name='id', value=row.id)
           input(type='submit', value='delete', class='btn btn-danger')
 

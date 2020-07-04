@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-let db = require('../models/db_calendar');
+let db = require('../models/db_config');
 
 function formatDate(date) {
   var d = new Date(date),
@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
   db.query('SELECT * FROM yearly', (error, result)=>{
     if (error) throw error;
     // console.log(result);
-    res.render('db', {db: result});
+    res.render('db_gisu/db_gisu', {db: result});
   })
 });
 
@@ -31,7 +31,7 @@ router.post('/delete', function(req, res) {
   })
   console.log(req.body.id)
   console.log(typeof(req.body.id))
-  res.redirect('/db')
+  res.redirect('/api/admin/db/gisu')
 });
 
 router.post('/insert', function(req, res) {
@@ -46,7 +46,7 @@ router.post('/insert', function(req, res) {
       if(error){
         throw error;
       }
-      res.redirect('/db');
+      res.redirect('/api/admin/db/gisu');
     }
   )
 })
@@ -60,7 +60,7 @@ router.post('/edit', function(req,res) {
       }
     }
     console.log(result[0]);
-    res.render('yearly_edit',{param: result[0]});
+    res.render('db_gisu/db_gisu_edit',{param: result[0]});
   })
 });
 
@@ -71,6 +71,6 @@ router.post('/edit_process', (req,res) => {
     (error,result) => {
       if (error) throw error;
     });
-  res.redirect('/db')
+  res.redirect('/api/admin/db/gisu')
 })
 module.exports = router;
