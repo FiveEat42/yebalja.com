@@ -1,12 +1,49 @@
 extends layout
 
 block content
-  table
-    tr
+  form(action='/db/insert', method='post')
+    div(class="form-row")
+      div.col
+        label 프로그램명
+        input(type='text',name='program',placeholder='program',value='42seoul(테스트)').form-control
+      div.col
+        label 기수
+        input(type='number',name='nth',placeholder='nth',value='13').form-control
+      div.col
+        label 모집시작
+        input(type='date',name='recruit_s',value='2020-01-01').form-control
+      div.col
+        label 모집종료
+        input(type='date',name='recruit_e',value='2020-02-02').form-control
+      div.col
+        label 선발시작
+        input(type='date',name='compete_s',value='2020-03-03').form-control
+      div.col
+        label 선발종료
+        input(type='date',name='compete_e',value='2020-04-04').form-control
+      div.col
+        label 교육시작
+        input(type='date',name='learn_s',value='2020-05-05').form-control
+    button(type="submit", class='btn btn-primary', style="padding=5px").row-sm-1.my-1 추가
+  table.table
+    thead
     -for (let key in db[0])
       th #{key}
-    each row in db
+    th 수정
+    th 삭제
+    each row,row_key in db
       tr
-      each val in row
+      each val, key in row
+        -
+          if (typeof(val) === 'object' && val )
+            val = val.toLocaleDateString();
         td #{val}
+      td
+        form(action="/db/edit", method='post')
+          input(type='hidden', name='id', value=row.id)
+          input(type='submit', value='edit', class='btn btn-secondary')
+      td
+        form(action="/db/delete", method='post')
+          input(type='hidden', name='id', value=row.id)
+          input(type='submit', value='delete', class='btn btn-danger')
 

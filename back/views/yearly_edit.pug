@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  form(action="/db/edit_process", method='post')
+    div(class="form-row")
+      div.col
+        label id
+        input(type='text', name='id',value=param.id readonly).form-control
+      div.col
+        label 프로그램명
+        input(type='text',name='program',value=param.program).form-control
+      div.col
+        label 기수
+        input(type='number',name='nth',value=param.nth).form-control
+      div.col
+        label 모집시작
+        input(type='date',name='recruit_s',value=param.recruit_s).form-control
+      div.col
+        label 모집종료
+        input(type='date',name='recruit_e',value=param.recruit_e).form-control
+      div.col
+        label 선발시작
+        input(type='date',name='compete_s',value=param.compete_s).form-control
+      div.col
+        label 선발종료
+        input(type='date',name='compete_e',value=param.compete_e).form-control
+      div.col
+        label 교육시작
+        input(type='date',name='learn_s',value=param.learn_s).form-control
+    button(type="submit", class='btn btn-primary', style="padding=5px") 수정
