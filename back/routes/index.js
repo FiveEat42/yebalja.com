@@ -4,7 +4,7 @@ const path = require('path');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/gisu', function(req, res, next) {
   res.send(express.static(path.join(__dirname, '../../front/build/index.html')));
 });
 

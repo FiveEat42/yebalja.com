@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let adminRouter = require('./routes/admin');
-let json_gisuRouter = require('./routes/json_gisu');
+let jsonRouter = require('./routes/json');
 let db_gisuRouter = require('./routes/db_gisu');
 let db_programRouter = require('./routes/db_program');
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, '../front/build')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api/gisu',json_gisuRouter);
+app.use('/api/json',jsonRouter);
 app.use('/api/admin',adminRouter);
 app.use('/api/admin/db/gisu',db_gisuRouter);
 app.use('/api/admin/db/program', db_programRouter);
