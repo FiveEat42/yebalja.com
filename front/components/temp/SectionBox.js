@@ -1,5 +1,5 @@
 import React ,{useEffect, useState} from 'react';
-import '../styles/SectionBox.css'
+import './SectionBox.module.css'
 
 export default function SectionBox(props) {
 	const [title] = useState('');

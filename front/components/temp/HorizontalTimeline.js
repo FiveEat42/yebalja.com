@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/HorizontalTimeline.css';
+import './HorizontalTimeline.module.css';
 
 
 export default function HorizontalTimeline() {

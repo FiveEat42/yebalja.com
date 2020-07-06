@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Table.css'
+import './Table.module.css'
 import Typography from '@material-ui/core/Typography';
 
 export default function Table() {
