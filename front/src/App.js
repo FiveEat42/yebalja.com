@@ -1,10 +1,11 @@
+/*
 import React, {Component} from 'react';
 import './styles/App.css';
-import Jumbotron from './components/Jumbotron'
-import HorizontalTimeline from './components/HorizontalTimeline'
+import Jumbotron from '../components/Jumbotron'
+import HorizontalTimeline from '../components/HorizontalTimeline'
 import Table from './components/Table'
-import Footer from './components/Footer'
-import SectionBox from './components/SectionBox'
+import Footer from '../components/Footer'
+import SectionBox from '../components/SectionBox'
 
 class App extends Component {
 	render() {
@@ -21,3 +22,4 @@ class App extends Component {
   }
 
   export default App;
+*/
