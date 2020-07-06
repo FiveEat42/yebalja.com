@@ -1,0 +1,24 @@
+{
+  "name": "yebalja.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "client": "cd client && npm run start",
+    "server": "node server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "body-parser": "^1.18.3",
+    "yarn": "^1.13.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  }
+}

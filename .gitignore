@@ -9,3 +9,4 @@ back/.next/
 front/.gitignore
 front/.idea
 front/next/
+node_modules
