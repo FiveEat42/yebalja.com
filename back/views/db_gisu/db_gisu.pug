@@ -1,0 +1,55 @@
+extends ../layout
+
+block content
+  form(action='/api/admin/db/gisu/insert', method='post')
+    div(class="form-row")
+      div.col
+        label 프로그램 ID
+        input(type='number',name='program_id',placeholder='program_id',value=1).form-control
+      div.col
+        label 기수 이름
+        input(type='text',name='gisu_title',placeholder='nth',value='13').form-control
+      div.col
+        label 기수 시작
+        input(type='date',name='gisu_start_date',value='2020-01-23').form-control
+      div.col
+        label 기수 끝
+        input(type='date',name='gisu_end_date',value='2020-12-03').form-control
+      div.col
+        label 모집시작
+        input(type='date',name='gisu_recruit_start',value='2020-01-01').form-control
+      div.col
+        label 모집종료
+        input(type='date',name='gisu_recruit_end',value='2020-02-02').form-control
+      div.col
+        label 선발시작
+        input(type='date',name='gisu_compete_start',value='2020-03-03').form-control
+      div.col
+        label 선발종료
+        input(type='date',name='gisu_compete_end',value='2020-04-04').form-control
+      div.col
+        label 교육시작
+        input(type='date',name='gisu_learn_start',value='2020-05-05').form-control
+    button(type="submit", class='btn btn-primary', style="padding=5px").row-sm-1.my-1 추가
+  table.table
+    thead
+    -for (let key in db[0])
+      th #{key}
+    th 수정
+    th 삭제
+    each row,row_key in db
+      tr
+      each val, key in row
+        -
+          if (typeof(val) === 'object' && val )
+            val = val.toLocaleDateString();
+        td #{val}
+      td
+        form(action="/api/admin/db/gisu/edit", method='post')
+          input(type='hidden', name='gisu_id', value=row.gisu_id)
+          input(type='submit', value='edit', class='btn btn-secondary')
+      td
+        form(action="/api/admin/db/gisu/delete", method='post')
+          input(type='hidden', name='gisu_id', value=row.gisu_id)
+          input(type='submit', value='delete', class='btn btn-danger')
+

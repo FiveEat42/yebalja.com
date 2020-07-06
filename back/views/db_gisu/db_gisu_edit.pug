@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+  form(action="/api/admin/db/gisu/edit_process", method='post')
+    div(class="form-row")
+      div.col
+        label id
+        input(type='text', name='gisu_id',value=param.gisu_id readonly).form-control
+      div.col
+        label 프로그램명
+        input(type='number',name='program_id',value=param.program_id).form-control
+      div.col
+        label 기수
+        input(type='text',name='gisu_title',value=param.gisu_title).form-control
+      div.col
+        label 기수 시작
+        input(type='date',name='gisu_start_date',value=param.gisu_start_date).form-control
+      div.col
+        label 기수 끝
+        input(type='date',name='gisu_end_date',value=param.gisu_end_date).form-control
+      div.col
+        label 모집시작
+        input(type='date',name='gisu_recruit_start',value=param.gisu_recruit_start).form-control
+      div.col
+        label 모집종료
+        input(type='date',name='gisu_recruit_end',value=param.gisu_recruit_end).form-control
+      div.col
+        label 선발시작
+        input(type='date',name='gisu_compete_start',value=param.gisu_compete_start).form-control
+      div.col
+        label 선발종료
+        input(type='date',name='gisu_compete_end',value=param.gisu_compete_end).form-control
+      div.col
+        label 교육시작
+        input(type='date',name='gisu_learn_start',value=param.gisu_learn_start).form-control
+    button(type="submit", class='btn btn-primary', style="padding=5px") 수정

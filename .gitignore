@@ -1,1 +1,12 @@
+*/node_modules
+back/models
+.DS_Store
+.idea/
+.next/
+back/.DS_Store
+back/.idea/
+back/.next/
+front/.gitignore
+front/.idea
+front/next/
 node_modules

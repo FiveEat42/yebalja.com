@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css",integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk",crossorigin="anonymous")
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      a.navbar-brand(href='http://www.yebalja.com') Yebalja.com
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavAltMarkup', aria-controls='navbarNavAltMarkup', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNavAltMarkup.collapse.navbar-collapse
+        .navbar-nav
+          a.nav-item.nav-link(href='/api/admin/db/program') Program DB
+          a.nav-item.nav-link(href='/api/admin/db/gisu') 기수 DB
+          a.nav-item.nav-link(href='/api/json/program') Program DB(JSON)
+          a.nav-item.nav-link(href='/api/json/gisu') 기수 DB(JSON)
+          //a.nav-item.nav-link.disabled(href='#') 상세DB //비활성화 메뉴 코드
+    block content

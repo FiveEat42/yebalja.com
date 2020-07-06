@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  form(action='/api/admin/db/program/update', method='post')
+    div
+      div.col
+        label id
+        input(type='text', name='program_id',value=updateId readonly).form-control
+      div.col
+        label 프로그램명
+      div.col
+        input(type='text',name='program_title',placeholder='프로그램 제목',value='42seoul(테스트)').form-control
+      div.col
+        label 프로그램 설명
+      div.col
+        textarea(name="program_content", placeholder='프로그램 설명',cols="30", rows="3").form-control
+      div.col
+        label 프로그램 요약 설명
+      div.col
+        textarea(name="program_summary_content", placeholder='프로그램 요약 설명',cols="30", rows="2").form-control
+      div.col
+        label 프로그램 혜택
+        textarea(name="program_benefit", placeholder='프로그램 혜택',cols="30", rows="1").form-control
+      div.col
+        label 프로그램 언어
+        input(type='text',name='program_language', placeholder='프로그램 언어').form-control
+    button(type="submit", class='btn btn-primary', style="padding=5px").row-sm-1.my-1 추가
