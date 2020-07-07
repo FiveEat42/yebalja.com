@@ -1,20 +1,10 @@
 {
-  "name": "timeline-ver",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.10.2",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.56",
-    "@testing-library/jest-dom": "^5.10.1",
-    "@testing-library/react": "^10.3.0",
-    "@testing-library/user-event": "^12.0.6",
-    "hammerjs": "^2.0.8",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
-  },
+  "name": "react-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
+    "dev": "next",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -22,6 +12,30 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "author": "fiveE",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/react": "^10.3.0",
+    "@testing-library/user-event": "^12.0.6",
+    "bootstrap": "^4.5.0",
+    "hammerjs": "^2.0.8",
+    "next": "^9.4.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4"
   },
   "browserslist": {
     "production": [

@@ -1,6 +1,7 @@
+/*
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
+import '../components/Layout.module.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -35,3 +36,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+*/
