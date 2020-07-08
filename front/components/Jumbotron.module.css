@@ -38,7 +38,6 @@
     flex-wrap: wrap;
 }
 
-
 .nav {
     display: inline;
     line-height: 3;
@@ -66,7 +65,6 @@
     color: #F2F8FF;
 }
 
-
 .text {
     float: left;
     vertical-align: left;
@@ -90,13 +88,12 @@
 
 .image {
     float: right;
+    width: 600px;
 }
 
 .burger {
     display: none;
 }
-
-
 
 @media screen and (max-width: 1024px) {
     .nav {
@@ -111,3 +108,33 @@
         padding-right: 10px;
     }
 }
+
+ /*
+    모니터 크기에 따라 일러스트레이션 크기 조정
+    부트스트랩 Responsive breakpoints 참고하여 작성
+
+
+ @media (min-width: 576px) {
+     .image {
+         max-width: 500px;
+     }
+ }
+
+ @media (min-width: 768px) {
+     .image {
+         max-width: 500px;
+     }
+ }
+
+ @media (min-width: 992px) {
+     .image {
+         max-width: 600px;
+     }
+ }
+
+ @media (min-width: 1200px) {
+     .image {
+         max-width: 800px;
+     }
+ }
+  */

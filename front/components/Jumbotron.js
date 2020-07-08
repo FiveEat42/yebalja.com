@@ -2,17 +2,16 @@ import styles from './Jumbotron.module.css'
 import Ham from './Hamburger';
 import Link from 'next/link';
 
-
-const Jumbo = () => {
+const Jumbotron = () => {
   return (
     <>
-      <div class={styles.box}> {/* 점보트론입니다. */}
+      <div className={styles.box}> {/* 점보트론입니다. */}
         <div className={styles.container}> {/* 일단 넣었는데 빼도 될 것 같기도하네요 */}
 
           {/*
             예발자 일러스트를 png로 불러왔습니다. svg는 연구 중입니다.
           */}
-          <img className={styles.image} src={require('../src/images/illustration.png')} width="600px"/>
+          <img className={styles.image} src={require('../src/images/illustration.png')}/>
 
 
           {/*
@@ -20,10 +19,9 @@ const Jumbo = () => {
           */}
           <div>
             <Link href="/">
-              <img  className={styles.burger} src={require('../src/images/hamburger.png')} width="35px" />
+              <img className={styles.burger} src={require('../src/images/hamburger.png')} width="35px" />
             </Link>
           </div>
-
 
           {/*
             내비게이션 목록입니다
@@ -42,7 +40,6 @@ const Jumbo = () => {
             </ul>
           </div>
 
-
           {/*
             점보트론 내 글귀입니다.
           */}
@@ -57,4 +54,4 @@ const Jumbo = () => {
   );
 }
 
-export default Jumbo;
+export default Jumbotron;

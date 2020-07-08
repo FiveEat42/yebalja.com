@@ -8,6 +8,7 @@
 .logo {
     padding-left: 10px;
     font-family: 'GmarketSansMedium';
+    font-size: xx-large;
     color: #4A91F5;
     display: inline;
 }
@@ -15,7 +16,13 @@
 .content {
     padding-left: 15px;
     font-family: 'NanumBarunGothic';
+    font-size: 14px;
     color: #696969;
     display: inline;
-    font-size: 14px;
+}
+
+@media screen and (max-width: 540px) {
+    .content {
+        display: none;
+    }
 }

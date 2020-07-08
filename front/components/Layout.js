@@ -1,16 +1,17 @@
 import PropTypes  from 'prop-types';
 import Link from 'next/link'
-import Header from "./Header";
 import Footer from "./Footer";
+import TextLogo from "./TextLogo";
+import Jumbotron from "./Jumbotron";
 
 const Layout = ({children}) => {
     return (
         <div>
             <div>
-                <Header />
+                <TextLogo/>
+                {children}
                 <Footer />
             </div>
-            {children}
         </div>
     )
 }
