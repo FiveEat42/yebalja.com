@@ -1,0 +1,66 @@
+ /*.jumbo {*/
+/*    background-color: #4A91F5;*/
+/*    max-height: 600px;*/
+/*}*/
+
+/*.container {*/
+/*    max-height: 600px;*/
+/*}*/
+
+/*.box {*/
+/*    overflow: auto;*/
+/*    background-color: #4A91F5;*/
+/*}*/
+
+/*.title {*/
+/*    color: white;*/
+/*}*/
+
+/*.content {*/
+/*    color: #F2F8FF;*/
+/*}*/
+
+/*.image {*/
+/*    float: right;*/
+
+/*}*/
+
+
+ @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum Gothic', sans-serif; }
+
+
+.box {
+    overflow: auto;
+    background-color: #4A91F5;
+    display: block;
+}
+
+.container {
+    diaplay: flex;
+
+    max-width: 100%;
+
+    flex-wrap: wrap;
+}
+
+.title, .content {
+    color: #F2F8FF;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.text {
+    float: left;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-family: "Nanum Gothic";
+
+}
+
+.image {
+    float: right;
+}
