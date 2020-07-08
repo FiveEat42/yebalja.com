@@ -1,5 +1,5 @@
 import styles from './Jumbotron.module.css'
-import Ham from './Hamburger';
+import Hamburger from './Hamburger';
 import Link from 'next/link';
 
 const Jumbotron = () => {

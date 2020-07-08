@@ -1,10 +1,8 @@
 import Layout from '../components/Layout';
-import Title from "../components/Title";
-import Table from "../components/Table";
-import Header from "../components/temp/Header";
 import Jumbotron from "../components/Jumbotron";
+import Table from "../components/Table";
+import Title from "../components/Title";
 import Subtitle from "../components/Subtitle";
-
 
 const Home = () => {
   return (

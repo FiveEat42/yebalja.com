@@ -39,12 +39,11 @@
 .footer a {
 	font-family: 'NanumBarunGothic';
 	font-size: medium;
-	color: white;
-	text-decoration: none;
+	color: #F2F8FF;
 }
 
 .footer a:hover {
-	color: #2581DC;
+	text-decoration: none;
 }
 
 .footer li p:hover {
