@@ -8,7 +8,7 @@
 
 .header {
   color: #202125;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 .header h2 {
   font-weight: 600;
@@ -57,7 +57,7 @@
 }
 .gantt__row__lines {
   position: absolute;
-  height: 100%;
+  height: 200%;
   width: 100%;
   background-color: transparent;
   grid-template-columns: 150px repeat(52, 1fr); /*경계선 : repeat 함수로 쪼갤 수 있음*/ 
@@ -115,8 +115,9 @@
   border-top: 1px solid rgba(221, 221, 221, 0.8);
 }
 .gantt__row__bars li {
+  max-height: 30px;
   font-weight: 500;
-  text-align: left;
+  text-align: center;
   font-size: 14px;
   min-height: 15px;
   background-color: #55de84;
@@ -151,14 +152,13 @@
   display: grid;
   padding: 9px 0;
   margin: 0;
-  grid-template-columns: repeat(365, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 8px 0;
-  border-top: 1px solid rgba(221, 221, 221, 0.8);
 }
 
 .gantt__tags li {
   font-weight: 500;
-  text-align: left;
+  text-align: center;
   font-size: 14px;
   min-height: 15px;
   background-color: #55de84;
@@ -168,4 +168,5 @@
   position: relative;
   cursor: pointer;
   border-radius: 20px;
+  margin: 0px 3px;
 }
