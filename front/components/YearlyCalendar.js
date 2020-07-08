@@ -8,10 +8,11 @@ export default function YearlyCalendar() {
             <div className={styles.header}>
                 <h2>2020년 부트캠프</h2>
                 <p>무료 부트캠프 일정을 한 눈에 확인하세요.</p>
-                <ul className={styles.gantt__tags}> 
-                    <li style={{ gridColumn: `0/11`, backgroundColor: `#2ecaac` }}>2기 모집</li>
-                    <li style={{ gridColumn: `11/12`, backgroundColor: `#ff6252` }}>코딩테스트</li>
-                    <li style={{ gridColumn: `126/160`, backgroundColor: `#54c6f9` }}>프리코스</li>
+                <ul className={styles.gantt__tags}>
+                        <li style={{  backgroundColor: `#2ecaac` }}>모집</li>
+                        <li style={{  backgroundColor: `lightpink` }}>온라인 코딩테스트</li>
+                        <li style={{  backgroundColor: `#54c6f9` }}>오프라인 코딩테스트</li>
+                        <li style={{  backgroundColor: `orange` }}>면접</li>
                 </ul>
             </div>
             <div className={styles.gantt}>
@@ -25,7 +26,21 @@ export default function YearlyCalendar() {
                 <div className={classNames({[styles.gantt__row]: true, [styles.gantt__row__lines]: true})}>
                         <span></span><span></span><span></span>
                         <span></span><span></span><span></span>
-                        <span></span><span className="marker"></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span className={styles.marker}></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
                         <span></span><span></span><span></span>
                 </div>
                 <div className={styles.gantt__row}>
@@ -33,8 +48,9 @@ export default function YearlyCalendar() {
                         SW 마에스트로
                     </div>
                     <ul className={styles.gantt__row__bars}>
-                        <li style={{ gridColumn: `1/2`, backgroundColor: `#2ecaac` }}>11기 모집</li>
-                        <li style={{ gridColumn: `2/3`, backgroundColor: `#ff6252` }}>코딩테스트/면접</li>
+                        <li style={{ gridColumn: `4/8`, backgroundColor: `#2ecaac` }}>모집</li>
+                        <li style={{ gridColumn: `12/13`, backgroundColor: `lightpink` }}></li>
+                        <li style={{ gridColumn: `13/14`, backgroundColor:`orange` }}></li>
                     </ul>
                     <ul className={styles.gantt__row__bars}></ul>
                 </div>
@@ -43,10 +59,10 @@ export default function YearlyCalendar() {
                         42 Seoul
                     </div>
                     <ul className={styles.gantt__row__bars}>
-                        <li style={{ gridColumn: `1/13`, backgroundColor: `#2ecaac` }}>1차 온라인테스트 상시모집</li>
-                        <li style={{ gridColumn: `1/2`, backgroundColor: `#54c6f9` }}>1-1차 La Piscine</li>
-                        <li style={{ gridColumn: `5/6`, backgroundColor: `#54c6f9` }}>1-2차 La Piscine</li>
-                        <li style={{ gridColumn: `7/8`, backgroundColor: `#54c6f9` }}>2-1차 La Piscine</li>
+                        <li style={{ gridColumn: `1/53`, backgroundColor: `#2ecaac` }}>상시모집</li>
+                        <li style={{ gridColumn: `3/7`, backgroundColor: `#54c6f9` }}>1-1차 Piscine</li>
+                        <li style={{ gridColumn: `20/24`, backgroundColor: `#54c6f9` }}>1-2차 Piscine</li>
+                        <li style={{ gridColumn: `28/32`, backgroundColor: `#54c6f9` }}>2-1차 Piscine</li>
                     </ul>
                 </div>
                 <div className={styles.gantt__row}>
@@ -54,8 +70,9 @@ export default function YearlyCalendar() {
                         SSAFY
                     </div>
                     <ul className={styles.gantt__row__bars}>
-                        <li style={{ gridColumn: `5/6`, backgroundColor: `#2ecaac` }}>4기 모집</li>
-                        <li style={{ gridColumn: `6/7`, backgroundColor: `#ff6252` }}>CBT</li>
+                        <li style={{ gridColumn: `19/24`, backgroundColor: `#2ecaac` }}>모집</li>
+                        <li style={{ gridColumn: `24/25`, backgroundColor: `lightpink` }}></li>
+                        <li style={{ gridColumn: `25/26`, backgroundColor:`orange` }}></li>
                     </ul>
                 </div>
                 <div className={styles.gantt__row}>
@@ -63,9 +80,9 @@ export default function YearlyCalendar() {
                         우아한테크코스
                     </div>
                     <ul className={styles.gantt__row__bars}>
-                        <li style={{ gridColumn: `10/11`, backgroundColor: `#2ecaac` }}>2기 모집</li>
-                        <li style={{ gridColumn: `11/12`, backgroundColor: `#ff6252` }}>코딩테스트</li>
-                        <li style={{ gridColumn: `12/13`, backgroundColor: `#54c6f9` }}>프리코스</li>
+                        <li style={{ gridColumn: `43/46`, backgroundColor: `#2ecaac` }}>모집</li>
+                        <li style={{ gridColumn: `46/47`, backgroundColor: `lightpink` }}></li>
+                        <li style={{ gridColumn: `48/52`, backgroundColor: `#54c6f9` }}>프리코스</li>
                     </ul>
                 </div>
                 <div className={styles.gantt__row}>
@@ -73,9 +90,10 @@ export default function YearlyCalendar() {
                         네이버 부스트캠프
                     </div>
                     <ul className={styles.gantt__row__bars}>
-                        <li style={{ gridColumn: `6/7`, backgroundColor: `#2ecaac` }}>모집</li>
-                        <li style={{ gridColumn: `7/8`, backgroundColor: `#ff6252` }}>코딩테스트</li>
-                        <li style={{ gridColumn: `8/9`, backgroundColor: `#54c6f9` }}>부스트캠프 챌린지</li>
+                        <li style={{ gridColumn: `23/27`, backgroundColor: `#2ecaac` }}>모집</li>
+                        <li style={{ gridColumn: `27/28`, backgroundColor: `lightpink` }}>1</li>
+                        <li style={{ gridColumn: `28/29`, backgroundColor: `lightpink` }}>2</li>
+                        <li style={{ gridColumn: `30/33`, backgroundColor: `#54c6f9` }}>챌린지</li>
                     </ul>
                 </div>
             </div>
