@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import Jumbotron from '../components/Jumbotron';
 import Table from "../components/Table";
 import TextLogo from '../components/TextLogo';
+import YearlyCalendar from '../components/YearlyCalendar';
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
       {/*</Layout>*/}
       <TextLogo/>
       <Jumbotron />
+      <YearlyCalendar />
       <Table />
     </>
   );
