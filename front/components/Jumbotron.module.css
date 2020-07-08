@@ -1,19 +1,113 @@
-.jumbotron {
-	color: #456990;
-  background-image: url("#");
-  background-position: center;
-  background-size: cover;
-}
-/*
-h1 {
-	font-family: 'NEXON Lv2 Gothic Bold';
+ /*.jumbo {*/
+/*    background-color: #4A91F5;*/
+/*    max-height: 600px;*/
+/*}*/
+
+/*.container {*/
+/*    max-height: 600px;*/
+/*}*/
+
+/*.box {*/
+/*    overflow: auto;*/
+/*    background-color: #4A91F5;*/
+/*}*/
+
+/*.title {*/
+/*    color: white;*/
+/*}*/
+
+/*.content {*/
+/*    color: #F2F8FF;*/
+/*}*/
+
+/*.image {*/
+/*    float: right;*/
+
+/*}*/
+
+ @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype'); } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype') } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype'); } .nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
+.box {
+    overflow: auto;
+    background-color: #4A91F5;
+    display: block;
 }
 
-p {
-	font-family: 'NEXON Lv1 Gothic OTF Light';
-	color : black;
+.container {
+    diaplay: flex;
+    max-width: 95%;
+    flex-wrap: wrap;
 }
 
-@font-face { font-family: 'NEXON Lv1 Gothic OTF Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff'); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'NEXON Lv2 Gothic Bold'; src: url('../fonts/NEXON\ Lv2\ Gothic\ Bold.ttf') format('truetype'); }
-*/
+
+.nav {
+    display: inline;
+    line-height: 3;
+    font-family: 'NanumBarunGothic';
+    font-size: 16px;
+    font-weight: 500;
+    width: 100px;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.a {
+    color: #F2F8FF;
+}
+
+.element {
+    display: inline;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.title, .content {
+    color: #F2F8FF;
+}
+
+
+.text {
+    float: left;
+    vertical-align: left;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-family: 'NanumBarunGothic';
+    max-width: 80%;
+ }
+
+.content {
+    font-size: 20px;
+    font-weight: 100px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.image {
+    float: right;
+}
+
+.burger {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .nav {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        position: absolute;
+        right: 0px;
+        padding-top: 10px;
+        padding-right: 10px;
+    }
+}

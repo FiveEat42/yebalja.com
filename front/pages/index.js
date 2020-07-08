@@ -1,22 +1,18 @@
 import Layout from '../components/Layout';
-import Jumbotron from '../components/Jumbotron'
-import Jumbo from '../components/JumbotronSelf';
-import Table from "../components/ResponsiveUsers";
+import Jumbotron from '../components/Jumbotron';
+import Table from "../components/Table";
+import TextLogo from '../components/TextLogo';
+
 
 const Home = () => {
   return (
     <>
-      <Layout>
-        <div>Hello, Next!</div>
-        <Jumbotron />
-      </Layout>
-      <img src={require('./yebalja.png')} height="60px" />
-      <Jumbo />
-
-
+      {/*<Layout>*/}
+      {/*  <div>Hello, Next!</div>*/}
+      {/*</Layout>*/}
+      <TextLogo/>
+      <Jumbotron />
       <Table />
-
-
     </>
   );
 }
