@@ -55,6 +55,10 @@
     color: #F2F8FF;
 }
 
+.a:hover {
+     text-decoration: none;
+}
+
 .element {
     display: inline;
     padding-left: 1rem;

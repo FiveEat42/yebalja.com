@@ -13,6 +13,10 @@
     display: inline;
 }
 
+.logo:hover {
+    text-decoration: none;
+}
+
 .content {
     padding-left: 15px;
     font-family: 'NanumBarunGothic';
