@@ -1,0 +1,45 @@
+extends ../layout
+
+
+
+block content
+
+    body
+        div.login_wrapper
+            form(action='/api/register' class="login_form" method='post')
+                div
+                    label ID : 
+                    input(type='email', placeholder='abc@mail.com' ,maxlength="20", name='user_email', id='user_email').form-control
+                div
+                    label ID 확인 :
+                    input(type='email', placeholder='이메일확인', maxlength="20",name='user_email_check',id='user_email_check').form-control
+                    button(type='button', onclick='email_check({user_email_check, user_email})') 중복체크
+                div
+                    label Nickname :
+                    input(type='text', placeholder="닉네임", maxlength="20",name='nickname').form-control
+                div
+                    label PW :
+                    input(type='password', placeholder="********", maxlength="20", name="user_password").form-control
+                
+                button(type='submit', class="login_button").form-control 회원가입
+        
+            script(type="text/javascript").
+                    function email_check(data){
+                        let email = user_email.value;
+                        let email_check = user_email_check.value;
+
+                        if (email == '' || email_check == '')
+                            alert('email 체크해주세요.');
+                        if (email != email_check)
+                            alert('email이 일치하지 않습니다.')
+                        if (!(email.includes('@')))
+                            alert('@없어')
+                        console.log(data);
+                        //data.user_email.value
+                        // console.log(email)
+                        //user_email_check.value = "******";
+                        console.log(user_email_check.value)
+                        //console.log(Object.keys(email) )
+                        //console.log('click')
+                    }
+                

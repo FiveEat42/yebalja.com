@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    div.login_wrapper
+        form(action='/api/login' class="login_form")
+            div
+                label ID : 
+                input(type="email", placeholder="abc@mail.com" ,maxlength="20")
+            div
+                label PW :
+                input(type="password", placeholder="********", maxlength="20")
+            
+            button(type="submit", class="login_button") 로그인
+        
+            button(type="button") 회원가입
