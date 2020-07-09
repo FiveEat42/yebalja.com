@@ -4,13 +4,6 @@ import Link from 'next/link';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-//import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
-
-/*
-You should import individual components like: react-bootstrap/Button rather than the entire library.
-Doing so pulls in only the specific components that you use,
-which can significantly reduce the amount of code you end up sending to the client.
- */
 
 const Header = () => {
   return (
