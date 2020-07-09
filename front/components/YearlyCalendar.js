@@ -48,9 +48,18 @@ export default function YearlyCalendar() {
                         SW 마에스트로
                     </div>
                     <ul className={styles.gantt__row__bars}>
-                        <li style={{ gridColumn: `4/8`, backgroundColor: `#2ecaac` }}>모집</li>
-                        <li style={{ gridColumn: `12/13`, backgroundColor: `lightpink` }}></li>
-                        <li style={{ gridColumn: `13/14`, backgroundColor:`orange` }}></li>
+                        <li className={styles.calendar_entry} style={{ gridColumn: `4/8`, backgroundColor: `#2ecaac`, zIndex: `1` }}>
+                            <span className={styles.calendar_entry__date}>1/22 - 3/10</span>
+                            <span className={styles.calendar_entry__title}>모집</span>
+                            <span className={styles.calendar_entry__details}><a>자세히보기</a></span>
+                            
+                            {/* <span className={styles.calendar_entry__category}>Meeting</span> */}
+                        </li>
+                        <li className={styles.calendar_entry} style={{ gridColumn: `10/14`, backgroundColor: `lightpink` }}>
+                            <span className={styles.calendar_entry__date}>1/22 - 3/10</span>
+                            <span className={styles.calendar_entry__title}>테스트</span>
+                            <span className={styles.calendar_entry__details}><a>자세히보기</a></span>
+                        </li>
                     </ul>
                     <ul className={styles.gantt__row__bars}></ul>
                 </div>
