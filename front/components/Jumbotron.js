@@ -15,15 +15,6 @@ const Jumbotron = () => {
 
 
           {/*
-            햄버거 모양입니다. 화면이 줄었을 때 호버로 목록을 보여주고 싶어요
-          */}
-          <div>
-            <Link href="/">
-              <img className={styles.burger} src={require('../src/images/hamburger.png')} width="35px" />
-            </Link>
-          </div>
-
-          {/*
             내비게이션 목록입니다
           */}
           <div className={styles.nav}>
