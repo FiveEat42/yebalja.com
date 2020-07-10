@@ -9,7 +9,6 @@ import Subtitle from "../components/Subtitle";
 const Home = () => {
   return (
       <Layout>
-      	<TextLogo/>
         <Jumbotron />
         <Title> 내 일정에 맞는 부트캠프 찾기 </Title>
       	<YearlyCalendar />
@@ -17,17 +16,6 @@ const Home = () => {
         <Title> 한 눈에 보는 부트캠프 </Title>
         <Table />
       </Layout>
-=======
-
-
-const Home = () => {
-  return (
-    <>
-      {/*<Layout>*/}
-      {/*  <div>Hello, Next!</div>*/}
-      {/*</Layout>*/}
-    </>
->>>>>>> Add YearlyCalendar
   );
 }
 
