@@ -1,0 +1,21 @@
+.header {
+    margin: 100px 0 0 0;
+    display: block;
+    text-align: center;
+    font-family: 'NanumBarunGothic';
+}
+
+.header h1 {
+    font-weight: 600;
+    color: #202125;
+}
+
+.header h2 {
+    font-weight: 600;
+    color: #202125;
+}
+
+.header p {
+    font-weight: 400;
+    color: dimgrey;
+}

@@ -1,0 +1,13 @@
+.navbarBg {
+    background-color: #4A91F5;
+    box-shadow: 3px 3px 24px -11px;
+    font-family: 'NanumBarunGothic';
+}
+
+.a {
+    color: #F2F8FF;
+}
+
+.a:hover {
+    text-decoration: none;
+}
