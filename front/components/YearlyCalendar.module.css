@@ -37,10 +37,10 @@
   background-color: #fff;
 }
 .gantt__row:nth-child(odd) {
-  background-color: #f5f5f5;
+  background-color: #F2F8FF;
 }
 .gantt__row:nth-child(odd) .gantt__row__first {
-  background-color: #f5f5f5;
+  background-color: #F2F8FF;
 }
 .gantt__row:nth-child(3) .gantt__row__bars {
   border-top: 0;
@@ -145,33 +145,7 @@
   right: 0;
 }
 
-/* 헤더 밑 태그 테스트용 gantt__row-bars 와 같음*/
-.gantt__tags {
-  list-style: none;
-  display: grid;
-  padding: 9px 0;
-  margin: 0;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 8px 0;
-}
-
-.gantt__tags li {
-  font-weight: 500;
-  text-align: center;
-  font-size: 14px;
-  min-height: 15px;
-  background-color: #55de84;
-  padding: 5px 12px;
-  color: #fff;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  border-radius: 20px;
-  margin: 0px 3px;
-}
-
 /* calendar hover  */
-
 .calendar_entry {
   background: #61cd8b;
   padding: 0 4px;
