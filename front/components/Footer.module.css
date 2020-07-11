@@ -23,7 +23,7 @@
 	list-style-type: none;
 	padding-inline-start: 0px;
 }
-
+/*
 @media (min-width: 768px) {
 	.footer {
 		max-height: 200px;
@@ -33,7 +33,7 @@
 		grid-gap: 20px;
 	}
 }
-
+*/
 .footer a {
 	font-family: 'NanumBarunGothic';
 	font-size: medium;
