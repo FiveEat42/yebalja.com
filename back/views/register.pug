@@ -2,8 +2,8 @@ extends layout
 
 block content
   div(style='width:30rem; margin:auto; margin-top:7rem')
-    div
-      h1(style='text-align:center; padding: 3rem') 회원가입
+    //div
+    //  h1(style='text-align:center; padding: 3rem') 회원가입
     form(action='/api/register', method='post')
       .form-row
         .col-md-12.mb-3
@@ -30,4 +30,4 @@ block content
           input#validationServer05.form-control.is-invalid(name='passwordCheck', type='password', value=123, required='')
           .invalid-feedback
             | Please provide a valid zip.
-      button.btn.btn-primary(type='submit') Submit form
+      button.btn.btn-primary(type='submit') 회원가입
