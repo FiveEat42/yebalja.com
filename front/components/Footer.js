@@ -4,20 +4,17 @@ const Footer = () => {
 
 	return (
 		<div className={styles.footer}>
-			<div className={styles.copyright}>
-				Copyright 2020. 이름 All Rights Reserved.
-			</div>
 			<div className={styles.list}>
-				<ul>
-					<li><a href="#">부트캠프란?</a></li>
-					<li><a href="#">예발자란?</a></li>
-					<li><a href="#">About 5E</a></li>
-					<li><a href="#">Email</a></li>
+				<ul className={styles.item}>
+					<li><p className={styles.wave}>👋</p></li>
+					<li><a href="/about">About</a></li>
+					<li><a href="/about">Email</a></li>
 					<li><a href="#">Github</a></li>
-					<li>
-					<p>👋</p>
-					</li>
+					<li><p className={styles.wave}>👋</p></li>
 				</ul>
+			</div>
+			<div className={styles.copyright}>
+				Copyright 2020. 예발자닷컴 All Rights Reserved.
 			</div>
 		</div>
 	);

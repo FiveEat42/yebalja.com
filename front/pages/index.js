@@ -10,12 +10,12 @@ const Home = () => {
       <Layout>
         <Jumbotron />
           <Header>
-              <h1>2020년 부트캠프</h1>
+              <h2>2020년 부트캠프</h2>
               <p>무료 부트캠프 일정을 한 눈에 확인하세요</p>
           </Header>
           <YearlyCalendar />
           <Header>
-              <h1>한 눈에 보는 부트캠프</h1>
+              <h2>한 눈에 보는 부트캠프</h2>
               <p>주요 부트캠프 특징을 한 눈에 비교해보세요</p>
           </Header>
           <Table />
