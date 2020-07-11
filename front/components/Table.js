@@ -31,7 +31,7 @@ const Table = () => {
               <td className={styles.cell}>기수 당 <br/>250여명</td>
               <td className={styles.cell}>최대 2년</td>
               <td className={styles.cell}>월 100만원</td>
-              <td className={styles.cell}>강남구 <br/>개포디지털혁신파크</td>
+              <td className={styles.cell}>강남구 개포디지털혁신파크</td>
             </tr>
 
             <tr className={styles.row}>

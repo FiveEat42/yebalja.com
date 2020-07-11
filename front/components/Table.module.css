@@ -9,16 +9,16 @@
 /*    background-color: #6cbec6;*/
 /*}*/
 
-/*.bootcamp {*/
-/*  color: #202125;*/
-/*  margin-bottom: 0px;*/
-/*}*/
-/*.bootcamp h2 {*/
-/*  font-weight: 600;*/
-/*}*/
-/*.bootcamp p {*/
-/*  font-weight: 300;*/
-/*}*/
+.bootcamp {
+  color: #202125;
+  margin-bottom: 0px;
+}
+.bootcamp h2 {
+  font-weight: 600;
+}
+.bootcamp p {
+  font-weight: 300;
+}
 
 .wrapper {
   max-width: 1200px;
@@ -39,22 +39,30 @@
 .title {
     /*background-color: #c8e7ea;*/
     color: white;
-    background-color: #4A91F5 !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /*background-color: #4A91F5 !important;*/
+
     text-align: center;
-    font-size: 13px;
+    font-size: 15px;
     align-self: center;
     font-weight: bold;
     padding: 20px 0;
 }
+
+.rowtitle {
+    background-image: linear-gradient(to top right, #4A91F5, #4DF0FF);
+}
+
+/*.row {*/
+/*    background-image: linear-gradient(to right, #4A91F5, #4DF0FF);*/
+
+/*}*/
 
 .table {
     box-sizing: border-box;
 }
 
 .rowtitle {
-    background-color: #c8e7ea;
-    border-bottom: 1px solid #91ced4;
+
     position: relative;
     top: 0;
     -webkit-transform: translateY(0);
@@ -63,7 +71,7 @@
 }
 
 .cell {
-    font-size: 12px;
+    font-size: 13px;
     border-width: 1px 0 0 0;
     border-color: rgba(0, 0, 0, 0.1);
     border-style: solid;
@@ -76,10 +84,10 @@
     border-color: rgba(0, 0, 0, 0.1);
     border-style: solid;
     padding: 15px 0;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
-    color: black;
+    color: #4A91F5;
     min-width: 12rem;
 }
 
@@ -88,7 +96,6 @@
 }
 .table .cell {
     text-align: center;
-    vertical-align: middle;
 
 }
 .table .cell:last-child {
@@ -107,9 +114,7 @@
 .table .row:nth-child(2n+1), .table .rowtitle:nth-child(2n+1) {
     background-color: white;
 }
-.rowtitle:nth-child(1) {
-    background-color: #6cbec6;
-}
+
 
 
 
@@ -128,7 +133,8 @@
 
 
 
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) {
+
 
     .table, .row, .cell, .rowtitle{
         display: block;
@@ -136,14 +142,28 @@
 
     .table .cell:nth-child(1) {
     background-color: #4A91F5;
+    /*background-image: linear-gradient(to top right, #4A91F5, #4DF0FF);*/
     color: white;
 }
+
+    .cell {
+        border-width: 0;
+    }
+    .cell:nth-child(2n) {
+
+        background-color: #F2F8FF;
+    }
+
+    .cell:nth-child(2n+1) {
+        background-color: white;
+    }
+
 
 
     .cell:first-child {
 
-        border-bottom: 1px solid #91ced4;
-        border-radius: 0px 0px 0 0;
+        background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);
+        border-radius: 12px 12px 0 0;
         position: relative;
         top: 0;
         -webkit-transform: translateY(0);
@@ -152,21 +172,22 @@
     }
     .cell:not(:first-child) {
         clear: both;
-        margin-left: 100px;
-        padding: 4px 20px 4px 90px;
+
+        padding: 7px 20px 7px 90px;
         position: relative;
+
     }
     .cell:not(:first-child):before {
-        color: #5C4DFF;
+        color: #4A91F5;
+        font-weight: 600;
         content: '';
         display: block;
         left: 0;
         position: absolute;
+        padding-left: 100px;
+        /*text-align: center;*/
+    }
 
-    }
-    .cell:last-child {
-        padding-botton: 1rem !important;
-    }
 
     .cell:nth-child(2):before {
         content: '주관:';
@@ -193,10 +214,34 @@
     .row, .rowtitle {
         padding: 0px 0;
         position: relative;
+        padding: 0 0 0.5rem 0;
+        margin-bottom: 1rem;
     }
     .row:first-child, .rowtitle:first-child {
         display: none;
     }
+    .cell:last-child {
+        /*padding-bottom: 1rem !important;*/
+        border-radius: 0 0 12px 12px;
+    }
+    .table, .row {
+        border-radius: 0 0 12px 12px;
+    }
+
+    .table .row:nth-child(2n+1), .table .row:nth-child(2n) {
+        background-color: #DAE4F2;
+    }
+    .row:last-child {
+        /*background-color: transparent;*/
+        margin-bottom: 0;
+    }
+    .table .row:last-child {
+        padding-bottom: 0;
+    }
+    .users {
+        background-color: #DAE4F2;
+    }
+
 }
 
 
@@ -205,17 +250,32 @@
 
 @media screen and (max-width: 600px) {
     .users {
-        background-color: #4DF0FF;
+
+        background-color: #DAE4F2;
+        box-sizing: content-box;
+        /*background-image: linear-gradient(to bottom, #4A91F5, #4DF0FF);*/
+    }
+    .cell:nth-child(2n) {
+
+        background-color: #F2F8FF;
+    }
+
+    .cell:nth-child(2n+1) {
+        background-color: white;
     }
 
     .cell:first-child {
-        border-radius: 12px 12px 0 0;
+        /*border-width: 0;*/
+        /*border-radius: 12px 12px 0 0;*/
         position: relative;
         top: 0;
         -webkit-transform: translateY(0);
         transform: translateY(0);
         width: 100%;
+        background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);
     }
+
+
     .cell:not(:first-child) {
         margin: 0;
         padding: 5px 1em;
@@ -225,33 +285,36 @@
         font-size: .8em;
         padding-top: 0.3em;
         position: relative;
+        padding-left: 0;
     }
     .cell:last-child {
         padding-bottom: 1rem !important;
         border-radius: 0 0 12px 12px;
     }
 
+    .cell, .cellheader {
+        /*border: 1px solid #4A91F5;*/
+        /*border-image: linear-gradient(to bottom, #4A91F5, #4DF0FF);*/
+        border-width: 0;
+    }
+
     .row, .rowtitle {
-        background-color: white !important;
-        border: 1px solid #4A91F5;
+        /*background-color: white !important;*/
+        /*border: 1px solid #F2F8FF ;*/
+        border-width: 0;
+        /*border-image: linear-gradient(to bottom, #4A91F5, #4DF0FF);*/
         border-radius: 12px;
-        box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        /*box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);*/
         margin: 0.5rem 0;
         padding: 0;
     }
 
     .users {
         border: none;
-        box-shadow: none;
+        /*box-shadow: none;*/
         overflow: visible;
     }
 
-    .cell:nth-child(2n) {
-    background-color: #F2F8FF;
-    }
 
-    .cell:nth-child(2n+1) {
-    background-color: white;
-    }
 
 }
