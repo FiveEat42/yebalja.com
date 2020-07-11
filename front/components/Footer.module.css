@@ -1,9 +1,8 @@
 .footer {
-	padding: 30px 10px 30px 10px;
-	margin-top: 50px;
+	padding: 60px 0 40px 0;
+	margin-top: 100px;
 	display: block;
-	max-height: 200px;
-	min-height: 140px;
+	min-height: 180px;
 	width: 100%;
 	text-align: center;
 	background-color: #4A91F5;
