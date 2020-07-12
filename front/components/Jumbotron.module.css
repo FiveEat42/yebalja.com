@@ -34,8 +34,9 @@
 
 .container {
     diaplay: flex;
-    max-width: 95%;
+    max-width: 100%;
     flex-wrap: wrap;
+    border-width: 0;
 }
 
 .nav {
@@ -69,13 +70,13 @@
     color: #F2F8FF;
 }
 
+
 .text {
     float: left;
     vertical-align: left;
-    padding-left: 4rem;
-    padding-right: 2rem;
+    padding-right: 4rem;
     position: absolute;
-    top: 23%;
+    top: 28%;
     font-family: 'NanumBarunGothic';
     max-width: 80%;
  }
@@ -95,6 +96,16 @@
     width: 600px;
 }
 
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .image {
+        float: flex;
+    }
+}
 
 
 @media screen and (max-width: 1024px) {
@@ -124,8 +135,20 @@
     .content {
         font-size: 0.8rem;
     }
+    .text {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
 }
 
+ @media screen and (max-width: 372px) {
+     .title {
+         font-size: 1.5rem;
+     }
+     .content {
+         font-size: 0.5rem;
+     }
+ }
  /*
     모니터 크기에 따라 일러스트레이션 크기 조정
     부트스트랩 Responsive breakpoints 참고하여 작성

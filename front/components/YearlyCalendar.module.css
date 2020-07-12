@@ -9,6 +9,7 @@
   max-width: 1200px;
   min-width: 700px;
   margin: 0 auto;
+  width: 92%;
 }
 .gantt {
   display: grid;
@@ -199,4 +200,18 @@
   opacity: 1;
   height: 12px;
   visibility: visible;
+}
+
+.mobilesubtitle {
+  display: none;
+}
+
+@media screen and (max-width: 740px) {
+  .wrapper, .websubtitle{
+    display: none;
+  }
+  .mobilesubtitle {
+    display: unset;
+  }
+
 }
