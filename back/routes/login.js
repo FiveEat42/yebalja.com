@@ -4,6 +4,8 @@ var url = require('url');
 let db = require('../models/db_config');
 var bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+let secretObj = require('../config/jwt');
+var cookie = require('cookie-parser');
 
 router.get('/', function(req, res, next) {
     //alert는 윈도우 브라우저에서 수행되는 메소드이기 때문에 서버사이드에서 수행할 수 없다.
@@ -13,16 +15,12 @@ router.get('/', function(req, res, next) {
   });
 
 router.post('/', function(req, res, next){
-    
-    let body = req.body;
-    let input_pw = body.login_password;
-    let input_email = body.login_email;
-    let input_obj ={
-      input_pw : body.login_password,
-      input_email : body.login_email
-    };
-    let sql = `SELECT * FROM member_table WHERE member_login_email = '${input_email}'`;
 
+    let body = req.body;
+    const { login_email, login_password } = req.body;
+    // let input_pw = body.login_password;
+    // let input_email = body.login_email;
+    let sql = `SELECT * FROM member_table WHERE member_login_email = '${login_email}'`;
     db.query(sql, function(err, result){
       if (err) throw (err);
       if (result == '')
@@ -31,16 +29,33 @@ router.post('/', function(req, res, next){
       }
       else
       {
-        bcrypt.compare(input_pw, result[0].member_login_pw, function(err, res){
-          console.log(res);
-          if (res)
+        bcrypt.compare(login_password, result[0].member_login_pw, function(err, result){
+          console.log(result);
+          if (result)
           {
+            console.log(secretObj.secret);
+
+            //로그인이 성공했을 때 토큰 발행
+            token = jwt.sign({
+              email : `${login_email}`
+            },
+            secretObj.secret, // 비밀키
+            {
+              expiresIn: '5m' // 유효시간
+            })
+            res.cookie('admin', token)
+            .status(200)
+            .json({loginSuccess: true, email: `${login_email}`});
+            // 쿠키에 토큰 저장, json으로 토큰발행이 성공했는지 확인해주는 부분
+
+            //토큰발행
             console.log('login success');
           }
         })
       }
     })
-    res.render('member/login');
+    //redirect를 넣으면 header오류가 발생함
+    //res.redirect('/api/admin');
   })
 
       // login.pug에서 post로 넘겨받은 email, password를 비교해야한다.

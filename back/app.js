@@ -13,6 +13,7 @@ let db_gisuRouter = require('./routes/db_gisu');
 let db_programRouter = require('./routes/db_program');
 let loginRouter = require('./routes/login');
 let registerRouter = require('./routes/register');
+var cookie = require('cookie');
 
 var app = express();
 
@@ -26,7 +27,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../front/build')));
-
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
