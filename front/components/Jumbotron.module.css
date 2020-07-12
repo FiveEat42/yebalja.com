@@ -93,26 +93,123 @@
 
 .image {
     float: right;
-    width: 600px;
+    max-width: 600px;
 }
 
 .container {
     max-width: 1200px;
     margin: auto;
+    width: 92%;
 }
 
-@media screen and (max-width: 1200px) {
-    .image {
-        float: flex;
-    }
+
+
+
+
+    /*Animation*/
+
+.seoul42 {
+	animation: hanging 2.5s infinite;
 }
+
+
+
+
+@keyframes hanging {
+    0% {
+		transform: translateY(0px);
+    }
+    50% {
+		transform: translateY(30px);
+    }
+    100% {
+		transform: translateY(0px);
+	}
+}
+
+.SSAFY {
+	animation: medium 4s infinite;
+
+  }
+
+.lion {
+	animation: medium 3.5s infinite;
+  }
+
+.boostcamp {
+	animation: medium 2.4s infinite;
+
+  }
+
+
+
+@keyframes medium {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(50px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+
+
+.SWM {
+	animation: side 4.5s infinite;
+  }
+
+
+
+@keyframes side {
+	0% {
+		transform: translateY(-20px);
+	}
+	50% {
+		transform: translateY(30px);
+	}
+	100% {
+		transform: translateY(-20px);
+	}
+}
+
+
+
+.techcourse {
+	animation: small 3.4s infinite;
+}
+
+
+@keyframes small {
+	0% {
+		transform: translateY(-30px);
+	}
+	50% {
+		transform: translateY(40px);
+	}
+	100% {
+		transform: translateY(-30px);
+	}
+}
+
+
+    /*End of Animation*/
+
+
 
 
 @media screen and (max-width: 1024px) {
     .nav {
         display: none;
     }
+}
 
+@media screen and (max-width: 930px){
+    .image {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -123,30 +220,38 @@
         padding-bottom: 2rem;
         margin: 0;
     }
+
 }
 
 @media screen and (max-width: 650px) {
-    .image {
-        width: 100%;
-    }
+
     .title {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
     .content {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     .text {
         padding-right: 1rem;
         padding-left: 1rem;
     }
+    .container {
+        margin: 0;
+        width: 100%;
+    }
 }
 
- @media screen and (max-width: 372px) {
+
+
+ @media screen and (max-width: 415px) {
+     .text {
+         padding-right: 0;
+     }
      .title {
-         font-size: 1.5rem;
+         font-size: 1.3rem;
      }
      .content {
-         font-size: 0.5rem;
+         font-size: 0.8rem;
      }
  }
  /*
