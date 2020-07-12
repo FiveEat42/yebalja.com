@@ -18,8 +18,6 @@ router.post('/', function(req, res, next){
 
     let body = req.body;
     const { login_email, login_password } = req.body;
-    // let input_pw = body.login_password;
-    // let input_email = body.login_email;
     let sql = `SELECT * FROM member_table WHERE member_login_email = '${login_email}'`;
     db.query(sql, function(err, result){
       if (err) throw (err);
@@ -33,8 +31,6 @@ router.post('/', function(req, res, next){
           console.log(result);
           if (result)
           {
-            console.log(secretObj.secret);
-
             //로그인이 성공했을 때 토큰 발행
             token = jwt.sign({
               email : `${login_email}`
@@ -45,7 +41,8 @@ router.post('/', function(req, res, next){
             })
             res.cookie('admin', token)
             .status(200)
-            .json({loginSuccess: true, email: `${login_email}`});
+            .redirect('/api/admin');
+            //.json({loginSuccess: true, email: `${login_email}`});
             // 쿠키에 토큰 저장, json으로 토큰발행이 성공했는지 확인해주는 부분
 
             //토큰발행
