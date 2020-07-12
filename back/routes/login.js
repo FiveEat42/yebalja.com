@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
   });
 
 router.post('/', function(req, res, next){
+    
     let body = req.body;
     let input_pw = body.login_password;
     let input_email = body.login_email;
@@ -21,15 +22,7 @@ router.post('/', function(req, res, next){
       input_email : body.login_email
     };
     let sql = `SELECT * FROM member_table WHERE member_login_email = '${input_email}'`;
-    // bcrypt.hash(input_pw, 10, (err, hash) => {
-    //   console.log(hash);
-    //   bcrypt.compare(input_pw, hash, function(err, res){
-    //     console.log(res);
-    //   })
-    // })
-    //sql문을 가지고 input된 email과 일치하는 데이터가 있는지 확인.
-    //없으면 result가 빈 값이다.
-    //result[0].db컬럼명으로 데이터 접근.
+
     db.query(sql, function(err, result){
       if (err) throw (err);
       if (result == '')
