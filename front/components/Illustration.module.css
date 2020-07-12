@@ -1,0 +1,109 @@
+
+
+.seoul42 {
+	animation: hanging 2.5s infinite;
+}
+
+
+
+
+@keyframes hanging {
+    0% {
+		transform: translateY(0px);
+    }
+    50% {
+		transform: translateY(30px);
+    }
+    100% {
+		transform: translateY(0px);
+	}
+}
+
+.SSAFY {
+	animation: medium 4s infinite;
+
+  }
+
+.lion {
+	animation: medium 3.5s infinite;
+  }
+
+.boostcamp {
+	animation: medium 2.4s infinite;
+
+  }
+
+
+
+@keyframes medium {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(50px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+
+
+.SWM {
+	animation: side 4.5s infinite;
+  }
+
+
+
+@keyframes side {
+	0% {
+		transform: translateY(-20px);
+	}
+	50% {
+		transform: translateY(30px);
+	}
+	100% {
+		transform: translateY(-20px);
+	}
+}
+
+
+
+.techcourse {
+	animation: small 3.4s infinite;
+}
+
+
+
+@keyframes small {
+	0% {
+		transform: translateY(-30px);
+	}
+	50% {
+		transform: translateY(40px);
+	}
+	100% {
+		transform: translateY(-30px);
+	}
+}
+
+
+
+
+
+
+
+
+.image {
+    float: right;
+    max-width: 600px;
+		width: 100%;
+}
+
+
+@media screen and (max-width: 930px){
+    .image {
+        width: 100%;
+
+    }
+}
