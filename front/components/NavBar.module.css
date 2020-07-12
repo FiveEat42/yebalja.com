@@ -1,0 +1,19 @@
+.navbarBg {
+    text-align: right;
+    line-height: 30px;
+    background-color: #4A91F5;
+    box-shadow: 3px 3px 24px -11px;
+    font-family: 'NanumBarunGothic';
+}
+
+.navbarBg a {
+    padding-right: 50px;
+}
+
+.a {
+    color: #F2F8FF;
+}
+
+.a:hover {
+    text-decoration: none;
+}

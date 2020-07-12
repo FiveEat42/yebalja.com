@@ -5,10 +5,6 @@ export default function YearlyCalendar() {
 
 	return (
         <div className={styles.wrapper}>
-            <div className={styles.header}>
-                <h2>2020년 부트캠프</h2>
-                <p>무료 부트캠프 일정을 한 눈에 확인하세요.</p>
-            </div>
             <div className={styles.gantt}>
                 <div className={classNames({[styles.gantt__row]: true, [styles.gantt__row__months]: true})}>
                         <div className={styles.gantt__row__first}></div>
