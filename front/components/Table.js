@@ -67,6 +67,7 @@ const Table = () => {
             </tr>
 
             <tr className={styles.row}>
+
               <td className={classNames({[styles.cell]: true, [styles.cellheader]:true})}>우아한테크코스</td>
               <td className={styles.cell}>우아한형제들</td>
               <td className={styles.cell}>온라인코딩테스트<br/>3주 프리코스<br/>최종 코딩테스트</td>

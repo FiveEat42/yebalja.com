@@ -15,6 +15,7 @@ const Jumbotron = () => {
 *}
 
           {/*
+
             svg
           */}
           <div className="image" >

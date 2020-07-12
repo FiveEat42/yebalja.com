@@ -9,6 +9,7 @@
 /*    background-color: #6cbec6;*/
 /*}*/
 
+
 /*.bootcamp {*/
 /*  color: #202125;*/
 /*  margin-bottom: 0px;*/
@@ -49,10 +50,12 @@
     align-self: center;
     font-weight: bold;
     padding: 20px 0;
+
 }
 
 .rowtitle {
     background-image: linear-gradient(to top, #4A91F5, #4DF0FF);
+
 }
 
 /*.row {*/
@@ -65,7 +68,6 @@
 /*}*/
 
 .rowtitle {
-
     position: relative;
     top: 0;
     -webkit-transform: translateY(0);
@@ -78,8 +80,10 @@
     border-width: 1px 0 0 0;
     border-color: rgba(0, 0, 0, 0.1);
     border-style: solid;
+
     min-width: 7rem;
     /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
+
 }
 
 
@@ -93,10 +97,12 @@
     text-align: center;
     color: #4A91F5;
     min-width: 12rem;
+
        /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
 }
 
 .table .cell {
+
     padding: 10px;
 }
 .table .cell {
@@ -135,6 +141,7 @@
 
 
 
+
 @media screen and (max-width: 1055px)
 {
     .cell {
@@ -144,6 +151,7 @@
         min-width: 11rem;
     }
 }
+
 
 
 
@@ -163,11 +171,17 @@
 
     .cell {
         border-width: 0;
+
     }
     .cell:nth-child(2n) {
 
         background-color: #F2F8FF;
     }
+
+    .cell:nth-child(2n+1) {
+        background-color: white;
+    }
+
 
     .cell:nth-child(2n+1) {
         background-color: white;
@@ -287,7 +301,9 @@
     .cell:first-child {
         /*border-width: 0;*/
         /*border-radius: 12px 12px 0 0;*/
+
         margin-top: 0;
+
         position: relative;
         top: 0;
         -webkit-transform: translateY(0);

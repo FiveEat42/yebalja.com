@@ -182,6 +182,7 @@
 }
 
 
+
 @keyframes small {
 	0% {
 		transform: translateY(-30px);
@@ -193,6 +194,7 @@
 		transform: translateY(-30px);
 	}
 }
+
 
 
     /*End of Animation*/
@@ -209,6 +211,7 @@
 @media screen and (max-width: 930px){
     .image {
         width: 100%;
+
     }
 }
 
