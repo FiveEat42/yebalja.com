@@ -2,32 +2,25 @@ extends layout
 
 block content
   div(style='width:30rem; margin:auto; margin-top:7rem')
-    //div
-    //  h1(style='text-align:center; padding: 3rem') 회원가입
     form(action='/api/register', method='post')
       .form-row
         .col-md-12.mb-3
           label(for='validationServer01')
             | 닉네임
-          input#validationServer01.form-control.is-valid(name='nickname', type='text', value='Mark', required='')
-          .valid-feedback
-            | Looks good!
+          input#validationServer01.form-control(name='nickname', type='text', value='Mark', required='')
       .form-row
         .col-md-12.mb-3
           label(for='validationServer02') 이메일
-          input#validationServer02.form-control.is-valid(name='email', type='email', placeholder='Email', value='abcd@gmail.com', required='')
-          .invalid-feedback
-            | Looks good!
+          input#validationServer02.form-control(name='email', type='email', placeholder='Email', value='abcd@gmail.com', required='')
       .form-row
         .col-md-12.mb-3
           label(for='validationServer03') 비밀번호
-          input#validationServer03.form-control.is-invalid(name='password', type='password',value=123, required='')
-          .invalid-feedback
-            | Please select a valid state.
-      .form-row
+          input#validationServer03.form-control(name='password', type='password',value=123, required='')
         .col-md-12.mb-3
           label(for='validationServer05') 비밀번호 확인
-          input#validationServer05.form-control.is-invalid(name='passwordCheck', type='password', value=123, required='')
-          .invalid-feedback
-            | Please provide a valid zip.
+          input#validationServer05.form-control(name='passwordCheck', type='password', value=123, required='')
+          //추후에 칸에 빨간색이나 파란색 테두리로 틀린것을 표현하면서 메세지를 띄우고 싶을 때 아래 메세지가 필요합니다.
+          //.is-invalid
+          //.invalid-feedback
+          //  | Please provide a valid zip.
       button.btn.btn-primary(type='submit') 회원가입
