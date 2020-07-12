@@ -6,22 +6,21 @@ const Table = () => {
     return (
       <>
       <div className={styles.wrapper}>
-        <div className={styles.bootcamp}>
-          <h2>한 눈에 보는 부트캠프</h2>
-          <p>무료 부트캠프들을 비교해보세요.</p>
-        </div>
+
         <div className={styles.users}>
           <table className={styles.table}>
-            <tr className={styles.rowtitle}>
-              <th className={styles.title}></th>
-              <th className={styles.title}>주관</th>
-              <th className={styles.title} width="230">선발과정</th>
-              <th className={styles.title}>지원자격</th>
-              <th className={styles.title}>모집인원</th>
-              <th className={styles.title}>교육기간</th>
-              <th className={styles.title}>혜택</th>
-              <th className={styles.title}>교육지역</th>
-            </tr>
+            <thead>
+              <tr className={styles.rowtitle}>
+                <th className={styles.title}></th>
+                <th className={styles.title}>주관</th>
+                <th className={styles.title} width="230">선발과정</th>
+                <th className={styles.title}>지원자격</th>
+                <th className={styles.title}>모집인원</th>
+                <th className={styles.title}>교육기간</th>
+                <th className={styles.title}>혜택</th>
+                <th className={styles.title}>교육지역</th>
+              </tr>
+            </thead>
 
             <tr className={styles.row}>
               <td className={classNames({[styles.cell]: true, [styles.cellheader]:true})}>42Seoul</td>

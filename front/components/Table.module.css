@@ -9,25 +9,27 @@
 /*    background-color: #6cbec6;*/
 /*}*/
 
-.bootcamp {
-  color: #202125;
-  margin-bottom: 0px;
-}
-.bootcamp h2 {
-  font-weight: 600;
-}
-.bootcamp p {
-  font-weight: 300;
-}
+/*.bootcamp {*/
+/*  color: #202125;*/
+/*  margin-bottom: 0px;*/
+/*}*/
+/*.bootcamp h2 {*/
+/*  font-weight: 600;*/
+/*}*/
+/*.bootcamp p {*/
+/*  font-weight: 300;*/
+/*}*/
 
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px;
+  /*padding: 40px;*/
+
 }
 
 .users * {
     box-sizing: border-box;
+    align-self: center;
 }
 
 .users {
@@ -75,7 +77,7 @@
     border-width: 1px 0 0 0;
     border-color: rgba(0, 0, 0, 0.1);
     border-style: solid;
-    min-width: 6rem;
+    min-width: 7rem;
 }
 
 
@@ -88,7 +90,7 @@
     font-weight: bold;
     text-align: center;
     color: #4A91F5;
-    min-width: 12rem;
+    min-width: 11rem;
 }
 
 .table .cell, .table .bootcamp {
@@ -116,7 +118,13 @@
 }
 
 
-
+@media screen and (max-width: 1280px)
+{
+    .wrapper {
+        margin: 0;
+        padding: 40px;
+    }
+}
 
 
 
@@ -249,6 +257,11 @@
 
 
 @media screen and (max-width: 600px) {
+
+    .table .row {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
     .users {
 
         background-color: #DAE4F2;
@@ -267,6 +280,7 @@
     .cell:first-child {
         /*border-width: 0;*/
         /*border-radius: 12px 12px 0 0;*/
+        margin-top: 0;
         position: relative;
         top: 0;
         -webkit-transform: translateY(0);
