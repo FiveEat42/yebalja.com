@@ -1,34 +1,35 @@
 var express = require('express');
 var router = express.Router();
-var url = require('url');
 let db = require('../models/db_config');
 var bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 let secretObj = require('../config/jwt');
-var cookie = require('cookie-parser');
+const flash = require('connect-flash');
 
 router.get('/', function(req, res, next) {
     //alert는 윈도우 브라우저에서 수행되는 메소드이기 때문에 서버사이드에서 수행할 수 없다.
     //console.log로 찍어야한다.
-
     res.render('member/login');
   });
 
 router.post('/', function(req, res, next){
-
-    let body = req.body;
+  //request body의 key에 해당하는 값을 할당.
     const { login_email, login_password } = req.body;
+  //view에서 input된 email 데이터를 DB에서 SELECT
     let sql = `SELECT * FROM member_table WHERE member_login_email = '${login_email}'`;
     db.query(sql, function(err, result){
       if (err) throw (err);
+    //해당하는 값이 존재하지 않으면, 다음 문구 출력
       if (result == '')
       {
         console.log('일치하는 데이터가 없습니다.');
       }
+    //값 존재시 input된 password를 hash하여 DB에 저장되어있는 해싱된 password와 비교작업
       else
       {
         bcrypt.compare(login_password, result[0].member_login_pw, function(err, result){
-          console.log(result);
+        //해싱되어 비교한 결과가 TRUE일 때, 로그인이 성공, jwt를 발행한다.
+        //token에 담겨있는 유저정보는 email, 해당 정보를 암호화할 비밀키, 만료시간을 포함한다.
           if (result)
           {
             //로그인이 성공했을 때 토큰 발행
@@ -39,6 +40,7 @@ router.post('/', function(req, res, next){
             {
               expiresIn: '5m' // 유효시간
             })
+          //토큰을 admin이라는 이름을 가진 cookie에 저장하고, 해당 작업이 성공(200)했다면, /api/admin으로 redirect한다.
             res.cookie('admin', token)
             .status(200)
             .redirect('/api/admin');
