@@ -105,6 +105,7 @@
   font-size: 13px;
   font-weight: bold;
   text-align: center;
+  
 }
 
 .gantt__row__bars {
@@ -208,6 +209,10 @@
   opacity: 1;
   height: 12px;
   visibility: visible;
+}
+
+.oversise_list:hover {
+  width: 105px;
 }
 
 /* CTA */

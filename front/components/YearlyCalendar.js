@@ -105,12 +105,12 @@ export default function YearlyCalendar() {
                       우아한테크코스
                   </div>
                   <ul className={styles.gantt__row__bars}>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `44/47`, backgroundColor: `#4DF0FF`, zIndex: `1` }}>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `44/47`, backgroundColor: `#4DF0FF`, zIndex: `1` }}>
                           <span className={styles.calendar_entry__date}>5/11 - 5/25</span>
                           <span className={styles.calendar_entry__title}>지원</span>
                           <span className={styles.calendar_entry__details}><a>4기</a></span>
                       </li>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `47/52`, backgroundColor: `#54c6f9` }}>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `47/52`, backgroundColor: `#54c6f9` }}>
                           <span className={styles.calendar_entry__date}>7/1 - 7/30</span>
                           <span className={styles.calendar_entry__title}>선발</span>
                           <span className={styles.calendar_entry__details}><a>자세히보기</a></span>
