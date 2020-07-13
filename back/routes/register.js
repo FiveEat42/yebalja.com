@@ -37,7 +37,7 @@ router.post('/', (req, res, next) => {
                       console.log('result', result2);
                     })
                 })
-                res.redirect('/api/admin')
+                res.redirect('/api/login')
               } else {
                 console.log('닉네임 중복')
                 res.redirect('/api/register')
