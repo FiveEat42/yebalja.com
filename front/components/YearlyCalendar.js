@@ -122,17 +122,17 @@ export default function YearlyCalendar() {
                       네이버 부스트캠프
                   </div>
                   <ul className={styles.gantt__row__bars}>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `23/27`, backgroundColor: `#4DF0FF`, zIndex: `1` }}>
+                      <li className={styles.calendar_entry} style={{ gridColumn: `23/27`, backgroundColor: `#4DF0FF`, zIndex: `3` }}>
                           <span className={styles.calendar_entry__date}>5/11 - 5/25</span>
                           <span className={styles.calendar_entry__title}>지원</span>
                           <span className={styles.calendar_entry__details}><a>4기</a></span>
                       </li>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `27/31`, backgroundColor: `#54c6f9`, }}>
+                      <li className={styles.calendar_entry} style={{ gridColumn: `27/31`, backgroundColor: `#54c6f9`, zIndex: `2` }}>
                           <span className={styles.calendar_entry__date}>7/1 - 7/30</span>
                           <span className={styles.calendar_entry__title}>선발</span>
                           <span className={styles.calendar_entry__details}><a>자세히보기</a></span>
                       </li>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `32/36`, backgroundColor: `#5C4DFF` }}>
+                      <li className={styles.calendar_entry} style={{ gridColumn: `32/36`, backgroundColor: `#5C4DFF`, zIndex: `1` }}>
                           <span className={styles.calendar_entry__date}>8/5 - 8/30</span>
                           <span className={styles.calendar_entry__title}>챌린지</span>
                           <span className={styles.calendar_entry__details}><a>자세히보기</a></span>
