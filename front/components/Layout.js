@@ -1,14 +1,14 @@
 import PropTypes  from 'prop-types';
-import Link from 'next/link'
 import Footer from "./Footer";
 import TextLogo from "./TextLogo";
-import Jumbotron from "./Jumbotron";
+import NavBar from "./NavBar"
 
 const Layout = ({children}) => {
     return (
         <div>
             <div>
                 <TextLogo/>
+                <NavBar />
                 {children}
                 <Footer />
             </div>

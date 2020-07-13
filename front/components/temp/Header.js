@@ -1,6 +1,4 @@
-import styles from './Header.module.css'
 import Link from 'next/link';
-
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -8,10 +6,6 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 const Header = () => {
   return (
     <div>
-      <span>
-        <Link href="/"><a className={styles.brand}>예발자닷컴</a></Link>
-        <span className={styles.default}>&nbsp;예비개발자를 위한</span>
-      </span>
       <Navbar collapseOnSelect expand="lg" variant="dark" className={styles.navbarBg}>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
