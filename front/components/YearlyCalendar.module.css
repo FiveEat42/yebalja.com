@@ -21,7 +21,7 @@
   max-width: 1200px;
   min-width: 700px;
   margin: 0 auto;
-  padding: 40px;
+  width: 92%;
 }
 .gantt {
   display: grid;
@@ -94,6 +94,7 @@
   align-self: center;
   font-weight: bold;
   padding: 20px 0;
+  
 }
 .gantt__row__first {
   background-color: #fff;
