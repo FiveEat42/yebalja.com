@@ -9,6 +9,7 @@
   max-width: 1200px;
   min-width: 700px;
   margin: 0 auto;
+  width: 92%;
 }
 .gantt {
   display: grid;
@@ -23,6 +24,7 @@
   display: grid;
   grid-template-columns: 150px 1fr;
   background-color: #fff;
+
 }
 .gantt__row:nth-child(odd) {
   background-color: #F2F8FF;
@@ -48,7 +50,8 @@
   height: 200%;
   width: 100%;
   background-color: transparent;
-  grid-template-columns: 150px repeat(12, 1fr); /*경계선 : repeat 함수로 쪼갤 수 있음*/ 
+  grid-template-columns: 150px repeat(12, 1fr); /*경계선 : repeat 함수로 쪼갤 수 있음*/
+
 }
 .gantt__row__lines span {
   display: block;
@@ -70,10 +73,12 @@
   background-color: #4A91F5 !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   grid-template-columns: 150px repeat(12, 1fr); /*1~12월 : repeat 함수로 쪼갤 수 있음*/
+  background-image: linear-gradient(to top, #4A91F5, #4DF0FF);
 }
 .gantt__row__months .gantt__row__first {
   border-top: 0 !important;
   background-color: #4A91F5 !important;
+  background-image: linear-gradient(to top, #4A91F5, #4DF0FF);
 }
 .gantt__row__months span {
   text-align: center;
@@ -91,6 +96,7 @@
   font-size: 13px;
   font-weight: bold;
   text-align: center;
+
 }
 
 .gantt__row__bars {
@@ -194,4 +200,18 @@
   opacity: 1;
   height: 12px;
   visibility: visible;
+}
+
+.mobilesubtitle {
+  display: none;
+}
+
+@media screen and (max-width: 740px) {
+  .wrapper, .websubtitle{
+    display: none;
+  }
+  .mobilesubtitle {
+    display: unset;
+  }
+
 }
