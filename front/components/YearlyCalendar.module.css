@@ -1,15 +1,27 @@
-.test1{
-    background-color: #55de84;
-}
-.test2{
-    color: bisque;
+@media only screen and (orientation: portrait) {
+  .landscape_only  { display: none; }
+  .websubtitle { display: none; }
 }
 
+@media only screen and (orientation: landscape) {
+  .mobilesubtitle { display: none; }
+}
+
+.header {
+  color: #202125;
+  margin-bottom: 0px;
+}
+.header h2 {
+  font-weight: 600;
+}
+.header p {
+  font-weight: 300;
+}
 .wrapper {
   max-width: 1200px;
   min-width: 700px;
   margin: 0 auto;
-  width: 92%;
+  padding: 40px;
 }
 .gantt {
   display: grid;
@@ -24,7 +36,6 @@
   display: grid;
   grid-template-columns: 150px 1fr;
   background-color: #fff;
-
 }
 .gantt__row:nth-child(odd) {
   background-color: #F2F8FF;
@@ -50,8 +61,7 @@
   height: 200%;
   width: 100%;
   background-color: transparent;
-  grid-template-columns: 150px repeat(12, 1fr); /*경계선 : repeat 함수로 쪼갤 수 있음*/
-
+  grid-template-columns: 150px repeat(12, 1fr); /*경계선 : repeat 함수로 쪼갤 수 있음*/ 
 }
 .gantt__row__lines span {
   display: block;
@@ -73,12 +83,10 @@
   background-color: #4A91F5 !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   grid-template-columns: 150px repeat(12, 1fr); /*1~12월 : repeat 함수로 쪼갤 수 있음*/
-  background-image: linear-gradient(to top, #4A91F5, #4DF0FF);
 }
 .gantt__row__months .gantt__row__first {
   border-top: 0 !important;
   background-color: #4A91F5 !important;
-  background-image: linear-gradient(to top, #4A91F5, #4DF0FF);
 }
 .gantt__row__months span {
   text-align: center;
@@ -96,7 +104,6 @@
   font-size: 13px;
   font-weight: bold;
   text-align: center;
-
 }
 
 .gantt__row__bars {
@@ -223,17 +230,4 @@
 	75% {
 		transform: rotate(-5deg);
 	}
-}
-.mobilesubtitle {
-  display: none;
-}
-
-@media screen and (max-width: 740px) {
-  .wrapper, .websubtitle{
-    display: none;
-  }
-  .mobilesubtitle {
-    display: unset;
-  }
-
 }
