@@ -42,7 +42,7 @@ export default function YearlyCalendar() {
                         SW 마에스트로
                     </div>
                     <ul className={styles.gantt__row__bars}>
-                        <li className={styles.calendar_entry} style={{ gridColumn: `4/8`, backgroundColor: `#4DF0FF`, zIndex: `1` }}>
+                        <li className={classNames({[styles.calendar_entry]: true, [styles.button ]: true})} style={{ gridColumn: `4/8`, backgroundColor: `#4DF0FF`, zIndex: `1` }}>
                             <span className={styles.calendar_entry__date}>1/22 - 3/10</span>
                             <span className={styles.calendar_entry__title}>지원</span>
                             <span className={styles.calendar_entry__details}><a>자세히보기</a></span>
