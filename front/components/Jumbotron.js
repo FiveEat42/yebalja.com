@@ -1,4 +1,5 @@
 import styles from './Jumbotron.module.css'
+import Illustration from './Illustration';
 
 const Jumbotron = () => {
   return (
@@ -9,7 +10,17 @@ const Jumbotron = () => {
           {/*
             예발자 일러스트를 png로 불러왔습니다. svg는 연구 중입니다.
           */}
+  {/*
           <img className={styles.image} src={require('../src/images/illustration.png')}/>
+*}
+
+          {/*
+
+            svg
+          */}
+          <Illustration/>
+
+
 
           {/*
             점보트론 내 글귀입니다.

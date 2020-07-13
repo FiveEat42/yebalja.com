@@ -34,8 +34,9 @@
 
 .container {
     diaplay: flex;
-    max-width: 95%;
+    max-width: 100%;
     flex-wrap: wrap;
+    border-width: 0;
 }
 
 .nav {
@@ -69,49 +70,93 @@
     color: #F2F8FF;
 }
 
+
 .text {
     float: left;
     vertical-align: left;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-right: 4rem;
+    position: absolute;
+    top: 28%;
     font-family: 'NanumBarunGothic';
     max-width: 80%;
  }
 
 .content {
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: 100px;
 }
 
 .title {
     font-weight: 600;
-    font-size: 40px;
+    font-size: 2rem;
 }
 
-.image {
-    float: right;
-    width: 600px;
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    width: 92%;
 }
 
-.burger {
-    display: none;
-}
+
+
+
+
+
+
 
 @media screen and (max-width: 1024px) {
     .nav {
         display: none;
     }
+}
 
-    .burger {
-        display: block;
-        position: absolute;
-        right: 0px;
-        padding-top: 10px;
-        padding-right: 10px;
+
+
+@media screen and (max-width: 900px) {
+    .text {
+        position: static;
+        float: bottom;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+
+    .title {
+        font-size: 1.7rem;
+    }
+    .content {
+        font-size: 1rem;
+    }
+    .text {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .container {
+        margin: 0;
+        width: 100%;
     }
 }
+
+
+
+ @media screen and (max-width: 415px) {
+     .text {
+         padding-right: 0;
+     }
+     .title {
+         font-size: 1.3rem;
+     }
+     .content {
+         font-size: 0.8rem;
+     }
+ }
+
 
  /*
     모니터 크기에 따라 일러스트레이션 크기 조정

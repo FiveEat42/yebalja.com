@@ -9,10 +9,7 @@ const Home = () => {
   return (
       <Layout>
         <Jumbotron />
-          <Header>
-              <h2>2020년 부트캠프</h2>
-              <p>무료 부트캠프 일정을 한 눈에 확인하세요</p>
-          </Header>
+
           <YearlyCalendar />
           <Header>
               <h2>한 눈에 보는 부트캠프</h2>
