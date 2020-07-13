@@ -40,6 +40,7 @@ router.post('/', function(req, res, next){
             {
               expiresIn: '5m' // 유효시간
             })
+            console.log(token);
           //토큰을 admin이라는 이름을 가진 cookie에 저장하고, 해당 작업이 성공(200)했다면, /api/admin으로 redirect한다.
             res.cookie('admin', token)
             .status(200)
