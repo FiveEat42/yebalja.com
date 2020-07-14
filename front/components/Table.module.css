@@ -80,7 +80,7 @@
     border-color: rgba(0, 0, 0, 0.1);
     border-style: solid;
 
-    min-width: 7rem;
+    min-width: 16rem;
     /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
 
 }
@@ -95,7 +95,7 @@
     font-weight: bold;
     text-align: center;
     color: #4A91F5;
-    min-width: 12rem;
+    min-width: 20rem;
 
        /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
 }
