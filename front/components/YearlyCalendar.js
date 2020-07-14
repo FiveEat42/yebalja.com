@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './YearlyCalendar.module.css'
 import classNames from 'classnames';
 import Header from "./Header";
+
 export default function YearlyCalendar() {
 
 	return (

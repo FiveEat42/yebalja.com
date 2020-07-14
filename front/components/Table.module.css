@@ -54,8 +54,7 @@
 }
 
 .rowtitle {
-    background-image: linear-gradient(to top, #4A91F5, #4DF0FF);
-
+    background-image: linear-gradient(to top, #4A91F5, #4A91F5);
 }
 
 /*.row {*/
