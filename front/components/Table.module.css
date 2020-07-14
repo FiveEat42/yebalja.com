@@ -21,12 +21,14 @@
 /*  font-weight: 300;*/
 /*}*/
 
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum Gothic', sans-serif; }
+
 .users {
   max-width: 1200px;
     width: 92%;
   margin: auto;
   /*padding: 40px;*/
-
+    font-family: "Nanum Gothic";
 }
 
 .users * {
@@ -92,7 +94,7 @@
     /*border-style: solid;*/
     padding: 15px 0;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     text-align: center;
     color: #4A91F5;
     min-width: 20rem;

@@ -6,7 +6,7 @@ const CTA = () => {
     <div className={styles.box}>
       <div className={styles.group}>
         <div className={styles.cta}>
-          <span className={styles.Hi}>  Hi </span>
+          <span className={styles.Hi}>  SHOW </span>
         </div>
         <div className={styles.imgbox}>
           <img className={styles.image} src={require('../src/image/pointer.png')}/>
