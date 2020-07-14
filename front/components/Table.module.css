@@ -87,9 +87,9 @@
 
 
 .cellheader {
-    border-width: 1px 0 0 0;
-    border-color: rgba(0, 0, 0, 0.1);
-    border-style: solid;
+    /*border-width: 1px 0 0 0;*/
+    /*border-color: rgba(0, 0, 0, 0.1);*/
+    /*border-style: solid;*/
     padding: 15px 0;
     font-size: 14px;
     font-weight: bold;
@@ -100,11 +100,15 @@
        /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
 }
 
-.table .cell {
+.cell:first-child {
+    min-width: 12rem;
+}
+
+.thetable .cell {
 
     padding: 10px;
 }
-.table .cell {
+.thetable .cell {
     text-align: center;
 
 }
@@ -117,21 +121,21 @@
 /*    background-color: #91ced4;*/
 /*    color: white;*/
 /*}*/
-.table .row:nth-child(2n), .table .rowtitle:nth-child(2n){
+.thetable .row:nth-child(2n), .thetable .rowtitle:nth-child(2n){
     background-color: #F2F8FF;
 }
 
-.table .row:nth-child(2n+1), .table .rowtitle:nth-child(2n+1) {
+.thetable .row:nth-child(2n+1), .thetable .rowtitle:nth-child(2n+1) {
     background-color: white;
 }
 
-.table .table {
+.table .thetable {
     table-layout: fixed;
     margin: 0;
     width: 100%;
 }
 
-.table {
+.thetable {
     padding: 0;
     margin: 0;
 }
@@ -146,7 +150,7 @@
     .cell {
         min-width: 6rem;
     }
-    .cellheader {
+    .cell:first-child {
         min-width: 11rem;
     }
 }
@@ -158,15 +162,18 @@
 @media only screen and (max-width: 900px) {
 
 
-    .table, .row, .cell, .rowtitle{
+    .thetable, .row, .cell, .rowtitle{
         display: block;
     }
 
-    .table .cell:nth-child(1) {
+    .thetable .cell:nth-child(1) {
     background-color: #4A91F5;
     /*background-image: linear-gradient(to top right, #4A91F5, #4DF0FF);*/
-    color: white;
 }
+    .thetable .cellheader:nth-child(1) {
+        color: white;
+        border-style: none;
+    }
 
     .cell {
         border-width: 0;
@@ -180,12 +187,6 @@
     .cell:nth-child(2n+1) {
         background-color: white;
     }
-
-
-    .cell:nth-child(2n+1) {
-        background-color: white;
-    }
-
 
 
     .cell:first-child {
@@ -254,16 +255,18 @@
     }
     .table, .row {
         border-radius: 0 0 12px 12px;
+        background-color: transparent;
     }
 
-    .table .row:nth-child(2n+1), .table .row:nth-child(2n) {
+
+    .thetable .row:nth-child(2n+1), .thetable .row:nth-child(2n) {
         background-color: #DAE4F2;
     }
     .row:last-child {
         /*background-color: transparent;*/
         margin-bottom: 0;
     }
-    .table .row:last-child {
+    .thetable .row:last-child {
         padding-bottom: 0;
     }
     .users {
@@ -278,7 +281,7 @@
 
 @media screen and (max-width: 600px) {
 
-    .table .row {
+    .thetable .row {
         margin-top: 0;
         margin-bottom: 1rem;
     }

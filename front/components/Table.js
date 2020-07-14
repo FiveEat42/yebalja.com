@@ -9,7 +9,7 @@ const Table = () => {
       <div className={styles.wrapper}>
 
         <div className={styles.users}>
-          <table className={styles.table}>
+          <table className={styles.thetable}>
             <thead>
               <tr className={styles.rowtitle}>
                 <th className={styles.title}></th>
@@ -24,7 +24,9 @@ const Table = () => {
             </thead>
 
             <tr className={styles.row}>
-              <Link href="/ftseoul"><a><td className={classNames({[styles.cell]: true, [styles.cellheader]:true})}>42Seoul</td></a></Link>
+
+              <td className={styles.cell}><Link href="/ftseoul"><a className={styles.cellheader}>42Seoul</a></Link></td>
+
               <td className={styles.cell}>이노베이션 아카데미</td>
               <td className={styles.cell}>1차 온라인테스트 <br/> 2차 4주 집중교육</td>
               <td className={styles.cell}>해당년도 <br/> 1월 1일 기준 <br/>성인</td>
@@ -35,7 +37,9 @@ const Table = () => {
             </tr>
 
             <tr className={styles.row}>
-              <Link href="/ssafy"><a><td className={classNames({[styles.cell]: true, [styles.cellheader]:true})}>SSAFY</td></a></Link>
+
+              <td className={styles.cell}><Link href="/ssafy"><a className={styles.cellheader}>SSAFY</a></Link></td>
+
               <td className={styles.cell}>삼성</td>
               <td className={styles.cell}>1차 온라인 CBT <br/>2차 현장 CBT, 면접</td>
               <td className={styles.cell}>만29세 이하의 <br/>대졸, 미취업자, 군필</td>
@@ -46,7 +50,9 @@ const Table = () => {
             </tr>
 
             <tr className={styles.row}>
-              <Link href="/soma"><a><td className={classNames({[styles.cell]: true, [styles.cellheader]:true})}>SW마에스트로</td></a></Link>
+
+              <td className={styles.cell}><Link href="/soma"><a className={styles.cellheader}>SW마에스트로</a></Link></td>
+
               <td className={styles.cell}>한국정보산업연합</td>
               <td className={styles.cell}>서류심사<br/>온라인코딩테스트<br/>인적성검사<br/>심층면접</td>
               <td className={styles.cell}>SW개발 능력을 갖춘 <br/>미취업자</td>
@@ -57,7 +63,9 @@ const Table = () => {
             </tr>
 
             <tr className={styles.row}>
-              <Link href="/boostcamp"><a><td className={classNames({[styles.cell]: true, [styles.cellheader]:true})}>네이버 부스트캠프</td></a></Link>
+
+              <td className={styles.cell}><Link href="/boostcamp"><a className={styles.cellheader}>네이버 부스트캠프</a></Link></td>
+
               <td className={styles.cell}>네이버</td>
               <td className={styles.cell}>1차 온라인코딩테스트<br/>2차 온라인코딩테스트<br/>4주 부스트캠프 챌린지</td>
               <td className={styles.cell}>개발 경력 2년 미만</td>
@@ -69,7 +77,9 @@ const Table = () => {
 
             <tr className={styles.row}>
 
-              <Link href="/woowa"><a><td className={classNames({[styles.cell]: true, [styles.cellheader]:true})}>우아한테크코스</td></a></Link>
+
+              <td className={styles.cell}><Link href="/woowa"><a className={styles.cellheader}>우아한테크코스</a></Link></td>
+
               <td className={styles.cell}>우아한형제들</td>
               <td className={styles.cell}>온라인코딩테스트<br/>3주 프리코스<br/>최종 코딩테스트</td>
               <td className={styles.cell}>프로그래밍에 대한<br/>기본지식</td>
