@@ -1,0 +1,101 @@
+.box {
+    margin: auto;
+    width: 92%;
+    max-width: 1200px;
+    display: block;
+    height: 60px;
+}
+
+.cta {
+    background: #4DF0FF;
+    margin: auto;
+    width: 50px;
+    height: 35px;
+    border-radius: 17px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.group {
+    float: right;
+    margin: auto;
+}
+
+.Hi {
+
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 2;
+    color: white;
+    font-size: 15px;
+    /*visibility: hidden;*/
+    /*opacity: 0;*/
+}
+
+.image {
+    width: 17px;
+    display: block;
+}
+
+.Hi {
+    animation: bounceIn 3s infinite;
+}
+
+@keyframes bounceIn {
+    0%, 52% {
+        opacity: 0;
+        /*visibility: hidden;*/
+    }
+    55%, 80% {
+        opacity: 1;
+        /*visibility: visible;*/
+    }
+    83%, 100% {
+        /*opacity: 1;*/
+        /*visibility: hidden;*/
+        opacity: 0;
+    }
+}
+
+.cta {
+    animation: rescale 3s linear infinite;
+}
+
+@keyframes rescale {
+    0%, 48% {
+        transform: scale(0.5);
+    }
+    58%, 75% {
+        transform: scale(1);
+    }
+    85%, 100% {
+        transform: scale(0.5);
+    }
+}
+
+.image {
+    animation: hover 3s linear infinite;
+}
+
+@keyframes hover {
+    0%, 30% {
+        transform: translate(45px, -2px);
+    }
+    55%, 75% {
+        transform: translate(20px, -8px);
+
+    }
+    100% {
+        transform: translate(45px, -2px);
+    }
+}
+
+
+@media screen and (max-width: 740px) {
+    .box {
+        display: none;
+    }
+}
