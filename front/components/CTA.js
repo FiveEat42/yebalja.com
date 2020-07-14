@@ -1,7 +1,6 @@
 import styles from "./CTA.module.css";
 import React from "react";
 
-
 const CTA = () => {
   return (
     <div className={styles.box}>
@@ -13,7 +12,6 @@ const CTA = () => {
           <img className={styles.image} src={require('../src/image/pointer.png')}/>
         </div>
       </div>
-
     </div>
   );
 }

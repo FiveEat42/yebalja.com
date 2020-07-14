@@ -13,10 +13,11 @@ export default function YearlyCalendar() {
         <p className={styles.websubtitle}>무료 부트캠프 일정을 한 눈에 확인하세요</p>
         <p className={styles.mobilesubtitle}>무료 부트캠프 연간 일정은 웹사이트 혹은 가로모드에서 지원됩니다</p>
       </Header>
-
+<CTA />
       <div className={classNames({[styles.wrapper]: true, [styles.landscape_only]: true})}>
 
-      <CTA />
+
+
 
           <div className={styles.gantt}>
               <div className={classNames({[styles.gantt__row]: true, [styles.gantt__row__months]: true})}>
