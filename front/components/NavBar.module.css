@@ -10,10 +10,67 @@
     padding-right: 50px;
 }
 
-.a {
+.active {
     color: #F2F8FF;
 }
 
 .a:hover {
     text-decoration: none;
 }
+
+.rolling {
+    border-radius: 5px;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+}
+
+.rolling span {
+    font-family: 'NanumBarunGothic';
+    font-weight: 400;
+    font-size: 15px;
+    top: 0px;
+    padding-left: 10px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    transform: translateY(0px);
+    animation: rollin-txt 4.5s infinite;
+}
+
+.rolling a {
+    color: white;
+}
+
+.rolling a:hover {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+@keyframes rollin-txt {
+    0% {
+          transform: translateY(-0px);
+    }
+    20% {
+          transform: translateY(-0px);
+    }
+    30% {
+          transform: translateY(-25px);
+    }
+    50% {
+          transform: translateY(-25px);
+    }
+    70% {
+          transform: translateY(-50px);
+    }
+    80% {
+          transform: translateY(-50px);
+    }
+    100% {
+          transform: translateY(0px);
+    }
+  }
