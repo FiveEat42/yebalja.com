@@ -53,15 +53,15 @@ const NavBar = () => {
                     </Nav>
                     <Form inline className={styles.rolling}>
                         <div>
-                            <p><a href="https://dreamin.career/academy/ios">
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://dreamin.career/academy/ios">
                                 <span className={styles.date}>D-3</span>
                                 <span className={styles.notice}>DREAMIN iOS Academy 교육생 모집</span>
                             </a></p>
-                            <p><a href="http://ai.gitct.kr/apply/">
+                            <p><a target="_blank" rel="noopener noreferrer" href="http://ai.gitct.kr/apply/">
                                 <span className={styles.date}>D-Day</span>
                                 <span className={styles.notice}>광주AI사관학교</span>
                             </a></p>
-                            <p><a href="https://yebalja.com">
+                            <p><a target="_blank" rel="noopener noreferrer" href="https://yebalja.com">
                                 <span className={styles.date}>D-10</span>
                                 <span className={styles.notice}>예발자닷컴 오픈</span>
                             </a></p>
