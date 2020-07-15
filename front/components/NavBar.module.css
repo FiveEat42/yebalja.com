@@ -21,7 +21,7 @@
 .rolling {
     height: 30px;
     line-height: 30px;
-    width: 400px;
+    width: 340px;
     position: relative;
     overflow: hidden;
 }
@@ -29,7 +29,7 @@
 .rolling a {
     font-family: 'NanumBarunGothic';
     font-weight: 400;
-    color: #a3c3f9;
+    color: #d5e3fc;
     top: 0px;
     padding-left: 10px;
     width: 100%;
@@ -41,24 +41,20 @@
 
 .rolling .date {
     font-size: 10px;
-    font-weight: 400;
-    color: white;
     background-color: #5C4DFF;
     padding: 2px 7px 2px 7px;
     border-radius: 5px;
 }
 
 .rolling .notice {
-    font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
     margin-left: 10px;
     text-align: left;
 }
 
 .rolling a:hover {
     text-decoration: none;
-    color: #d5e3fc;
-    font-weight: 600;
+    color: #ECF2FE;
 }
 
 @keyframes rollin-txt {
@@ -69,18 +65,24 @@
           transform: translateY(-0px);
     }
     30% {
-          transform: translateY(-48px);
+          transform: translateY(-47px);
     }
     50% {
-          transform: translateY(-48px);
+          transform: translateY(-47px);
     }
     70% {
-          transform: translateY(-96px);
+          transform: translateY(-94px);
     }
     80% {
-          transform: translateY(-96px);
+          transform: translateY(-94px);
     }
     100% {
           transform: translateY(0px);
     }
   }
+
+ @media (max-width: 991.98px) {
+    .rolling {
+        display: none;
+      }
+ }
