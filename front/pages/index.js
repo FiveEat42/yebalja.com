@@ -11,8 +11,9 @@ const Home = () => {
       <Layout>
         <Jumbotron />
           <YearlyCalendar />
+          <br /><br /><br />
           <Header>
-              <h2>한 눈에 보는 부트캠프</h2>
+              <h1>한 눈에 보는 부트캠프</h1>
               <p>주요 부트캠프 특징을 한 눈에 비교해보세요</p>
           </Header>
           <Table />

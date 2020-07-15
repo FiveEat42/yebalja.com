@@ -8,10 +8,10 @@ export default function YearlyCalendar() {
 
 	return (
 	  <>
-      <Header>
-        <h2>2020년 부트캠프</h2>
+      <Header className={styles.webheader}>
+        <h1>2020년 부트캠프</h1>
         <p className={styles.websubtitle}>무료 부트캠프 일정을 한 눈에 확인하세요</p>
-        <p className={styles.mobilesubtitle}>무료 부트캠프 연간 일정은 웹사이트 혹은 가로모드에서 지원됩니다</p>
+        {/*<p className={styles.mobilesubtitle}>무료 부트캠프 연간 일정은 웹사이트 혹은 가로모드에서 지원됩니다</p>*/}
       </Header>
 
       <div className={classNames({[styles.wrapper]: true, [styles.landscape_only]: true})}>
@@ -49,7 +49,7 @@ export default function YearlyCalendar() {
               </div>
               <div className={styles.gantt__row}>
                   <div className={styles.gantt__row__first}>
-                      <span>42 Seoul</span> <br></br><br></br>1기
+                      <span>42 Seoul</span> <br></br><br></br><span className={styles.gisu}>1기</span>
                   </div>
                   <ul className={styles.gantt__row__bars}>
                       <li style={{ gridColumn: `1/53`, backgroundColor: `#5C4DFF` }}>지원</li>
@@ -67,7 +67,7 @@ export default function YearlyCalendar() {
               </div>
               <div className={styles.gantt__row}>
                   <div className={styles.gantt__row__first}>
-                      2기
+                    <span className={styles.gisu}>2기</span>
                   </div>
                   <ul className={styles.gantt__row__bars}>
                       <li className={styles.calendar_entry} style={{ gridColumn: `20/24`, backgroundColor: `#54c6f9`, zIndex: `1` }}>
@@ -84,7 +84,7 @@ export default function YearlyCalendar() {
               </div>
               <div className={styles.gantt__row}>
                   <div className={styles.gantt__row__first}>
-                      3기
+                    <span className={styles.gisu}>3기</span>
                   </div>
                   <ul className={styles.gantt__row__bars}>
                       <li className={styles.calendar_entry} style={{ gridColumn: `28/32`, backgroundColor: `#54c6f9` }}>
@@ -120,7 +120,7 @@ export default function YearlyCalendar() {
               <div className={styles.gantt__row}>
                   <div className={styles.gantt__row__first}>
                     <span>네이버 부스트캠프</span>
-                  </div>
+                </div>
                   <ul className={styles.gantt__row__bars}>
                       <li className={styles.calendar_entry} style={{ gridColumn: `23/27`, backgroundColor: `#5C4DFF`, zIndex: `3` }}>
                           <span className={styles.calendar_entry__date}>5/11 - 5/25</span>

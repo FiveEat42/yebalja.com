@@ -1,6 +1,7 @@
 
 .box {
-    margin: auto;
+    margin-top: -60x;
+    margin-bottom: 5px;
     width: 92%;
     max-width: 1200px;
     display: block;
@@ -16,7 +17,7 @@
     box-sizing: border-box;
     transition: 0.3s;
     text-align: center;
-    margin-right: -20px;
+    margin-right: -70px;
 }
 
 .group {
@@ -99,14 +100,14 @@
 
 @keyframes hover {
     0%, 30% {
-        transform: translate(55px, -2px);
+        transform: translate(80px, -2px);
     }
     55%, 75% {
-        transform: translate(30px, -8px);
+        transform: translate(50px, -8px);
 
     }
     100% {
-        transform: translate(55px, -2px);
+        transform: translate(80px, -2px);
     }
 }
 
