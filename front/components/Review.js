@@ -6,32 +6,28 @@ import Link from 'next/link';
 export default function Review() {
     return (
       <>
-        <div classNmae={styles.slider}>
-          
-          <a href="#slide-1">1</a>
-          <a href="#slide-2">2</a>
-          <a href="#slide-3">3</a>
-          <a href="#slide-4">4</a>
-          <a href="#slide-5">5</a>
-
-          <div className={styles.slides}>
-            <div id="slide-1">
-              1
-            </div>
-            <div id="slide-2">
-              2
-            </div>
-            <div id="slide-3">
-              3
-            </div>
-            <div id="slide-4">
-              4
-            </div>
-            <div id="slide-5">
-              5
-            </div>
-          </div>
-        </div>
+        <nav className={classNames({[styles.menu]: true, [styles.menu__adsila]: true})}>
+          <a className={styles.menu__item} href="#">
+            <span className={styles.menu__item_name}>Artists</span>
+            <span className={styles.menu__item_label}>Explore all artists' portfolios</span>
+          </a>
+          <a className={styles.menu__item} href="#">
+            <span className={styles.menu__item_name}>Exhibitions</span>
+            <span className={styles.menu__item_label}>Discover their stories</span>
+          </a>
+          <a className={styles.menu__item} href="#">
+            <span className={styles.menu__item_name}>Schedule</span>
+            <span className={styles.menu__item_label}>View our event calendar</span>
+          </a>
+          <a className={styles.menu__item} href="#">
+            <span className={styles.menu__item_name}>Mission</span>
+            <span className={styles.menu__item_label}>Read our mission statement</span>
+          </a>
+          <a className={styles.menu__item} href="#">
+            <span className={styles.menu__item_name}>The Gardens</span>
+            <span className={styles.menu__item_label}>Get to know our eco village</span>
+          </a>
+        </nav>
       </>
   );
 }
