@@ -26,9 +26,10 @@
 .users {
   max-width: 1200px;
     width: 92%;
-  margin: auto;
+  margin: 0 auto;
   /*padding: 40px;*/
     font-family: "Nanum Gothic";
+    color: #615E67;
 }
 
 .users * {
@@ -48,7 +49,7 @@
     /*background-color: #4A91F5 !important;*/
 
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     align-self: center;
     font-weight: bold;
     padding: 20px 0;
@@ -77,12 +78,13 @@
 }
 
 .cell {
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 700;
     border-width: 1px 0 0 0;
     border-color: rgba(0, 0, 0, 0.1);
     border-style: solid;
 
-    min-width: 16rem;
+    /*min-width: 12rem;*/
     /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
 
 }
@@ -93,18 +95,22 @@
     /*border-color: rgba(0, 0, 0, 0.1);*/
     /*border-style: solid;*/
     padding: 15px 0;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 900;
     text-align: center;
     color: #4A91F5;
-    min-width: 20rem;
+    /*min-width: 5rem;*/
 
        /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
 }
 
 .cell:first-child {
-    min-width: 12rem;
+    /*min-width: 15rem;*/
 }
+.csstable{
+    margin:0;
+}
+
 
 .thetable .cell {
 
@@ -132,29 +138,46 @@
 }
 
 .table .thetable {
-    table-layout: fixed;
+    table-layout: auto;
     margin: 0;
     width: 100%;
 }
 
 .thetable {
+    width: 100%;
     padding: 0;
     margin: 0;
+    border-radius: 12px;
+}
+
+.cell:first-child:after {
+    color: #7A4DFF;
+    font-size: 12px;
+    font-weight: 500;
+    content: '';
+    display: block;
+    left: 0;
+    /*position: absolute;*/
+    /*padding-left: 100px;*/
+    /*text-align: center;*/
+    content-align: center;
 }
 
 
-
-
-
-
-@media screen and (max-width: 1055px)
-{
-    .cell {
-        min-width: 6rem;
-    }
-    .cell:first-child {
-        min-width: 11rem;
-    }
+.row:nth-child(2) .cell:first-child:after {
+    content: '이노베이션 아카데미';
+}
+.row:nth-child(3) .cell:first-child:after {
+    content: '삼성';
+}
+.row:nth-child(4) .cell:first-child:after {
+    content: '네이버';
+}
+.row:nth-child(5) .cell:first-child:after {
+    content: '한국정보산업연합회';
+}
+.row:nth-child(6) .cell:first-child:after {
+    content: '우아한 형제들';
 }
 
 
@@ -163,7 +186,9 @@
 
 @media only screen and (max-width: 900px) {
 
-
+    .cell:first-child:after {
+        display: none;
+    }
     .thetable, .row, .cell, .rowtitle{
         display: block;
     }
@@ -192,8 +217,8 @@
 
 
     .cell:first-child {
-
-        background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);
+        background-color: #4A91F5;
+        /*background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);*/
         border-radius: 12px 12px 0 0;
         position: relative;
         top: 0;
@@ -221,25 +246,19 @@
 
 
     .cell:nth-child(2):before {
-        content: '주관:';
+        content: '코딩테스트:';
     }
     .cell:nth-child(3):before {
         content: '선발과정:';
     }
     .cell:nth-child(4):before {
-        content: '지원자격:';
-    }
-    .cell:nth-child(5):before {
         content: '모집인원:';
     }
-    .cell:nth-child(6):before {
+    .cell:nth-child(5):before {
         content: '교육기간:';
     }
-    .cell:nth-child(7):before {
+    .cell:nth-child(6):before {
         content: '혜택:';
-    }
-    .cell:nth-child(8):before {
-        content: '교육지역:';
     }
 
     .row, .rowtitle {
@@ -313,7 +332,8 @@
         -webkit-transform: translateY(0);
         transform: translateY(0);
         width: 100%;
-        background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);
+        /*background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);*/
+        background-color: #4A91F5;
     }
 
 
