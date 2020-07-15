@@ -2,8 +2,10 @@ import styles from './NavBar.module.css'
 import Link from 'next/link';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import classNames from 'classnames';
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
+import Button from 'react-bootstrap/Button'
 import { useRouter } from "next/router";
 
 
@@ -13,7 +15,7 @@ const NavBar = () => {
 
     return (
         <div>
-            <Navbar fixed="top" collapseOnSelect expand="lg" variant="dark" className={styles.navbarBg}>
+            <Navbar collapseOnSelect expand="lg" variant="dark" className={styles.navbarBg}>
                 <Navbar.Brand></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -49,10 +51,19 @@ const NavBar = () => {
                                 멋쟁이사자처럼</a>
                         </Link>
                     </Nav>
-                    <Nav>
-                        <Nav.Link href="/sign-in">로그인</Nav.Link>
-                        <Nav.Link href="/sign-up">회원가입</Nav.Link>
-                    </Nav>
+                    <Form inline className={styles.rolling}>
+                        <div>
+                            <span><a href="https://dreamin.career/academy/ios">
+                                [D-2](~7/17) DREAMIN iOS Academy 교육생 모집
+                            </a></span>
+                            <span><a href="http://ai.gitct.kr/apply/">
+                                [마감](~5/31) 광주AI사관학교
+                            </a></span>
+                            <span><a href="https://dreamin.career/academy/ios">
+                                [D-2](~7/17) DREAMIN iOS Academy 교육생 모집
+                            </a></span>
+                        </div>
+                    </Form>
                 </Navbar.Collapse>
             </Navbar>
         </div>
