@@ -1,15 +1,16 @@
 import styles from "./CTA.module.css";
 import React from "react";
+import classNames from 'classnames';
 
 const CTA = () => {
   return (
     <div className={styles.box}>
       <div className={styles.group}>
-        <div className={styles.cta}>
+        <div className={classNames({[styles.cta]: true, [styles.ctabox]: true})}>
           <span className={styles.Hi}>  SHOW </span>
         </div>
         <div className={styles.imgbox}>
-          <img className={styles.image} src={require('../src/image/pointer.png')}/>
+          <img className={styles.image} src={require('../src/image/pointerpurple.png')}/>
         </div>
       </div>
     </div>

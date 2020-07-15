@@ -10,13 +10,13 @@
 .cta {
     background: #4DF0FF;
     margin: auto;
-    width: 60px;
+    width: 70px;
     height: 35px;
     border-radius: 17px;
     box-sizing: border-box;
     transition: 0.3s;
     text-align: center;
-    margin-right: 30px;
+    margin-right: -20px;
 }
 
 .group {
@@ -28,16 +28,15 @@
 
     font-weight: 600;
     font-family: sans-serif;
-    font-size: 10px;
-    line-height: 2.3;
+    line-height: 2.7;
     color: white;
-    font-size: 15px;
+    font-size: 13px;
     /*visibility: hidden;*/
     /*opacity: 0;*/
 }
 
 .image {
-    width: 17px;
+    width: 25px;
     display: block;
 }
 
@@ -62,18 +61,35 @@
 }
 
 .cta {
+    /*animation: wave-animation 3s linear infinite;*/
     animation: rescale 3s linear infinite;
+    /*animation: rescales 3s, wave-animation 3s;*/
+    /*animation-iteration-count: infinite;*/
 }
+
+/*.ctabox {*/
+/*    animation: rescale 3s linear infinite;*/
+/*}*/
+
 
 @keyframes rescale {
     0%, 48% {
-        transform: scale(0.5);
+        transform: rotate(0deg) scale(0.7);
+
+    }
+    3%, 15%, 27%, 39% {
+        transform: rotate(10deg) scale(0.7);
+
+    }
+    9%, 21%, 33%, 45% {
+        transform: rotate(-10deg) scale(0.7);
+
     }
     58%, 75% {
         transform: scale(1);
     }
     85%, 100% {
-        transform: scale(0.5);
+        transform: scale(0.7);
     }
 }
 
@@ -83,14 +99,14 @@
 
 @keyframes hover {
     0%, 30% {
-        transform: translate(45px, -2px);
+        transform: translate(55px, -2px);
     }
     55%, 75% {
-        transform: translate(20px, -8px);
+        transform: translate(30px, -8px);
 
     }
     100% {
-        transform: translate(45px, -2px);
+        transform: translate(55px, -2px);
     }
 }
 
@@ -100,3 +116,5 @@
         display: none;
     }
 }
+
+

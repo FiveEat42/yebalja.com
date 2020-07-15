@@ -29,7 +29,7 @@ const Table = () => {
               <td className={styles.cell}><Link href="/ftseoul"><a className={styles.cellheader}>42Seoul</a></Link></td>
 
               {/*<td className={styles.cell}>이노베이션 아카데미</td>*/}
-              <td className={styles.cell}>O</td>
+              <td className={styles.cell}>X</td>
               <td className={styles.cell}>1차 온라인테스트 <br/> 2차 4주 집중교육</td>
               {/*<td className={styles.cell}>해당년도 <br/> 1월 1일 기준 <br/>성인</td>*/}
 
@@ -43,7 +43,7 @@ const Table = () => {
               <td className={styles.cell}><Link href="/ssafy"><a className={styles.cellheader}>SSAFY</a></Link></td>
 
               {/*<td className={styles.cell}>삼성</td>*/}
-              <td className={styles.cell}>O</td>
+              <td className={styles.cell}>X</td>
               <td className={styles.cell}>1차 온라인 CBT <br/>2차 현장 CBT, 면접</td>
               {/*<td className={styles.cell}>만29세 이하의 <br/>대졸, 미취업자, 군필</td>*/}
 
@@ -53,21 +53,8 @@ const Table = () => {
               {/*<td className={styles.cell}>지역별 상이</td>*/}
             </tr>
 
-            <tr className={styles.row}>
 
 
-              <td className={styles.cell}><Link href="/soma"><a className={styles.cellheader}>SW마에스트로</a></Link></td>
-
-              {/*<td className={styles.cell}>한국정보산업연합</td>*/}
-              <td className={styles.cell}>O</td>
-              <td className={styles.cell}>서류심사<br/>온라인코딩테스트<br/>인적성검사<br/>심층면접</td>
-              {/*<td className={styles.cell}>SW개발 능력을 갖춘 <br/>미취업자</td>*/}
-
-              <td className={styles.cell}>150명</td>
-              <td className={styles.cell}>6개월</td>
-              <td className={styles.cell}>월 100만원<br/>IT기기 150만원</td>
-              {/*<td className={styles.cell}>서울 강남구</td>*/}
-            </tr>
 
             <tr className={styles.row}>
               <td className={styles.cell}><Link href="/boostcamp"><a className={styles.cellheader}>네이버 부스트캠프</a></Link></td>
@@ -80,6 +67,20 @@ const Table = () => {
               <td className={styles.cell}>4개월</td>
               <td className={styles.cell}> - </td>
               {/*<td className={styles.cell}>역삼역/뚝섬역 베이스캠프</td>*/}
+            </tr>
+
+            <tr className={styles.row}>
+              <td className={styles.cell}><Link href="/soma"><a className={styles.cellheader}>SW마에스트로</a></Link></td>
+
+              {/*<td className={styles.cell}>한국정보산업연합</td>*/}
+              <td className={styles.cell}>O</td>
+              <td className={styles.cell}>서류심사<br/>온라인코딩테스트<br/>인적성검사<br/>심층면접</td>
+              {/*<td className={styles.cell}>SW개발 능력을 갖춘 <br/>미취업자</td>*/}
+
+              <td className={styles.cell}>150명</td>
+              <td className={styles.cell}>6개월</td>
+              <td className={styles.cell}>월 100만원<br/>IT기기 150만원</td>
+              {/*<td className={styles.cell}>서울 강남구</td>*/}
             </tr>
 
             <tr className={styles.row}>
