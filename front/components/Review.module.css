@@ -1,4 +1,7 @@
 .menu {
+	max-width: 1200px;
+    width: 92%;
+ 	margin: auto;
 	position: relative;
 	z-index: 10;
 }
