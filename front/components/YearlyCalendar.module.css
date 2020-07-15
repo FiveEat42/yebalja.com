@@ -22,6 +22,7 @@
   min-width: 700px;
   margin: 0 auto;
   width: 92%;
+  font-family: "Nanum Gothic";
 }
 .gantt {
   display: grid;
@@ -105,6 +106,7 @@
   font-size: 13px;
   font-weight: bold;
   text-align: center;
+  font-weight: 800;
   
 }
 
@@ -157,7 +159,7 @@
   box-sizing: border-box;
   transition: 0.3s;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Nanum Gothic';
   font-size: 13px;
   line-height: 1;
   display: flex;
