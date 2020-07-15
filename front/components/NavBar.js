@@ -53,15 +53,18 @@ const NavBar = () => {
                     </Nav>
                     <Form inline className={styles.rolling}>
                         <div>
-                            <span><a href="https://dreamin.career/academy/ios">
-                                [D-2](~7/17) DREAMIN iOS Academy 교육생 모집
-                            </a></span>
-                            <span><a href="http://ai.gitct.kr/apply/">
-                                [마감](~5/31) 광주AI사관학교
-                            </a></span>
-                            <span><a href="https://dreamin.career/academy/ios">
-                                [D-2](~7/17) DREAMIN iOS Academy 교육생 모집
-                            </a></span>
+                            <p><a href="https://dreamin.career/academy/ios">
+                                <span className={styles.date}>D-3</span>
+                                <span className={styles.notice}>DREAMIN iOS Academy 교육생 모집</span>
+                            </a></p>
+                            <p><a href="http://ai.gitct.kr/apply/">
+                                <span className={styles.date}>D-Day</span>
+                                <span className={styles.notice}>광주AI사관학교</span>
+                            </a></p>
+                            <p><a href="https://yebalja.com">
+                                <span className={styles.date}>D-10</span>
+                                <span className={styles.notice}>예발자닷컴 오픈</span>
+                            </a></p>
                         </div>
                     </Form>
                 </Navbar.Collapse>

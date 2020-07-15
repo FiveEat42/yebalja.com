@@ -19,35 +19,45 @@
 }
 
 .rolling {
-    border-radius: 5px;
-    display: block;
-    height: 25px;
-    line-height: 25px;
-    position: relative;
+    height: 30px;
+    line-height: 30px;
     width: 400px;
+    position: relative;
     overflow: hidden;
 }
 
-.rolling span {
+.rolling a {
     font-family: 'NanumBarunGothic';
     font-weight: 400;
-    font-size: 15px;
+    color: #a3c3f9;
     top: 0px;
     padding-left: 10px;
     width: 100%;
-    display: block;
     text-align: left;
+    display: inline-block;
     transform: translateY(0px);
     animation: rollin-txt 4.5s infinite;
 }
 
-.rolling a {
+.rolling .date {
+    font-size: 10px;
+    font-weight: 400;
     color: white;
+    background-color: #5C4DFF;
+    padding: 2px 7px 2px 7px;
+    border-radius: 5px;
+}
+
+.rolling .notice {
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 10px;
+    text-align: left;
 }
 
 .rolling a:hover {
     text-decoration: none;
-    color: white;
+    color: #d5e3fc;
     font-weight: 600;
 }
 
@@ -59,16 +69,16 @@
           transform: translateY(-0px);
     }
     30% {
-          transform: translateY(-25px);
+          transform: translateY(-48px);
     }
     50% {
-          transform: translateY(-25px);
+          transform: translateY(-48px);
     }
     70% {
-          transform: translateY(-50px);
+          transform: translateY(-96px);
     }
     80% {
-          transform: translateY(-50px);
+          transform: translateY(-96px);
     }
     100% {
           transform: translateY(0px);
