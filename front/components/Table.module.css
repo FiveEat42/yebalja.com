@@ -30,9 +30,11 @@
   /*padding: 40px;*/
     font-family: "Nanum Gothic";
     color: #615E67;
+    margin-bottom: 170px;
 }
 
 .badges {
+    padding-top: 30px;
     position: relative;
     margin: 0 auto;
     width: 92%;
@@ -103,35 +105,25 @@
     border-width: 1px 0 0 0;
     border-color: rgba(0, 0, 0, 0.1);
     border-style: solid;
-
-    /*min-width: 12rem;*/
-    /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
-
 }
 
 
 .cellheader {
-    /*border-width: 1px 0 0 0;*/
-    /*border-color: rgba(0, 0, 0, 0.1);*/
-    /*border-style: solid;*/
     padding: 15px 0;
     font-size: 18px;
     font-weight: 800;
-    text-align: center;
+    text-align: left;
     color: #4A91F5;
-
-    /*min-width: 5rem;*/
-
-       /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
 }
 
 .cellheader:hover {
     text-decoration: none;
 }
 
-.cell:first-child {
-    /*min-width: 15rem;*/
+.cell:last-child {
+    padding-right: 100px;
 }
+
 .csstable{
     margin:0;
 }
@@ -205,11 +197,21 @@
     content: '우아한 형제들';
 }
 
-
+.cell:first-child {
+    text-align: left;
+    padding-left: 50px;
+    max-width: 165px;
+    min-width: 140px;
+}
 
 
 
 @media only screen and (max-width: 900px) {
+
+    .cell:first-child {
+        max-width: unset;
+        min-width: 0;
+    }
 
     .cell:first-child:after {
         display: none;
@@ -250,6 +252,7 @@
         -webkit-transform: translateY(0);
         transform: translateY(0);
         width: 100%;
+        max-width: 100%;
     }
     .cell:not(:first-child) {
         clear: both;
@@ -271,20 +274,18 @@
 
 
     .cell:nth-child(2):before {
-        content: '코딩테스트:';
+        content: '모집인원';
     }
     .cell:nth-child(3):before {
-        content: '선발과정:';
+        content: '교육기관';
     }
     .cell:nth-child(4):before {
-        content: '모집인원:';
+        content: '혜택';
     }
     .cell:nth-child(5):before {
-        content: '교육기간:';
+        content: '선발과정';
     }
-    .cell:nth-child(6):before {
-        content: '혜택:';
-    }
+
 
     .row, .rowtitle {
         padding: 0px 0;
@@ -322,7 +323,10 @@
 }
 
 
-
+.row:first-child.cellheader {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 
 
 @media screen and (max-width: 600px) {
@@ -338,7 +342,6 @@
         /*background-image: linear-gradient(to bottom, #4A91F5, #4DF0FF);*/
     }
     .cell:nth-child(2n) {
-
         background-color: #F2F8FF;
     }
 
@@ -347,32 +350,28 @@
     }
 
     .cell:first-child {
-        /*border-width: 0;*/
-        /*border-radius: 12px 12px 0 0;*/
-
         margin-top: 0;
-
         position: relative;
         top: 0;
         -webkit-transform: translateY(0);
         transform: translateY(0);
         width: 100%;
-        /*background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);*/
         background-color: #4A91F5;
     }
-
 
     .cell:not(:first-child) {
         margin: 0;
         padding: 5px 1em;
         width: 100%;
     }
+
     .cell:not(:first-child):before {
         font-size: .8em;
         padding-top: 0.3em;
         position: relative;
         padding-left: 0;
     }
+
     .cell:last-child {
         padding-bottom: 1rem !important;
         border-radius: 0 0 12px 12px;
@@ -383,6 +382,8 @@
         /*border-image: linear-gradient(to bottom, #4A91F5, #4DF0FF);*/
         border-width: 0;
     }
+
+
 
     .row, .rowtitle {
         /*background-color: white !important;*/

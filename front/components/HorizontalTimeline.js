@@ -9,8 +9,8 @@ export default function HorizontalTimeline() {
 	return (
 		<div className={styles.body}>
 			<Header className={styles.header}>
-				<h4>타임라인</h4>
-				<p>추가예정</p>
+				<h1>네이버 부스트캠프</h1>
+				<p>개발자의 지속 가능한 성장을 추구하는 학습 커뮤니티</p>
 			</Header>
 			<div className={styles.timeline}>
 				<ol className={styles.order}>

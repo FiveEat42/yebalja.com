@@ -6,10 +6,10 @@ import Timeline from '../components/HorizontalTimeline';
 const Boostcamp = () => {
     return (
         <Layout>
-            <Header>
-                <h2>네이버 부스트캠프</h2>
-                <p>개발자의 지속 가능한 성장을 추구하는 학습 커뮤니티</p>
-            </Header>
+            {/*<Header>*/}
+            {/*    <h2>네이버 부스트캠프</h2>*/}
+            {/*    <p>개발자의 지속 가능한 성장을 추구하는 학습 커뮤니티</p>*/}
+            {/*</Header>*/}
 
           <Timeline />
             <Header>
