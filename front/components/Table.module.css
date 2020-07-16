@@ -21,12 +21,15 @@
 /*  font-weight: 300;*/
 /*}*/
 
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum Gothic', sans-serif; }
+
 .users {
   max-width: 1200px;
     width: 92%;
-  margin: auto;
+  margin: 0 auto;
   /*padding: 40px;*/
-
+    font-family: "Nanum Gothic";
+    color: #615E67;
 }
 
 .users * {
@@ -46,7 +49,7 @@
     /*background-color: #4A91F5 !important;*/
 
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     align-self: center;
     font-weight: bold;
     padding: 20px 0;
@@ -54,8 +57,7 @@
 }
 
 .rowtitle {
-    background-image: linear-gradient(to top, #4A91F5, #4DF0FF);
-
+    background-image: linear-gradient(to top, #4A91F5, #4A91F5);
 }
 
 /*.row {*/
@@ -76,36 +78,50 @@
 }
 
 .cell {
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 700;
     border-width: 1px 0 0 0;
     border-color: rgba(0, 0, 0, 0.1);
     border-style: solid;
 
-    min-width: 7rem;
+    /*min-width: 12rem;*/
     /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
 
 }
 
 
 .cellheader {
-    border-width: 1px 0 0 0;
-    border-color: rgba(0, 0, 0, 0.1);
-    border-style: solid;
+    /*border-width: 1px 0 0 0;*/
+    /*border-color: rgba(0, 0, 0, 0.1);*/
+    /*border-style: solid;*/
     padding: 15px 0;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 800;
     text-align: center;
     color: #4A91F5;
-    min-width: 12rem;
+
+    /*min-width: 5rem;*/
 
        /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
 }
 
-.table .cell {
+.cellheader:hover {
+    text-decoration: none;
+}
+
+.cell:first-child {
+    /*min-width: 15rem;*/
+}
+.csstable{
+    margin:0;
+}
+
+
+.thetable .cell {
 
     padding: 10px;
 }
-.table .cell {
+.thetable .cell {
     text-align: center;
 
 }
@@ -118,38 +134,55 @@
 /*    background-color: #91ced4;*/
 /*    color: white;*/
 /*}*/
-.table .row:nth-child(2n), .table .rowtitle:nth-child(2n){
+.thetable .row:nth-child(2n), .thetable .rowtitle:nth-child(2n){
     background-color: #F2F8FF;
 }
 
-.table .row:nth-child(2n+1), .table .rowtitle:nth-child(2n+1) {
+.thetable .row:nth-child(2n+1), .thetable .rowtitle:nth-child(2n+1) {
     background-color: white;
 }
 
-.table .table {
-    table-layout: fixed;
+.table .thetable {
+    table-layout: auto;
     margin: 0;
     width: 100%;
 }
 
-.table {
+.thetable {
+    width: 100%;
     padding: 0;
     margin: 0;
+    border-radius: 12px;
+}
+
+.cell:first-child:after {
+    color: #89A1C3;
+    font-size: 12px;
+    font-weight: 500;
+    content: '';
+    display: block;
+    left: 0;
+    /*position: absolute;*/
+    /*padding-left: 100px;*/
+    /*text-align: center;*/
+    content-align: center;
 }
 
 
-
-
-
-
-@media screen and (max-width: 1055px)
-{
-    .cell {
-        min-width: 6rem;
-    }
-    .cellheader {
-        min-width: 11rem;
-    }
+.row:nth-child(2) .cell:first-child:after {
+    content: '이노베이션 아카데미';
+}
+.row:nth-child(3) .cell:first-child:after {
+    content: '삼성';
+}
+.row:nth-child(4) .cell:first-child:after {
+    content: '네이버';
+}
+.row:nth-child(5) .cell:first-child:after {
+    content: '한국정보산업연합회';
+}
+.row:nth-child(6) .cell:first-child:after {
+    content: '우아한 형제들';
 }
 
 
@@ -158,16 +191,21 @@
 
 @media only screen and (max-width: 900px) {
 
-
-    .table, .row, .cell, .rowtitle{
+    .cell:first-child:after {
+        display: none;
+    }
+    .thetable, .row, .cell, .rowtitle{
         display: block;
     }
 
-    .table .cell:nth-child(1) {
+    .thetable .cell:nth-child(1) {
     background-color: #4A91F5;
     /*background-image: linear-gradient(to top right, #4A91F5, #4DF0FF);*/
-    color: white;
 }
+    .thetable .cellheader:nth-child(1) {
+        color: white;
+        border-style: none;
+    }
 
     .cell {
         border-width: 0;
@@ -183,15 +221,9 @@
     }
 
 
-    .cell:nth-child(2n+1) {
-        background-color: white;
-    }
-
-
-
     .cell:first-child {
-
-        background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);
+        background-color: #4A91F5;
+        /*background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);*/
         border-radius: 12px 12px 0 0;
         position: relative;
         top: 0;
@@ -219,25 +251,19 @@
 
 
     .cell:nth-child(2):before {
-        content: '주관:';
+        content: '코딩테스트:';
     }
     .cell:nth-child(3):before {
         content: '선발과정:';
     }
     .cell:nth-child(4):before {
-        content: '지원자격:';
-    }
-    .cell:nth-child(5):before {
         content: '모집인원:';
     }
-    .cell:nth-child(6):before {
+    .cell:nth-child(5):before {
         content: '교육기간:';
     }
-    .cell:nth-child(7):before {
+    .cell:nth-child(6):before {
         content: '혜택:';
-    }
-    .cell:nth-child(8):before {
-        content: '교육지역:';
     }
 
     .row, .rowtitle {
@@ -255,16 +281,18 @@
     }
     .table, .row {
         border-radius: 0 0 12px 12px;
+        background-color: transparent;
     }
 
-    .table .row:nth-child(2n+1), .table .row:nth-child(2n) {
+
+    .thetable .row:nth-child(2n+1), .thetable .row:nth-child(2n) {
         background-color: #DAE4F2;
     }
     .row:last-child {
         /*background-color: transparent;*/
         margin-bottom: 0;
     }
-    .table .row:last-child {
+    .thetable .row:last-child {
         padding-bottom: 0;
     }
     .users {
@@ -279,7 +307,7 @@
 
 @media screen and (max-width: 600px) {
 
-    .table .row {
+    .thetable .row {
         margin-top: 0;
         margin-bottom: 1rem;
     }
@@ -309,7 +337,8 @@
         -webkit-transform: translateY(0);
         transform: translateY(0);
         width: 100%;
-        background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);
+        /*background-image: linear-gradient(to bottom right, #4A91F5, #4DF0FF);*/
+        background-color: #4A91F5;
     }
 
 

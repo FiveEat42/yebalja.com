@@ -1,0 +1,60 @@
+import React from 'react';
+import styles from './HorizontalTimeline.module.css';
+import Header from "./Header";
+import Layout from "./Layout";
+
+
+export default function HorizontalTimeline() {
+
+	return (
+		<div className={styles.body}>
+			<Header className={styles.header}>
+				<h4>타임라인</h4>
+				<p>추가예정</p>
+			</Header>
+			<div className={styles.timeline}>
+				<ol className={styles.order}>
+					<li className={styles.list}>
+					<div className={styles.card}>
+						접수기간<span className={styles.status_end}>마감</span><div className={styles.content}>6.1 11:00 ~ 6.30 23:59</div>
+					</div>
+					</li>
+					<li className={styles.list}>
+					<div className={styles.card}>
+						1차<span className={styles.status_end}>모집중</span><div className={styles.content}>온라인 코딩테스트<br/>7.4</div>
+					</div>
+					</li>
+					<li className={styles.list}>
+					<div className={styles.card}>
+						2차<span className={styles.status}>모집중</span><div className={styles.content}>온라인 코딩테스트<br/>7.4</div>
+					</div>
+					</li>
+					<li className={styles.list}>
+					<div className={styles.card}>
+						최종 합격자 발표<span className={styles.status}>모집중</span><div className={styles.content}>수료자 선발<br/>7.20</div>
+					</div>
+					</li>
+					<li className={styles.list}>
+					<div className={styles.card}>
+						부스트캠프 챌린지<span className={styles.status_challenge}>D-43</span><div className={styles.content}>수료자 선발<br/>7.27 ~ 8.21</div>
+					</div>
+					</li>
+					<li className={styles.list}>
+					<div className={styles.card}>
+						부스트캠프 멤버쉽<span className={styles.status_membership}>D-55</span><div className={styles.content}>챌린지 과정 수료자만<br/>8.31 ~ 12.21</div>
+					</div>
+					</li>
+				</ol>
+
+				{/*<div className={styles.arrows}>*/}
+				{/*	<button className={styles.prev}>*/}
+				{/*	<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow" />*/}
+				{/*	</button>*/}
+				{/*	<button className={styles.next}>*/}
+				{/*	<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow" />*/}
+				{/*	</button>*/}
+				{/*</div>*/}
+			</div>
+		</div>
+	);
+}

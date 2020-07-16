@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import React from "react";
+import Review from "../components/Review";
 
 const Likelion = () => {
     return (
@@ -21,6 +22,7 @@ const Likelion = () => {
                 <h4>프로그램 참여후기</h4>
                 <p>추가예정</p>
             </Header>
+            <Review></Review> 
         </Layout>
     );
 }
