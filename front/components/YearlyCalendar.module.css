@@ -178,9 +178,7 @@
 
 /* calendar hover  */
 .calendar_entry {
-  background: #61cd8b;
   padding: 0 4px;
-  width: auto;
   border-radius: 3px;
   box-sizing: border-box;
   transition: 0.3s;
@@ -240,7 +238,12 @@
 }
 
 .oversise_list:hover {
-  width: 105px;
+  width: auto;
+  cursor: pointer;
+  padding: 12px;
+  -webkit-box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
+  -moz-box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
+  box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
 }
 
 /*!* CTA *!*/
