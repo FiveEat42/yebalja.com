@@ -1,0 +1,253 @@
+/*@font-face { font-family: 'NEXON Lv1 Gothic OTF Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'NEXON Lv2 Gothic Bold'; src: url('../fonts/NEXON\ Lv2\ Gothic\ Bold.ttf') format('truetype'); }*/
+
+@font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype'); } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype') } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype'); } .nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
+
+
+/***/
+/**::before,*/
+/**::after {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*  font-family: 'NEXON Lv1 Gothic OTF Light';*/
+/*  font-weight: bolder;*/
+/*}*/
+
+.button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+}
+
+.body {
+  font: normal 16px/1.5 "NanumBarunGothic", sans-serif;
+  background: #F2F8FF;
+  color: #1153A1;
+  margin: auto;
+  max-width: 1200px;
+  width: 92%;
+}
+
+.header {
+  color: #1153A1;
+}
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.status_end, .status, .status_challenge, .status_membership {
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.status_end {
+  background-color: #DAE4F2;
+  color: #89A1C3;
+}
+
+.status {
+  background-color: #4A91F5;
+  color: #F2F8FF;
+}
+
+.status_challenge {
+  background-color: #FDA1D8;
+  color: #FFFFFF;
+}
+
+.status_membership {
+  background-color: #FF4DA2;
+  color: #89A1C3;
+}
+
+
+
+.timeline {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.timeline .order {
+  font-size: 0;
+  width: 100vw;
+  padding: 140px 0;
+  transition: all 1s;
+
+}
+
+.timeline ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 160px;
+  height: 3px;
+  background: #fff;
+}
+
+.timeline ol li:last-child {
+  width: 280px;
+}
+
+.timeline ol li:not(:first-child) {
+  margin-left: 14px;
+}
+
+.timeline ol li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #F45B69;
+}
+
+.timeline ol li .card {
+  position: absolute;
+  left: calc(100% + 7px);
+  width: 280px;
+  padding: 15px;
+  font-size: 1rem;
+  white-space: normal;
+  font-weight: 600;
+  background: white;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.timeline ol li .card::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+
+.timeline ol li:nth-child(odd) .card {
+  top: -16px;
+  transform: translateY(-100%);
+}
+
+.timeline ol li:nth-child(odd) .card::before {
+  top: 96%;
+  border-width: 10px 10px 0 0;
+  border-color: white transparent transparent transparent;
+}
+
+/* 라인에서 얼마나 떨어졌는지 */
+.timeline ol li:nth-child(even) .card {
+  top: calc(100% + 16px);
+}
+
+.timeline ol li:nth-child(even) .card::before {
+  top: -5px;
+  border-width: 10px 0 0 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.timeline ol li:nth-child(1) .card {
+  border-color: #DAE4F2;
+}
+
+.timeline ol li:nth-child(2) .card {
+  border-color: #DAE4F2;
+  border-width: 3px;
+}
+
+.content {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+
+/* TIMELINE ARROWS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline .arrows {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.timeline .arrows .prev {
+  margin-right: 20px;
+}
+
+.timeline .disabled {
+  opacity: .5;
+}
+
+.timeline .arrows img {
+  width: 45px;
+  height: 45px;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (max-width: 599px) {
+  .timeline ol,
+  .timeline ol li {
+    width: auto;
+  }
+
+  .timeline ol {
+    padding: 0;
+    transform: none !important;
+  }
+
+  .timeline ol li {
+    display: block;
+    height: auto;
+    background: transparent;
+  }
+
+  .timeline ol li:first-child {
+    margin-top: 25px;
+  }
+
+  .timeline ol li:not(:first-child) {
+    margin-left: auto;
+  }
+
+  .timeline ol li .card {
+    width: 94%;
+    height: auto !important;
+    margin: 0 auto 25px;
+  }
+
+  .timeline ol li .card {
+    position: static;
+  }
+
+  .timeline ol li:nth-child(odd) .card {
+    transform: none;
+  }
+
+  .timeline ol li:nth-child(odd) .card::before,
+  .timeline ol li:nth-child(even) .card::before {
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: none;
+    border-left: 3px solid white;
+    height: 25px;
+  }
+
+  .timeline ol li:last-child,
+  .timeline ol li:nth-last-child(2) .card::before,
+  .timeline ol li:not(:last-child)::after,
+  .timeline .arrows {
+    display: none;
+  }
+}

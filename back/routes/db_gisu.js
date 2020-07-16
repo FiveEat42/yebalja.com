@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const jwt = require('jsonwebtoken');
+const secretObj = require('../config/jwt');
 
 let db = require('../models/db_config');
 
@@ -18,18 +20,32 @@ function formatDate(date) {
 }
 
 router.get('/', function(req, res, next) {
-  db.query('SELECT * FROM gisu_table', (error, result)=>{
-    if (error) throw error;
-    // console.log(result);
-    res.render('db_gisu/db_gisu', {db: result});
-  })
+  let token = req.cookies['admin'];
+  if (token)
+  {
+    let decoded = jwt.verify(token, secretObj.secret);
+    if(decoded.email == secretObj.adminAccount){
+      console.log('관리자 계정입니다.');
+      db.query('SELECT * FROM gisu_table', (error, result)=>{
+        if (error) throw error;
+        // console.log(result);
+        res.render('db_gisu/db_gisu', {db: result});
+      })
+    }
+    else{
+      console.log('관리자 계정이 아닙니다.')
+      res.redirect('/api/login');
+    }
+  }
+
+
 });
 
 router.post('/delete', function(req, res) {
   db.query(`DELETE FROM gisu_table WHERE gisu_id=${req.body.gisu_id}`,(error, result) => {
     if (error) throw error;
   })
-  res.redirect('/api/admin/db/gisu')
+  res.redirect('/api/admin/db/gisu');
 });
 
 router.post('/insert', function(req, res) {

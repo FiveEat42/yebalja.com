@@ -1,5 +1,5 @@
 .header {
-    margin: 100px 0 0 0;
+    margin: 160px 0 50px 0;
     display: block;
     text-align: center;
     font-family: 'NanumBarunGothic';
@@ -27,5 +27,5 @@
 
 .header p {
     font-weight: 400;
-    color: darkgray;
+    color: #89A1C3;
 }

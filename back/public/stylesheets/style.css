@@ -5,3 +5,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+.login_wrapper
+{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px gray;
+  text-align: center;
+}

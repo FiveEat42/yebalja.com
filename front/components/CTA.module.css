@@ -1,33 +1,121 @@
+
+.box {
+    margin-top: -60x;
+    margin-bottom: 5px;
+    width: 92%;
+    max-width: 1200px;
+    display: block;
+    height: 60px;
+}
+
 .cta {
     background: #4DF0FF;
     margin: auto;
-    width: 50px;
-    height: 30px;
-    border-radius: 15px;
+    width: 70px;
+    height: 35px;
+    border-radius: 17px;
     box-sizing: border-box;
     transition: 0.3s;
-    color: white;
-    font-family: sans-serif;
-    font-size: 10px;
     text-align: center;
-    line-height: 3;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+    margin-right: -70px;
+}
+
+.group {
+    float: right;
+    margin: auto;
+}
+
+.Hi {
+
     font-weight: 600;
+    font-family: sans-serif;
+    line-height: 2.7;
+    color: white;
+    font-size: 13px;
+    /*visibility: hidden;*/
+    /*opacity: 0;*/
+}
+
+.image {
+    width: 25px;
+    display: block;
+}
+
+.Hi {
+    animation: bounceIn 3s infinite;
+}
+
+@keyframes bounceIn {
+    0%, 52% {
+        opacity: 0;
+        /*visibility: hidden;*/
+    }
+    55%, 80% {
+        opacity: 1;
+        /*visibility: visible;*/
+    }
+    83%, 100% {
+        /*opacity: 1;*/
+        /*visibility: hidden;*/
+        opacity: 0;
+    }
+}
+
+.cta {
+    /*animation: wave-animation 3s linear infinite;*/
+    animation: rescale 3s linear infinite;
+    /*animation: rescales 3s, wave-animation 3s;*/
+    /*animation-iteration-count: infinite;*/
+}
+
+/*.ctabox {*/
+/*    animation: rescale 3s linear infinite;*/
+/*}*/
+
+
+@keyframes rescale {
+    0%, 48% {
+        transform: rotate(0deg) scale(0.7);
+
+    }
+    3%, 15%, 27%, 39% {
+        transform: rotate(10deg) scale(0.7);
+
+    }
+    9%, 21%, 33%, 45% {
+        transform: rotate(-10deg) scale(0.7);
+
+    }
+    58%, 75% {
+        transform: scale(1);
+    }
+    85%, 100% {
+        transform: scale(0.7);
+    }
+}
+
+.image {
+    animation: hover 3s linear infinite;
+}
+
+@keyframes hover {
+    0%, 30% {
+        transform: translate(80px, -2px);
+    }
+    55%, 75% {
+        transform: translate(50px, -8px);
+
+    }
+    100% {
+        transform: translate(80px, -2px);
+    }
 }
 
 
-.cta:hover {
-    width: 80px;
-    font-size: 15px;
-    height: 50px;
-    line-height: 2;
-    border-radius: 20px;
-    cursor: pointer;
-
-    padding: 12px;
-    -webkit-box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
-    -moz-box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
-    box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
+@media screen and (max-width: 740px) {
+    .box {
+        display: none;
+    }
 }
+
+

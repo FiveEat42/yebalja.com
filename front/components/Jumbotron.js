@@ -11,6 +11,7 @@ const Jumbotron = () => {
             예발자 일러스트를 png로 불러왔습니다. svg는 연구 중입니다.
           */}
   {/*
+
           <img className={styles.image} src={require('../src/images/illustration.png')}/>
 *}
 

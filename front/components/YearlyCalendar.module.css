@@ -9,6 +9,7 @@
   .mobilesubtitle { display: none; }
 }
 
+
 .header {
   color: #202125;
   margin-bottom: 0px;
@@ -28,6 +29,7 @@
   min-width: 700px;
   margin: 0 auto;
   width: 92%;
+  font-family: "Nanum Gothic";
 }
 .gantt {
   display: grid;
@@ -105,7 +107,7 @@
 }
 .gantt__row__months span {
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   align-self: center;
   font-weight: bold;
   padding: 20px 0;
@@ -120,11 +122,18 @@
   font-size: 13px;
   font-weight: bold;
   text-align: center;
+  font-weight: 800;
   
 }
 
 .gantt__row__first span{
   color: #4A91F5;
+  font-size: 15px;
+}
+
+.gantt__row__first .gisu{
+  color: #89A1C3;
+  font-size: 12px;
 }
 
 .gantt__row__bars {
@@ -176,7 +185,7 @@
   box-sizing: border-box;
   transition: 0.3s;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Nanum Gothic';
   font-size: 13px;
   line-height: 1;
   display: flex;
@@ -234,25 +243,25 @@
   width: 105px;
 }
 
-/* CTA */
+/*!* CTA *!*/
 
-.button {
-	animation: wave-animation 0.4s infinite;
-}
+/*.button {*/
+/*	animation: wave-animation 0.4s infinite;*/
+/*}*/
 
-.button:hover {
-  animation: none;
-}
+/*.button:hover {*/
+/*  animation: none;*/
+/*}*/
 
-@keyframes wave-animation {
-	0%,
-	100% {
-		transform: rotate(0deg);
-	}
-	25% {
-		transform: rotate(5deg);
-	}
-	75% {
-		transform: rotate(-5deg);
-	}
-}
+/*@keyframes wave-animation {*/
+/*	0%,*/
+/*	100% {*/
+/*		transform: rotate(0deg);*/
+/*	}*/
+/*	25% {*/
+/*		transform: rotate(5deg);*/
+/*	}*/
+/*	75% {*/
+/*		transform: rotate(-5deg);*/
+/*	}*/
+/*}*/
