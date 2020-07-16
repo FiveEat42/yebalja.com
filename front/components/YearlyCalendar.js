@@ -46,7 +46,7 @@ export default function YearlyCalendar() {
                       <span>42 Seoul</span> <br></br><br></br>1기
                   </div>
                   <ul className={styles.gantt__row__bars}>
-                      <li style={{ gridColumn: `1/53`, backgroundColor: `#5C4DFF` }}>지원</li>
+                      <li style={{ gridColumn: `1/366`, backgroundColor: `#5C4DFF` }}>지원</li>
                       <li className={styles.calendar_entry} style={{ gridColumn: `3/7`, backgroundColor: `#54c6f9` }}>
                           <span className={styles.calendar_entry__date}>1/23 - 2/16</span>
                           <span className={styles.calendar_entry__title}>Piscine</span>

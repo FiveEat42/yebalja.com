@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import React from "react";
+import Review from "../components/Review";
 
 const Boostcamp = () => {
     return (
@@ -18,9 +19,10 @@ const Boostcamp = () => {
                 <p>추가예정</p>
             </Header>
             <Header>
-                <h4>프로그램 참여후기</h4>
-                <p>추가예정</p>
+                <h4>부트캠프 참여후기</h4>
+                <p>솔직담백한 이야기를 공유합니다</p>
             </Header>
+            <Review></Review> 
         </Layout>
     );
 }
