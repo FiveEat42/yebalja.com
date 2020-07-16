@@ -6,17 +6,15 @@ import CodingTest from './BadgeCoding';
 import Aptitude from './BadgeAptitude';
 import Interview from './BadgeInterview';
 import Tryout from './BadgeTryout';
-import NocodingText from './BadgeCoding';
-import NoAptitude from './BadgeAptitude';
-import NoInterview from './BadgeInterview';
-import NoTryout from './BadgeTryout';
 
 const Table = () => {
     return (
       <>
       <div className={styles.wrapper}>
-        <div className={styles.badges}>
 
+        {/* Badge Description*/}
+
+        <div className={styles.badges}>
             <div className={styles.badge}>
               <img src={require('../src/image/tryout badge.png')} width="40"/>
               <span className={styles.tooltip}>사전 집중교육</span>
@@ -35,8 +33,11 @@ const Table = () => {
             <img src={require('../src/image/aptitude badge.png')} width="40"/>
             <span className={styles.tooltip}>적성검사</span>
           </div>
-
         </div>
+
+
+        {/*Table*/}
+
         <div className={styles.users}>
           <table className={styles.thetable}>
             <thead>
@@ -53,6 +54,8 @@ const Table = () => {
             </thead>
 
 
+            {/*42Seoul*/}
+
             <tr className={styles.row}>
               <td className={styles.cell}><Link href="/ftseoul"><a className={styles.cellheader}>42Seoul</a></Link></td>
               {/*<td className={styles.cell}>이노베이션 아카데미</td>*/}
@@ -64,10 +67,16 @@ const Table = () => {
               {/*<td className={styles.cell}>강남구 개포디지털혁신파크</td>*/}
               <td className={styles.cell}>
                 <div className={styles.cellbadges}>
-                  <Aptitude/> <CodingTest /> <NoInterview/> <NoTryout/>
+                  <div className={styles.true}><Aptitude/></div>
+                  <div className={styles.false}><CodingTest/></div>
+                  <div className={styles.false}><Interview/></div>
+                  <div className={styles.true}><Tryout/></div>
                 </div>
               </td>
             </tr>
+
+
+            {/*SSAFY*/}
 
             <tr className={styles.row}>
               <td className={styles.cell}><Link href="/ssafy"><a className={styles.cellheader}>SSAFY</a></Link></td>
@@ -80,10 +89,16 @@ const Table = () => {
               {/*<td className={styles.cell}>지역별 상이</td>*/}
               <td className={styles.cell}>
                 <div className={styles.cellbadges}>
-                  <Aptitude/> <Interview/>
+                  <div className={styles.true}><Aptitude/></div>
+                  <div className={styles.false}><CodingTest/></div>
+                  <div className={styles.true}><Interview/></div>
+                  <div className={styles.false}><Tryout/></div>
                 </div>
               </td>
             </tr>
+
+
+            {/*네이버 부스트캠프*/}
 
             <tr className={styles.row}>
               <td className={styles.cell}><Link href="/boostcamp"><a className={styles.cellheader}>네이버 부스트캠프</a></Link></td>
@@ -96,10 +111,17 @@ const Table = () => {
               {/*<td className={styles.cell}>역삼역/뚝섬역 베이스캠프</td>*/}
               <td className={styles.cell}>
                 <div className={styles.cellbadges}>
-                  <CodingTest/> <Tryout/>
+                  <div className={styles.false}><Aptitude/></div>
+                  <div className={styles.true}><CodingTest/></div>
+                  <div className={styles.false}><Interview/></div>
+                  <div className={styles.true}><Tryout/></div>
                 </div>
               </td>
             </tr>
+
+
+            {/*SW 마에스트로*/}
+
 
             <tr className={styles.row}>
               <td className={styles.cell}><Link href="/soma"><a className={styles.cellheader}>SW마에스트로</a></Link></td>
@@ -111,11 +133,18 @@ const Table = () => {
               <td className={styles.cell}>월 100만원<br/>IT기기 140만원</td>
               <td className={styles.cell}>
                 <div className={styles.cellbadges}>
-                  <Aptitude/> <CodingTest/> <Interview/>
+                  <div className={styles.true}><Aptitude/></div>
+                  <div className={styles.true}><CodingTest/></div>
+                  <div className={styles.true}><Interview/></div>
+                  <div className={styles.false}><Tryout/></div>
                 </div>
               </td>
               {/*<td className={styles.cell}>서울 강남구</td>*/}
             </tr>
+
+
+
+            {/*우아한테크코스*/}
 
             <tr className={styles.row}>
               <td className={styles.cell}><Link href="/woowa"><a className={styles.cellheader}>우아한테크코스</a></Link></td>
@@ -127,7 +156,10 @@ const Table = () => {
               <td className={styles.cell}>월 100만원</td>
               <td className={styles.cell}>
                 <div className={styles.cellbadges}>
-                  <Aptitude/> <CodingTest/>
+                  <div className={styles.false}><Aptitude/></div>
+                  <div className={styles.true}><CodingTest/></div>
+                  <div className={styles.false}><Interview/></div>
+                  <div className={styles.true}><Tryout/></div>
                 </div>
               </td>
               {/*<td className={styles.cell}>잠실역 한국루터회관</td>*/}
