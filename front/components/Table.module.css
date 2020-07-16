@@ -99,9 +99,14 @@
     font-weight: 800;
     text-align: center;
     color: #4A91F5;
+
     /*min-width: 5rem;*/
 
        /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
+}
+
+.cellheader:hover {
+    text-decoration: none;
 }
 
 .cell:first-child {
