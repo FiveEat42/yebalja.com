@@ -32,6 +32,26 @@
     color: #615E67;
 }
 
+.badges {
+    position: relative;
+    margin: 0 auto;
+    width: 92%;
+    max-width: 1200px;
+}
+
+.badge {
+    max-width: 130px;
+    display: inline;
+    padding-left: 10px;
+    float: right;
+}
+
+.tooltip {
+    text-align: center;
+    color: #89A1C3;
+    font-size: 12px;
+}
+
 .users * {
     box-sizing: border-box;
     align-self: center;
