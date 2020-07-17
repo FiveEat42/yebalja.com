@@ -7,16 +7,16 @@ const express = require('express');
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
+const path = require('path');
 
 var port1 = 80;
 var port2 = 443;
-var port3 = 3080;
 
-var options = {
-    key : fs.readFileSync('./keys/key.pem'),
-    cert : fs.readFileSync('./keys/cert.pem')
-}
-
+const option = {
+  ca: fs.readFileSync('/etc/letsencrypt/live/www.yebalja.com/fullchain.pem'),
+  key: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/www.yebalja.com/privkey.pem'), 'utf8').toString(),
+  cert: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/www.yebalja.com/cert.pem'), 'utf8').toString(),
+};
 
 
 //80port not uses https so it uses http object
