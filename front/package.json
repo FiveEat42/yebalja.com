@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
     "start": "NODE_ENV=production node server.js",
     "build": "next build",
     "test": "react-scripts test",
