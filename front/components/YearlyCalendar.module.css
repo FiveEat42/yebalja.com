@@ -146,17 +146,18 @@
   border-top: 1px solid rgba(221, 221, 221, 0.8);
 }
 .gantt__row__bars li {
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   font-size: 14px;
+  height: 20px;
   min-height: 15px;
   background-color: #55de84;
-  padding: 5px 12px;
+  padding: 0px 12px;
   color: #fff;
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 0px;
 }
 .gantt__row__bars li.stripes {
   background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.1) 5px, rgba(255, 255, 255, 0.1) 12px);
