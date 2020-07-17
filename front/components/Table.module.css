@@ -23,15 +23,10 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum Gothic', sans-serif; }
 
-.users {
-  max-width: 1200px;
-    width: 92%;
-  margin: 0 auto;
-  /*padding: 40px;*/
-    font-family: "Nanum Gothic";
-    color: #615E67;
-    margin-bottom: 170px;
-}
+/*
+    Badge
+*/
+
 
 .false {
     /*filter: grayscale(100%);*/
@@ -64,6 +59,22 @@
     font-size: 12px;
 }
 
+
+
+/*
+    Table
+*/
+
+
+.users {
+    max-width: 1200px;
+    width: 92%;
+    margin: 0 auto;
+    font-family: "Nanum Gothic";
+    color: #615E67;
+    margin-bottom: 170px;
+}
+
 .users * {
     box-sizing: border-box;
     align-self: center;
@@ -76,30 +87,17 @@
 }
 
 .title {
-    /*background-color: #c8e7ea;*/
     color: white;
-    /*background-color: #4A91F5 !important;*/
-
     text-align: center;
     font-size: 16px;
     align-self: center;
     font-weight: bold;
     padding: 20px 0;
-
 }
 
 .rowtitle {
     background-image: linear-gradient(to top, #4A91F5, #4A91F5);
 }
-
-/*.row {*/
-/*    background-image: linear-gradient(to right, #4A91F5, #4DF0FF);*/
-
-/*}*/
-
-/*.table {*/
-/*    box-sizing: border-box;*/
-/*}*/
 
 .rowtitle {
     position: relative;
@@ -118,13 +116,13 @@
     min-width: 150px;
 }
 
-
 .cellheader {
     padding: 15px 0;
     font-size: 18px;
     font-weight: 800;
-    text-align: left;
+    text-align: center;
     color: #4A91F5;
+    padding-left: 10px;
 }
 
 .cellheader:hover {
@@ -139,24 +137,17 @@
     margin:0;
 }
 
-
 .thetable .cell {
 
     padding: 10px;
 }
 .thetable .cell {
     text-align: center;
-
 }
 .table .cell:last-child {
     line-height: 1.4;
 }
 
-
-/*.table .cell:nth-child(1) {*/
-/*    background-color: #91ced4;*/
-/*    color: white;*/
-/*}*/
 .thetable .row:nth-child(2n), .thetable .rowtitle:nth-child(2n){
     background-color: #F2F8FF;
 }
@@ -208,16 +199,19 @@
     content: '우아한 형제들';
 }
 
-.cell:first-child {
-    text-align: left;
-    padding-left: 50px;
-    max-width: 165px;
-    min-width: 140px;
-}
-
+/*.cell:first-child {*/
+/*    text-align: center;*/
+/*    padding-left: 50px;*/
+/*    max-width: 165px;*/
+/*    min-width: 140px;*/
+/*}*/
 
 
 @media only screen and (max-width: 900px) {
+
+    .cell {
+        text-align: left;
+    }
 
     .cell:first-child {
         max-width: unset;
