@@ -141,22 +141,23 @@
   display: grid;
   padding: 9px 0;
   margin: 0;
-  grid-template-columns: repeat(52, 1fr); /* 칸 : repeat 함수로 쪼갤 수 있음*/
+  grid-template-columns: repeat(365, 1fr); /* 칸 : repeat 함수로 쪼갤 수 있음*/
   grid-gap: 8px 0;
   border-top: 1px solid rgba(221, 221, 221, 0.8);
 }
 .gantt__row__bars li {
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   font-size: 14px;
+  height: 20px;
   min-height: 15px;
   background-color: #55de84;
-  padding: 5px 12px;
+  padding: 0px 12px;
   color: #fff;
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 0px;
 }
 .gantt__row__bars li.stripes {
   background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.1) 5px, rgba(255, 255, 255, 0.1) 12px);
@@ -178,9 +179,7 @@
 
 /* calendar hover  */
 .calendar_entry {
-  background: #61cd8b;
   padding: 0 4px;
-  width: auto;
   border-radius: 3px;
   box-sizing: border-box;
   transition: 0.3s;
@@ -240,7 +239,12 @@
 }
 
 .oversise_list:hover {
-  width: 105px;
+  width: auto;
+  cursor: pointer;
+  padding: 12px;
+  -webkit-box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
+  -moz-box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
+  box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
 }
 
 /*!* CTA *!*/

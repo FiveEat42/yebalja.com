@@ -1,9 +1,14 @@
-.menu {
+.wrapper {
+	display: block;
+	width: 500px;
+	margin: 70px auto;
+} 
+
+.wrapper .menu {
 	max-width: 1200px;
     width: 92%;
- 	margin: auto;
-	position: relative;
-	z-index: 10;
+	margin: 0 auto;
+	left: 0;
 }
 
 .menu__item {
@@ -26,6 +31,7 @@
 
 .menu__item_label {
 	margin: 0 0 0 0.5em;
+	text-align: right;
 }
 
 .menu__adsila {
@@ -89,24 +95,24 @@
 
 .menu__adsila .menu__item:nth-child(odd) .menu__item_name::before,
 .menu__adsila .menu__item:nth-child(odd) .menu__item_label::before {
-	background: #fe628e;
+	background: #4DF0FF;
 }
 
 .menu__adsila .menu__item:nth-child(even) .menu__item_name::before,
 .menu__adsila .menu__item:nth-child(even) .menu__item_label::before  {
-	background: #6265fe;
+	background: #7A4DFF;
 }
 
 /* Hover */
 
 .menu__adsila .menu__item:nth-child(odd):hover,
 .menu__adsila .menu__item:nth-child(odd):focus {
-	color: #fe628e;
+	color: #4DF0FF;
 }
 
 .menu__adsila .menu__item:nth-child(even):hover,
 .menu__adsila .menu__item:nth-child(even):focus {
-	color: #6265fe;
+	color: #7A4DFF;
 }
 
 .menu__adsila .menu__item:hover .menu__item_name::before,
