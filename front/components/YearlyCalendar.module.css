@@ -149,14 +149,28 @@
   font-weight: 500;
   text-align: center;
   font-size: 14px;
-  min-height: 15px;
-  padding: 5px 12px;
+  height: 25px;
+  padding: 2px 12px;
   color: #fff;
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 13px;
 }
+
+.gantt__row__bars .next_year {
+  font-weight: 500;
+  text-align: center;
+  font-size: 14px;
+  height: 25px;
+  padding: 2px 12px;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border-radius: 13px 1px 1px 13px;
+}
+
 .gantt__row__bars li.stripes {
   background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.1) 5px, rgba(255, 255, 255, 0.1) 12px);
 }
@@ -219,6 +233,7 @@
   transition: 0.3s;
 }
 .calendar_entry:hover {
+  height: auto;
   width: 200px;
   cursor: pointer;
   padding: 12px;
@@ -232,11 +247,11 @@
 }
 .calendar_entry:hover .calendar_entry__date, .calendar_entry:hover .calendar_entry__details {
   opacity: 1;
-  height: 12px;
+  height: 15px;
   visibility: visible;
 }
 
-.oversise_list:hover {
+.oversize_list:hover {
   width: auto;
   cursor: pointer;
   padding: 12px;
