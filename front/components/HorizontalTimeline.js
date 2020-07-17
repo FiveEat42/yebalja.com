@@ -15,12 +15,12 @@ export default function HorizontalTimeline() {
 			<div className={styles.timeline}>
 				<ol className={styles.order}>
 					<li className={styles.list}>
-						<div className={styles.card_end}>
+						<div className={styles.card}>
 							접수기간<span className={styles.status_end}>마감</span><div className={styles.content}>6.1 11:00 ~ 6.30 23:59</div>
 						</div>
 					</li>
 					<li className={styles.list}>
-						<div className={styles.card_end}>
+						<div className={styles.card}>
 							1차<span className={styles.status_end}>모집중</span><div className={styles.content}>온라인 코딩테스트<br/>7.4</div>
 						</div>
 					</li>
@@ -35,12 +35,12 @@ export default function HorizontalTimeline() {
 						</div>
 					</li>
 					<li className={styles.list}>
-						<div className={styles.card_edu}>
+						<div className={styles.card}>
 							부스트캠프 챌린지<span className={styles.status_edu}>D-43</span><div className={styles.content}>수료자 선발<br/>7.27 ~ 8.21</div>
 						</div>
 					</li>
 					<li className={styles.list}>
-						<div className={styles.card_edu}>
+						<div className={styles.card}>
 							부스트캠프 멤버쉽<span className={styles.status_edu}>D-55</span><div className={styles.content}>챌린지 과정 수료자만<br/>8.31 ~ 12.21</div>
 						</div>
 					</li>

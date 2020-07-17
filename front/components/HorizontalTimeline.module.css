@@ -86,114 +86,92 @@
   height: 90px;
   border-radius: 12px;
   background-color: white;
-    border-width: 5px;
-  border-color: black;
+}
+
+
+.timeline ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 160px;
+  height: 3px;
+  background: #fff;
+}
+
+.timeline ol li:last-child {
+  width: 450px;
+}
+
+.timeline ol li:not(:first-child) {
+  margin-left: 14px;
+}
+
+.timeline ol li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #F45B69;
+}
+
+.timeline ol li .card {
+  position: absolute;
+  left: calc(100% + 7px);
+  width: 280px;
+  padding: 15px;
+  font-size: 1rem;
+  white-space: normal;
+  font-weight: 600;
+  background: white;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.timeline ol li .card::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
   border-style: solid;
 }
 
-.card, .card_end, .card_edu {
-  padding: 20px;
 
+.timeline ol li:nth-child(odd) .card {
+  top: -16px;
+  transform: translateY(-100%);
 }
 
-/* Add arrows to the left container (pointing right) */
-.list::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 100px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
+.timeline ol li:nth-child(odd) .card::before {
+  top: 96%;
+  border-width: 10px 10px 0 0;
+  border-color: white transparent transparent transparent;
+}
+
+/* 라인에서 얼마나 떨어졌는지 */
+.timeline ol li:nth-child(even) .card {
+  top: calc(100% + 16px);
+}
+
+.timeline ol li:nth-child(even) .card::before {
+  top: -5px;
+  border-width: 10px 0 0 10px;
   border-color: transparent transparent transparent white;
 }
 
+.timeline ol li:nth-child(1) .card {
+  border-color: #DAE4F2;
+}
 
-/*.timeline ol li {*/
-/*  position: relative;*/
-/*  display: inline-block;*/
-/*  list-style-type: none;*/
-/*  width: 160px;*/
-/*  height: 3px;*/
-/*  background: #fff;*/
-/*}*/
-
-/*.timeline ol li:last-child {*/
-/*  width: 450px;*/
-/*}*/
-
-/*.timeline ol li:not(:first-child) {*/
-/*  margin-left: 14px;*/
-/*}*/
-
-/*.timeline ol li:not(:last-child)::after {*/
-/*  content: '';*/
-/*  position: absolute;*/
-/*  top: 50%;*/
-/*  left: calc(100% + 1px);*/
-/*  bottom: 0;*/
-/*  width: 12px;*/
-/*  height: 12px;*/
-/*  transform: translateY(-50%);*/
-/*  border-radius: 50%;*/
-/*  background: #F45B69;*/
-/*}*/
-
-/*.timeline ol li .card {*/
-/*  position: absolute;*/
-/*  left: calc(100% + 7px);*/
-/*  width: 280px;*/
-/*  padding: 15px;*/
-/*  font-size: 1rem;*/
-/*  white-space: normal;*/
-/*  font-weight: 600;*/
-/*  background: white;*/
-/*  border-radius: 5px 5px 5px 5px;*/
-/*}*/
-
-/*.timeline ol li .card::before {*/
-/*  content: '';*/
-/*  position: absolute;*/
-/*  top: 100%;*/
-/*  left: 0;*/
-/*  width: 0;*/
-/*  height: 0;*/
-/*  border-style: solid;*/
-/*}*/
-
-
-/*.timeline ol li:nth-child(odd) .card {*/
-/*  top: -16px;*/
-/*  transform: translateY(-100%);*/
-/*}*/
-
-/*.timeline ol li:nth-child(odd) .card::before {*/
-/*  top: 96%;*/
-/*  border-width: 10px 10px 0 0;*/
-/*  border-color: white transparent transparent transparent;*/
-/*}*/
-
-/*!* 라인에서 얼마나 떨어졌는지 *!*/
-/*.timeline ol li:nth-child(even) .card {*/
-/*  top: calc(100% + 16px);*/
-/*}*/
-
-/*.timeline ol li:nth-child(even) .card::before {*/
-/*  top: -5px;*/
-/*  border-width: 10px 0 0 10px;*/
-/*  border-color: transparent transparent transparent white;*/
-/*}*/
-
-/*.timeline ol li:nth-child(1) .card {*/
-/*  border-color: #DAE4F2;*/
-/*}*/
-
-/*.timeline ol li:nth-child(2) .card {*/
-/*  border-color: #DAE4F2;*/
-/*  border-width: 3px;*/
-/*}*/
+.timeline ol li:nth-child(2) .card {
+  border-color: #DAE4F2;
+  border-width: 3px;
+}
 
 
 
