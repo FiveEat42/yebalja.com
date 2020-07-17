@@ -10,11 +10,11 @@
 
 .aptitude:hover::after {
     content: '적성검사';
-    background-color: #DAE4F2;
+    background-color: #89A1C3;
     border-radius: 6px;
     padding: 5px 10px 5px 10px;
     z-index: 1;
-    color: #89A1C3;
+    color: white;
     display: inline;
     position: absolute;
 }
