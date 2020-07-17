@@ -1,4 +1,6 @@
+require('dotenv').config();
+
 module.exports = {
-    'secret' : 'apple',
-    'adminAccount' : 'admin@admin.com'
+    'secret' : process.env.JWT_SECRET_CODE,
+    'adminAccount' : process.env.ADMIN_EMAIL
 }
