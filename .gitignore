@@ -1,6 +1,6 @@
 */node_modules
-back/models
 .DS_Store
+back/.env
 .idea/
 .next/
 back/.DS_Store

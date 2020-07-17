@@ -39,7 +39,7 @@ router.post('/', async (req, res, next) => {
     console.log('nick',nick_double_check);
     console.log('email', email_double_check);
     if (email_double_check && nick_double_check && password_valid_check) {
-      bcrypt.hash(password, 10, (err, hash) => {
+      bcrypt.hash(password, process.env.HASH_ROUND, (err, hash) => {
         //위의 모든 테스트를 통과한 경우 정상데이터로 판단해서 DB에 넣습니다.
         db.query(`
                     INSERT INTO member_table(member_login_nickname, member_login_pw, member_login_email)
