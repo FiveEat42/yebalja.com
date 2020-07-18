@@ -59,8 +59,6 @@
   color: #FFFFFF;
 }
 
-
-
 .timeline {
   /*white-space: nowrap;*/
   /*overflow-x: hidden;*/
@@ -74,38 +72,49 @@
   /*transition: all 1s;*/
 }
 
-
 .content {
   font-weight: 400;
   font-size: 13px;
 }
 
-.list {
-  display: inline-block;
-  width: 270px;
-  height: 90px;
-  border-radius: 12px;
-  background-color: white;
+/*.list {*/
+/*  display: inline-block;*/
+/*  width: 270px;*/
+/*  height: 90px;*/
+/*  border-radius: 12px;*/
+/*  background-color: white;*/
+/*}*/
+
+.line {
+  position: absolute;
+  /*display: inline-block;*/
+  width: 100%;
+  height: 3px;
+  background: white;
+  top: 607px;
+  z-index: 1;
 }
 
-
+/*timeline line*/
 .timeline ol li {
   position: relative;
   display: inline-block;
   list-style-type: none;
-  width: 160px;
-  height: 3px;
-  background: #fff;
+  /*width: 160px;*/
+  /*height: 3px;*/
+  /*background: #fff;*/
 }
 
-.timeline ol li:last-child {
-  width: 450px;
-}
+/*.timeline ol li:last-child {*/
+/*  width: 450px;*/
+/*}*/
 
-.timeline ol li:not(:first-child) {
-  margin-left: 14px;
-}
+/*.timeline ol li:not(:first-child) {*/
+/*  margin-left: 14px;*/
+/*}*/
 
+
+/*dot*/
 .timeline ol li:not(:last-child)::after {
   content: '';
   position: absolute;
@@ -116,31 +125,53 @@
   height: 12px;
   transform: translateY(-50%);
   border-radius: 50%;
-  background: #F45B69;
 }
 
+.timeline ol li:nth-child(1)::after, .timeline ol li:nth-child(2)::after {
+  background: #DFE8F4;
+}
+.timeline ol li:nth-child(3)::after, .timeline ol li:nth-child(4)::after {
+  background: #66D1FF;
+}
+.timeline ol li:nth-child(5)::after, .timeline ol li:nth-child(6)::after {
+  background: #4A91F5;
+}
+
+
+/*card*/
 .timeline ol li .card {
-  position: absolute;
-  left: calc(100% + 7px);
-  width: 280px;
-  padding: 15px;
-  font-size: 1rem;
-  white-space: normal;
-  font-weight: 600;
-  background: white;
-  border-radius: 5px 5px 5px 5px;
+   position: absolute;
+   left: calc(100% + 7px);
+   width: 280px;
+   padding: 15px;
+   font-size: 1rem;
+   white-space: normal;
+   font-weight: 600;
+   border-radius: 5px 5px 5px 5px;
+ }
+
+.timeline ol li .card:nth-child(1), .timeline ol li .card:nth-child(2) {
+  background: #DFE8F4;
 }
 
+.timeline ol li .card:nth-child(3), .timeline ol li .card:nth-child(4) {
+  background: #66D1FF;
+}
+
+.timeline ol li .card:nth-child(5), .timeline ol li .card:nth-child(6) {
+  background: #DFE8F4;
+}
+
+/*arrow*/
 .timeline ol li .card::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-
+   content: '';
+   position: absolute;
+   top: 100%;
+   left: 0;
+   width: 0;
+   height: 0;
+   border-style: solid;
+ }
 
 .timeline ol li:nth-child(odd) .card {
   top: -16px;
@@ -150,8 +181,18 @@
 .timeline ol li:nth-child(odd) .card::before {
   top: 96%;
   border-width: 10px 10px 0 0;
-  border-color: white transparent transparent transparent;
 }
+
+.timeline ol li:nth-child(1) .card::before {
+  border-color: #DFE8F4 transparent transparent transparent;
+}
+.timeline ol li:nth-child(3) .card::before {
+  border-color: #66D1FF transparent transparent transparent;
+}
+.timeline ol li:nth-child(5) .card::before {
+  border-color: #4A91F5 transparent transparent transparent;
+}
+
 
 /* 라인에서 얼마나 떨어졌는지 */
 .timeline ol li:nth-child(even) .card {
@@ -161,41 +202,41 @@
 .timeline ol li:nth-child(even) .card::before {
   top: -5px;
   border-width: 10px 0 0 10px;
-  border-color: transparent transparent transparent white;
 }
 
-.timeline ol li:nth-child(1) .card {
-  border-color: #DAE4F2;
+.timeline ol li:nth-child(2) .card::before {
+  border-color: transparent transparent transparent #DFE8F4;
+}
+.timeline ol li:nth-child(4) .card::before {
+  border-color: transparent transparent transparent #66D1FF;
+}
+.timeline ol li:nth-child(6) .card::before {
+  border-color: transparent transparent transparent #4A91F5;
 }
 
-.timeline ol li:nth-child(2) .card {
-  border-color: #DAE4F2;
-  border-width: 3px;
-}
 
 
+/*!* TIMELINE ARROWS*/
+/*–––––––––––––––––––––––––––––––––––––––––––––––––– *!*/
 
-/* TIMELINE ARROWS
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*.timeline .arrows {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  margin-bottom: 30px;*/
+/*}*/
 
-.timeline .arrows {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-}
+/*.timeline .arrows .prev {*/
+/*  margin-right: 20px;*/
+/*}*/
 
-.timeline .arrows .prev {
-  margin-right: 20px;
-}
+/*.timeline .disabled {*/
+/*  opacity: .5;*/
+/*}*/
 
-.timeline .disabled {
-  opacity: .5;
-}
-
-.timeline .arrows img {
-  width: 45px;
-  height: 45px;
-}
+/*.timeline .arrows img {*/
+/*  width: 45px;*/
+/*  height: 45px;*/
+/*}*/
 
 
 /* GENERAL MEDIA QUERIES
@@ -245,7 +286,7 @@
     top: 100%;
     transform: translateX(-50%);
     border: none;
-    border-left: 3px solid white;
+    border-left: 3px solid;
     height: 25px;
   }
 

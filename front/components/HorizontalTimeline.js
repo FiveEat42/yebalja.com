@@ -13,6 +13,8 @@ export default function HorizontalTimeline() {
 				<p>개발자의 지속 가능한 성장을 추구하는 학습 커뮤니티</p>
 			</Header>
 			<div className={styles.timeline}>
+				<div className={styles.line}></div>
+
 				<ol className={styles.order}>
 					<li className={styles.list}>
 						<div className={styles.card}>
@@ -47,7 +49,6 @@ export default function HorizontalTimeline() {
 					<li>
 					</li>
 				</ol>
-				<div className={styles.line}></div>
 
 				{/*<div className={styles.arrows}>*/}
 				{/*	<button className={styles.prev}>*/}
