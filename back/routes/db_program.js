@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var url = require('url');
-let db = require('../models/db_config');
+let db = require('../config/db_config');
 
 const jwt = require('jsonwebtoken');
 const secretObj = require('../config/jwt');

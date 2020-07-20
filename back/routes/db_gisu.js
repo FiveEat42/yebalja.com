@@ -3,7 +3,7 @@ var router = express.Router();
 const jwt = require('jsonwebtoken');
 const secretObj = require('../config/jwt');
 
-let db = require('../models/db_config');
+let db = require('../config/db_config');
 
 function formatDate(date) {
   var d = new Date(date),
