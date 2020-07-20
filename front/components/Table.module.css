@@ -22,6 +22,8 @@
 /*}*/
 
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum Gothic', sans-serif; }
+@import url(//fonts.googleapis.com/earlyaccess/nanumBarunGothic.css); .nanumBarunGothic * { font-family: 'Nanum BarunGothic', sans-serif; }
+
 
 /*
     Badge
@@ -70,7 +72,7 @@
     max-width: 1200px;
     width: 92%;
     margin: 0 auto;
-    font-family: "Nanum Gothic";
+    font-family: "Nanum BarunGothic";
     color: #615E67;
     margin-bottom: 170px;
 }

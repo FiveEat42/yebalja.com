@@ -1,10 +1,9 @@
 
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum Gothic', sans-serif; }
-@font-face { font-family: 'LAB디지털'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff'); font-weight: normal; font-style: normal; }
+@import url(//fonts.googleapis.com/earlyaccess/nanumBarunGothic.css); .nanumBarunGothic * { font-family: 'Nanum BarunGothic', sans-serif; }
 
 
 .body {
-  font: normal 16px/1.5 "Nanum Gothic";
+  font: normal 16px/1.5 "Nanum BarunGothic";
   background: #F2F8FF;
   margin: 0 auto;
   width: 100%;
@@ -14,7 +13,7 @@
 }
 
 .body * {
-  font-family: "Nanum Gothic";
+  font-family: "Nanum BarunGothic";
 }
 
 
@@ -80,9 +79,9 @@
   position: absolute;
   /*display: inline-block;*/
   width: 100%;
-  height: 3px;
+  height: 7px;
   background: white;
-  top: 606px;
+  top: 603.5px;
 }
 
 
@@ -144,11 +143,19 @@
   font-size: 1.1rem;
   white-space: normal;
   font-weight: 600;
-  border-radius: 5px 5px 5px 5px;
-  font-family: 'Nanum Gothic';
-  box-shadow: 2px 2px 3px 1px #DBE4EE;
+  font-family: 'Nanum BarunGothic';
+  /*box-shadow: 2px 2px 3px 1px #DBE4EE;*/
+  box-shadow: 10px 10px 20px 5px #cdd2d9;
 }
 
+.timeline ol li .card:nth-child(odd) {
+
+  border-radius: 12px 12px 12px 0;
+}
+
+.timeline ol li:nth-child(even) .card {
+  border-radius: 0 12px 12px 12px;
+}
 
 .card_end {
   background: #DFE8F4;
@@ -208,7 +215,7 @@
 /* ODD */
 .timeline ol li:nth-child(odd) .card {
   top: -16px;
-  transform: translateY(-100%);
+  transform: translateY(-115%);
 }
 
 .timeline ol li:nth-child(odd) .card::before {
@@ -251,7 +258,7 @@
 
 /* 라인에서 얼마나 떨어졌는지 */
 .timeline ol li:nth-child(even) .card {
-  top: calc(100% + 16px);
+  top: calc(100% + 30px);
 }
 /*-----------------------------------------------------------------------*/
 
