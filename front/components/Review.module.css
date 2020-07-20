@@ -16,6 +16,7 @@
 	display: flex;
 	-webkit-box-align: start;
 			align-items: flex-start;
+	
   }
   .comment_block .comment_image {
 	width: 4rem;
@@ -28,6 +29,7 @@
 			animation: popup 0.5s cubic-bezier(1, 0, 0, 1.5) forwards;
   }
   .comment_block .comment_dialog {
+	box-shadow: 0 10px 25px  #7e8f94;
 	background-color: #4A91F5;
 	color: #ffffff;
 	padding: 1rem;
