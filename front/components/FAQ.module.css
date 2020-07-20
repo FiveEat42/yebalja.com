@@ -1,0 +1,17 @@
+.firstTab {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.shadow {
+    box-shadow: 0 10px 25px  #7e8f94;
+}
+
+.secondTab {
+    margin-top: 30px;
+    align-content: center;
+}
+
+.content {
+    margin-top: 30px;
+}
