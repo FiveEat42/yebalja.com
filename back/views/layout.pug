@@ -16,7 +16,16 @@ html
           a.nav-item.nav-link(href='/api/json/program') Program DB(JSON)
           a.nav-item.nav-link(href='/api/json/gisu') 기수 DB(JSON)
           //a.nav-item.nav-link.disabled(href='#') 상세DB //비활성화 메뉴 코드
-        .navbar-nav.ml-auto
-          a.nav-item.nav-link.active(href='/api/register') 회원가입
-          a.nav-item.nav-link.active(href='/api/login') 로그인
+        
+        if logined_email == null
+         .navbar-nav.ml-auto
+           a.nav-item.nav-link.active(href='/api/register') 회원가입
+           a.nav-item.nav-link.active(href='/api/login') 로그인
+        else
+         .navbar-nav.ml-auto
+           div(style='display:flex; margin:0 auto;')
+             span.badge.badge-primary(style='padding:1.25em .4em') #{logined_email} 안녕하세요.
+           div
+             a.nav-item.nav-link.active(href='/api/logout') 로그아웃
+
     block content

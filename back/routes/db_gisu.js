@@ -21,25 +21,22 @@ function formatDate(date) {
 
 router.get('/', function(req, res, next) {
   let token = req.cookies['admin'];
-  console.log('token', token);
-  if (token)
-  {
-    let decoded = jwt.verify(token, secretObj.secret);
-    if(decoded.email == secretObj.adminAccount){
-      console.log('관리자 계정입니다.');
-      db.query('SELECT * FROM gisu_table', (error, result)=>{
-        if (error) throw error;
-        // console.log(result);
-        res.render('db_gisu/db_gisu', {db: result});
-      })
-    }
-    else{
-      console.log('관리자 계정이 아닙니다.')
-      res.redirect('/api/login');
-    }
+  
+  let decoded = {};
+  if(token)
+	  decoded = jwt.verify(token, secretObj.secret);
+  if(decoded.email == secretObj.adminAccount){
+    console.log('관리자 계정입니다.');
+    db.query('SELECT * FROM gisu_table', (error, result)=>{
+      if (error) throw error;
+      // console.log(result);
+      res.render('db_gisu/db_gisu', {db: result,logined_email : decoded.email });
+    })
   }
-
-
+  else{
+    console.log('관리자 계정이 아닙니다.')
+    res.redirect('/api/login');
+  }
 });
 
 router.post('/delete', function(req, res) {
