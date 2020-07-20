@@ -21,6 +21,7 @@ function formatDate(date) {
 
 router.get('/', function(req, res, next) {
   let token = req.cookies['admin'];
+  console.log('token', token);
   if (token)
   {
     let decoded = jwt.verify(token, secretObj.secret);
