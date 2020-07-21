@@ -1,43 +1,5 @@
-/*$first: #327a81;*/
-/*$second: #6cbec6;*/
-/*$third: #91ced4;*/
-/*$fourth: #c8e7ea;*/
-/*$fifth: #daeff1;*/
-/*$sixth: #edf7f8;*/
+@import url(//fonts.googleapis.com/earlyaccess/nanumBarunGothic.css); .nanumBarunGothic * { font-family: 'Nanum BarunGothic', sans-serif; }
 
-/*.users {*/
-/*    background-color: #6cbec6;*/
-/*}*/
-
-
-/*.bootcamp {*/
-/*  color: #202125;*/
-/*  margin-bottom: 0px;*/
-/*}*/
-/*.bootcamp h2 {*/
-/*  font-weight: 600;*/
-/*}*/
-/*.bootcamp p {*/
-/*  font-weight: 300;*/
-/*}*/
-
-/*@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum Gothic', sans-serif; }*/
-/*@import url(//fonts.googleapis.com/earlyaccess/nanumBarunGothic.css); .nanumBarunGothic * { font-family: 'Nanum BarunGothic', sans-serif; }*/
-@font-face {
-    font-family: 'NanumBarunGothic';
-    font-style: normal;
-    font-weight: 400;
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'NanumBarunGothic';
-    font-style: normal; font-weight: 700;
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
-}
-
-.nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
 
 .wrapper {
     width: 92%;
