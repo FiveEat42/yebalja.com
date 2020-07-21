@@ -3,13 +3,9 @@ extends ../layout
 block content
     div.login_wrapper
         form(action='/api/login' class="login_form" method='post')
-            div
-                label ID : 
-                input(type="email", placeholder="abc@mail.com" ,maxlength="20", name='login_email')
-            div
-                label PW :
-                input(type="password", placeholder="********", maxlength="20" name='login_password')
-            
-                button(type="submit", class="login_button") 로그인
-        
-            button(type="button") 회원가입
+            div(style='margin:1rem')
+                input#ID.form-control(type="email", placeholder="이메일" , maxlength="20", name='login_email')
+            div(style='margin:1rem')
+                input.form-control(type="password", placeholder="비밀번호", maxlength="20" name='login_password')
+            button.btn.btn-primary(type="submit", class="login_button" ) 로그인
+            //button(type="button") 회원가입
