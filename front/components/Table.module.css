@@ -80,11 +80,11 @@
 
 
 .users {
-    max-width: 1200px;
-    width: 92%;
+    /*max-width: 1200px;*/
+    width: 100%;
     margin: 0 auto;
     font-family: "Nanum Gothic";
-    color: #615E67;
+    color: #606976;
     margin-bottom: 170px;
 }
 
@@ -154,6 +154,11 @@
 
     padding: 10px;
 }
+
+.thetable .cell:last-child {
+    padding: 0;
+}
+
 .thetable .cell {
     text-align: center;
 }
@@ -212,6 +217,7 @@
     content: '우아한 형제들';
 }
 
+
 /*.cell:first-child {*/
 /*    text-align: center;*/
 /*    padding-left: 50px;*/
@@ -222,8 +228,18 @@
 
 @media only screen and (max-width: 900px) {
 
-    .cell {
+
+    .thetable .cell:not(:first-child) {
         text-align: left;
+        padding-left: 180px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        /*max-height: 53px;*/
+
+    }
+
+    .thetable .cellheader {
+        padding-left: 30px;
     }
 
     .cell:first-child {
@@ -269,12 +285,12 @@
         top: 0;
         -webkit-transform: translateY(0);
         transform: translateY(0);
+        text-align: left;
         /*width: 100%;*/
         /*max-width: 100%;*/
     }
     .cell:not(:first-child) {
         clear: both;
-
         padding: 7px 20px 7px 90px;
         position: relative;
 
@@ -286,8 +302,9 @@
         display: block;
         left: 0;
         position: absolute;
-        padding-left: 100px;
-        /*text-align: center;*/
+        padding-left: 40px;
+        text-align: left;
+        margin-right: 100px;
     }
 
 
@@ -295,7 +312,7 @@
         content: '모집인원';
     }
     .cell:nth-child(3):before {
-        content: '교육기관';
+        content: '교육기간';
     }
     .cell:nth-child(4):before {
         content: '혜택';
@@ -342,10 +359,13 @@
 
 
 
+@media only screen and (orientation: landscape) {
+  .mobileheader { display: none; }
+}
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
 
     .badges {
         width: 94%;
@@ -373,6 +393,7 @@
         margin-top: 0;
         margin-bottom: 1rem;
     }
+
     .users {
 
         background-color: #DAE4F2;
@@ -403,11 +424,27 @@
         width: 100%;
     }
 
+    .thetable .cell:not(:first-child) {
+        padding-left: 14px;
+        text-align: center;
+    }
+
+    .thetable .cell {
+        text-align: center;
+    }
+
     .cell:not(:first-child):before {
         font-size: .8em;
         padding-top: 0.3em;
         position: relative;
         padding-left: 0;
+        text-align: center;
+        margin: 0 auto;
+        padding-bottom: 3px;
+    }
+
+    .thetable .cellheader {
+        padding: 0;
     }
 
     .cell:last-child {

@@ -2,12 +2,9 @@
 
 @media only screen and (orientation: portrait) {
   .landscape_only  { display: none; }
-  .websubtitle { display: none; }
+  .webheader { display: none; }
 }
 
-@media only screen and (orientation: landscape) {
-  .mobilesubtitle { display: none; }
-}
 
 
 .header {

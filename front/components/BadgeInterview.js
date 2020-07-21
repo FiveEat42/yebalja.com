@@ -7,7 +7,7 @@ const Interview = () => {
   return (
     <div className={styles.interview}>
       <div className={styles.badge}>
-        <img src={require('../src/image/interview badge.png')} width="30"/>
+        <img src={require('../src/image/interview badge.png')} width="27"/>
       </div>
       {/*<span className={styles.tooltip}>인터뷰</span>*/}
     </div>
