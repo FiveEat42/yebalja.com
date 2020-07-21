@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Header from "./Header";
 import CTA from "./CTA";
 
+
 export default function YearlyCalendar() {
 
 	return (
@@ -52,18 +53,18 @@ export default function YearlyCalendar() {
                       <span>42 Seoul</span> <br></br><br></br><span className={styles.gisu}>1기</span>
                   </div>
                   <ul className={styles.gantt__row__bars}>
-                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `1/366`, backgroundColor: `#4DF0FF`, zIndex: `3`}}>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true})} style={{ gridColumn: `1/366`, backgroundColor: `#4DF0FF`, zIndex: `3`}}>
                           <span className={styles.calendar_entry__date}>상시모집</span>
                           <span className={styles.calendar_entry__title}>지원</span>
                       </li>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `23/46`, backgroundColor: `#7A4DFF`, zIndex: `2` }}>
-                          <span className={styles.calendar_entry__date}>1/23 - 2/16</span>
-                          <span className={styles.calendar_entry__title}>Piscine</span>
+                      <li className={styles.calendar_entry} style={{ gridColumn: `23/46`, backgroundColor: `#42A7F1`, zIndex: `2` }}>
+                          <span className={styles.calendar_entry__date}>1/23 ~ 2/16</span>
+                          <span className={styles.calendar_entry__title}>라피신</span>
                           {/* <span className={styles.calendar_entry__details}><a>자세히보기</a></span> */}
                       </li>
-                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `57/366`, backgroundColor: `#DAE4F2`, zIndex: `1`}}>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true, [styles.next_year]: true})} style={{ gridColumn: `57/380`, backgroundColor: `#CBDFFD`, zIndex: `1`}}>
                           <span className={styles.calendar_entry__date}>2/27 ~ 최대 2년</span>
-                          <span className={styles.calendar_entry__title}>교육 시작</span>
+                          <span className={styles.calendar_entry__title}>교육</span>
                           {/* <span className={styles.calendar_entry__details}><a>최대 2년</a></span> */}
                       </li>
                   </ul>
@@ -73,17 +74,17 @@ export default function YearlyCalendar() {
                     <span className={styles.gisu}>2기</span>
                   </div>
                   <ul className={styles.gantt__row__bars}>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `179/204`, backgroundColor: `#7A4DFF`, zIndex: `3` }}>
-                          <span className={styles.calendar_entry__date}>2-1기 : 6/29 - 7/24</span>
-                          <span className={styles.calendar_entry__title}>Piscine</span>
+                      <li className={styles.calendar_entry} style={{ gridColumn: `179/204`, backgroundColor: `#42A7F1`, zIndex: `3` }}>
+                          <span className={styles.calendar_entry__date}>2-1기 : 6/29 ~ 7/24</span>
+                          <span className={styles.calendar_entry__title}>라피신</span>
                       </li>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `207/234`, backgroundColor: `#7A4DFF`, zIndex: `2` }}>
-                          <span className={styles.calendar_entry__date}>2-2기 : 7/27 - 8/24</span>
-                          <span className={styles.calendar_entry__title}>Piscine</span>
+                      <li className={styles.calendar_entry} style={{ gridColumn: `207/234`, backgroundColor: `#42A7F1`, zIndex: `2` }}>
+                          <span className={styles.calendar_entry__date}>2-2기 : 7/27 ~ 8/24</span>
+                          <span className={styles.calendar_entry__title}>라피신</span>
                       </li>
-                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `244/366`, backgroundColor: `#DAE4F2`, zIndex: `1` }}>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true, [styles.next_year]: true})} style={{ gridColumn: `244/380`, backgroundColor: `#CBDFFD`, zIndex: `1` }}>
                           <span className={styles.calendar_entry__date}>9/01 ~ 최대 2년</span>
-                          <span className={styles.calendar_entry__title}>교육 시작</span>
+                          <span className={styles.calendar_entry__title}>교육</span>
                       </li>
                   </ul>
               </div>
@@ -92,17 +93,17 @@ export default function YearlyCalendar() {
                     <span className={styles.gisu}>3기</span>
                   </div>
                   <ul className={styles.gantt__row__bars}>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `241/267`, backgroundColor: `#7A4DFF`, zIndex: `3` }}>
-                          <span className={styles.calendar_entry__date}>3-1기 : 8/31 - 9/27</span>
-                          <span className={styles.calendar_entry__title}>Piscine</span>
+                      <li className={styles.calendar_entry} style={{ gridColumn: `241/267`, backgroundColor: `#42A7F1`, zIndex: `3` }}>
+                          <span className={styles.calendar_entry__date}>3-1기 : 8/31 ~ 9/27</span>
+                          <span className={styles.calendar_entry__title}>라피신</span>
                       </li>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `275/301`, backgroundColor: `#7A4DFF`, zIndex: `2` }}>
-                          <span className={styles.calendar_entry__date}>3-2기 : 10/05 - 11/01</span>
-                          <span className={styles.calendar_entry__title}>Piscine</span>
+                      <li className={styles.calendar_entry} style={{ gridColumn: `275/301`, backgroundColor: `#42A7F1`, zIndex: `2` }}>
+                          <span className={styles.calendar_entry__date}>3-2기 : 10/05 ~ 11/01</span>
+                          <span className={styles.calendar_entry__title}>라피신</span>
                       </li>
-                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `315/366`, backgroundColor: `#DAE4F2`, zIndex: `1` }}>
-                          <span className={styles.calendar_entry__date}>11/15 - 최대 2년</span>
-                          <span className={styles.calendar_entry__title}>교육 시작</span>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true, [styles.next_year]: true})} style={{ gridColumn: `315/380`, backgroundColor: `#CBDFFD`, zIndex: `1` }}>
+                          <span className={styles.calendar_entry__date}>11/15 ~ 최대 2년</span>
+                          <span className={styles.calendar_entry__title}>교육</span>
                       </li>
                   </ul>
               </div>
@@ -112,7 +113,7 @@ export default function YearlyCalendar() {
                   </div>
                   <ul className={styles.gantt__row__bars}>
                       <li className={styles.calendar_entry} style={{ gridColumn: `129/149`, backgroundColor: `#4DF0FF`, zIndex: `3` }}>
-                          <span className={styles.calendar_entry__date}>5/11 - 5/25</span>
+                          <span className={styles.calendar_entry__date}>5/11 ~ 5/25</span>
                           <span className={styles.calendar_entry__title}>지원</span>
                           <span className={styles.calendar_entry__details}><a>4기</a></span>
                       </li>
@@ -121,9 +122,9 @@ export default function YearlyCalendar() {
                           <span className={styles.calendar_entry__date}>현장 인터뷰 : 6/17 ~ 6/19</span>
                           <span className={styles.calendar_entry__title}>선발</span>
                       </li>
-                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `187/366`, backgroundColor: `#DAE4F2`, zIndex: `1` }}>
-                          <span className={styles.calendar_entry__date}>7/07 - 1년</span>
-                          <span className={styles.calendar_entry__title}>교육 시작</span>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true, [styles.next_year]: true})} style={{ gridColumn: `187/380`, backgroundColor: `#CBDFFD`, zIndex: `1` }}>
+                          <span className={styles.calendar_entry__date}>7/07 ~ 1년</span>
+                          <span className={styles.calendar_entry__title}>교육</span>
                       </li>
                       
                   </ul>
@@ -134,7 +135,7 @@ export default function YearlyCalendar() {
                 </div>
                   <ul className={styles.gantt__row__bars}>
                       <li className={styles.calendar_entry} style={{ gridColumn: `151/180`, backgroundColor: `#4DF0FF`, zIndex: `3` }}>
-                          <span className={styles.calendar_entry__date}>6/01 - 6/30</span>
+                          <span className={styles.calendar_entry__date}>6/01 ~ 6/30</span>
                           <span className={styles.calendar_entry__title}>지원</span>
                           <span className={styles.calendar_entry__details}><a>4기</a></span>
                       </li>
@@ -144,14 +145,14 @@ export default function YearlyCalendar() {
                           <span className={styles.calendar_entry__title}>선발</span>
                           <span className={styles.calendar_entry__details}><a>자세히보기</a></span>
                       </li>
-                      <li className={styles.calendar_entry} style={{ gridColumn: `207/231`, backgroundColor: `#7A4DFF`, zIndex: `1` }}>
-                          <span className={styles.calendar_entry__date}>7/27 - 8/21</span>
+                      <li className={styles.calendar_entry} style={{ gridColumn: `207/237`, backgroundColor: `#42A7F1`, zIndex: `1` }}>
+                          <span className={styles.calendar_entry__date}>7/27 ~ 8/21</span>
                           <span className={styles.calendar_entry__title}>챌린지</span>
                           <span className={styles.calendar_entry__details}><a>자세히보기</a></span>
                       </li>
-                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `231/351`, backgroundColor: `#DAE4F2` }}>
-                          <span className={styles.calendar_entry__date}>8/31 - 12/21</span>
-                          <span className={styles.calendar_entry__title}>교육 시작</span>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true})} style={{ gridColumn: `237/351`, backgroundColor: `#CBDFFD` }}>
+                          <span className={styles.calendar_entry__date}>8/31 ~ 12/21</span>
+                          <span className={styles.calendar_entry__title}>교육</span>
                       </li>
                   </ul>
               </div>
@@ -161,7 +162,7 @@ export default function YearlyCalendar() {
                   </div>
                   <ul className={styles.gantt__row__bars}>
                       <li className={styles.calendar_entry} style={{ gridColumn: `22/51`, backgroundColor: `#4DF0FF`, zIndex: `3` }}>
-                          <span className={styles.calendar_entry__date}>1/22 - 2/21</span>
+                          <span className={styles.calendar_entry__date}>1/22 ~ 2/21</span>
                           <span className={styles.calendar_entry__title}>지원</span>
                           <span className={styles.calendar_entry__details}><a>4기</a></span>
                       </li>
@@ -171,9 +172,9 @@ export default function YearlyCalendar() {
                           <span className={styles.calendar_entry__date}>심층면접 : 5/08~09</span>
                           <span className={styles.calendar_entry__title}>선발</span>
                       </li>
-                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `153/365`, backgroundColor: `#DAE4F2` }}>
-                          <span className={styles.calendar_entry__date}>6/01 - 12월</span>
-                          <span className={styles.calendar_entry__title}>교육 시작</span>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true})} style={{ gridColumn: `153/365`, backgroundColor: `#CBDFFD` }}>
+                          <span className={styles.calendar_entry__date}>6/01 ~ 12월</span>
+                          <span className={styles.calendar_entry__title}>교육</span>
                       </li>
                   </ul>
               </div>
@@ -182,7 +183,7 @@ export default function YearlyCalendar() {
                     <span>우아한테크코스</span>
                   </div>
                   <ul className={styles.gantt__row__bars}>
-                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `1/366`, backgroundColor: `#5C4DFF`, zIndex: `1` }}>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true})} style={{ gridColumn: `1/366`, backgroundColor: `#DAE4F2`, zIndex: `1`}}>
                           <span className={styles.calendar_entry__date}>약 10개월</span>
                           <span className={styles.calendar_entry__title}>미정 (2021년 시작예정)</span>
                       </li>
@@ -198,9 +199,9 @@ export default function YearlyCalendar() {
                           <span className={styles.calendar_entry__title}>지원</span>
                           <span className={styles.calendar_entry__details}><a>8기</a></span>
                       </li>
-                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversise_list]: true})} style={{ gridColumn: `107/270`, backgroundColor: `#DAE4F2` }}>
-                          <span className={styles.calendar_entry__date}>4월 - 10월</span>
-                          <span className={styles.calendar_entry__title}>교육 시작</span>
+                      <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true})} style={{ gridColumn: `107/270`, backgroundColor: `#CBDFFD` }}>
+                          <span className={styles.calendar_entry__date}>4월 ~ 10월</span>
+                          <span className={styles.calendar_entry__title}>교육</span>
                           <span className={styles.calendar_entry__details}><a></a></span>
                       </li>
                   </ul>

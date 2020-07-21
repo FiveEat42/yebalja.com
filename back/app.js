@@ -4,16 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const flash = require('connect-flash');
-const session = require('express-session');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
 let adminRouter = require('./routes/admin');
 let jsonRouter = require('./routes/json');
 let db_gisuRouter = require('./routes/db_gisu');
 let db_programRouter = require('./routes/db_program');
 let loginRouter = require('./routes/login');
 let registerRouter = require('./routes/register');
-var cookie = require('cookie');
+let logoutRouter = require('./routes/logout');
+
 
 var app = express();
 
@@ -35,6 +35,7 @@ app.use('/api/admin',adminRouter);
 app.use('/api/admin/db/gisu',db_gisuRouter);
 app.use('/api/admin/db/program', db_programRouter);
 
+app.use('/api/logout', logoutRouter);
 app.use('/api/login', loginRouter);
 app.use('/api/register', registerRouter);
 
