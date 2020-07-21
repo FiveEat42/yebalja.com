@@ -77,11 +77,11 @@
 .text {
     float: left;
     vertical-align: left;
-    padding-right: 4rem;
-    position: absolute;
-    top: 28%;
+    position: relative;
     font-family: 'NanumBarunGothic';
     max-width: 80%;
+    padding-top: 130px;
+    padding-bottom: 40px;
  }
 
 .content {
@@ -108,21 +108,13 @@
 
 
 
-
-@media screen and (max-width: 1024px) {
-    .nav {
-        display: none;
-    }
-}
-
-
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1009px) {
     .text {
         position: static;
         float: bottom;
         padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-bottom: 3rem;
+        padding-left: 2rem;
         margin: 0;
     }
 
