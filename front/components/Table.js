@@ -16,21 +16,21 @@ const Table = () => {
 
         <div className={styles.badges}>
             <div className={styles.badge}>
-              <img src={require('../src/image/tryout badge.png')} width="40"/>
-              <span className={styles.tooltip}>사전 집중교육</span>
+              <img src={require('../src/image/tryout badge.png')} width="27"/>
+              <span className={styles.tooltip}>사전집중교육</span>
             </div>
 
             <div className={styles.badge}>
-              <img src={require('../src/image/interview badge.png')} width="40"/>
+              <img src={require('../src/image/interview badge.png')} width="27"/>
               <span className={styles.tooltip}>면접</span>
             </div>
           <div className={styles.badge}>
-            <img src={require('../src/image/coding test badge.png')} width="40"/>
-            <span className={styles.tooltip}>코딩 테스트</span>
+            <img src={require('../src/image/coding test badge.png')} width="27"/>
+            <span className={styles.tooltip}>코딩테스트</span>
           </div>
 
           <div className={styles.badge}>
-            <img src={require('../src/image/aptitude badge.png')} width="40"/>
+            <img src={require('../src/image/aptitude badge.png')} width="27"/>
             <span className={styles.tooltip}>적성검사</span>
           </div>
         </div>
@@ -153,7 +153,7 @@ const Table = () => {
               {/*<td className={styles.cell}>프로그래밍에 대한<br/>기본지식</td>*/}
               <td className={styles.cell}>약 40명</td>
               <td className={styles.cell}>약 10개월</td>
-              <td className={styles.cell}>월 100만원</td>
+              <td className={styles.cell}>월 50만원</td>
               <td className={styles.cell}>
                 <div className={styles.cellbadges}>
                   <div className={styles.false}><Aptitude/></div>

@@ -6,6 +6,8 @@
 
 .badge {
     display: inline-block;
+    padding-right: 7px;
+    padding-left: 7px;
 }
 
 .aptitude:hover::after {

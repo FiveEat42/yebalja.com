@@ -23,6 +23,13 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum Gothic', sans-serif; }
 
+.wrapper {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
 /*
     Badge
 */
@@ -40,6 +47,8 @@
     margin: 0 auto;
     width: 92%;
     max-width: 1200px;
+    padding-bottom: 10px;
+
 }
 
 .true, .false {
@@ -50,13 +59,17 @@
     max-width: 130px;
     display: inline;
     padding-left: 10px;
+    padding-right: 5px;
     float: right;
+    padding-bottom: 10px;
 }
 
 .tooltip {
     text-align: center;
     color: #89A1C3;
     font-size: 12px;
+    margin: 0;
+    padding-left: 10px;
 }
 
 
@@ -328,14 +341,33 @@
 }
 
 
+
+
+
+
 @media screen and (max-width: 600px) {
 
     .badges {
-        width: 92%;
+        width: 94%;
         margin: 0 auto;
-        padding-right: 20px;
+        padding-right: 5px;
         padding-bottom: 45px;
+
     }
+
+    .badge {
+        max-width: 130px;
+        display: inline;
+        padding-left: 8px;
+        float: right;
+        padding-right: 0px;
+    }
+
+    .tooltip {
+        padding-left: 3px;
+        font-size: 11px;
+    }
+
 
     .thetable .row {
         margin-top: 0;
@@ -407,4 +439,34 @@
         /*box-shadow: none;*/
         overflow: visible;
     }
+}
+
+
+@media screen and (max-width: 400px) {
+    .badges {
+        width: 94%;
+        margin: 0 auto;
+        padding-right: 7px;
+        padding-bottom: 55px;
+        text-align: center;
+        content-align: center;
+    }
+
+    .badge {
+        max-width: 130px;
+        display: inline;
+        padding-left: 0px;
+        /*float: right;*/
+        padding-right: 0px;
+        content-align: center;
+    }
+
+    .tooltip {
+        display: block;
+        text-align: center;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 11px;
+    }
+
 }
