@@ -1,0 +1,30 @@
+.button {
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 0 10px 25px -6px #7e8f94;
+}
+
+.button a:hover {
+    text-decoration: none;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.txt {
+    font-size: x-small;
+    color: #696969;
+}
