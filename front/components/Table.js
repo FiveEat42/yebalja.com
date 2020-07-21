@@ -57,7 +57,7 @@ const Table = () => {
 
             {/*42Seoul*/}
 
-            <tbody>
+
               <tr className={styles.row}>
                 <td className={styles.cell}><Link href="/ftseoul"><a className={styles.cellheader}>42Seoul</a></Link></td>
                 {/*<td className={styles.cell}>이노베이션 아카데미</td>*/}
@@ -166,7 +166,7 @@ const Table = () => {
                 </td>
                 {/*<td className={styles.cell}>잠실역 한국루터회관</td>*/}
               </tr>
-            </tbody>
+
           </table>
         </div>
       </div>
