@@ -80,7 +80,7 @@
 .title {
     color: white;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     align-self: center;
     font-weight: bold;
     padding: 20px 0;
@@ -99,12 +99,13 @@
 }
 
 .cell {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     border-width: 1px 0 0 0;
     border-color: rgba(0, 0, 0, 0.1);
     border-style: solid;
     min-width: 150px;
+
 }
 
 .cellheader {
@@ -139,6 +140,14 @@
 
 .thetable .cell {
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.thetable .title {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
 }
 .table .cell:last-child {
     line-height: 1.4;
