@@ -1,28 +1,11 @@
-/*$first: #327a81;*/
-/*$second: #6cbec6;*/
-/*$third: #91ced4;*/
-/*$fourth: #c8e7ea;*/
-/*$fifth: #daeff1;*/
-/*$sixth: #edf7f8;*/
+@font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype'); } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype') } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype'); } .nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
 
-/*.users {*/
-/*    background-color: #6cbec6;*/
-/*}*/
-
-
-/*.bootcamp {*/
-/*  color: #202125;*/
-/*  margin-bottom: 0px;*/
-/*}*/
-/*.bootcamp h2 {*/
-/*  font-weight: 600;*/
-/*}*/
-/*.bootcamp p {*/
-/*  font-weight: 300;*/
-/*}*/
-
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum Gothic', sans-serif; }
-@import url(//fonts.googleapis.com/earlyaccess/nanumBarunGothic.css); .nanumBarunGothic * { font-family: 'Nanum BarunGothic', sans-serif; }
+.wrapper {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'NanumBarunGothic';
+}
 
 
 /*
@@ -42,6 +25,8 @@
     margin: 0 auto;
     width: 92%;
     max-width: 1200px;
+    padding-bottom: 10px;
+
 }
 
 .true, .false {
@@ -52,13 +37,17 @@
     max-width: 130px;
     display: inline;
     padding-left: 10px;
+    padding-right: 5px;
     float: right;
+    padding-bottom: 10px;
 }
 
 .tooltip {
     text-align: center;
     color: #89A1C3;
     font-size: 12px;
+    margin: 0;
+    padding-left: 10px;
 }
 
 
@@ -69,11 +58,11 @@
 
 
 .users {
-    max-width: 1200px;
-    width: 92%;
+    /*max-width: 1200px;*/
+    width: 100%;
     margin: 0 auto;
-    font-family: "Nanum BarunGothic";
-    color: #615E67;
+    font-family: "NanumBarunGothic";
+    color: #606976;
     margin-bottom: 170px;
 }
 
@@ -91,7 +80,7 @@
 .title {
     color: white;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     align-self: center;
     font-weight: bold;
     padding: 20px 0;
@@ -110,12 +99,13 @@
 }
 
 .cell {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     border-width: 1px 0 0 0;
     border-color: rgba(0, 0, 0, 0.1);
     border-style: solid;
     min-width: 150px;
+
 }
 
 .cellheader {
@@ -143,8 +133,21 @@
 
     padding: 10px;
 }
+
+.thetable .cell:last-child {
+    padding: 0;
+}
+
 .thetable .cell {
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.thetable .title {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
 }
 .table .cell:last-child {
     line-height: 1.4;
@@ -201,6 +204,7 @@
     content: '우아한 형제들';
 }
 
+
 /*.cell:first-child {*/
 /*    text-align: center;*/
 /*    padding-left: 50px;*/
@@ -211,8 +215,18 @@
 
 @media only screen and (max-width: 900px) {
 
-    .cell {
+
+    .thetable .cell:not(:first-child) {
         text-align: left;
+        padding-left: 180px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        /*max-height: 53px;*/
+
+    }
+
+    .thetable .cellheader {
+        padding-left: 30px;
     }
 
     .cell:first-child {
@@ -258,12 +272,12 @@
         top: 0;
         -webkit-transform: translateY(0);
         transform: translateY(0);
+        text-align: left;
         /*width: 100%;*/
         /*max-width: 100%;*/
     }
     .cell:not(:first-child) {
         clear: both;
-
         padding: 7px 20px 7px 90px;
         position: relative;
 
@@ -275,8 +289,9 @@
         display: block;
         left: 0;
         position: absolute;
-        padding-left: 100px;
-        /*text-align: center;*/
+        padding-left: 40px;
+        text-align: left;
+        margin-right: 100px;
     }
 
 
@@ -284,7 +299,7 @@
         content: '모집인원';
     }
     .cell:nth-child(3):before {
-        content: '교육기관';
+        content: '교육기간';
     }
     .cell:nth-child(4):before {
         content: '혜택';
@@ -330,19 +345,42 @@
 }
 
 
-@media screen and (max-width: 600px) {
+
+@media only screen and (orientation: landscape) {
+  .mobileheader { display: none; }
+}
+
+
+
+@media screen and (max-width: 500px) {
 
     .badges {
-        width: 92%;
+        width: 94%;
         margin: 0 auto;
-        padding-right: 20px;
+        padding-right: 5px;
         padding-bottom: 45px;
+
     }
+
+    .badge {
+        max-width: 130px;
+        display: inline;
+        padding-left: 8px;
+        float: right;
+        padding-right: 0px;
+    }
+
+    .tooltip {
+        padding-left: 3px;
+        font-size: 11px;
+    }
+
 
     .thetable .row {
         margin-top: 0;
         margin-bottom: 1rem;
     }
+
     .users {
 
         background-color: #DAE4F2;
@@ -373,11 +411,27 @@
         width: 100%;
     }
 
+    .thetable .cell:not(:first-child) {
+        padding-left: 14px;
+        text-align: center;
+    }
+
+    .thetable .cell {
+        text-align: center;
+    }
+
     .cell:not(:first-child):before {
         font-size: .8em;
         padding-top: 0.3em;
         position: relative;
         padding-left: 0;
+        text-align: center;
+        margin: 0 auto;
+        padding-bottom: 3px;
+    }
+
+    .thetable .cellheader {
+        padding: 0;
     }
 
     .cell:last-child {
@@ -409,4 +463,34 @@
         /*box-shadow: none;*/
         overflow: visible;
     }
+}
+
+
+@media screen and (max-width: 400px) {
+    .badges {
+        width: 94%;
+        margin: 0 auto;
+        padding-right: 7px;
+        padding-bottom: 55px;
+        text-align: center;
+        content-align: center;
+    }
+
+    .badge {
+        max-width: 130px;
+        display: inline;
+        padding-left: 0px;
+        /*float: right;*/
+        padding-right: 0px;
+        content-align: center;
+    }
+
+    .tooltip {
+        display: block;
+        text-align: center;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 11px;
+    }
+
 }

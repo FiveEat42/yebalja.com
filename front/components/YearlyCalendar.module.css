@@ -1,15 +1,11 @@
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum BarunGothic', sans-serif; }
-@import url(//fonts.googleapis.com/earlyaccess/nanumBarunGothic.css); .nanumBarunGothic * { font-family: 'Nanum BarunGothic', sans-serif; }
-
+/*@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum BarunGothic', sans-serif; }*/
+/*@import url(//fonts.googleapis.com/earlyaccess/nanumBarunGothic.css); .nanumBarunGothic * { font-family: 'Nanum BarunGothic', sans-serif; }*/
 
 @media only screen and (orientation: portrait) {
   .landscape_only  { display: none; }
-  .websubtitle { display: none; }
+  .webheader { display: none; }
 }
 
-@media only screen and (orientation: landscape) {
-  .mobilesubtitle { display: none; }
-}
 
 
 
@@ -27,7 +23,7 @@
   font-weight: 300;
 }
 .wrapper {
-  font-family: 'Nanum BarunGothic';
+  font-family: 'NanumBarunGothic';
   font-weight: 800;
   text-align: center;
   font-size: 18px;
@@ -35,7 +31,7 @@
   min-width: 700px;
   margin: 0 auto;
   width: 92%;
-  font-family: "Nanum BarunGothic";
+  font-family: "NanumBarunGothic";
 }
 .gantt {
   display: grid;
@@ -202,7 +198,7 @@
   box-sizing: border-box;
   transition: 0.3s;
   color: white;
-  font-family: 'Nanum BarunGothic';
+  font-family: 'NanumBarunGothic';
   font-size: 13px;
   line-height: 1;
   display: flex;

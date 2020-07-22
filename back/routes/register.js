@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const db = require('../models/db_config');
+const db = require('../config/db_config');
 const util = require('util');
 
 let db_promise = util.promisify(db.query).bind(db);
