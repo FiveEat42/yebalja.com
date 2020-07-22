@@ -9,9 +9,9 @@ export default function YearlyCalendar() {
 
 	return (
 	  <>
-      <Header className={styles.webheader}>
-        <h1>2020년 부트캠프</h1>
-        <p className={styles.websubtitle}>무료 부트캠프 일정을 한 눈에 확인하세요</p>
+      <Header>
+        <h1 className={styles.webheader}>2020년 부트캠프</h1>
+        <p className={styles.webheader}>무료 부트캠프 일정을 한 눈에 확인하세요</p>
         {/*<p className={styles.mobilesubtitle}>무료 부트캠프 연간 일정은 웹사이트 혹은 가로모드에서 지원됩니다</p>*/}
       </Header>
 
@@ -208,6 +208,9 @@ export default function YearlyCalendar() {
               </div>
           </div>
       </div>
+    <div className={styles.webheader}>
+              <br /><br /><br />
+    </div>
   </>
 	);
   }
