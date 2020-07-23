@@ -8,7 +8,6 @@ const Footer = () => {
 				<ul className={styles.item}>
 					<li><p className={styles.wave}>👋</p></li>
 					<li><a href="/about">About</a></li>
-					<li><a href="/about">Email</a></li>
 					<li><a href="#">Github</a></li>
 					<li><p className={styles.wave}>👋</p></li>
 				</ul>

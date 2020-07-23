@@ -81,8 +81,8 @@
     }
   }
 
- @media (max-width: 991.98px) {
-    .rolling {
+ @media screen and (max-width: 991.98px) {
+    .navbarBg .rolling {
         display: none;
       }
  }
