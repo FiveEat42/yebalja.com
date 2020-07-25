@@ -58,7 +58,7 @@ const Table = (props) => {
 
 
               <tr className={styles.row}>
-                <td className={styles.cell}><Link href="/ftseoul"><a className={styles.cellheader}>{props.value[0].program_title}</a></Link></td>
+                <td className={styles.cell}><Link href="/ftseoul"><a className={styles.cellheader}></a></Link></td>
                 {/*<td className={styles.cell}>이노베이션 아카데미</td>*/}
                 {/*<td className={styles.cell}>1차 온라인테스트 <br/> 2차 4주 집중교육</td>*/}
                 {/*<td className={styles.cell}>해당년도 <br/> 1월 1일 기준 <br/>성인</td>*/}

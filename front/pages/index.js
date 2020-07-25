@@ -6,13 +6,14 @@ import Header from "../components/Header";
 import React, { useEffect, useState } from "react";
 import CTA from "../components/CTA";
 import TopButton from "../components/TopButton"
-import axios from 'axios'
+import axios from 'axios';
+
 const Home = () => {
 	const [data, setData] = useState([]);
 	//처음 랜더링될 때만 실행, 업데이트 경우 실행 필요 X => 2번째 인자에 빈 배열
 	useEffect(() =>{
 		async function fetchData(){
-		const result = await axios.get('https://api.yebalja.com/api/json/program'
+		const result = await axios('https://api.yebalja.com/api/json/program'
 		,);
 		setData(result.data);
 		console.log(result.data[0].program_title);
@@ -26,8 +27,8 @@ const Home = () => {
       <YearlyCalendar />
       <Header>
 		<div>
-			{data.map(program => 
-				<div key={program.program_id}>{program.program_title}
+			{data.map(p_id => 
+				<div key={p_id.program_id}>{p_id.program_title}
 				</div>
 				)}
 		</div>
