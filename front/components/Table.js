@@ -8,7 +8,7 @@ import Interview from './BadgeInterview';
 import Tryout from './BadgeTryout';
 import Header from "./Header";
 
-const Table = (props) => {
+const Table = () => {
     return (
       <>
       <div className={styles.wrapper}>
