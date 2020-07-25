@@ -1,29 +1,31 @@
 import React from 'react';
-import styles from './HorizontalTimeline.module.css';
+import styles from './Timeline.module.css';
 import Header from "./Header";
 import Layout from "./Layout";
 import classNames from 'classnames';
+import CalculateDays from './CalculateDays';
+import TimelineList	from './TimelineList';
+import TimelineListItem from "./TimelineListItem";
 
 
-export default function HorizontalTimeline() {
+const Timeline = () => {
 
 	return (
+
 		<div className={styles.body}>
-			<Header className={styles.header}>
+		<Header className={styles.header}>
 				<h1>네이버 부스트캠프</h1>
 				<p>개발자의 지속 가능한 성장을 추구하는 학습 커뮤니티</p>
 			</Header>
 			<div className={styles.line}></div>
 			<div className={styles.timeline}>
-				<ol className={styles.order}>
+		<TimelineList />
+		{/*
+					<ol className={styles.order}>
+
 					<li className={styles.list}>
 						<div className={classNames({[styles.card]: true, [styles.card_end]: true})}>
-							접수기간<span className={styles.status_end}>마감</span><div className={styles.content}>6.1 11:00 ~ 6.30 23:59</div>
-						</div>
-					</li>
-					<li className={styles.list}>
-						<div className={classNames({[styles.card]: true, [styles.card_end]: true})}>
-							1차<span className={styles.status_end}>마감</span><div className={styles.content}>온라인 코딩테스트<br/>7.4</div>
+							1차<span className={styles.status_end}>마감</span><div className={styles.content}>온라인 코딩테스트<br/>감</div>
 						</div>
 					</li>
 					<li className={styles.list}>
@@ -49,16 +51,11 @@ export default function HorizontalTimeline() {
 					<li>
 					</li>
 				</ol>
+*/}
+	</div>
+	</div>
 
-				{/*<div className={styles.arrows}>*/}
-				{/*	<button className={styles.prev}>*/}
-				{/*	<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow" />*/}
-				{/*	</button>*/}
-				{/*	<button className={styles.next}>*/}
-				{/*	<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow" />*/}
-				{/*	</button>*/}
-				{/*</div>*/}
-			</div>
-		</div>
 	);
 }
+
+export default Timeline;
