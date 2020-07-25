@@ -4,6 +4,62 @@ import Header from "./Header";
 import Layout from "./Layout";
 import classNames from 'classnames';
 
+export function TimeLineList() {
+
+	const dataList = [
+			{
+				date_title: "접수기간",
+				status_end: "마감",
+				content: '6.1 11:00 ~ 6.30 23:59',
+				status_end_class: 'statue_end'
+			},
+			{
+				date_title: "접수기간",
+				status_end: "마감",
+				content: '6.1 11:00 ~ 6.30 23:59',
+				status_end_class: 'statue_end'
+			},{
+				date_title: "접수기간",
+				status_end: "마감",
+				content: '6.1 11:00 ~ 6.30 23:59',
+				status_end_class: 'statue'
+			},{
+				date_title: "접수기간",
+				status_end: "마감",
+				content: '6.1 11:00 ~ 6.30 23:59',
+				status_end_class: 'statue'
+			},{
+				date_title: "접수기간",
+				status_end: "마감",
+				content: '6.1 11:00 ~ 6.30 23:59',
+				status_end_class: 'statue_edu'
+			},{
+				date_title: "접수기간",
+				status_end: "마감",
+				content: '6.1 11:00 ~ 6.30 23:59',
+				status_end_class: 'statue_edu'
+			},
+		]
+
+	return (
+		<>
+			{dataList.map((v, idx) => <TimeLineListItem data={v} key={idx}/>)}
+		</>
+	)
+}
+
+export function TimeLineListItem ({data}) {
+	// date 넘어가면 status_end
+	return (
+			<li className={styles.list}>
+				<div className={classNames({[styles.card]: true, [styles.card_edu]: true})}>
+					{data.date_title}
+					<span className={styles[data.statue_end_class]}></span>
+					<div className={styles.content}>{data.content}</div>
+				</div>
+			</li>
+	)
+}
 
 export default function HorizontalTimeline() {
 
@@ -15,40 +71,8 @@ export default function HorizontalTimeline() {
 			</Header>
 			<div className={styles.line}></div>
 			<div className={styles.timeline}>
-				<ol className={styles.order}>
-					<li className={styles.list}>
-						<div className={classNames({[styles.card]: true, [styles.card_end]: true})}>
-							접수기간<span className={styles.status_end}>마감</span><div className={styles.content}>6.1 11:00 ~ 6.30 23:59</div>
-						</div>
-					</li>
-					<li className={styles.list}>
-						<div className={classNames({[styles.card]: true, [styles.card_end]: true})}>
-							1차<span className={styles.status_end}>마감</span><div className={styles.content}>온라인 코딩테스트<br/>7.4</div>
-						</div>
-					</li>
-					<li className={styles.list}>
-						<div className={classNames({[styles.card]: true, [styles.card_now]: true})}>
-							2차<span className={styles.status}>모집중</span><div className={styles.content}>온라인 코딩테스트<br/>7.4</div>
-						</div>
-					</li>
-					<li className={styles.list}>
-						<div className={classNames({[styles.card]: true, [styles.card_now]: true})}>
-							최종 합격자 발표<span className={styles.status}>모집중</span><div className={styles.content}>수료자 선발<br/>7.20</div>
-						</div>
-					</li>
-					<li className={styles.list}>
-						<div className={classNames({[styles.card]: true, [styles.card_edu]: true})}>
-							부스트캠프 챌린지<span className={styles.status_edu}>D-43</span><div className={styles.content}>수료자 선발<br/>7.27 ~ 8.21</div>
-						</div>
-					</li>
-					<li className={styles.list}>
-						<div className={classNames({[styles.card]: true, [styles.card_edu]: true})}>
-							부스트캠프 멤버쉽<span className={styles.status_edu}>D-55</span><div className={styles.content}>챌린지 과정 수료자만<br/>8.31 ~ 12.21</div>
-						</div>
-					</li>
-					<li>
-					</li>
-				</ol>
+				<TimeLineList />
+
 
 				{/*<div className={styles.arrows}>*/}
 				{/*	<button className={styles.prev}>*/}

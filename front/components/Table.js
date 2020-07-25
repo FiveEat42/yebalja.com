@@ -57,6 +57,20 @@ const Table = () => {
 
             {/*42Seoul*/}
 
+  {/*
+    cell1 : 기수당 ...
+    cell2 : 최대 2
+    cellbadges: [
+      {name : Aptitude,
+      isTrue: true},
+      {name : Aptitude,
+      isTrue: true},{name : Aptitude,
+      isTrue: true}
+      ,{name : Aptitude,
+      isTrue: true}
+
+    ]
+  */}
 
               <tr className={styles.row}>
                 <td className={styles.cell}><Link href="/ftseoul"><a className={styles.cellheader}>42Seoul</a></Link></td>
@@ -69,6 +83,7 @@ const Table = () => {
                 {/*<td className={styles.cell}>강남구 개포디지털혁신파크</td>*/}
                 <td className={styles.cell}>
                   <div className={styles.cellbadges}>
+    {/*cellbadges.map(v => <div styles[v.isTrue]>{v.name}</div>) */}
                     <div className={styles.true}><Aptitude/></div>
                     <div className={styles.false}><CodingTest/></div>
                     <div className={styles.false}><Interview/></div>
