@@ -8,7 +8,11 @@ import Interview from './BadgeInterview';
 import Tryout from './BadgeTryout';
 import Header from "./Header";
 
+import { useSelector } from 'react-redux';
+
 const Table = () => {
+  const user = useSelector((state) => state.user.name);
+
     return (
       <>
       <div className={styles.wrapper}>
@@ -17,7 +21,7 @@ const Table = () => {
         <div className={styles.badges}>
             <div className={styles.badge}>
               <img src={require('../src/image/tryout badge.png')} width="27"/>
-              <span className={styles.tooltip}>사전집중교육</span>
+              <span className={styles.tooltip}>사전집중교육 {user}</span>
             </div>
 
             <div className={styles.badge}>
