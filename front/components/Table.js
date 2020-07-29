@@ -8,17 +8,20 @@ import Interview from './BadgeInterview';
 import Tryout from './BadgeTryout';
 import Header from "./Header";
 
+import { useSelector } from 'react-redux';
+
 const Table = () => {
+  const user = useSelector((state) => state.user.name);
+
     return (
       <>
       <div className={styles.wrapper}>
-
         {/* Badge Description*/}
 
         <div className={styles.badges}>
             <div className={styles.badge}>
               <img src={require('../src/image/tryout badge.png')} width="27"/>
-              <span className={styles.tooltip}>사전집중교육</span>
+              <span className={styles.tooltip}>사전집중교육 {user}</span>
             </div>
 
             <div className={styles.badge}>
@@ -59,7 +62,7 @@ const Table = () => {
 
 
               <tr className={styles.row}>
-                <td className={styles.cell}><Link href="/ftseoul"><a className={styles.cellheader}>42Seoul</a></Link></td>
+                <td className={styles.cell}><Link href="/ftseoul"><a className={styles.cellheader}>42 Seoul</a></Link></td>
                 {/*<td className={styles.cell}>이노베이션 아카데미</td>*/}
                 {/*<td className={styles.cell}>1차 온라인테스트 <br/> 2차 4주 집중교육</td>*/}
                 {/*<td className={styles.cell}>해당년도 <br/> 1월 1일 기준 <br/>성인</td>*/}
