@@ -1,6 +1,6 @@
-export default function CalculateDays({props}) {
+export default function CalculateDays() {
   let currentdate = new Date();
-  let targetdate = new Date({props});
+  let targetdate = new Date('2020-07-30');
   {/* new Date()함수는 현재 날짜를 생성 */}
   {/* new Date(`MM/DD/YY`)는 입력한 날짜를 생성 */}
   {/* +는 js언어로 integer로 변환하라는 명령어의 약자 */}
