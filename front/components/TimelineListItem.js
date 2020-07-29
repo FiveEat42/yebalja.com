@@ -6,7 +6,7 @@ import classNames from 'classnames';
 export default function TimelineListItem({data}) {
 		return (
 				<li className={styles.list}>
-					<div className=classNames({[styles.card]: true, [styles.{data.card_style}: true]})>
+					<div className={styles.card}>
 						{data.name}
 						<span className={styles.status_end}>
 							<CalculateDays props={data.targetdate} />
