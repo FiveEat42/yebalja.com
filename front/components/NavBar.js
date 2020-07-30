@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './NavBar.module.css'
 import Link from 'next/link';
 import Navbar from "react-bootstrap/Navbar";
@@ -72,26 +73,22 @@ const NavBar = () => {
 			date: "D-9",
 		},
 	]
-		return (
-			<div>
-				<Navbar collapseOnSelect expand="lg" variant="dark" className={styles.navbarBg}>
-					<Navbar.Brand></Navbar.Brand>
-					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-					<Navbar.Collapse id="responsive-navbar-nav">
-						<Nav className="mr-auto">
-
-							{navList.map((v) => <NavItem data={v} key={v.program}/>)}
-
-						</Nav>
-						<Form inline className={styles.rolling}>
-								<div>
-
-									{noticeList.map((v) => <NoticeItem data={v} key={v.title}/>)}
-
-								</div>
-						</Form>
-					</Navbar.Collapse>
-				</Navbar>
+	return (
+		<div>
+			<Navbar collapseOnSelect expand="lg" variant="dark" className={styles.navbarBg}>
+				<Navbar.Brand></Navbar.Brand>
+				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+				<Navbar.Collapse id="responsive-navbar-nav">
+					<Nav className="mr-auto">
+						{navList.map((v) => <NavItem data={v} key={v.program}/>)}
+					</Nav>
+					<Form inline className={styles.rolling}>
+						<div>
+							{noticeList.map((v) => <NoticeItem data={v} key={v.title}/>)}
+						</div>
+					</Form>
+				</Navbar.Collapse>
+			</Navbar>
 		</div>
 	);
 };
