@@ -128,7 +128,7 @@ function ProgramList() {
                 },
                 {
                     title: "선발",
-                    date: "SW적성진단 : 6/06 <br/> 현장 인터뷰 : 6/17 ~ 6/19",
+                    date: "SW적성진단 : 6/06  </br> 현장 인터뷰 : 6/17 ~ 6/19",
 					gridColumn: "155/175",
 					backgroundColor: "#54c6f9",
 					zIndex: "2",
@@ -279,11 +279,31 @@ function StepList({data}) {
 function StepListItem({data}) {
     return (
         <>
-            <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true})} 
-            style={{ gridColumn: data.gridColumn, backgroundColor: data.backgroundColor, zIndex: data.zIndex}}>
-                <span className={styles.calendar_entry__date}>{data.date}</span>
-                <span className={styles.calendar_entry__title}>{data.title}</span>
-            </li>
+            {
+                (() => {
+                    if (data.oversize_list === 0 && data.next_year === 0) 
+                        return (
+                            <li className={classNames({[styles.calendar_entry]: true})} style={{ gridColumn: data.gridColumn, backgroundColor: data.backgroundColor, zIndex: data.zIndex}}>
+                                <span className={styles.calendar_entry__date} dangerouslySetInnerHTML={{__html: data.date}}></span>
+                                <span className={styles.calendar_entry__title}>{data.title}</span>
+                            </li>
+                        );
+                    else if (data.oversize_list === 1 && data.next_year === 0) 
+                        return (
+                            <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true})} style={{ gridColumn: data.gridColumn, backgroundColor: data.backgroundColor, zIndex: data.zIndex}}>
+                                <span className={styles.calendar_entry__date} dangerouslySetInnerHTML={{__html: data.date}}></span>
+                                <span className={styles.calendar_entry__title}>{data.title}</span>
+                            </li>
+                        );
+                    else if (data.oversize_list === 1 && data.next_year === 1) 
+                        return (
+                            <li className={classNames({[styles.calendar_entry]: true, [styles.oversize_list]: true, [styles.next_year]: true})} style={{ gridColumn: data.gridColumn, backgroundColor: data.backgroundColor, zIndex: data.zIndex}}>
+                                <span className={styles.calendar_entry__date} dangerouslySetInnerHTML={{__html: data.date}}></span>
+                                <span className={styles.calendar_entry__title}>{data.title}</span>
+                            </li>
+                        );
+                })()
+            }
         </>
     )
 }
