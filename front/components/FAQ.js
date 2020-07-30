@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './FAQ.module.css';
 import ListGroup from "react-bootstrap/ListGroup"
 import Tab from "react-bootstrap/Tab"
@@ -5,28 +6,28 @@ import Tabs from "react-bootstrap/Tabs"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
-export function QnA ({data}) {
+function QnA ({data}) {
     return (
         <>
-            <strong>{data.q}</strong>
-            <br />{data.a}
+            <strong>Q. {data.q}</strong>
+            <br />A. {data.a}
             <br /><br />
         </>
     );
 };
 
-export function FaqItem ({data}) {
+function FaqItem (data, key) {
     return (
-        <Tab.Pane eventKey={data}>
-            {data.subCategory.qna.map((v, idx) => <QnA data={v} key={idx}/>)}
+        <Tab.Pane eventKey={key}>
+            {data.subCategory.qna.map((v) => <QnA data={v} key={v.idx} />)}
         </Tab.Pane>
     );
-};
+}
 
-export function FaqTab ({data}) {
-	// date 넘어가면 status_end
+function FaqTab (data, eventKey) {
+    console.log(data);
 	return (
-        <Tab title={data.category}>
+        <Tab eventKey={eventKey} title={data.category}>
             <Row className="justify-content-md-center">
                 <Tab.Container id="list-group-tabs-example" defaultActiveKey={data.subCategory.title}>
                     <Col md={3}>
@@ -36,14 +37,15 @@ export function FaqTab ({data}) {
                     </Col>
                     <Col md={9} className={styles.content}>
                         <Tab.Content>
-                            {data.subCategory.map((v, idx) => <FaqItem subCategory={v} key={idx} />)}
+                            {data.map((v, eventKey) => <FaqItem data={v} key={eventKey} />)}
                         </Tab.Content>
                     </Col>
                 </Tab.Container>
             </Row>
         </Tab>
-	)
+	);
 }
+
 
 export default function Faq() {
 
@@ -52,6 +54,7 @@ export default function Faq() {
             category: "지원/선발",
             subCategory: [
                 {
+                    idx: "1",
                     title: "지원자격",
                     qna: [
                         {
@@ -64,6 +67,7 @@ export default function Faq() {
                         },
                     ]
                 },{
+                    idx: "2",
                     title: "모집규모 및 분야",
                     qna: [
                         {
@@ -76,6 +80,7 @@ export default function Faq() {
                         },
                     ]
                 },{
+                    idx: "3",
                     title: "선발과정",
                     qna: [
                         {
@@ -93,6 +98,7 @@ export default function Faq() {
             category: "교육과정",
             subCategory: [
                 {
+                    idx: "4",
                     title: "교육내용",
                     qna: [
                         {
@@ -102,6 +108,7 @@ export default function Faq() {
                     ]
                 },
                {
+                    idx: "5",
                     title: "교육시간 및 장소",
                     qna: [
                         {
@@ -121,6 +128,7 @@ export default function Faq() {
             category: "기타",
             subCategory: [
                 {
+                    idx: "6",
                     title: "교육비용",
                     qna: [
                         {
@@ -130,6 +138,7 @@ export default function Faq() {
                     ]
                 },
                 {
+                    idx: "7",
                     title: "교육장비",
                     qna: [
                         {
@@ -141,11 +150,22 @@ export default function Faq() {
             ],
         },
     ]
-    console.log(dataList[0]);
-    return (
+
+    // const titleList = ['지원/선발', '교육과정', '기타'];
+    const type = ['home','profile','contact'];
+
+  return (
+
+    <div className={styles.firstTab}>
+       <Tabs defaultActiveKey="home" transition={false} id="noanim-tab-example">
+        {dataList.map((v, idx) => <FaqTab data={v} key={idx} eventKey={type[idx]}/>)}
+
+    {/* return (
         <div className={styles.firstTab}>
-            <Tabs defaultActiveKey="home" transition={false} id="noanim-tab-example" className={styles.menu}>
-                {dataList.map((v, idx) => <FaqTab data={v} key={idx}/>)}
+            <Tabs defaultActiveKey="1" transition={false} id="noanim-tab-example" className={styles.menu}>
+                {console.log({dataList})}
+                {console.log("b")}
+                <FaqMid/> */}
 
                 {/* <Tab eventKey="home" title="지원/선발">
                     <Row className="justify-content-md-center">
@@ -170,8 +190,6 @@ export default function Faq() {
                             <Col md={9} className={styles.content}>
                                 <Tab.Content>
                                     <Tab.Pane eventKey="#link1-1">
-                                    {dataList.map((v, idx) => <QnA data={v} key={idx}/>)}
-                                    {data.date_title}
                                     <strong>Q.웹이나 iOS가 아닌 다른 분야의 개발자로 경력이 있을 경우 지원이 가능한가요?</strong>
                                     <br />A.분야에 관계없이 2년 이상의 현업 개발 경력을 가진 분은 지원이 불가능합니다.
                                     <br /><br />
