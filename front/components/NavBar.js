@@ -56,7 +56,7 @@ const NavBar = () => {
       },{
         program: "멋쟁이사자처럼",
         href: "/likelion"
-      },
+      }
   ]
   const noticeList = [
     {
@@ -71,7 +71,7 @@ const NavBar = () => {
       title: "예발자닷컴 오픈",
       href: "https://yebalja.com",
       date: "D-9",
-    },
+    }
   ]
   return (
     <div>
