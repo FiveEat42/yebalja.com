@@ -5,20 +5,20 @@ import TextLogo from "./TextLogo";
 import NavBar from "./NavBar"
 
 const Layout = ({children}) => {
-	return (
-		<div>
-			<div>
-				<TextLogo/>
-				<NavBar />
-					{children}
-				<Footer />
-			</div>
-		</div>
-	)
+  return (
+    <div>
+      <div>
+        <TextLogo/>
+        <NavBar />
+          {children}
+        <Footer />
+      </div>
+    </div>
+  )
 }
 
 Layout.propTypes = {
-	children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;
