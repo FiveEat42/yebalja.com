@@ -11,7 +11,7 @@ const Boostcamp = () => {
 
     return (
         <Layout>
-            <Timeline/>
+            <Timeline program="boostcamp"/>
             <Header>
                 <h3>자주 묻는 질문</h3>
                 <p>항목별로 더 자세한 내용을 알아보세요</p>

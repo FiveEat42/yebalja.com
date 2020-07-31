@@ -1,199 +1,187 @@
 
 /*@import url(//fonts.googleapis.com/earlyaccess/nanumBarunGothic.css); .nanumBarunGothic * { font-family: 'Nanum BarunGothic', sans-serif; }*/
 @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype'); } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype') } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype'); } .nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
+.body * {
+	font-family: "NanumBarunGothic";
+}
 
 .body {
-  font: normal 16px/1.5 "NanumBarunGothic";
-  background: #F2F8FF;
-  margin: 0 auto;
-  width: 100%;
-  margin-top: 0px;
-  padding-top: 10px;
-  padding-bottom: 100px;
+	font: normal 16px/1.5 "NanumBarunGothic";
+	background: #F2F8FF;
+	margin: 0 auto;
+	width: 100%;
+	margin-top: 0px;
+	padding-top: 10px;
+	padding-bottom: 100px;
 }
 
-.body * {
-  font-family: "NanumBarunGothic";
-}
+
 
 
 /*D-Day part*/
 .status_end, .status, .status_edu{
-  border-radius: 5px;
-  width: 50px;
-  padding: 3px;
-  font-size: 12px;
-  font-weight: 700;
-  margin-left: 10px;
-  text-align: center;
-  background-color: white;
-  display: inline-block;
-  position: absolute;
-  top: 16px;
+	border-radius: 5px;
+	width: 50px;
+	padding: 3px;
+	font-size: 12px;
+	font-weight: 700;
+	margin-left: 10px;
+	text-align: center;
+	background-color: white;
+	display: inline-block;
+	margin-top: 5px;
+	/*position: absolute;*/
+	/*top: 16px;*/
 }
 
 .status_end {
-  color: #89A1C3;
+	color: #89A1C3;
 }
 
 .status {
-  color: #66D1FF;
+	color: #66D1FF;
 }
 
 .status_edu {
-  color: #4A91F5;
+	color: #4A91F5;
 }
 /*-----------------------------------------------------------------------*/
 
 
 /*timeline margin*/
 .timeline {
-  /*white-space: nowrap;*/
-  /*overflow-x: hidden;*/
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 92%;
-  margin-top: 100px;
+	/*white-space: nowrap;*/
+	/*overflow-x: hidden;*/
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 92%;
+	margin-top: 100px;
 }
+
 
 /*-----------------------------------------------------------------------*/
-
-.timeline .order {
-  font-size: 0;
-  /*width: 100vw;*/
-  padding: 140px 0;
-  /*transition: all 1s;*/
-}
-
 .content {
-  font-weight: 400;
-  font-size: 13px;
+	font-weight: 400;
+	font-size: 13px;
 }
-
-
-
 
 
 /*timeline line*/
 .line {
-  position: absolute;
-  /*display: inline-block;*/
-  width: 100%;
-  height: 7px;
-  background: white;
-  top: 603.5px;
+	position: absolute;
+	/*display: inline-block;*/
+	width: 100%;
+	height: 7px;
+	background: white;
+	top: 603.5px;
 }
 
 
-.timeline ol li {
-  position: relative;
-  display: inline-block;
-  list-style-type: none;
 
-  /*width: 160px;*/
-  /*height: 3px;*/
-  /*background: #fff;*/
-}
 /*-----------------------------------------------------------------------*/
 
 
 
-
-
 /*dot*/
-.timeline ol li:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: calc(100% + 1px);
-  bottom: 0;
-  width: 12px;
-  height: 12px;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  border-width: 3px;
-  border-style: solid;
+.dot, .dot_end, .dot_edu {
+	content: '';
+	/*position: absolute;*/
+	/*top: 50%;*/
+	/*left: calc(100% + 1px);*/
+	/*bottom: 0;*/
+	width: 12px;
+	height: 12px;
+	/*transform: translateY(-50%);*/
+	border-radius: 50%;
+	border-width: 3px;
+	border-style: solid;
+	background: white;
+	left: 50%;
 }
 
-.timeline ol li:nth-child(1)::after, .timeline ol li:nth-child(2)::after {
-  background: white;
-  border-color: #DFE8F4;
+.dot {
+	border-color: #66D1FF;
 }
-.timeline ol li:nth-child(3)::after, .timeline ol li:nth-child(4)::after {
-  background: white;
-  border-color: #66D1FF;
+
+.dot_end {
+	border-color: #DFE8F4;
 }
-.timeline ol li:nth-child(5)::after, .timeline ol li:nth-child(6)::after {
-  background: white;
-  border-color: #4A91F5;
+
+.dot_edu{
+	border-color: #4A91F5;
 }
+
 /*-----------------------------------------------------------------------*/
 
 
 
 
 /*card*/
-.timeline ol li .card {
-  position: absolute;
-  left: calc(100% + 6px); /* dot 보다 7px 오른쪽에 위치 */
-  width: 320px;
-  height: 110px;
-  padding: 15px;
-  padding-left: 25px;
-  font-size: 1.1rem;
-  white-space: normal;
-  font-weight: 600;
-  font-family: 'NanumBarunGothic';
-  /*box-shadow: 2px 2px 3px 1px #DBE4EE;*/
-  box-shadow: 10px 10px 20px 5px #cdd2d9;
+.timeline .card {
+	/*position: absolute;*/
+	/*left: calc(100% + 6px); !* dot 보다 7px 오른쪽에 위치 *!*/
+	width: 320px;
+	height: 110px;
+	padding: 15px;
+	padding-left: 25px;
+	font-size: 1.1rem;
+	white-space: normal;
+	font-weight: 600;
+	font-family: 'NanumBarunGothic';
+	/*box-shadow: 2px 2px 3px 1px #DBE4EE;*/
+	box-shadow: 10px 10px 20px 5px #cdd2d9;
+	margin: 0;
 }
 
-.timeline ol li .card:nth-child(odd) {
-
-  border-radius: 12px 12px 12px 0;
+/*.timeline ol li .card:nth-child(odd) */
+.timeline .box .up {
+	border-radius: 12px 12px 12px 0;
+	margin: 0;
 }
 
-.timeline ol li:nth-child(even) .card {
-  border-radius: 0 12px 12px 12px;
+/*.timeline ol li:nth-child(even) .card */
+.two, .four, .six {
+	border-radius: 0 12px 12px 12px;
+	margin: 0;
 }
 
 .card_end {
-  background: #DFE8F4;
-  color: #89A1C3;
+	background: #DFE8F4;
+	color: #89A1C3;
 }
 
 .card_now {
-  background: #66D1FF;
-  color: white;
+	background: #66D1FF;
+	color: white;
 }
 
 .card_edu {
-  background: #4A91F5;
-  color: white;
+	background: #4A91F5;
+	color: white;
 }
 /*-----------------------------------------------------------------------*/
 
 
 
-/*card position*/
-.timeline ol li:nth-child(1) {
-  left: -3%;
-}
-.timeline ol li:nth-child(2) {
-  left: 13%;
-}
-.timeline ol li:nth-child(3) {
-  left: 29%;
-}
-.timeline ol li:nth-child(4) {
-  left: 45%;
-}
-.timeline ol li:nth-child(5) {
-  left: 61%;
-}
-.timeline ol li:nth-child(6) {
-  left: 77%;
-}
+/*!*card position*!*/
+/*.timeline ol li .one{*/
+/*	left: -3%;*/
+/*}*/
+/*.timeline ol li .two {*/
+/*	left: 13%;*/
+/*}*/
+/*.timeline ol li .three {*/
+/*	left: 29%;*/
+/*}*/
+/*.timeline ol li .four {*/
+/*	left: 45%;*/
+/*}*/
+/*.timeline ol li .five {*/
+/*	left: 61%;*/
+/*}*/
+/*.timeline ol li .six {*/
+/*	left: 77%;*/
+/*}*/
 /*-----------------------------------------------------------------------*/
 
 
@@ -201,54 +189,61 @@
 
 
 /*arrow*/
-.timeline ol li .card::before {
-   content: '';
-   position: absolute;
-   top: 100%;
-   left: 0;
-   width: 0;
-   height: 0;
-   border-style: solid;
- }
+.timeline box::before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
 
 
 /* ODD */
-.timeline ol li:nth-child(odd) .card {
-  top: -16px;
-  transform: translateY(-115%);
+/*.timeline ol li:nth-child(odd) .card {*/
+.up {
+	top: -16px;
+	/*transform: translateY(-115%);*/
 }
 
-.timeline ol li:nth-child(odd) .card::before {
-  top: 96%;
-  border-width: 10px 10px 0 0;
+/*.timeline ol li:nth-child(odd) .card::before {*/
+.up::before {
+top: 96%;
+border-width: 10px 10px 0 0;
 }
 
-.timeline ol li:nth-child(1) .card::before {
-  border-color: #DFE8F4 transparent transparent transparent;
+/*.timeline ol li:nth-child(1) .card::before {*/
+.timeline .up::before {
+border-color: #DFE8F4 transparent transparent transparent;
 }
 .timeline ol li:nth-child(3) .card::before {
-  border-color: #66D1FF transparent transparent transparent;
+	border-color: #66D1FF transparent transparent transparent;
 }
 .timeline ol li:nth-child(5) .card::before {
-  border-color: #4A91F5 transparent transparent transparent;
+	border-color: #4A91F5 transparent transparent transparent;
 }
 
 
 /* EVEN */
 
-.timeline ol li:nth-child(even) .card::before {
-  top: -5px;
-  border-width: 10px 0 0 10px;
+/*.timeline ol li:nth-child(even) .card::before {*/
+.down::before {
+	top: -5px;
+	border-width: 10px 0 0 10px;
 }
 
-.timeline ol li:nth-child(2) .card::before {
-  border-color: transparent transparent transparent #DFE8F4;
+/*.timeline ol li:nth-child(2) .card::before {*/
+.two::before {
+	border-color: transparent transparent transparent #DFE8F4;
 }
-.timeline ol li:nth-child(4) .card::before {
-  border-color: transparent transparent transparent #66D1FF;
+/*.timeline ol li:nth-child(4) .card::before {*/
+.four::before {
+	border-color: transparent transparent transparent #66D1FF;
 }
-.timeline ol li:nth-child(6) .card::before {
-  border-color: transparent transparent transparent #4A91F5;
+/*.timeline ol li:nth-child(6) .card::before {*/
+.six::before {
+	border-color: transparent transparent transparent #4A91F5;
 }
 
 /*-----------------------------------------------------------------------*/
@@ -257,8 +252,9 @@
 
 
 /* 라인에서 얼마나 떨어졌는지 */
-.timeline ol li:nth-child(even) .card {
-  top: calc(100% + 30px);
+/*.timeline ol li:nth-child(even) .card {*/
+.down {
+	/*top: calc(100% + 30px);*/
 }
 /*-----------------------------------------------------------------------*/
 
@@ -268,44 +264,44 @@
 
 /* 카드가 화면 밖으로 삐져나가는 것 방지 */
 @media screen and (max-width: 1300px) {
-  .timeline ol li .card {
-    width: 300px;
-  }
+	.timeline ol li .card {
+		width: 300px;
+	}
 }
 
 
 
 @media screen and (max-width: 1220px) {
-  .timeline ol li .card {
-    width: 280px;
-  }
+	.timeline ol li .card {
+		width: 280px;
+	}
 }
 
 
 
 
 @media screen and (max-width: 1150px) {
-  .timeline ol li .card {
-    width: 280px;
-  }
-  .timeline ol li:nth-child(1) {
-    left: 7%;
-  }
-  .timeline ol li:nth-child(2) {
-    left: 18%;
-  }
-  .timeline ol li:nth-child(3) {
-    left: 30%;
-  }
-  .timeline ol li:nth-child(4) {
-    left: 42%;
-  }
-  .timeline ol li:nth-child(5) {
-    left: 54%;
-  }
-  .timeline ol li:nth-child(6) {
-    left: 65%;
-  }
+	.timeline ol li .card {
+		width: 280px;
+	}
+	.timeline ol li:nth-child(1) {
+		left: 7%;
+	}
+	.timeline ol li:nth-child(2) {
+		left: 18%;
+	}
+	.timeline ol li:nth-child(3) {
+		left: 30%;
+	}
+	.timeline ol li:nth-child(4) {
+		left: 42%;
+	}
+	.timeline ol li:nth-child(5) {
+		left: 54%;
+	}
+	.timeline ol li:nth-child(6) {
+		left: 65%;
+	}
 }
 
 
@@ -355,108 +351,108 @@
 /* GENERAL MEDIA QUERIES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media screen and (max-width: 950px) {
-  .line {
-    display: none;
-  }
+	.line {
+		display: none;
+	}
 
-  .header .header {
-    margin-top: 0px;
-  }
+	.header .header {
+		margin-top: 0px;
+	}
 
-  .body {
-    padding-bottom: 50px;
-  }
+	.body {
+		padding-bottom: 50px;
+	}
 
-  .timeline {
-    margin-top: 20px;
-  }
+	.timeline {
+		margin-top: 20px;
+	}
 
-  .timeline .order {
-    padding: 0;
-  }
+	.timeline .order {
+		padding: 0;
+	}
 
 
 
-  .timeline ol li:nth-child(odd), .timeline ol li:nth-child(even) {
-    left: 0%;
-  }
+	.timeline ol li:nth-child(odd), .timeline ol li:nth-child(even) {
+		left: 0%;
+	}
 
-  .timeline ol,
-  .timeline ol li {
-    width: auto;
-  }
+	.timeline ol,
+	.timeline ol li {
+		width: auto;
+	}
 
-  .timeline ol {
-    padding: 0;
-    transform: none !important;
-  }
+	.timeline ol {
+		padding: 0;
+		transform: none !important;
+	}
 
-  .timeline ol li {
-    display: block;
-    /*height: auto;*/
-    background: transparent;
-  }
+	.timeline ol li {
+		display: block;
+		/*height: auto;*/
+		background: transparent;
+	}
 
-  .timeline ol li:nth-child(1) {
-    left: auto;
-  }
+	.timeline ol li:nth-child(1) {
+		left: auto;
+	}
 
-  .timeline ol li:first-child {
-    margin-top: 25px;
-  }
+	.timeline ol li:first-child {
+		margin-top: 25px;
+	}
 
-  .timeline ol li:not(:first-child) {
-    margin-left: auto;
-  }
+	.timeline ol li:not(:first-child) {
+		margin-left: auto;
+	}
 
-  .timeline ol li .card {
-    max-width: 400px;
-    width: 90%;
-    /*height: auto !important;*/
-    height: 100px;
-    margin: 0 auto 25px;
-    /*font-size: 16px;*/
-  }
+	.timeline ol li .card {
+		max-width: 400px;
+		width: 90%;
+		/*height: auto !important;*/
+		height: 100px;
+		margin: 0 auto 25px;
+		/*font-size: 16px;*/
+	}
 
-  .content {
-    font-size: 14px;
-  }
+	.content {
+		font-size: 14px;
+	}
 
-  .timeline ol li .card {
-    padding: 15px;
-    padding-left: 25px;
-    font-size: 1.2rem;
-  }
+	.timeline ol li .card {
+		padding: 15px;
+		padding-left: 25px;
+		font-size: 1.2rem;
+	}
 
-  .status_end, .status, .status_edu{
-    top: 12px;
-    font-size: 12px;
-  }
+	.status_end, .status, .status_edu{
+		top: 12px;
+		font-size: 12px;
+	}
 
-  .timeline ol li .card {
-    position: static;
-  }
+	.timeline ol li .card {
+		position: static;
+	}
 
-  .timeline ol li:nth-child(odd) .card {
-    transform: none;
-  }
+	.timeline ol li:nth-child(odd) .card {
+		transform: none;
+	}
 
-  .timeline ol li:nth-child(odd) .card::before,
-  .timeline ol li:nth-child(even) .card::before {
-    /*left: 50%;*/
-    /*top: 100%;*/
-    /*transform: translateX(-50%);*/
-    /*border: none;*/
-    /*border-left: 3px solid;*/
-    /*height: 25px;*/
-    /*color: white;*/
-    display: none;
-  }
+	.timeline ol li:nth-child(odd) .card::before,
+	.timeline ol li:nth-child(even) .card::before {
+		/*left: 50%;*/
+		/*top: 100%;*/
+		/*transform: translateX(-50%);*/
+		/*border: none;*/
+		/*border-left: 3px solid;*/
+		/*height: 25px;*/
+		/*color: white;*/
+		display: none;
+	}
 
-  .timeline ol li:last-child,
-  .timeline ol li:nth-last-child(2) .card::before,
-  .timeline ol li:not(:last-child)::after,
-  .timeline .arrows {
-    display: none;
-  }
+	.timeline ol li:last-child,
+	.timeline ol li:nth-last-child(2) .card::before,
+	.timeline ol li:not(:last-child)::after,
+	.timeline .arrows {
+		display: none;
+	}
 }

@@ -10,7 +10,7 @@ import Header from "./Header";
 
 import { useSelector } from 'react-redux';
 
-export function Table = () => {
+export default function Table() {
   const user = useSelector((state) => state.user.name);
 
     return (
