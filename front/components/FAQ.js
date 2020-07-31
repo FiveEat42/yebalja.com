@@ -162,17 +162,11 @@ export default function Faq() {
   return (
     <div className={styles.firstTab}>
       <Tabs defaultActiveKey={dataList[0].eventKey} transition={false}>
-        <Tab eventKey={dataList[0].eventKey} title={dataList[0].category}>
-          <FaqTab subList={dataList[0].subCategory} />
-        </Tab>
-
-        <Tab eventKey={dataList[1].eventKey} title={dataList[1].category}>
-          <FaqTab subList={dataList[1].subCategory} />
-        </Tab>
-
-        <Tab eventKey={dataList[2].eventKey} title={dataList[2].category}>
-          <FaqTab subList={dataList[2].subCategory} />
-        </Tab>
+        {dataList.map((v, idx) => (
+          <Tab eventKey={v.eventKey} title={v.category} key={idx}>
+            <FaqTab subList={v.subCategory} key={idx}/>
+          </Tab>
+        ))}
       </Tabs>
     </div>
   );
