@@ -117,7 +117,7 @@
 
 
 /*card*/
-.timeline .card {
+.card_now, .card_edu, .card_end {
 	/*position: absolute;*/
 	/*left: calc(100% + 6px); !* dot 보다 7px 오른쪽에 위치 *!*/
 	width: 320px;
@@ -133,14 +133,17 @@
 	margin: 0;
 }
 
+.timeline .up {
+	margin: 0;
+}
 /*.timeline ol li .card:nth-child(odd) */
-.timeline .box .up {
+.up_now, .up_edu, .up_end {
 	border-radius: 12px 12px 12px 0;
 	margin: 0;
 }
 
 /*.timeline ol li:nth-child(even) .card */
-.two, .four, .six {
+.down_now, .down_edu, .down_end {
 	border-radius: 0 12px 12px 12px;
 	margin: 0;
 }
@@ -202,25 +205,25 @@
 
 /* ODD */
 /*.timeline ol li:nth-child(odd) .card {*/
-.up {
+.up_now, .up_edu, .up_end {
 	top: -16px;
 	/*transform: translateY(-115%);*/
 }
 
 /*.timeline ol li:nth-child(odd) .card::before {*/
-.up::before {
+.up_now::before {
 top: 96%;
 border-width: 10px 10px 0 0;
 }
 
 /*.timeline ol li:nth-child(1) .card::before {*/
-.timeline .up::before {
+.timeline .up_end::before {
 border-color: #DFE8F4 transparent transparent transparent;
 }
-.timeline ol li:nth-child(3) .card::before {
+.timeline .up_now::before {
 	border-color: #66D1FF transparent transparent transparent;
 }
-.timeline ol li:nth-child(5) .card::before {
+.timeline .up_edu::before {
 	border-color: #4A91F5 transparent transparent transparent;
 }
 
@@ -234,15 +237,15 @@ border-color: #DFE8F4 transparent transparent transparent;
 }
 
 /*.timeline ol li:nth-child(2) .card::before {*/
-.two::before {
+.down_end::before {
 	border-color: transparent transparent transparent #DFE8F4;
 }
 /*.timeline ol li:nth-child(4) .card::before {*/
-.four::before {
+.down_now::before {
 	border-color: transparent transparent transparent #66D1FF;
 }
 /*.timeline ol li:nth-child(6) .card::before {*/
-.six::before {
+.down_edu::before {
 	border-color: transparent transparent transparent #4A91F5;
 }
 
@@ -264,7 +267,7 @@ border-color: #DFE8F4 transparent transparent transparent;
 
 /* 카드가 화면 밖으로 삐져나가는 것 방지 */
 @media screen and (max-width: 1300px) {
-	.timeline ol li .card {
+	.card_now, .card_edu, .card_end {
 		width: 300px;
 	}
 }
@@ -272,73 +275,11 @@ border-color: #DFE8F4 transparent transparent transparent;
 
 
 @media screen and (max-width: 1220px) {
-	.timeline ol li .card {
+	.card_now, .card_edu, .card_end {
 		width: 280px;
 	}
 }
 
-
-
-
-@media screen and (max-width: 1150px) {
-	.timeline ol li .card {
-		width: 280px;
-	}
-	.timeline ol li:nth-child(1) {
-		left: 7%;
-	}
-	.timeline ol li:nth-child(2) {
-		left: 18%;
-	}
-	.timeline ol li:nth-child(3) {
-		left: 30%;
-	}
-	.timeline ol li:nth-child(4) {
-		left: 42%;
-	}
-	.timeline ol li:nth-child(5) {
-		left: 54%;
-	}
-	.timeline ol li:nth-child(6) {
-		left: 65%;
-	}
-}
-
-
-/*@media screen and (max-width: 790px) {*/
-/*  .timeline ol li .card {*/
-/*    padding: 12px;*/
-/*    padding-left: 20px;*/
-/*    font-size: 0.9rem;*/
-/*  }*/
-
-/*  .status_end, .status, .status_edu{*/
-/*    top: 12px;*/
-/*    font-size: 10px;*/
-/*  }*/
-
-/*  .timeline ol li .card {*/
-/*    width: 250px;*/
-/*  }*/
-/*  .timeline ol li:nth-child(1) {*/
-/*    left: 10%;*/
-/*  }*/
-/*  .timeline ol li:nth-child(2) {*/
-/*    left: 20%;*/
-/*  }*/
-/*  .timeline ol li:nth-child(3) {*/
-/*    left: 29%;*/
-/*  }*/
-/*  .timeline ol li:nth-child(4) {*/
-/*    left: 37%;*/
-/*  }*/
-/*  .timeline ol li:nth-child(5) {*/
-/*    left: 46%;*/
-/*  }*/
-/*  .timeline ol li:nth-child(6) {*/
-/*    left: 56%;*/
-/*  }*/
-/*}*/
 
 
 
@@ -351,7 +292,7 @@ border-color: #DFE8F4 transparent transparent transparent;
 /* GENERAL MEDIA QUERIES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media screen and (max-width: 950px) {
-	.line {
+	.line, .dot_now, .dot_edu, .dot_end {
 		display: none;
 	}
 
@@ -367,70 +308,34 @@ border-color: #DFE8F4 transparent transparent transparent;
 		margin-top: 20px;
 	}
 
-	.timeline .order {
-		padding: 0;
-	}
-
-
-
-	.timeline ol li:nth-child(odd), .timeline ol li:nth-child(even) {
-		left: 0%;
-	}
-
-	.timeline ol,
-	.timeline ol li {
-		width: auto;
-	}
-
 	.timeline ol {
 		padding: 0;
 		transform: none !important;
 	}
 
-	.timeline ol li {
-		display: block;
-		/*height: auto;*/
-		background: transparent;
-	}
-
-	.timeline ol li:nth-child(1) {
-		left: auto;
-	}
-
-	.timeline ol li:first-child {
+	.card_now:first-child, .card_end:first-child {
 		margin-top: 25px;
 	}
 
-	.timeline ol li:not(:first-child) {
-		margin-left: auto;
-	}
-
-	.timeline ol li .card {
+	.card_now, .card_edu, .card_end {
 		max-width: 400px;
 		width: 90%;
-		/*height: auto !important;*/
 		height: 100px;
 		margin: 0 auto 25px;
-		/*font-size: 16px;*/
+		padding: 15px;
+		padding-left: 25px;
+		font-size: 1.2rem;
+		position: static;
+		border-radius: 12px;
 	}
 
 	.content {
 		font-size: 14px;
 	}
 
-	.timeline ol li .card {
-		padding: 15px;
-		padding-left: 25px;
-		font-size: 1.2rem;
-	}
-
 	.status_end, .status, .status_edu{
 		top: 12px;
 		font-size: 12px;
-	}
-
-	.timeline ol li .card {
-		position: static;
 	}
 
 	.timeline ol li:nth-child(odd) .card {
