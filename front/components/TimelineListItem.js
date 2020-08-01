@@ -2,7 +2,7 @@ import styles from "./Timeline.module.css";
 import TimelineList from './TimelineList';
 import classNames from 'classnames';
 
-export default function TimelineListItem({data}) {
+export default function TimelineListItem({data, id}) {
   {/* edu인지 recruit인지 구분 */}
   let type;
   if (data.edu == `true`) {
@@ -17,7 +17,7 @@ export default function TimelineListItem({data}) {
 
   let updown;
   {/* 카드가 위/아래 중 어디에 위치할지 */}
-  if (data.id % 2 == 1) {
+  if (id % 2 == 0) {
     updown = `up_${type}`;
   } else {
     updown = `down_${type}`;
@@ -40,8 +40,12 @@ export default function TimelineListItem({data}) {
     card_type = 'card_end';
     status = 'status_end';
     dot = 'dot_end';
+    if (updown == 'up_recruit' || updown == 'up_edu') {
+      updown = 'up_end';
+    } else {
+      updown = 'down_end';
+    }
   }
-
 
   {/* 시작일과 마감일로 기간 표현하기 */}
   let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
@@ -52,11 +56,11 @@ export default function TimelineListItem({data}) {
   } else {
     period = `${startdate} ~ ${enddate}`;
   }
-
+  console.log(card_type);
+console.log(updown);
   return (
-    <li className={styles.box}>
-      <div className={styles[dot]}></div>
-      <div className={classNames({[styles[card_type]]: true, [styles[updown]]: true})}>
+    <li className={styles.list}>
+      <div className={classNames({[styles[card_type]]: true, [styles.card]: true, [styles[updown]]: true})}>
         {data.name}
         <span className={styles[status]}>
           {status_content}
