@@ -56,8 +56,8 @@ export default function TimelineListItem({data, id}) {
   } else {
     period = `${startdate} ~ ${enddate}`;
   }
-  console.log(card_type);
-console.log(updown);
+
+
   return (
     <li className={styles.list}>
       <div className={classNames({[styles[card_type]]: true, [styles.card]: true, [styles[updown]]: true})}>

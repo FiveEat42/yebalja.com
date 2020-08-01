@@ -151,11 +151,7 @@
   font-weight: 600;
   font-family: 'NanumBarunGothic';
   /*box-shadow: 2px 2px 3px 1px #DBE4EE;*/
-  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.2);
-}
-
-.timeline ol li .card box-shadow {
-  mix-blend-mode: multiply;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.1);
 }
 
 .timeline ol li .card:nth-child(odd) {
