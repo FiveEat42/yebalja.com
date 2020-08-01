@@ -5,7 +5,7 @@ export default function TimelineList({program}) {
     boostcamp: [
       {
         id: `1`,
-        type: 'now',
+        edu: `false`,
         name: '접수기간',
         description: '4기 서류지원',
         startdate: '2020-06-01',
@@ -13,7 +13,7 @@ export default function TimelineList({program}) {
       },
       {
         id: `2`,
-        type: 'now',
+        edu: 'false',
         name: '1차',
         description: '온라인 코딩테스트',
         startdate: '2020-07-04',
@@ -21,7 +21,7 @@ export default function TimelineList({program}) {
       },
       {
         id: `3`,
-          type: 'now',
+        edu: 'false',
         name: '2차',
         description: '온라인 코딩테스트',
         startdate: '2020-07-11',
@@ -29,25 +29,25 @@ export default function TimelineList({program}) {
       },
       {
         id: `4`,
-        type: 'now',
+        edu: 'false',
         name: '최종 합격자 발표',
-        description: '부스트캠프 챌린지 참가 자격 부여',
+        description: '부스트캠프 챌린지 합격',
         startdate: '2020-07-20',
         enddate: '2020-07-20',
       },
       {
         id: `5`,
-        type: 'edu',
+        edu: 'true',
         name: '부스트캠프 챌린지',
-        description: '수료자 중에서 합격자 선발',
+        description: '수료자 중에서 선발',
         startdate: '2020-07-27',
         enddate: '2020-08-21',
       },
       {
         id: `6`,
-        type: 'edu',
+        edu: 'true',
         name: '부스트캠프 멤버쉽',
-        description: '챌린지 합격자만 멤버쉽 참가 자격 부여',
+        description: '선발자만 부스트캠프 멤버쉽 참가 가능',
         startdate: '2020-08-31',
         enddate: '2020-12-21',
       },

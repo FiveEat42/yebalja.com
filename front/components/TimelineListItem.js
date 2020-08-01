@@ -3,22 +3,31 @@ import TimelineList from './TimelineList';
 import classNames from 'classnames';
 
 export default function TimelineListItem({data}) {
+  {/* edu인지 recruit인지 구분 */}
+  let type;
+  if (data.edu == `true`) {
+    type = 'edu';
+  } else {
+    type = 'recruit';
+  }
+  let card_type = `card_${type}`;
+  let status = `status_${type}`;
+  let dot = `dot_${type}`;
+
+
   let updown;
+  {/* 카드가 위/아래 중 어디에 위치할지 */}
+  if (data.id % 2 == 1) {
+    updown = `up_${type}`;
+  } else {
+    updown = `down_${type}`;
+  }
+
+
   let startdateLeft = Math.floor((new Date(data.startdate).setHours(9) - new Date().setHours(9)) / (1000 * 60 * 60 * 24)) + 1;
   let enddateLeft = Math.floor((new Date(data.enddate).setHours(9) - new Date().setHours(9)) / (1000 * 60 * 60 * 24)) + 1;
   let status_content;				{/* 모집현황 멘트 (D-Day, 진행중, 마감) */}
-  {/* 카드, 모집현황, 점의 클래스네임이 모집(now)인지 교육(edu)인지 알려주기 */}
-  let card_type = 'card_' + data.type;
-  let status = 'status_' + data.type;
-  let dot = 'dot_' + data.type;
-
-  {/* 카드가 위/아래 중 어디에 위치할지 */}
-  if (data.id % 2 == 1) {
-    updown = 'up_' + data.type;
-  } else {
-    updown = 'down_' + data.type;
-  }
-
+  {/* 카드, 모집현황, 점의 클래스네임이 모집(recruit)인지 교육(edu)인지 알려주기 */}
   {/* 시작날짜 기준으로 DDAY 산정 && 마감날짜 기준으로 진행중/마감 알려주 */}
   if (startdateLeft > 0) {
     status_content = `D-${startdateLeft}`;
@@ -33,6 +42,8 @@ export default function TimelineListItem({data}) {
     dot = 'dot_end';
   }
 
+
+  {/* 시작일과 마감일로 기간 표현하기 */}
   let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
   let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
   let period;
@@ -43,18 +54,18 @@ export default function TimelineListItem({data}) {
   }
 
   return (
-    <div className={styles.box}>
+    <li className={styles.box}>
       <div className={styles[dot]}></div>
       <div className={classNames({[styles[card_type]]: true, [styles[updown]]: true})}>
         {data.name}
-      <span className={styles[status]}>
-        {status_content}
-      </span>
-      <div className={styles.content}>
-        {data.description} <br/>
-        {period}
+        <span className={styles[status]}>
+          {status_content}
+        </span>
+        <div className={styles.content}>
+          {data.description} <br/>
+          {period}
+        </div>
       </div>
-    </div>
-    </div>
+    </li>
 )
 }

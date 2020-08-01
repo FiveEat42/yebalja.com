@@ -15,11 +15,15 @@
 	padding-bottom: 100px;
 }
 
+.timeline *::before, .timeline *::after {
+	margin: 0;
+}
 
 
 
+/*-------------------------------------------------------------------*/
 /*D-Day part*/
-.status_end, .status, .status_edu{
+.status_end, .status_recruit, .status_edu{
 	border-radius: 5px;
 	width: 50px;
 	padding: 3px;
@@ -38,7 +42,7 @@
 	color: #89A1C3;
 }
 
-.status {
+.status_recruit {
 	color: #66D1FF;
 }
 
@@ -50,7 +54,7 @@
 
 /*timeline margin*/
 .timeline {
-	/*white-space: nowrap;*/
+	/*white-space: recruitrap;*/
 	/*overflow-x: hidden;*/
 	max-width: 1200px;
 	margin: 0 auto;
@@ -77,21 +81,19 @@
 }
 
 
-
 /*-----------------------------------------------------------------------*/
 
 
-
 /*dot*/
-.dot, .dot_end, .dot_edu {
+.dot_recruit, .dot_end, .dot_edu {
 	content: '';
-	/*position: absolute;*/
-	/*top: 50%;*/
-	/*left: calc(100% + 1px);*/
-	/*bottom: 0;*/
+	/*position: relative;*/
+	top: 50%;
+	left: calc(100% + 1px);
+	bottom: 0;
 	width: 12px;
 	height: 12px;
-	/*transform: translateY(-50%);*/
+	transform: translateY(-50%);
 	border-radius: 50%;
 	border-width: 3px;
 	border-style: solid;
@@ -99,7 +101,7 @@
 	left: 50%;
 }
 
-.dot {
+.dot_recruit {
 	border-color: #66D1FF;
 }
 
@@ -112,12 +114,18 @@
 }
 
 /*-----------------------------------------------------------------------*/
+.timeline ol {
+	position: relative;
+	display: inline-block;
+}
 
-
-
+.timeline ol li {
+	margin: 0;
+	list-style-type: none;
+}
 
 /*card*/
-.card_now, .card_edu, .card_end {
+.card_recruit, .card_edu, .card_end {
 	/*position: absolute;*/
 	/*left: calc(100% + 6px); !* dot 보다 7px 오른쪽에 위치 *!*/
 	width: 320px;
@@ -131,19 +139,20 @@
 	/*box-shadow: 2px 2px 3px 1px #DBE4EE;*/
 	box-shadow: 10px 10px 20px 5px #cdd2d9;
 	margin: 0;
+	position: relative;
 }
 
 .timeline .up {
 	margin: 0;
 }
 /*.timeline ol li .card:nth-child(odd) */
-.up_now, .up_edu, .up_end {
+.up_recruit, .up_edu, .up_end {
 	border-radius: 12px 12px 12px 0;
 	margin: 0;
 }
 
 /*.timeline ol li:nth-child(even) .card */
-.down_now, .down_edu, .down_end {
+.down_recruit, .down_edu, .down_end {
 	border-radius: 0 12px 12px 12px;
 	margin: 0;
 }
@@ -153,7 +162,7 @@
 	color: #89A1C3;
 }
 
-.card_now {
+.card_recruit {
 	background: #66D1FF;
 	color: white;
 }
@@ -205,13 +214,13 @@
 
 /* ODD */
 /*.timeline ol li:nth-child(odd) .card {*/
-.up_now, .up_edu, .up_end {
+.up_recruit, .up_edu, .up_end {
 	top: -16px;
-	/*transform: translateY(-115%);*/
+	transform: translateY(-115%);
 }
 
 /*.timeline ol li:nth-child(odd) .card::before {*/
-.up_now::before {
+.up_recruit::before, .up_edu::before, .up_end::before {
 top: 96%;
 border-width: 10px 10px 0 0;
 }
@@ -220,7 +229,7 @@ border-width: 10px 10px 0 0;
 .timeline .up_end::before {
 border-color: #DFE8F4 transparent transparent transparent;
 }
-.timeline .up_now::before {
+.timeline .up_recruit::before {
 	border-color: #66D1FF transparent transparent transparent;
 }
 .timeline .up_edu::before {
@@ -231,7 +240,7 @@ border-color: #DFE8F4 transparent transparent transparent;
 /* EVEN */
 
 /*.timeline ol li:nth-child(even) .card::before {*/
-.down::before {
+.down_recruit::before, .down_edu::before, .down_end::before {
 	top: -5px;
 	border-width: 10px 0 0 10px;
 }
@@ -241,7 +250,7 @@ border-color: #DFE8F4 transparent transparent transparent;
 	border-color: transparent transparent transparent #DFE8F4;
 }
 /*.timeline ol li:nth-child(4) .card::before {*/
-.down_now::before {
+.down_recruit::before {
 	border-color: transparent transparent transparent #66D1FF;
 }
 /*.timeline ol li:nth-child(6) .card::before {*/
@@ -256,8 +265,8 @@ border-color: #DFE8F4 transparent transparent transparent;
 
 /* 라인에서 얼마나 떨어졌는지 */
 /*.timeline ol li:nth-child(even) .card {*/
-.down {
-	/*top: calc(100% + 30px);*/
+.down_recruit, .down_edu, .down_end {
+	top: calc(100% + 30px);
 }
 /*-----------------------------------------------------------------------*/
 
@@ -267,7 +276,7 @@ border-color: #DFE8F4 transparent transparent transparent;
 
 /* 카드가 화면 밖으로 삐져나가는 것 방지 */
 @media screen and (max-width: 1300px) {
-	.card_now, .card_edu, .card_end {
+	.card_recruit, .card_edu, .card_end {
 		width: 300px;
 	}
 }
@@ -275,7 +284,7 @@ border-color: #DFE8F4 transparent transparent transparent;
 
 
 @media screen and (max-width: 1220px) {
-	.card_now, .card_edu, .card_end {
+	.card_recruit, .card_edu, .card_end {
 		width: 280px;
 	}
 }
@@ -292,7 +301,7 @@ border-color: #DFE8F4 transparent transparent transparent;
 /* GENERAL MEDIA QUERIES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media screen and (max-width: 950px) {
-	.line, .dot_now, .dot_edu, .dot_end {
+	.line, .dot_recruit, .dot_edu, .dot_end {
 		display: none;
 	}
 
@@ -313,11 +322,11 @@ border-color: #DFE8F4 transparent transparent transparent;
 		transform: none !important;
 	}
 
-	.card_now:first-child, .card_end:first-child {
+	.card_recruit:first-child, .card_end:first-child {
 		margin-top: 25px;
 	}
 
-	.card_now, .card_edu, .card_end {
+	.card_recruit, .card_edu, .card_end {
 		max-width: 400px;
 		width: 90%;
 		height: 100px;

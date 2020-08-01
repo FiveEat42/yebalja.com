@@ -15,7 +15,9 @@ const Timeline = ({program}) => {
 		</Header>
 		<div className={styles.line}></div>
 		<div className={styles.timeline}>
+		<ol>
 			<TimelineList program={program}/>
+		</ol>
 		</div>
 	</div>
 
