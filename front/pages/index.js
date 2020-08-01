@@ -11,15 +11,15 @@ import axios from 'axios';
 const Home = () => {
 	const [data, setData] = useState([]);
 	//처음 랜더링될 때만 실행, 업데이트 경우 실행 필요 X => 2번째 인자에 빈 배열
-	useEffect(() =>{
-		async function fetchData(){
-		const result = await axios('https://api.yebalja.com/api/json/program'
-		,);
-		setData(result.data);
-		console.log(result.data[0].program_title);
-		}
-		fetchData();
-	},[]);
+	// useEffect(() =>{
+	// 	async function fetchData(){
+	// 	const result = await axios('https://api.yebalja.com/api/json/program'
+	// 	,);
+	// 	setData(result.data);
+	// 	console.log(result.data[0].program_title);
+	// 	}
+	// 	fetchData();
+	// },[]);
 
   return (
     <Layout>

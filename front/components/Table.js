@@ -21,7 +21,7 @@ export default function Table() {
         <div className={styles.badges}>
             <div className={styles.badge}>
               <img src={require('../src/image/tryout badge.png')} width="27"/>
-              <span className={styles.tooltip}>사전집중교육 {user}</span>
+              <span className={styles.tooltip}>사전집중교육</span>
             </div>
 
             <div className={styles.badge}>
