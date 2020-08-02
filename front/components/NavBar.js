@@ -23,11 +23,22 @@ function NavItem ({ data }) {
 }
 
 function NoticeItem ({ data }) {
+  
+  let enddateLeft = Math.floor((new Date(data.enddate).setHours(9) - new Date().setHours(9)) / (1000 * 60 * 60 * 24)) + 1;
+  
+  let status_content;
+
+  if (enddateLeft > 0) {
+   status_content  = `D-${enddateLeft}`;
+  } else {
+    status_content = '마감';
+  }
+
   return (
     <>
       <p>
         <a target="_blank" rel="noopener noreferrer" href={data.href}>
-          <span className={styles.date}>{data.date}</span>
+          <span className={styles.date}>{status_content}</span>
           <span className={styles.notice}>{data.title}</span>
         </a>
       </p>
@@ -35,7 +46,7 @@ function NoticeItem ({ data }) {
   )
 }
 
-const NavBar = () => {
+export default function NavBar() {
 
   const navList = [
       {
@@ -58,21 +69,23 @@ const NavBar = () => {
         href: "/likelion"
       }
   ]
+
   const noticeList = [
     {
       title: "DREAMIN iOS Academy 교육생 모집",
       href: "https://dreamin.career/academy/ios",
-      date: "D-3",
+      enddate: "2020-07-17",
     },{
       title: "광주AI사관학교",
       href: "http://ai.gitct.kr/apply/",
-      date: "마감",
+      enddate: "2020.05.31",
     },{
       title: "예발자닷컴 오픈",
       href: "https://yebalja.com",
-      date: "D-9",
+      enddate: "2020-08-08",
     }
   ]
+
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" variant="dark" className={styles.navbarBg}>
@@ -92,5 +105,3 @@ const NavBar = () => {
     </div>
   );
 };
-
-export default NavBar;
