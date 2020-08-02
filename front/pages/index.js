@@ -27,15 +27,15 @@ const Home = () => {
       <YearlyCalendar />
       <Header>
 		<div>
-			{data.map(p_id => 
-				<div key={p_id.program_id}>{p_id.program_title}
-				</div>
-				)}
+// 			{data.map(p_id => 
+// 				<div key={p_id.program_id}>{p_id.program_title}
+// 				</div>
+// 				)}
 		</div>
         <h1>한 눈에 보는 부트캠프</h1>
         <p>주요 부트캠프 특징을 한 눈에 비교해보세요</p>
       </Header>
-      <Table value = {data}/>
+//       <Table value = {data}/>
       <TopButton />
     </Layout>
 );
