@@ -13,7 +13,7 @@ function YearByWeekLines() {
 				 {Array(12).fill('').map((v, idx) => <span>{idx+1}월</span>)}
 			 </div>
 			 <div className={classNames({[styles.gantt__row]: true, [styles.gantt__row__lines]: true})}>
-				 {Array(54).fill('').map((v, idx) => <span></span>)}
+				 {Array(12).fill('').map((v, idx) => <span></span>)}
 			 </div>
 		 </>
 	 )
@@ -98,7 +98,7 @@ function ProgramList() {
                 },
                 {
                     title: "선발",
-                    period: "SW적성진단 : 6/06  </br> 현장 인터뷰 : 6/17 ~ 6/19",
+                    period: "SW적성진단 : 6/06  </br> 현장 인터뷰 : 6/17 ~ 6/19", //최대 2줄 (<br> 한 번만 허용)
                     startDate: "2020-06-06",
                     endDate: "2020-06-19",
                 },
@@ -133,7 +133,7 @@ function ProgramList() {
                 {
                     title: "교육",
                     period: "01/01 ~ 12/31",
-                    startDate: "2020-01-01",
+                    startDate: "2020-09-01",
                     endDate: "2020-12-31",
                 }
             ],
@@ -148,7 +148,7 @@ function ProgramList() {
                 },
                 {
                     title: "선발",
-                    period: "1차 코딩테스트 : 3/14 <br/>2차 코딩테스트 : 4/26 <br/>심층면접 : 5/08~09",
+                    period: "1차, 2차 코딩테스트 : 3/14, 4/26 <br/>심층면접 : 5/08~09",
                     startDate: "2020-03-14",
                     endDate: "2020-05-09",
                 },
@@ -176,7 +176,7 @@ function ProgramList() {
                     title:  "지원",
                     period: "3/17 ~ 대학별 상이",
                     startDate: "2020-03-17",
-                    endDate: "2020-04-17",
+                    endDate: "2020-04-10",
 					gridColumn: "77/107",
                 },
                 {
@@ -212,9 +212,9 @@ function StepList({data}) {
 }
 
 function StepListItem({data, id}) {
-    let startDate = new Date(data.startDate);
-    let endDate = new Date(data.endDate);
-    let beginning = new Date('2020-01-01');
+    let startDate = new Date(data.startDate).setHours(9);
+    let endDate = new Date(data.endDate).setHours(9);
+    let beginning = new Date('2020-01-01').setHours(9);
     let start = Math.floor((startDate  - beginning) / (1000 * 60 * 60 * 24)) + 1;
     let end = Math.floor((endDate - beginning) / (1000 * 60 * 60 * 24)) + 1;
 
@@ -230,7 +230,7 @@ function StepListItem({data, id}) {
         backgroundColor = "#DAE4F2";
 
     let	zIndex= id;
-	let	oversize_list = (end - start > 30) ? 1 : 0;
+	let	oversize_list = (end - start > 61) ? 1 : 0;
     let	next_year = (data.endDate === "2020-12-50") ? 1 : 0;
 
     return (
