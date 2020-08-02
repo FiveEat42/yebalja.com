@@ -8,11 +8,7 @@ import Interview from './BadgeInterview';
 import Tryout from './BadgeTryout';
 import Header from "./Header";
 
-import { useSelector } from 'react-redux';
-
 export default function Table() {
-  const user = useSelector((state) => state.user.name);
-
     return (
       <>
       <div className={styles.wrapper}>

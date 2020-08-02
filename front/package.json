@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production next start",
     "build": "next build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
