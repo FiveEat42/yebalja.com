@@ -7,7 +7,7 @@ export default function TableRow({data}) {
   return (
     <>
       <tr className={styles.row}>
-        <td className={styles.cell}><Link href={data.link}><a className={styles.cellheader}>{data.name}</a></Link></td>
+        <td className={styles.cell}><Link href={data.link}><a className={styles.cellheader}>{data.program}</a></Link></td>
         <td className={styles.cell}>{data.number_of_recruits}</td>
         <td className={styles.cell}>{data.edu_period}</td>
         <td className={styles.cell}>{data.grant}</td>

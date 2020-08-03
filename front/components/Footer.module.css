@@ -1,68 +1,58 @@
 .footer {
-	padding: 60px 0 40px 0;
-	margin-top: 100px;
-	display: block;
-	min-height: 180px;
-	width: 100%;
-	text-align: center;
-	background-color: #4A91F5;
-	line-height: 1.3;
+  padding: 60px 0 40px 0;
+  margin-top: 100px;
+  display: block;
+  min-height: 180px;
+  width: 100%;
+  text-align: center;
+  background-color: #4A91F5;
+  line-height: 1.3;
 }
 
 .list {
-	display: flex;
-	margin: 5px 0 5px 0;
+  display: flex;
+  margin: 5px 0 5px 0;
 }
 
 .footer ul {
-	display: inline-grid;
-	grid-auto-flow: column;
-	grid-gap: 10px;
-	justify-items: center;
-	margin: auto;
-	list-style-type: none;
-	padding-inline-start: 0px;
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  justify-items: center;
+  margin: auto;
+  list-style-type: none;
+  padding-inline-start: 0px;
 }
-/*
-@media (min-width: 768px) {
-	.footer {
-		max-height: 200px;
-	}
-	.footer ul {
-		grid-auto-flow: column;
-		grid-gap: 20px;
-	}
-}
-*/
+
 .footer a {
-	font-family: 'NanumBarunGothic';
-	font-size: medium;
-	color: white;
+  font-family: 'NanumBarunGothic';
+  font-size: medium;
+  color: white;
 }
 
 .footer a:hover {
-	text-decoration: none;
-	color: #F2F8FF;
+  text-decoration: none;
+  color: #F2F8FF;
 }
 
 .footer p:hover {
-	animation: wave-animation 0.3s infinite;
+  animation: wave-animation 0.3s infinite;
 }
 
 @keyframes wave-animation {
-	0%,
-	100% {
-		transform: rotate(0deg);
-	}
-	25% {
-		transform: rotate(20deg);
-	}
-	75% {
-		transform: rotate(-15deg);
-	}
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
 }
 
 .copyright {
-	font-size: small;
-	color: white;
+  font-size: small;
+  color: white;
 }
