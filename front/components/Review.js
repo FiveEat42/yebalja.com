@@ -1,5 +1,5 @@
-import styles from './Review.module.css';
 import React from "react";
+import styles from './Review.module.css';
 import classNames from 'classnames';
 import Head from 'next/head';
 
@@ -20,10 +20,10 @@ export default function Review() {
                 <span className={styles.menu__item_name}>부스트캠프동안 내가 배운것들</span>
               </a>
             </div>
-            <i class="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
+            <i className="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
             <p className={styles.text}>부스트캠프는 최고의 서포터와 함께 하는 게임이었습니다. 저는 부스트캠프를 하면서, 각종 모든 트렌디한 기술을 시도하려는 개발자들과 함께 개발을 할 수 있었습니다.</p>
             <div className={styles.date}>
-              <i class="fa fa-minus" style={{ color: `#white` }} aria-hidden="true"></i>
+              <i className="fa fa-minus" style={{ color: `#white` }} aria-hidden="true"></i>
               <span>   2020. 06. 06.</span>
             </div>
           </div>
