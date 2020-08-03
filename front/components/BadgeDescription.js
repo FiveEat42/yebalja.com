@@ -1,34 +1,30 @@
-// import styles from './Table.module.css';
-//
-// export default function BadgeDescription() {
-//
-//   return (
-//     <>
-//   {[
-//     {
-//       png: '../src/image/tryout badge.png',
-//       text: '사전집중교육',
-//     },
-//     {
-//       png: '../src/image/interview badge.png',
-//       text: '면접',
-//     },
-//     {
-//       png: '../src/image/coding test badge.png',
-//       text: '코딩테스트',
-//     },
-//     {
-//       png: '../src/image/aptitude badge.png',
-//       text: '적성검사',
-//     },
-//   ]}.map((v, idx) => {
-//               return (
-//               <div className = {styles.badge}>
-//                   <img src = {require({v.png})} width = "27" />
-//                   <span className = {styles.tooltip}>{v.text}</span>
-//                   </div>
-//               );
-//             })}
-//             </>
-//   );
-// }
+import styles from './Table.module.css';
+
+const Badge = () => {
+
+  return (
+        <div className={styles.badges}>
+            <div className={styles.badge}>
+              <img src={require('../src/image/Tryout.png')} width="27"/>
+              <span className={styles.tooltip}>사전집중교육</span>
+            </div>
+
+            <div className={styles.badge}>
+              <img src={require('../src/image/Interview.png')} width="27"/>
+              <span className={styles.tooltip}>면접</span>
+            </div>
+          <div className={styles.badge}>
+            <img src={require('../src/image/Coding.png')} width="27"/>
+            <span className={styles.tooltip}>코딩테스트</span>
+          </div>
+
+          <div className={styles.badge}>
+            <img src={require('../src/image/Aptitude.png')} width="27"/>
+            <span className={styles.tooltip}>적성검사</span>
+          </div>
+        </div>
+
+  );
+}
+
+export default Badge;

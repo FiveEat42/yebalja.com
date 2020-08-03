@@ -1,16 +1,8 @@
 import Link from "next/link";
-import Aptitude from "./BadgeAptitude";
-import CodingTest from "./BadgeCoding";
-import Interview from "./BadgeInterview";
-import Tryout from "./BadgeTryout";
 import styles from './Table.module.css';
-import Badge from './BadgeAptitude';
+import Badge from './Badge';
 
 export default function TableRow({data}) {
-  let Aptitude_TF = +data.badge.substring(0, 1) ? 'true' : 'false';
-  let Coding_TF = +data.badge.substring(1, 2) ? 'true' : 'false';
-  let Interview_TF = +data.badge.substring(2, 3) ? 'true' : 'false';
-  let Tryout_TF = +data.badge.substring(3, 4) ? 'true' : 'false';
 
   return (
     <>
@@ -21,11 +13,10 @@ export default function TableRow({data}) {
         <td className={styles.cell}>{data.grant}</td>
         <td className={styles.cell}>
           <div className={styles.cellbadges}>
-            <div className={styles[Aptitude_TF]}><Aptitude /></div>
-            <div className={styles[Coding_TF]}><CodingTest/></div>
-            <div className={styles[Interview_TF]}><Interview /></div>
-            <div className={styles[Tryout_TF]}><Tryout /></div>
-
+            <div className={styles[data.aptitude]}><Badge type="Aptitude"/></div>
+            <div className={styles[data.coding]}><Badge type="Coding"/></div>
+            <div className={styles[data.interview]}><Badge type="Interview"/></div>
+            <div className={styles[data.tryout]}><Badge type="Tryout"/></div>
           </div>
         </td>
       </tr>
