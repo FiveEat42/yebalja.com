@@ -23,7 +23,7 @@ const Boostcamp = () => {
         <h3>부트캠프 참여후기</h3>
         <p>솔직담백한 이야기를 공유합니다</p>
       </Header>
-      <Review />
+      <Review program="boostcamp"/>
     </Layout>
   );
 }
