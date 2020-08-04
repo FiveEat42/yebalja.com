@@ -4,8 +4,8 @@ const path = require('path');
 
 
 /* GET home page. */
-router.get('/gisu', function(req, res, next) {
-  res.send(express.static(path.join(__dirname, '../../front/build/index.html')));
+router.get('/', function(req, res, next) {
+  res.render('../views/index',{title: '세초월드'});
 });
 
 module.exports = router;

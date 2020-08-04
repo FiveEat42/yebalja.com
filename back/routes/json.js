@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-let db = require('../models/db_config');
+let db = require('../config/db_config');
 
 
 router.get('/gisu', function(req, res, next) {

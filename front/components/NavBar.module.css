@@ -1,88 +1,88 @@
 .navbarBg {
-    text-align: right;
-    line-height: 30px;
-    background-color: #4A91F5;
-    box-shadow: 3px 3px 24px -11px;
-    font-family: 'NanumBarunGothic';
+  text-align: right;
+  line-height: 30px;
+  background-color: #4A91F5;
+  box-shadow: 3px 3px 24px -11px;
+  font-family: 'NanumBarunGothic';
 }
 
 .navbarBg a {
-    padding-right: 50px;
+  padding-right: 50px;
 }
 
 .active {
-    color: #F2F8FF;
+  color: #F2F8FF;
 }
 
 .a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .rolling {
-    height: 30px;
-    line-height: 30px;
-    width: 340px;
-    position: relative;
-    overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+  width: 340px;
+  position: relative;
+  overflow: hidden;
 }
 
 .rolling a {
-    font-family: 'NanumBarunGothic';
-    font-weight: 400;
-    color: #d5e3fc;
-    top: 0px;
-    padding-left: 10px;
-    width: 100%;
-    text-align: left;
-    display: inline-block;
-    transform: translateY(0px);
-    animation: rollin-txt 4.5s infinite;
+  font-family: 'NanumBarunGothic';
+  font-weight: 400;
+  color: #d5e3fc;
+  top: 0px;
+  padding-left: 10px;
+  width: 100%;
+  text-align: left;
+  display: inline-block;
+  transform: translateY(0px);
+  animation: rollin-txt 4.5s infinite;
 }
 
 .rolling .date {
-    font-size: 10px;
-    background-color: #5C4DFF;
-    padding: 2px 7px 2px 7px;
-    border-radius: 5px;
+  font-size: 10px;
+  background-color: #5C4DFF;
+  padding: 2px 7px 2px 7px;
+  border-radius: 5px;
 }
 
 .rolling .notice {
-    font-size: 13px;
-    margin-left: 10px;
-    text-align: left;
+  font-size: 13px;
+  margin-left: 10px;
+  text-align: left;
 }
 
 .rolling a:hover {
-    text-decoration: none;
-    color: #ECF2FE;
+  text-decoration: none;
+  color: #ECF2FE;
 }
 
 @keyframes rollin-txt {
-    0% {
-          transform: translateY(-0px);
-    }
-    20% {
-          transform: translateY(-0px);
-    }
-    30% {
-          transform: translateY(-47px);
-    }
-    50% {
-          transform: translateY(-47px);
-    }
-    70% {
-          transform: translateY(-94px);
-    }
-    80% {
-          transform: translateY(-94px);
-    }
-    100% {
-          transform: translateY(0px);
-    }
+  0% {
+      transform: translateY(-0px);
+  }
+  20% {
+      transform: translateY(-0px);
+  }
+  30% {
+      transform: translateY(-47px);
+  }
+  50% {
+      transform: translateY(-47px);
+  }
+  70% {
+      transform: translateY(-94px);
+  }
+  80% {
+      transform: translateY(-94px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
   }
 
- @media (max-width: 991.98px) {
-    .rolling {
-        display: none;
-      }
+ @media screen and (max-width: 991.98px) {
+  .navbarBg .rolling {
+    display: none;
+    }
  }

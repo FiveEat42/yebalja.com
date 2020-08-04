@@ -1,31 +1,31 @@
 .header {
-    margin: 160px 0 50px 0;
-    display: block;
-    text-align: center;
-    font-family: 'NanumGothic';
+  margin: 160px 0 50px 0;
+  display: block;
+  text-align: center;
+  font-family: 'NanumBarunGothic';
 }
 
 .header h1 {
-    font-weight: 600;
-    color: #4A91F5;
+  font-weight: 600;
+  color: #4A91F5;
 }
 
 .header h2 {
-    font-weight: 600;
-    color: #4A91F5;
+  font-weight: 600;
+  color: #4A91F5;
 }
 
 .header h3 {
-    font-weight: 600;
-    color: #4A91F5;
+  font-weight: 600;
+  color: #4A91F5;
 }
 
 .header h4 {
-    font-weight: 600;
-    color: dimgrey;
+  font-weight: 600;
+  color: dimgrey;
 }
 
 .header p {
-    font-weight: 400;
-    color: #89A1C3;
+  font-weight: 400;
+  color: #89A1C3;
 }
