@@ -27,7 +27,7 @@ const Jumbotron = () => {
             점보트론 내 글귀입니다.
           */}
           <div className={styles.text}>
-            <h1 className={styles.title}>누구나,<br/>예발자 시절이 있었으니까</h1><br/>
+            <h1 className={styles.title}>누구나<br/>예발자 시절이 있었으니까,</h1><br/>
             <p className={styles.content}>예비개발자를 위한 코딩교육과정,<br/>부트캠프를 만나보세요.</p>
           </div>
 
