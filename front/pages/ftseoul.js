@@ -1,7 +1,8 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import React from "react";
-import Faq from "../components/Faq"
+import Faq from "../components/Faq";
+import Review from "../components/Review";
 
 const ftseoul = () => {
   return (
@@ -21,9 +22,10 @@ const ftseoul = () => {
           </Header>
           <Faq program="ftseoul"/>
           <Header>
-              <h4>프로그램 참여후기</h4>
-              <p>추가예정</p>
+            <h3>부트캠프 참여후기</h3>
+            <p>솔직담백한 이야기를 공유합니다</p>
           </Header>
+          <Review program="ftseoul"/>
       </div>
     </Layout>
   );
