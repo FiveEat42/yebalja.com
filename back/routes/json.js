@@ -20,24 +20,28 @@ router.get('/program', function(req, res, next){
 })
 
 router.get('/table', (req, res) => {
-  db.query(`select
-    'program', title,
-    'link', link,
-    'number_of_recruits', personnel,
-    'edu_period', edu_period,
-    'grant', benefit,
-    'aptitude', badge_aptitude,
-    'coding', badge_coding,
-    'interview', badge_interview,
-    'tryout', badge_tryout
+  db.query(`
+    select json_object(
+      'program', title,
+      'link', link,
+      'number_of_recruits', personnel,
+      'edu_period', edu_period,
+      'grant', benefit,
+      'aptitude', badge_aptitude,
+      'coding', badge_coding,
+      'interview', badge_interview,
+      'tryout', badge_tryout)
     from programs;`, (error, result) => {
       let arr = [];
       if (error) throw error;
       result.map((v) => {
-        if (v.link != '/likelion'){
-          arr.push(v);
+        let parsed =JSON.parse(Object.values(v));
+        console.log(parsed);
+        if (parsed.link !== '/likelion'){
+          arr.push(parsed);
         }
       })
+    console.log(arr);
       res.json(arr);
   })
 });
