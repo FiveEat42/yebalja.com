@@ -23,19 +23,29 @@ export default function TimelineListItem({data, id}) {
   }
 
   {/* 시작날까지 남은 날짜 && 마감날까지 남은날짜 계산 */}
-  let startdateLeft = Math.floor((new Date(data.startdate).setHours(9) - new Date().setHours(9)) / (1000 * 60 * 60 * 24)) + 1;
-  let enddateLeft = Math.floor((new Date(data.enddate).setHours(9) - new Date().setHours(9)) / (1000 * 60 * 60 * 24)) + 1;
+  let startdateLeft = Math.floor((new Date(data.startdate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
+  let enddateLeft = Math.floor((new Date(data.enddate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
+  let starttimeLeft = Math.floor((new Date(data.startdate) - new Date()) / (1000)) + 1;
+  let endtimeLeft = Math.floor((new Date(data.enddate) - new Date()) / (1000)) + 1;
+
+  console.log(startdateLeft);
+  console.log(starttimeLeft);
   {/* 모집현황으로 D-Day/진행중/마감을 담음 */}
   let status_content;
-
   if (startdateLeft > 0) {
-    status_content = `D-${startdateLeft}`;
-  } else if (startdateLeft == 0) {
-    status_content = 'D-Day';
+    status_content = `D-${startdateLeft}`;    {/* 'D-숫자'로 표시 */}
+  } else if (startdateLeft >= 0) {
+      if (starttimeLeft >= 0) {
+        status_content = '진행중';              {/* 시작시간이 지나면 '진행중' */}
+      } else if (starttimeLeft < 0) {
+        status_content = 'D-Day';               {/* 시작시간이 안됐으면 'D-Day' */}
+      }
   } else if (enddateLeft >= 0) {
-    status_content = '진행중';   {/* 카드 및 모집현황의 클래스네임이 모집(recruit)인지 교육(edu)인지 알려주기 */}
+    status_content = '진행중';
+      if (endtimeLeft <= 0)
+        status_content = '마감'
   } else {
-    status_content = '마감';    {/* 시작날짜 기준으로 DDAY 산정 && 마감날짜 기준으로 진행중/마감 알려주기 */}
+    status_content = '마감';
     card_type = 'card_end';
     status = 'status_end';
     if (updown == 'up_recruit' || updown == 'up_edu') {
@@ -47,14 +57,40 @@ export default function TimelineListItem({data, id}) {
 
   {/* 시작일과 마감일로 period 표현하기 */}
   let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
+  startdate = startdate.bold();
   let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
-  let period;
-  if (startdate == enddate) {
-    period = startdate;
+  enddate = enddate.bold();
+  let starttime;
+  let endtime;
+  if (new Date(data.startdate).getMinutes() < '10') {
+    starttime = `${new Date(data.startdate).getHours()}:0${new Date(data.startdate).getMinutes()}`;
   } else {
-    period = `${startdate} ~ ${enddate}`;
+    starttime = `${new Date(data.startdate).getHours()}:${new Date(data.startdate).getMinutes()}`;
+  }
+  if (new Date(data.enddate).getMinutes() < '10') {
+    endtime = `${new Date(data.enddate).getHours()}:0${new Date(data.enddate).getMinutes()}`;
+  } else {
+    endtime = `${new Date(data.enddate).getHours()}:${new Date(data.enddate).getMinutes()}`;
   }
 
+  let period;
+  if (startdate == enddate) {                           {/* 시작일과 마감일이 같을 때 */}
+    if (starttime == '0:00' && endtime == '0:00') {       {/* 시간이 둘 다 명시 안되어있을 때 */}
+      period = startdate;
+    } else if (starttime == endtime) {                    {/* 시작시간과 마감시간 같고 시간이 명시되어있을 때 */}
+      period = `${startdate} ${starttime}`;
+    } else if (endtime == '0:00') {                       {/* 시작시간만 있을 때  */}
+      period = `${startdate} ${starttime} ~ ${endtime}`;
+} else if (starttime == '0:00') {                         {/* 마감시간만 있을  */}
+      period = `${startdate} ~${endtime}`
+    }
+  } else {                                              {/* 시작일과 마감일이 다를 때 */}
+    if (starttime == '0:00' && endtime == '0:00') {   {/* 시간이 명시 안되어있을 때 */}
+      period = `${startdate} ~ ${enddate}`;
+    } else {                                            {/* 시간이 명시되어있을 때*/}
+      period = `${startdate} ${starttime} ~ ${enddate} ${endtime}`;
+    }
+  }
 
   return (
     <li className={styles.list}>
