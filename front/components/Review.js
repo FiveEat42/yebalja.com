@@ -22,7 +22,7 @@ function LeftCommentItem({data}) {
     <>
       <div className={styles.wrapper}>
               <div className={styles.comment_block}>
-                <img className={styles.comment_image} src="https://user-images.githubusercontent.com/37580034/89162051-75774d00-d5ae-11ea-8ba2-89cf1fbb3c18.png"/>
+                {/* <img className={styles.comment_image} src="https://user-images.githubusercontent.com/37580034/89393019-37606180-d745-11ea-87f7-93a71ca3b152.png"/> */}
                 <div className={styles.comment_dialog}>
                   <div className={classNames({[styles.menu]: true, [styles.menu__adsila]: true})}>
                     <a className={styles.menu__item} href={data.link} target="_black">
@@ -45,7 +45,7 @@ function LeftCommentItem({data}) {
 function RightCommentItem({data}) {
   return (
     <>
-      <div className={styles.wrapper_r}>
+      <div className={styles.wrapper}>
         <div className={styles.comment_block_r}>
           <div className={styles.comment_dialog_r}>
             <div className={classNames({[styles.menu]: true, [styles.menu__adsila]: true})}>
@@ -60,7 +60,7 @@ function RightCommentItem({data}) {
               <span>  {data.posted_date}</span>
             </div>
           </div>
-          <img className={styles.comment_image_r} src="https://user-images.githubusercontent.com/37580034/89162148-96d83900-d5ae-11ea-9b3c-62e91aed0084.png"/>
+          {/* <img className={styles.comment_image_r} src="https://user-images.githubusercontent.com/37580034/89162148-96d83900-d5ae-11ea-9b3c-62e91aed0084.png"/> */}
         </div>
       </div>
     </>
@@ -75,7 +75,7 @@ export default function Review({program}) {
       {
         link: "https://yechoi.tistory.com/15",
         title: "42서울은 동료학습을 어떻게 구현했을까",
-        content: "남들한테 물어 배운 건 책을 보며 익히는 것보다 빨랐다. 피씬에서 프로그래밍 언어를 인생 처음으로 접한 친구는 어떻게든 문제를 해결해 나가며 C의 기초적인 문법을 한 주 만에 뗐지만, '이 부분을 제대로 아는 게 아닌 것 같다'며 책을 붙잡고 있던 누군가는 어느 순간 보니 뒤쳐져 있었다.",
+        content: "남들한테 물어 배운 건 책을 보며 익히는 것보다 빨랐다. '이 부분을 제대로 아는 게 아닌 것 같다'며 책을 붙잡고 있던 누군가는 어느 순간 보니 뒤쳐져 있었다.",
         post_date: "2020-07-19",
       },
       {
@@ -246,7 +246,7 @@ export default function Review({program}) {
       },
       {
         link: "https://brunch.co.kr/magazine/likelionwork",
-        title: "[멋자 직장인] 퇴근하고 코딩 배우는 직장인들 이야기",
+        title: "[멋자 직장인] 퇴근하고 코딩 배우는 직장인들",
         content: "이 글은 스타트업 인사담당자가 '멋사 직장인'에서 코딩을 배워 해커톤에서 우승하는 작은 성취에 대한 이야기입니다.",
         posted_date: "2019-12-19",
       },
