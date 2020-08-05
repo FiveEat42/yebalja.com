@@ -16,6 +16,7 @@
   color: #F2F8FF;
 }
 
+
 /* 공고 롤링텍스트 */
 
 .noticeRolling {
@@ -78,10 +79,37 @@
   100% { transform: translateY(-280%); }
 }
 
+/* 공고 팝오버리스트 */
+
+.noticePopoverList ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.noticePopoverItem a {
+  font-family: 'NanumBarunGothic';
+  font-weight: 400;
+  line-height: 240%;
+  padding: 0 10px;
+  text-align: left;
+  color: #404040; 
+  height: 33px;
+}
+
+.noticePopoverItem a:hover{
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.noticePopoverItem span {
+  display:inline-block
+}
+
 /* 반응형 */
 
  @media screen and (max-width: 991.98px) {
-  .navbarBg .rolling, .list {
+  .navbarBg .noticeRolling, .noticeList {
     display: none;
     }
  }
