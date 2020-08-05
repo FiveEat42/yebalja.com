@@ -57,7 +57,7 @@ function ListItem ({ data, idx }) {
     <>
       <li className={styles.noticePopoverItem}>
         <a target="_blank" rel="noopener noreferrer" href={data.href}>
-        <span>· {data.title}</span>
+        <span>· {data.title}!</span>
         </a>
       </li>
     </>
@@ -98,9 +98,9 @@ export default function NavBar() {
       href: "http://ai.gitct.kr/apply/",
       enddate: "2020-05-31",
     },{
-      title: "예발자닷컴 오픈",
+      title: "디데이 표시 테스트",
       href: "https://yebalja.com",
-      enddate: "2020-08-08",
+      enddate: "2020-08-06",
     }
   ]
 
@@ -132,7 +132,7 @@ export default function NavBar() {
                   </Popover.Content>
               </Popover>
             }>
-            <Button variant="link" className={styles.noticeList}>
+            <Button variant="link" className={styles.noticeListHidden}>
               <img src={require('../src/image/Expand.png')} width="24" height="24" />
             </Button>
           </OverlayTrigger>

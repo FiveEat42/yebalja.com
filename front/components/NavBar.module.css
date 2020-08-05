@@ -44,7 +44,7 @@
   text-align: left;
   display: inline-block;
   transform: translateY(0px);
-  animation: roll 6s infinite;
+  animation: roll 5s infinite;
 }
 
 .noticeRolling .date {
@@ -109,7 +109,7 @@
 /* 반응형 */
 
  @media screen and (max-width: 991.98px) {
-  .navbarBg .noticeRolling, .noticeList {
+  .navbarBg .noticeRolling, .noticeListHidden {
     display: none;
     }
  }
