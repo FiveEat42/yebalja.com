@@ -51,8 +51,8 @@ export default function TimelineList({program}) {
         edu: `false`,
         name: '접수기간',
         description: '4기 서류 접수',
-        startdate: '2020-04-05 13:08:00',
-        enddate: '2020-08-05 17:00:00',
+        startdate: '2020-08-06 20:00:00',
+        enddate: '2020-08-06 20:00:00',
       },
       {
         edu: 'false',

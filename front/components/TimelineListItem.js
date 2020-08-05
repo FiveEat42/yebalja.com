@@ -28,22 +28,30 @@ export default function TimelineListItem({data, id}) {
   let starttimeLeft = Math.floor((new Date(data.startdate) - new Date()) / (1000)) + 1;
   let endtimeLeft = Math.floor((new Date(data.enddate) - new Date()) / (1000)) + 1;
 
-  console.log(startdateLeft);
-  console.log(starttimeLeft);
+
   {/* 모집현황으로 D-Day/진행중/마감을 담음 */}
   let status_content;
   if (startdateLeft > 0) {
-    status_content = `D-${startdateLeft}`;    {/* 'D-숫자'로 표시 */}
+    status_content = `D-${startdateLeft}`;    {/* 시작일까지 얼마나 남았는지 'D-숫자'로 표시 */}
   } else if (startdateLeft >= 0) {
       if (starttimeLeft >= 0) {
-        status_content = '진행중';              {/* 시작시간이 지나면 '진행중' */}
+        status_content = 'D-Day';              {/* 시작일의 시작시간이 지나면 '진행중' */}
       } else if (starttimeLeft < 0) {
-        status_content = 'D-Day';               {/* 시작시간이 안됐으면 'D-Day' */}
+        status_content = '진행중';               {/* 시작일인데 아직 시작시간이 안됐으면 'D-Day' */}
       }
   } else if (enddateLeft >= 0) {
-    status_content = '진행중';
-      if (endtimeLeft <= 0)
-        status_content = '마감'
+    if (endtimeLeft >= 0) {
+      status_content = '진행중';                 {/* 마감날이 됐는데 마감시간이 안 지났을 때 '진행중' */}
+    } else if (endtimeLeft <= 0) {              {/* 마감날의 마감시간이 지난 경우는 '마감' */}
+      status_content = '마감';
+      card_type = 'card_end';
+      status = 'status_end';
+      if (updown == 'up_recruit' || updown == 'up_edu') {
+        updown = 'up_end';
+      } else {
+        updown = 'down_end';
+      }
+    }
   } else {
     status_content = '마감';
     card_type = 'card_end';
@@ -55,13 +63,17 @@ export default function TimelineListItem({data, id}) {
     }
   }
 
+
+
+
   {/* 시작일과 마감일로 period 표현하기 */}
   let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
-  startdate = startdate.bold();
+  // startdate = startdate.bold();
   let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
-  enddate = enddate.bold();
+  // enddate = enddate.bold();
   let starttime;
   let endtime;
+  {/* 00:00 형태로 시작시간과 마감시간 뽑아내 */}
   if (new Date(data.startdate).getMinutes() < '10') {
     starttime = `${new Date(data.startdate).getHours()}:0${new Date(data.startdate).getMinutes()}`;
   } else {
@@ -73,6 +85,7 @@ export default function TimelineListItem({data, id}) {
     endtime = `${new Date(data.enddate).getHours()}:${new Date(data.enddate).getMinutes()}`;
   }
 
+  {/* 날짜 및 시간 알려주는 부분 */}
   let period;
   if (startdate == enddate) {                           {/* 시작일과 마감일이 같을 때 */}
     if (starttime == '0:00' && endtime == '0:00') {       {/* 시간이 둘 다 명시 안되어있을 때 */}
@@ -80,17 +93,38 @@ export default function TimelineListItem({data, id}) {
     } else if (starttime == endtime) {                    {/* 시작시간과 마감시간 같고 시간이 명시되어있을 때 */}
       period = `${startdate} ${starttime}`;
     } else if (endtime == '0:00') {                       {/* 시작시간만 있을 때  */}
+      period = `${startdate} ${starttime} ~`;
+    } else if (starttime == '0:00') {                         {/* 마감시간만 있을  */}
+      period = `${startdate} ~ ${endtime}`;
+    } else {
       period = `${startdate} ${starttime} ~ ${endtime}`;
-} else if (starttime == '0:00') {                         {/* 마감시간만 있을  */}
-      period = `${startdate} ~${endtime}`
     }
   } else {                                              {/* 시작일과 마감일이 다를 때 */}
-    if (starttime == '0:00' && endtime == '0:00') {   {/* 시간이 명시 안되어있을 때 */}
+    if (starttime == '0:00' && endtime == '0:00') {   {/* 시간이 둘 다 명시 안되어있을 때 */}
       period = `${startdate} ~ ${enddate}`;
-    } else {                                            {/* 시간이 명시되어있을 때*/}
+    } else if (starttime == '0:00') {                 {/* 시작시간이 없 때*/}
+      period = `${startdate} ~ ${enddate} ${endtime}`;
+    } else if (endtime == '0:00') {
+      period = `${startdate} ${starttime} ~ ${enddate}`;
+    } else {
       period = `${startdate} ${starttime} ~ ${enddate} ${endtime}`;
     }
   }
+
+
+  {/* 기간에서 마감일까지 며칠 남았는지 알려주는 부분 */}
+  if (startdate != enddate) {
+    if (enddateLeft <= 7 && enddateLeft > 0) {
+      period = `${period} (${enddateLeft}일 남음)`;
+    } else if (enddateLeft == 0) {
+      if (endtimeLeft <= 0 && endtime != '0:00') {
+        period = period;
+      } else {
+        period = `${period} (마감일)`;
+      }
+    }
+  }
+
 
   return (
     <li className={styles.list}>
