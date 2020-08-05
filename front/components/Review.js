@@ -8,7 +8,8 @@ function CommentList({data, id}) {
   return (
     <>
       {
-        (id % 2) ? <RightCommentItem data={data}/> : <LeftCommentItem data={data}/>
+         (id % 2) ? <RightCommentItem data={data}/> : 
+        <LeftCommentItem data={data}/>
       }
     </>
   )
@@ -23,7 +24,7 @@ function LeftCommentItem({data}) {
                 <div className={styles.comment_dialog}>
                   <div className={classNames({[styles.menu]: true, [styles.menu__adsila]: true})}>
                     <a className={styles.menu__item} href={data.link} target="_black">
-                      <span className={styles.menu__item_name}>{data.title}</span>
+                      <span className={styles.menu__item_name}>{data.title + "   >"} </span>
                     </a>
                   </div>
                   <i className="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
@@ -47,7 +48,7 @@ function RightCommentItem({data}) {
           <div className={styles.comment_dialog_r}>
             <div className={classNames({[styles.menu]: true, [styles.menu__adsila]: true})}>
               <a className={styles.menu__item} href={data.link} target="_black">
-                <span className={styles.menu__item_name}>{data.title}</span>
+                <span className={styles.menu__item_name}>{data.title + "   >"}</span>
               </a>
             </div>
             <i class="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
