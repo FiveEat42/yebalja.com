@@ -93,7 +93,7 @@ export default function TimelineListItem({data, id}) {
     } else if (starttime == endtime) {                    {/* 시작시간과 마감시간 같고 시간이 명시되어있을 때 */}
       period = `${startdate} ${starttime}`;
     } else if (endtime == '0:00') {                       {/* 시작시간만 있을 때  */}
-      period = `${startdate} ${starttime} ~`;
+      period = `${startdate} ${starttime}`;
     } else if (starttime == '0:00') {                         {/* 마감시간만 있을  */}
       period = `${startdate} ~ ${endtime}`;
     } else {
