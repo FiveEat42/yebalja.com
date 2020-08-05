@@ -57,7 +57,7 @@ function ListItem ({ data, idx }) {
     <>
       <li className={styles.noticePopoverItem}>
         <a target="_blank" rel="noopener noreferrer" href={data.href}>
-        <span>· {data.title}!</span>
+        <span>· {data.title}</span>
         </a>
       </li>
     </>
@@ -98,9 +98,9 @@ export default function NavBar() {
       href: "http://ai.gitct.kr/apply/",
       enddate: "2020-05-31",
     },{
-      title: "디데이 표시 테스트",
+      title: "예발자닷컴 오픈",
       href: "https://yebalja.com",
-      enddate: "2020-08-06",
+      enddate: "2020-08-08",
     }
   ]
 
