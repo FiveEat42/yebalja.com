@@ -1,3 +1,4 @@
+/* 내비게이션바 배경 */
 .navbarBg {
   text-align: right;
   line-height: 30px;
@@ -6,83 +7,81 @@
   font-family: 'NanumBarunGothic';
 }
 
-.navbarBg a {
-  padding-right: 50px;
+/* 내비게이션바 아이템 */
+.a:hover {
+  text-decoration: none;
 }
 
 .active {
   color: #F2F8FF;
 }
 
-.a:hover {
-  text-decoration: none;
-}
+/* 공고 롤링텍스트 */
 
-.rolling {
+.noticeRolling {
   height: 30px;
-  line-height: 30px;
-  width: 340px;
+  line-height: 200%;
+  max-width: 400px;
   position: relative;
   overflow: hidden;
 }
 
-.rolling a {
+.noticeRolling ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.noticeRolling a {
   font-family: 'NanumBarunGothic';
   font-weight: 400;
   color: #d5e3fc;
   top: 0px;
   padding-left: 10px;
+  padding-right: 50px;
   width: 100%;
   text-align: left;
   display: inline-block;
   transform: translateY(0px);
-  animation: rollin-txt 4.5s infinite;
+  animation: roll 6s infinite;
 }
 
-.rolling .date {
+.noticeRolling .date {
   font-size: 10px;
   background-color: #5C4DFF;
   padding: 2px 7px 2px 7px;
   border-radius: 5px;
 }
 
-.rolling .notice {
+.noticeRolling .notice {
   font-size: 13px;
   margin-left: 10px;
   text-align: left;
 }
 
-.rolling a:hover {
+.noticeRolling a:hover {
   text-decoration: none;
   color: #ECF2FE;
 }
 
-@keyframes rollin-txt {
-  0% {
-      transform: translateY(-0px);
-  }
-  20% {
-      transform: translateY(-0px);
-  }
-  30% {
-      transform: translateY(-47px);
-  }
-  50% {
-      transform: translateY(-47px);
-  }
-  70% {
-      transform: translateY(-94px);
-  }
-  80% {
-      transform: translateY(-94px);
-  }
-  100% {
-      transform: translateY(0px);
-  }
-  }
+@keyframes roll {
+  0%   { transform: translateY(+20%); }
+  10%  { transform: translateY(0%);}
+  20%  { transform: translateY(0%); }
+  30%  { transform: translateY(0%); }
+  40%  { transform: translateY(-100%); }
+  50%  { transform: translateY(-100%); }
+  60%  { transform: translateY(-100%); }
+  70%  { transform: translateY(-200%); }
+  80%  { transform: translateY(-200%); }
+  90%  { transform: translateY(-200%); }
+  100% { transform: translateY(-280%); }
+}
+
+/* 반응형 */
 
  @media screen and (max-width: 991.98px) {
-  .navbarBg .rolling {
+  .navbarBg .rolling, .list {
     display: none;
     }
  }

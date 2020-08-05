@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import classNames from 'classnames';
-import Form from 'react-bootstrap/Form'
+import Form from 'react-bootstrap/Form';
 import { useRouter } from "next/router";
 
 function NavItem ({ data }) {
@@ -28,20 +28,22 @@ function NoticeItem ({ data }) {
   
   let status_content;
 
-  if (enddateLeft > 0) {
-   status_content  = `D-${enddateLeft}`;
+  if (enddateLeft > 1) {
+    status_content  = `D-${enddateLeft}`;
+  } else if (enddateLeft > 0) {
+    status_content = `D-Day`
   } else {
     status_content = '마감';
   }
 
   return (
     <>
-      <p>
+      <li>
         <a target="_blank" rel="noopener noreferrer" href={data.href}>
           <span className={styles.date}>{status_content}</span>
           <span className={styles.notice}>{data.title}</span>
         </a>
-      </p>
+      </li>
     </>
   )
 }
@@ -93,13 +95,18 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            {navList.map((v) => <NavItem data={v} key={v.program}/>)}
+              {navList.map((v) => <NavItem data={v} key={v.program}/>)}
           </Nav>
-          <Form inline className={styles.rolling}>
-            <div>
+          <div className={styles.noticePopover}>
+            <img src={require('../src/image/Expand.png')} width="24" height="24" />
+          </div>
+
+          <Form inline className={styles.noticeRolling}>
+            <ul>
               {noticeList.map((v) => <NoticeItem data={v} key={v.title}/>)}
-            </div>
+            </ul>
           </Form>
+
         </Navbar.Collapse>
       </Navbar>
     </div>
