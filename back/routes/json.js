@@ -65,6 +65,56 @@ from programs;`, (error, result) => {
     res.json(obj);
   })
 })
+// router.get('/timelinelist', (req,res) => {
+//   db.query(`select json_object(
+//     substring(link, 2), json_array((
+//       select group_concat(
+//         json_object(
+//           'edu', edu,
+//           'name', name,
+//           'title', title,
+//           'description', description,
+//           'startdate', start_date,
+//           'enddate', end_date
+//         )
+//       )
+//       from steps_timelines
+//       inner join gisus on steps_timelines.gisus_id = gisus.id
+//       inner join programs on programs.id = gisus.programs_id
+//      ))
+//     )
+//     from programs;`, (error, result) => {
+//       if (error) throw result;
+//      result.map((v) => {
+//        let each = JSON.parse(Object.values(v)[0])
+//        console.log('hihi', JSON.parse(Object.values(each)[0][0]))
+//      })
+//      // result.map(v => {
+//      //   console.log("----------------------\n", Object.values(v));
+//      // })
+//     // console.log(a);
+//       // console.log(result)
+//       res.json(result);
+//   })
+// })
+router.get('/timelinelist', (req, res) => {
+  db.query(`  select
+    substring(link, 2) as 'program',
+    edu,
+    name,
+     title,
+     description,
+    'startdate', start_date,
+    'enddate', end_date
+    from steps_timelines
+      inner join gisus on steps_timelines.gisus_id = gisus.id
+      inner join programs on programs.id = gisus.programs_id;`, (error, result) => {
+    if (error) throw error;
+    console.log(result);
+    res.json(result);
+  })
+})
+
 
 module.exports = router;
 
