@@ -1,4 +1,4 @@
-.aptitude, .coding, .interview, .tryout {
+.Aptitude, .Coding, .Interview, .Tryout {
     display: inline-block;
     /*width: 30%;*/
     max-width: 50px;
@@ -10,7 +10,7 @@
     padding-left: 5px;
 }
 
-.aptitude:hover::after {
+.Aptitude:hover::after {
     content: '적성검사';
     background-color: #89A1C3;
     border-radius: 6px;
@@ -21,7 +21,7 @@
     position: absolute;
 }
 
-.coding:hover::after {
+.Coding:hover::after {
     content: '코딩 테스트';
     background-color: #7A4DFF;
     border-radius: 6px;
@@ -32,7 +32,7 @@
     position: absolute;
 }
 
-.interview:hover::after {
+.Interview:hover::after {
     content: '면접';
     background-color: #4A91F5;
     border-radius: 6px;
@@ -43,7 +43,7 @@
     position: absolute;
 }
 
-.tryout:hover::after {
+.Tryout:hover::after {
     content: '사전 집중교육';
     background-color: #4DF0FF;
     border-radius: 6px;
