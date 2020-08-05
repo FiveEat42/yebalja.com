@@ -51,15 +51,15 @@ export default function TimelineList({program}) {
         edu: `false`,
         name: '접수기간',
         description: '4기 서류 접수',
-        startdate: '2020-08-06 20:00:00',
-        enddate: '2020-08-06 20:00:00',
+        startdate: '2020-05-11 09:00:00',
+        enddate: '2020-05-25 17:00:00',
       },
       {
         edu: 'false',
         name: '1차 선발과정',
         description: '온라인 SW 적성진단',
         startdate: '2020-06-06 11:00:00',
-        enddate: '2020-06-06 11:00:00',
+        enddate: '2020-06-06 00:00:00',
       },
       {
         edu: 'false',
