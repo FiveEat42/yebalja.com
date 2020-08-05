@@ -81,6 +81,13 @@
 
 /* 공고 팝오버리스트 */
 
+.noticePopoverTitle {
+  font-family: 'NanumBarunGothic';
+  font-size: 0.9em;
+  font-weight: 600;
+  padding: 8px 0 5px 30px ;
+}
+
 .noticePopoverList ul {
   list-style-type: none;
   margin: 0;
@@ -89,6 +96,7 @@
 
 .noticePopoverItem a {
   font-family: 'NanumBarunGothic';
+  font-size: 0.9em;
   font-weight: 400;
   line-height: 240%;
   padding: 0 10px;
