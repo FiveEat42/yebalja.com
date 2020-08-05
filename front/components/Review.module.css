@@ -11,16 +11,13 @@
 }
 /*right comment card*/
 
-/* .wrapper_r {
-	
-} */
-
 .comment_block_r {
 	display: inline-block;
 	position: absolute;
 	right: 300px;
   }
   .comment_block_r .comment_image_r {
+	float: right ;
 	width: 4rem;
 	height: 4rem;
 	border-radius: 50%;
@@ -31,11 +28,13 @@
 			animation: popup 0.5s cubic-bezier(1, 0, 0, 1.5) forwards;
   }
   .comment_block_r .comment_dialog_r {
+	float: left;
 	border-radius: 13px;
 	box-shadow: 0 10px 25px  #7e8f94;
 	background-color: #66D1FF;
 	color: #ffffff;
 	padding: 1rem;
+	max-height: 200px;
 	max-width: 500px;
 	position: relative;
 	margin: 0 1.5rem;
@@ -92,9 +91,6 @@
 	}
   }
 
-.date_r {
-	margin-top: 5px;
-}
 
 /*left comment card*/
 
@@ -108,6 +104,7 @@
   }
 
   .comment_block .comment_image {
+	float: left;
 	width: 4rem;
 	height: 4rem;
 	border-radius: 50%;
@@ -118,11 +115,13 @@
 			animation: popup 0.5s cubic-bezier(1, 0, 0, 1.5) forwards;
   }
   .comment_block .comment_dialog {
+	float: right;
 	border-radius: 13px;
 	box-shadow: 0 10px 25px  #7e8f94;
 	background-color: #4A91F5;
 	color: #ffffff;
 	padding: 1rem;
+	max-height: 200px;
 	max-width: 500px;
 	position: relative;
 	margin-left: 1.5rem;
@@ -265,7 +264,73 @@
 	transform: scale3d(1,1,1);
 }
 
-/* @media screen and (max-width: 1200px) {
-	.calendar_entry__title {
-	font-size: 10px;
-  } */
+@media screen and (max-width: 1200px) {
+	.comment_block {
+		left: 150px;
+	  }
+	.comment_block_r {
+		right: 150px;
+	  }
+  }
+
+  @media screen and (max-width: 875px) {
+	.comment_block {
+		left: 20px;
+	  }
+	.comment_block_r {
+		right: 20px;
+	  }
+  }
+
+  @media screen and (max-width: 650px) {
+	.comment_block .comment_dialog {
+		  max-width: 300px;
+	}
+
+	.comment_block_r .comment_dialog_r {
+		max-width: 300px;
+	}
+
+	.menu__item_name {
+		font-size: 1em;
+	}
+
+	.comment_block .text {
+		font-size: 0.75em;
+	}
+
+	.comment_block_r .text_r {
+		font-size: 0.75em;
+	}
+  }
+
+  @media screen and (max-width: 440px) {
+	.comment_block .comment_image {
+		display: none;
+	  }
+	  .comment_block_r .comment_image_r {
+		display: none;
+	  }
+  }
+
+  @media screen and (max-width: 390px) {
+	.comment_block .comment_dialog {
+		max-width: 250px;
+	}
+
+	.comment_block_r .comment_dialog_r {
+	  max-width: 250px;
+	}
+
+	.menu__item_name {
+		font-size: 0.9em;
+	}
+
+	.comment_block .text {
+		font-size: 0.65em;
+	}
+
+	.comment_block_r .text_r {
+		font-size: 0.65em;
+	}
+  }

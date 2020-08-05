@@ -22,7 +22,7 @@ function LeftCommentItem({data}) {
     <>
       <div className={styles.wrapper}>
               <div className={styles.comment_block}>
-                {/* <img className={styles.comment_image} src="https://user-images.githubusercontent.com/37580034/89393019-37606180-d745-11ea-87f7-93a71ca3b152.png"/> */}
+                <img className={styles.comment_image} src="https://user-images.githubusercontent.com/37580034/89393019-37606180-d745-11ea-87f7-93a71ca3b152.png"/>
                 <div className={styles.comment_dialog}>
                   <div className={classNames({[styles.menu]: true, [styles.menu__adsila]: true})}>
                     <a className={styles.menu__item} href={data.link} target="_black">
@@ -33,7 +33,7 @@ function LeftCommentItem({data}) {
                   <p className={styles.text}>{data.content}</p>
                   <div className={styles.date}>
                     <i className="fa fa-minus" style={{ color: `#white` }} aria-hidden="true"></i>
-                    <span>  {data.posted_date}</span>
+                    <span className={styles.text}> {data.posted_date}</span>
                   </div>
                 </div>
               </div>
@@ -55,12 +55,12 @@ function RightCommentItem({data}) {
             </div>
             <i class="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
             <p className={styles.text_r}>{data.content}</p>
-            <div className={styles.date_r}>
+            <div className={styles.date}>
               <i class="fa fa-minus" style={{ color: `#white` }} aria-hidden="true"></i>
-              <span>  {data.posted_date}</span>
+              <span className={styles.text_r}>  {data.posted_date}</span>
             </div>
           </div>
-          {/* <img className={styles.comment_image_r} src="https://user-images.githubusercontent.com/37580034/89162148-96d83900-d5ae-11ea-9b3c-62e91aed0084.png"/> */}
+          <img className={styles.comment_image_r} src="https://user-images.githubusercontent.com/37580034/89393019-37606180-d745-11ea-87f7-93a71ca3b152.png"/>
         </div>
       </div>
     </>
@@ -201,22 +201,22 @@ export default function Review({program}) {
         posted_date: "2019-12-17",
       },
       {
-        link: "https://m.blog.naver.com/jhc9639/221853453301",
+        link: "https://pjh3749.tistory.com/236",
         title: "우테코 지원하게 된 동기와 마음가짐",
         content: "우아한테크코스가 목표가 아니라 좋은 개발자로 성장하는 것을 목표로 하면서 성장해 나가는 과정으로 생각하고 도전했으면 합니다.",
-        posted_date: "2020-04-10",
+        posted_date: "2019-04-10",
       },
       {
         link: "https://blog.naver.com/spring1a/221490064807",
         title: "웹 백엔드 온라인 코딩테스트 문제 및 후기",
         content: "유명한 369 문제가 나왔고 해당 알고리즘은 구글링해보니 바로 찾을 수 있어서 가져다 썼다. 출처는 주석에 적어 두었다.",
-        posted_date: "2020-03-17",
+        posted_date: "2019-03-17",
       },
       {
         link: "https://velog.io/@kouz/우아한-테크코스-2기-오프라인-코딩테스트-리뷰-반성-3dk4pax3p7",
         title: "2기 오프라인 코딩테스트 리뷰와 반성",
         content: "프리코스 만으로도, 자신도 모르게 몰입하게 되고 많이 성장할 수 있는 과정입니다. 의심할 여지가 없이 좋은 경험을 할 수 있을 것입니다.",
-        posted_date: "2020-12-28",
+        posted_date: "2019-12-28",
       },
     ],
     likelion : [
@@ -246,9 +246,9 @@ export default function Review({program}) {
       },
       {
         link: "https://brunch.co.kr/magazine/likelionwork",
-        title: "[멋자 직장인] 퇴근하고 코딩 배우는 직장인들",
+        title: "[멋사 직장인] 퇴근하고 코딩 배우는 직장인들",
         content: "이 글은 스타트업 인사담당자가 '멋사 직장인'에서 코딩을 배워 해커톤에서 우승하는 작은 성취에 대한 이야기입니다.",
-        posted_date: "2019-12-19",
+        posted_date: "2019-12-11",
       },
     ],
   }
