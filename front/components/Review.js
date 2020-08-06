@@ -21,22 +21,22 @@ function LeftCommentItem({data}) {
   return (
     <>
       <div className={styles.wrapper}>
-              <div className={styles.comment_block}>
-                <img className={styles.comment_image} src="https://user-images.githubusercontent.com/37580034/89393019-37606180-d745-11ea-87f7-93a71ca3b152.png"/>
-                <div className={styles.comment_dialog}>
-                  <div className={classNames({[styles.menu]: true, [styles.menu__adsila]: true})}>
-                    <a className={styles.menu__item} href={data.link} target="_black">
-                      <span className={styles.menu__item_name}>{data.title + "   >"} </span>
-                    </a>
-                  </div>
-                  <i className="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
-                  <p className={styles.text}>{data.content}</p>
-                  <div className={styles.date}>
-                    <i className="fa fa-minus" style={{ color: `#white` }} aria-hidden="true"></i>
-                    <span className={styles.text}> {data.posted_date}</span>
-                  </div>
-                </div>
-              </div>
+        <div className={styles.comment_block}>
+          <img className={styles.comment_image} src="https://user-images.githubusercontent.com/37580034/89393019-37606180-d745-11ea-87f7-93a71ca3b152.png"/>
+          <div className={styles.comment_dialog}>
+            <div className={classNames({[styles.menu]: true, [styles.menu__adsila]: true})}>
+              <a className={styles.menu__item} href={data.link} target="_black">
+                <span className={styles.menu__item_name}>{data.title + "   >"} </span>
+              </a>
+            </div>
+            <i className="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
+            <p className={styles.text}>{data.content}</p>
+            <div className={styles.date}>
+              <i className="fa fa-minus" style={{ color: `#white` }} aria-hidden="true"></i>
+              <span className={styles.text}> {data.posted_date}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )
@@ -45,7 +45,7 @@ function LeftCommentItem({data}) {
 function RightCommentItem({data}) {
   return (
     <>
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper_r}>
         <div className={styles.comment_block_r}>
           <div className={styles.comment_dialog_r}>
             <div className={classNames({[styles.menu]: true, [styles.menu__adsila]: true})}>
