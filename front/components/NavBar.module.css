@@ -8,7 +8,7 @@
 }
 
 /* 내비게이션바 아이템 */
-.a:hover {
+.navbarBg a:hover {
   text-decoration: none;
 }
 
@@ -16,6 +16,10 @@
   color: #F2F8FF;
 }
 
+/* 햄버거 */
+.navbarBg button:focus {
+  outline: none;
+}
 
 /* 공고 롤링텍스트 */
 
@@ -81,7 +85,7 @@
 
 /* 공고 팝오버리스트 */
 .noticePopover {
-  opacity: 0.7;
+  
 }
 
 .noticePopoverTitle {
@@ -90,10 +94,6 @@
   font-size: 0.9em;
   font-weight: 600;
   border-bottom: 1px solid #E5F0FF;
-}
-
-.noticePopoverList {
-  
 }
 
 .noticePopoverList ul {
@@ -106,7 +106,6 @@
   font-family: 'NanumBarunGothic';
   font-size: 0.9em;
   font-weight: 400;
-  opacity: 1;
   line-height: 240%;
   padding: 0 10px;
   text-align: left;
@@ -122,16 +121,17 @@
 .noticePopoverItem span {
   display:inline-block;
   color: #696969;
+  width: 100%;
 }
 
-.buttonPopover {
+.buttonPopover:focus {
   box-shadow: none;
 }
 
 /* 반응형 */
 
  @media screen and (max-width: 991.98px) {
-  .navbarBg .noticeRolling, .buttonPopover {
+  .noticeRolling, .buttonPopover, .noticePopover {
     display: none;
     }
  }

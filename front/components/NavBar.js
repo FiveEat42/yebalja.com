@@ -125,7 +125,7 @@ export default function NavBar() {
 
           <OverlayTrigger trigger="click" placement="bottom" 
             overlay={
-              <Popover id={`popover-positioned-bottom`} style={{"opacity": `0.9`}}>
+              <Popover id={`popover-positioned-bottom`} className={styles.noticePopover}>
                 <Popover.Title className={styles.noticePopoverTitle}> 실시간 모집공고</Popover.Title>
                 <Popover.Content className={styles.noticePopoverList}>
                     <ul id="noticePopoverList">
@@ -134,7 +134,7 @@ export default function NavBar() {
                   </Popover.Content>
               </Popover>
             }>
-            <Button variant="link" className={styles.noticeListHidden}>
+            <Button variant="link" className={styles.buttonPopover}>
               <img src={require('../src/image/Expand.png')} width="24" height="24" />
             </Button>
           </OverlayTrigger>
