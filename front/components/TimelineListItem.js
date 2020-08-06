@@ -24,9 +24,9 @@ export default function TimelineListItem({data, id}) {
 
   {/* 시작일, 마감일, 시작시간, 마감시간 구하기 */}
   let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
-  // startdate = startdate.bold();
   let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
-  // enddate = enddate.bold();
+
+
   let starttime;
   let endtime;
   {/* 00:00 형태로 시작시간과 마감시간 뽑아내 */}
@@ -99,42 +99,57 @@ export default function TimelineListItem({data, id}) {
 
 
   {/* 날짜 및 시간을 period에 넣어 알려주는 부분 */}
-  let period;
+
   if (startdate == enddate) {
     {/* 시작일과 마감일이 같을 때 */}
     if (starttime == '0:00' && endtime == '0:00') {       {/* 시간이 둘 다 명시 안되어있을 때 */}
-      period = startdate;
-    } else if (starttime == endtime) {                    {/* 시작시간과 마감시간 같고 시간이 명시되어있을 때 */}
-      period = `${startdate} ${starttime}`;
-    } else if (endtime == '0:00') {                       {/* 시작시간만 있을 때  */}
-      period = `${startdate} ${starttime}`;
+      enddate = '';
+      starttime = '';
+      endtime = '';
+    } else if (starttime == endtime || endtime == '0:00') {                    {/* 시작시간과 마감시간 같고 시간이 명시되어있거나 시작시간만 있을  */}
+      `${startdate} ${starttime}`;
+      enddate = '';
+      endtime = '';
+      starttime = ` ${starttime}`;
     } else if (starttime == '0:00') {                         {/* 마감시간만 있을  */}
-      period = `${startdate} ~ ${endtime}`;
+      enddate = '';
+      starttime = '';
+      endtime = ` ~ ${endtime}`;
     } else {
-      period = `${startdate} ${starttime} ~ ${endtime}`;
+      enddate = '';
+      endtime = ` ~ ${endtime}`;
+      starttime = ` ${starttime}`;
     }
   } else {                                              {/* 시작일과 마감일이 다를 때 */}
     if (starttime == '0:00' && endtime == '0:00') {   {/* 시간이 둘 다 명시 안되어있을 때 */}
-      period = `${startdate} ~ ${enddate}`;
+      starttime = '';
+      endtime = '';
+      enddate = ` ~ ${enddate}`;
     } else if (starttime == '0:00') {                 {/* 시작시간이 없 때*/}
-      period = `${startdate} ~ ${enddate} ${endtime}`;
+      starttime = '';
+      enddate = ` ~ ${enddate}`;
+      endtime = ` ${endtime}`;
     } else if (endtime == '0:00') {
-      period = `${startdate} ${starttime} ~ ${enddate}`;
+      endtime = '';
+      enddate = ` ~ ${enddate}`;
+      starttime = ` ${starttime}`;
     } else {
-      period = `${startdate} ${starttime} ~ ${enddate} ${endtime}`;
+      starttime = ` ${starttime}`;
+      enddate = ` ~ ${enddate} `;
     }
   }
 
 
   {/* 기간에서 마감일까지 며칠 남았는지 알려주는 부분 */}
+  let daysLeft = ''
   if (startdate != enddate) {
     if (enddateLeft <= 7 && enddateLeft > 0) {
-      period = `${period} (${enddateLeft}일 남음)`;
+      daysLeft = ` (${enddateLeft}일 남음)`;
     } else if (enddateLeft == 0) {
       if (endtimeLeft <= 0 && endtime != '0:00') {
-        period = period;
+        daysLeft = '';
       } else {
-        period = `${period} (마감일)`;
+        daysLeft = ` (마감일)`;
       }
     }
   }
@@ -149,9 +164,12 @@ export default function TimelineListItem({data, id}) {
         </span>
         <div className={styles.content}>
           {data.description} <br/>
-          {period}
+          <b classNames={styles.datestyle}>{startdate}</b>
+  {starttime}
+  <b classNames={styles.datestyle}>{enddate}</b>
+  {endtime}{daysLeft}
         </div>
       </div>
     </li>
-)
+  )
 }
