@@ -22,51 +22,7 @@ export default function TimelineListItem({data, id}) {
     updown = `down_${type}`;
   }
 
-  {/* 시작날까지 남은 날짜 && 마감날까지 남은날짜 계산 */}
-  let startdateLeft = Math.floor((new Date(data.startdate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
-  let enddateLeft = Math.floor((new Date(data.enddate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
-  let starttimeLeft = Math.floor((new Date(data.startdate) - new Date()) / (1000)) + 1;
-  let endtimeLeft = Math.floor((new Date(data.enddate) - new Date()) / (1000)) + 1;
-
-
-  {/* 모집현황으로 D-Day/진행중/마감을 담음 */}
-  let status_content;
-  if (startdateLeft > 0) {
-    status_content = `D-${startdateLeft}`;    {/* 시작일까지 얼마나 남았는지 'D-숫자'로 표시 */}
-  } else if (startdateLeft >= 0) {
-      if (starttimeLeft >= 0) {
-        status_content = 'D-Day';              {/* 시작일의 시작시간이 지나면 '진행중' */}
-      } else if (starttimeLeft < 0) {
-        status_content = '진행중';               {/* 시작일인데 아직 시작시간이 안됐으면 'D-Day' */}
-      }
-  } else if (enddateLeft >= 0) {
-    if (endtimeLeft >= 0) {
-      status_content = '진행중';                 {/* 마감날이 됐는데 마감시간이 안 지났을 때 '진행중' */}
-    } else if (endtimeLeft <= 0) {              {/* 마감날의 마감시간이 지난 경우는 '마감' */}
-      status_content = '마감';
-      card_type = 'card_end';
-      status = 'status_end';
-      if (updown == 'up_recruit' || updown == 'up_edu') {
-        updown = 'up_end';
-      } else {
-        updown = 'down_end';
-      }
-    }
-  } else {
-    status_content = '마감';
-    card_type = 'card_end';
-    status = 'status_end';
-    if (updown == 'up_recruit' || updown == 'up_edu') {
-      updown = 'up_end';
-    } else {
-      updown = 'down_end';
-    }
-  }
-
-
-
-
-  {/* 시작일과 마감일로 period 표현하기 */}
+  {/* 시작일, 마감일, 시작시간, 마감시간 구하기 */}
   let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
   // startdate = startdate.bold();
   let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
@@ -85,9 +41,67 @@ export default function TimelineListItem({data, id}) {
     endtime = `${new Date(data.enddate).getHours()}:${new Date(data.enddate).getMinutes()}`;
   }
 
-  {/* 날짜 및 시간 알려주는 부분 */}
+
+  {/* 시작날까지 남은 날 && 마감날까지 남은 날 && 시작시간까지 남은 시간 && 마감시간까지 남은 시간 */}
+  let startdateLeft = Math.floor((new Date(data.startdate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
+  let enddateLeft = Math.floor((new Date(data.enddate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
+  let starttimeLeft;
+  let endtimeLeft;
+  if (starttime == '0:00') {
+    starttimeLeft = Math.floor((new Date(data.startdate).setHours(23,59,59) - new Date()) / (1000)) + 1;
+  } else {
+    starttimeLeft = Math.floor((new Date(data.startdate) - new Date()) / (1000)) + 1;
+  }
+  if (endtime == '0:00') {
+    endtimeLeft = Math.floor((new Date(data.enddate).setHours(23,59,59) - new Date()) / (1000)) + 1;
+  } else {
+    endtimeLeft = Math.floor((new Date(data.enddate) - new Date()) / (1000)) + 1;
+  }
+
+
+  {/* 모집현황으로 D-Day/진행중/마감을 담음 */}
+  let status_content;
+  if (startdateLeft > 0) {
+    status_content = `D-${startdateLeft}`;    {/* 시작일까지 얼마나 남았는지 'D-숫자'로 표시 */}
+  } else if (startdateLeft >= 0) {
+      if (starttimeLeft >= 0) {
+        status_content = 'D-Day';              {/* 시작일의 시작시간이 지나면 '진행중' */}
+      } else if (starttimeLeft < 0) {
+        status_content = '진행중';               {/* 시작일인데 아직 시작시간이 안됐으면 'D-Day' */}
+      }
+  } else if (enddateLeft >= 0) {
+    if (endtimeLeft > 0) {
+      status_content = '진행중';                 {/* 마감날이 됐는데 마감시간이 안 지났을 때 '진행중' */}
+    } else if (endtimeLeft <= 0) {              {/* 마감날의 마감시간이 지난 경우는 '마감' */}
+      status_content = '마감';
+      card_type = 'card_end';
+      status = 'status_end';
+      if (updown == 'up_recruit' || updown == 'up_edu') {
+        updown = 'up_end';
+      } else {
+        updown = 'down_end';
+      }
+    }
+  } else {                                   {/* 마감날이 지난 경우는 무조건 '마감' */}
+    status_content = '마감';
+    card_type = 'card_end';
+    status = 'status_end';
+    if (updown == 'up_recruit' || updown == 'up_edu') {
+      updown = 'up_end';
+    } else {
+      updown = 'down_end';
+    }
+  }
+
+
+
+
+
+
+  {/* 날짜 및 시간을 period에 넣어 알려주는 부분 */}
   let period;
-  if (startdate == enddate) {                           {/* 시작일과 마감일이 같을 때 */}
+  if (startdate == enddate) {
+    {/* 시작일과 마감일이 같을 때 */}
     if (starttime == '0:00' && endtime == '0:00') {       {/* 시간이 둘 다 명시 안되어있을 때 */}
       period = startdate;
     } else if (starttime == endtime) {                    {/* 시작시간과 마감시간 같고 시간이 명시되어있을 때 */}
