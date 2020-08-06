@@ -9,6 +9,7 @@
   height: 15rem;
 }
 
+/*right comment card*/
 .comment_body {
   position: absolute;
   bottom: 10px;
@@ -169,7 +170,7 @@
 }
 
 /* title link */
-.menu__item {
+.link_item {
   position: relative;
   display: block;
   outline: none;
@@ -177,41 +178,33 @@
   line-height: 1;
 }
 
-.menu__item_name, .menu__item_label {
+.link_item_name {
   position: relative;
   display: inline-block;
-}
-
-.menu__item_name {
   font-size: 1.25em;
 }
 
-.menu__item_label {
-  margin: 0 0 0 0.5em;
-  text-align: right;
-}
-
-.menu__adsila {
+.link_adsila {
   font-size: 1.15em;
   font-family: 'Nunito', sans-serif;
 }
 
-.menu__adsila a {
+.link_adsila a {
   color: #ffffff;
 }
 
-.menu__adsila .menu__item {
+.link_adsila .link_item {
   margin: 0 0 1em;
 }
 
-.menu__adsila .menu__item_name {
+.link_adsila .link_item_name {
   font-weight: bold;
   line-height: 1.4;
   transition: color 0.5s;
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.menu__adsila .menu__item_name::before {
+.link_adsila .link_item_name::before {
   content: '';
   position: absolute;
   z-index: -1;
@@ -226,16 +219,16 @@
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.menu__adsila .menu__item:nth-child(odd) .menu__item_name::before {
+.link_adsila .link_item:nth-child(odd) .link_item_name::before {
   background: #4DF0FF;
 }
 
 /* title link Hover */
-.menu__adsila .menu__item:hover, .menu__adsila .menu__item:focus {
+.link_adsila .link_item:hover, .link_adsila .link_item:focus {
   color: #ffffff;
 }
 
-.menu__adsila .menu__item:hover .menu__item_name::before, .menu__adsila .menu__item:focus .menu__item_name::before {
+.link_adsila .link_item:hover .link_item_name::before, .link_adsila .link_item:focus .link_item_name::before {
   transform: scale3d(1, 1, 1);
 }
 
@@ -266,7 +259,7 @@
     max-width: 300px;
     height: 150px;
   }
-  .menu__item_name {
+  .link_item_name {
     font-size: 0.9em;
   }
   .comment_block .text {
@@ -301,7 +294,7 @@
   .comment_block_r .comment_dialog_r {
     max-width: 250px;
   }
-  .menu__item_name {
+  .link_item_name {
     font-size: 0.8em;
   }
   .comment_block .text {
