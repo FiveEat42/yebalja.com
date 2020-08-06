@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    outline: none;
     z-index: 1;
     box-shadow: 0 10px 25px -6px #7e8f94;
 }
