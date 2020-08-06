@@ -126,7 +126,7 @@ export default function NavBar() {
           <OverlayTrigger trigger="click" placement="bottom" 
             overlay={
               <Popover id={`popover-positioned-bottom`}>
-                <Popover.Title className={styles.noticePopoverTitle}> 실시간 인기 모집공고</Popover.Title>
+                <Popover.Title className={styles.noticePopoverTitle}> 실시간 모집공고</Popover.Title>
                 <Popover.Content className={styles.noticePopoverList}>
                     <ul id="noticePopoverList">
                       {noticeList.map((v, idx) => <ListItem data={v} key={v.title} id={idx}/>)}
