@@ -19,7 +19,8 @@ function NavItem ({ data }) {
       <Link href={data.href}>
         <a className={classNames({["nav-link"]: true,
           [router.pathname == [data.href] ? "active" : ""]: true})}>
-          {data.program}</a>
+            {data.program}
+        </a>
       </Link>
     </>
   )
@@ -27,23 +28,24 @@ function NavItem ({ data }) {
 
 function RollingItem ({ data }) {
   
-  let enddateLeft = Math.floor((new Date(data.enddate).setHours(9) - new Date().setHours(9)) / (1000 * 60 * 60 * 24)) + 1;
-  
-  let status_content;
+  /* 남은 날짜, 시간에 따라 D-Day 표현방식(status) 결정 */
+  let status;
+  let target = new Date(data.enddate);
+  let today = new Date();
 
-  if (enddateLeft > 1) {
-    status_content  = `D-${enddateLeft}`;
-  } else if (enddateLeft > 0) {
-    status_content = `D-Day`
+  if (today > target) {
+    status = '마감';
+  } else if (target.setHours(0, 0, 0, 0) === today.setHours(0, 0, 0, 0)) {
+    status = 'D-Day';
   } else {
-    status_content = '마감';
+    status= `D-${(target - today)/(60*60*24*1000)}`;
   }
-
+  
   return (
     <>
       <li>
         <a target="_blank" rel="noopener noreferrer" href={data.href}>
-          <span className={styles.date}>{status_content}</span>
+          <span className={styles.date}>{status}</span>
           <span className={styles.notice}>{data.title}</span>
         </a>
       </li>
@@ -92,15 +94,15 @@ export default function NavBar() {
     {
       title: "DREAMIN iOS Academy 교육생 모집",
       href: "https://dreamin.career/academy/ios",
-      enddate: "2020-07-17",
+      enddate: "2020-07-17 18:00:00",
     },{
       title: "광주AI사관학교",
       href: "http://ai.gitct.kr/apply/",
-      enddate: "2020-05-31",
+      enddate: "2020-05-31 18:00:00",
     },{
       title: "예발자닷컴 오픈",
       href: "https://yebalja.com",
-      enddate: "2020-08-08",
+      enddate: "2020-08-07 23:00:00",
     }
   ]
 
