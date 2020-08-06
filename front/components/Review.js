@@ -29,11 +29,13 @@ function LeftCommentItem({data}) {
                 <span className={styles.menu__item_name}>{data.title + "   >"} </span>
               </a>
             </div>
-            <i className="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
-            <p className={styles.text}>{data.content}</p>
-            <div className={styles.date}>
-              <i className="fa fa-minus" style={{ color: `#white` }} aria-hidden="true"></i>
-              <span className={styles.text}> {data.posted_date}</span>
+            <div className={styles.comment_body}>
+              <i className="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
+              <p className={styles.text}>{data.content}</p>
+              <div className={styles.date}>
+                <i className="fa fa-minus" style={{ color: `#white` }} aria-hidden="true"></i>
+                <span className={styles.text}> {data.posted_date}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -45,7 +47,7 @@ function LeftCommentItem({data}) {
 function RightCommentItem({data}) {
   return (
     <>
-      <div className={styles.wrapper_r}>
+      <div className={styles.wrapper}>
         <div className={styles.comment_block_r}>
           <div className={styles.comment_dialog_r}>
             <div className={classNames({[styles.menu]: true, [styles.menu__adsila]: true})}>
@@ -53,11 +55,13 @@ function RightCommentItem({data}) {
                 <span className={styles.menu__item_name}>{data.title + "   >"}</span>
               </a>
             </div>
-            <i className={"fa fa-quote-left"} style={{ color: `white` }} aria-hidden="true"></i>
-            <p className={styles.text_r}>{data.content}</p>
-            <div className={styles.date}>
-              <i className={"fa fa-minus"} style={{ color: `#white` }} aria-hidden="true"></i>
-              <span className={styles.text_r}>  {data.posted_date}</span>
+            <div className={styles.comment_body}>
+              <i className={"fa fa-quote-left"} style={{ color: `white` }} aria-hidden="true"></i>
+              <p className={styles.text_r}>{data.content}</p>
+              <div className={styles.date}>
+                <i className={"fa fa-minus"} style={{ color: `#white` }} aria-hidden="true"></i>
+                <span className={styles.text_r}>  {data.posted_date}</span>
+              </div>
             </div>
           </div>
           <img className={styles.comment_image_r} src="https://user-images.githubusercontent.com/37580034/89393019-37606180-d745-11ea-87f7-93a71ca3b152.png"/>
@@ -74,9 +78,9 @@ export default function Review({program}) {
     ftseoul: [
       {
         link: "https://yechoi.tistory.com/15",
-        title: "42서울은 동료학습을 어떻게 구현했을까",
-        content: "남들한테 물어 배운 건 책을 보며 익히는 것보다 빨랐다. '이 부분을 제대로 아는 게 아닌 것 같다'며 책을 붙잡고 있던 누군가는 어느 순간 보니 뒤쳐져 있었다.",
-        post_date: "2020-07-19",
+        title: "42는 동료학습을 어떻게 구현했을까",
+        content: "남들한테 물어 배운 건 책을 보며 익히는 것보다 빨랐다. '이 부분을 제대로 아는 게 아닌 것 같다'며 책을 붙잡고 있던 누군가는 어느 순간 보니 뒤쳐져 있었다.", //max-length: 94글자 혹은 159byte
+        posted_date: "2020-07-19",
       },
       {
         link: "https://wannabedev.tistory.com/21",
@@ -92,7 +96,7 @@ export default function Review({program}) {
       },
       {
         link: "https://nadarm.tistory.com/27",
-        title: "SSAFY, 42 Seoul(La Piscine) 후기 / 비교",
+        title: "SSAFY, 42 Seoul 후기 / 비교",
         content: "정해진 진도가 없이 하는 만큼 진도가 나가게 된다. 옆 사람과 비교하다간 멘탈 나갈 확률 90%",
         posted_date: "2020-02-16",
       },
@@ -124,7 +128,7 @@ export default function Review({program}) {
       },
       {
         link: "https://watermelonlike.tistory.com/31?category=823857",
-        title: "생각 나는대로 적은 전공자반 1학기 후기",
+        title: "전공자반 1학기 후기",
         content: "기본부터 알려주고 뒤에 프레임워크나 실무에서 사용하는 팁들을 알려주며 짜짠하는 느낌이었다. '적용시키며 웹을 공부하자'의 느낌이 강했다.",
         posted_date: "2020-06-09",
       },
@@ -197,7 +201,7 @@ export default function Review({program}) {
       {
         link: "https://blog.naver.com/10040171_/221740613814",
         title: "우테코 3주 프리코스 후기",
-        content: "프리코스를 진행하는 동안 가장 중요하게 생각한 것은 객체를 객체답게 사용하는 것이었다. 기존에 C언어를 주로 사용하다 보니 절차 지향적으로 코드를 작성하는 버릇이 있었고, 이를 개선하고자 했다.",
+        content: "프리코스를 진행하는 동안 가장 중요하게 생각한 것은 객체를 객체답게 사용하는 것이었다. 절차 지향적으로 코드를 작성하는 버릇을 개선하고자 했다.",
         posted_date: "2019-12-17",
       },
       {
@@ -208,7 +212,7 @@ export default function Review({program}) {
       },
       {
         link: "https://blog.naver.com/spring1a/221490064807",
-        title: "웹 백엔드 온라인 코딩테스트 문제 및 후기",
+        title: "웹 백엔드 온라인 코딩테스트 문제 후기",
         content: "유명한 369 문제가 나왔고 해당 알고리즘은 구글링해보니 바로 찾을 수 있어서 가져다 썼다. 출처는 주석에 적어 두었다.",
         posted_date: "2019-03-17",
       },
@@ -223,7 +227,7 @@ export default function Review({program}) {
       {
         link: "https://itchipmunk.tistory.com/91",
         title: "멋사 4, 5기 회고록",
-        content: "사실 웹 개발 비중보다 직접 문제를 만들고 여러 가지 관광 코스 루트를 기획하는 것이 주된 일이었다. 작년에는 앉아서 개발만 했다면 이제는 발로 뛰어 다니면서도 개발을 해야 했다.",
+        content: "사실 웹 개발 비중보다 직접 문제를 만들고 기획하는 것이 주된 일이었다. 작년에는 앉아서 개발만 했다면 이제는 발로 뛰어 다니면서도 개발을 해야 했다.",
         posted_date: "2018-02-26",
       },
       {
