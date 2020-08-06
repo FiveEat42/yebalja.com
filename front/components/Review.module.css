@@ -213,7 +213,7 @@
 }
 
 .menu__adsila a {
-	color: #DAE4F2;
+	color: #ffffff;
 }
 
 .menu__adsila .menu__item {
@@ -245,10 +245,6 @@
 
 .menu__adsila .menu__item:nth-child(odd) .menu__item_name::before
 {
-	background: #4DF0FF;
-}
-
-.menu__adsila .menu__item:nth-child(even) .menu__item_name::before {
 	background: #4DF0FF;
 }
 

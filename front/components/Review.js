@@ -53,10 +53,10 @@ function RightCommentItem({data}) {
                 <span className={styles.menu__item_name}>{data.title + "   >"}</span>
               </a>
             </div>
-            <i class="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
+            <i className={"fa fa-quote-left"} style={{ color: `white` }} aria-hidden="true"></i>
             <p className={styles.text_r}>{data.content}</p>
             <div className={styles.date}>
-              <i class="fa fa-minus" style={{ color: `#white` }} aria-hidden="true"></i>
+              <i className={"fa fa-minus"} style={{ color: `#white` }} aria-hidden="true"></i>
               <span className={styles.text_r}>  {data.posted_date}</span>
             </div>
           </div>
