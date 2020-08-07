@@ -234,7 +234,6 @@ function ProgramList() {
                             period: "3/17 ~ 대학별 상이",
                             startDate: "2020-03-17",
                             endDate: "2020-04-10",
-                            gridColumn: "77/107",
                         },
                         {
                             title: "교육",

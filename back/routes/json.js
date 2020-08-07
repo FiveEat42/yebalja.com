@@ -97,5 +97,51 @@ router.get('/timelinelist', (req, res) => {
   })
 })
 
-module.exports = router;
+const hasKey = (arr, key, value) => {
+  let len = arr.length;
+  if (!arr[len - 1] || arr[len - 1][key] != value){
+    return false;
+  } else {
+    return true;
+  }
+}
 
+router.get('/yearlycalendar', (req, res) => {
+  db.query(`select substring(link, 2) as 'idName', programs.title as title, gisus.gisu, visible, steps_calendars.title as stepTitle, detail, start_date as startDate, end_date as endDate from steps_calendars inner join gisus on steps_calendars.gisus_id = gisus.id inner join programs on gisus.programs_id = programs.id;`,
+    (error, result) => {
+      if (error) throw error;
+      let outerArr = [];
+      result.map(v => {
+        if (!hasKey(outerArr, 'idName', v.idName)){
+          let obj1 = {
+            'idName' : v.idName,
+            'title' : v.title,
+            'gisuData' : [],
+          };
+          outerArr.push(obj1);
+        }
+        let middleArr = outerArr[outerArr.length - 1].gisuData;
+        if (!hasKey(middleArr,'gisu', v.gisu)){
+          let obj2 = {
+            'gisu' : v.gisu,
+            'visible' : v.visible,
+            'step' : [],
+          }
+          middleArr.push(obj2);
+        }
+        let innerArr = middleArr[middleArr.length - 1].step;
+        if (!hasKey(innerArr, 'title', v.stepTitle)){
+          let obj3 = {
+            'title': v.stepTitle,
+            'period': v.detail,
+            'startDate': v.startDate,
+            'endDate': v.endDate,
+          }
+          innerArr.push(obj3);
+        }
+      })
+      res.send(outerArr);
+  })
+})
+
+module.exports = router;
