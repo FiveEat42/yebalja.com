@@ -113,11 +113,12 @@ export default function Team() {
                 <div className="col-md-4">
                   <div className={classNames({[styles.pull_left]: true, [styles.sm_text_center]: true})}>
                     <div className={styles.team_overview}>
-                      <h2>Who We Are</h2>
+                      <h2>인삿말</h2>
+                      <p>미혜: 아이스 아메리카노 얼음적게 주세연-<br />성상: (끄응)<br />태혁: 혀기배고팡<br />정아: 오홍<br />대현: 전 처음부터 그렇게 생각했어요</p>    
                       <a target="_blank" rel="noopener noreferrer" href="https://github.com/FiveEat42/yebalja.com">
-                        그들의 개발 히스토리
+                        예발자닷컴 개발 히스토리
                       </a>
-                      <p><div>솔직히 저희도 이렇게 잘 될줄 몰랐어요</div></p>
+                      <p>저희 다 이런거 처음해봐요<br />솔직히 저희도 이렇게 잘 될줄 몰랐어요<br />잘되니까 기분은 좋네요 껄껄껄</p>
                     </div>
                   </div>
                 </div>

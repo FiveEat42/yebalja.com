@@ -115,11 +115,12 @@
 
 /* Team overview */
 .team_overview {
-  padding-right: 15px;
+  margin-right: 15px;
+  margin-left: -100px;
 }
 
 .team_overview h2 {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-weight: 800;
   margin-bottom: 5px;
 }
@@ -141,14 +142,13 @@
   display: inline-block;
 }
 
-
 /* For centering elements - optional - Can use table,tablecell instead */
 .flex_center {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   margin: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .flex_center > div:first-child {
