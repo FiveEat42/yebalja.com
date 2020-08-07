@@ -97,6 +97,11 @@ router.get('/timelinelist', (req, res) => {
   })
 })
 
+//밑에 yearlycalendar component JSON에 사용될 함수
+//더미데이터가 배열속에 오브젝트안에 배열속에 오브젝트안에 배열안에 오브젝트들이 나오는 꼴이라서 반복됨
+//현재 배열중 제일 마지마 length - 1번째 오브젝트의 키, 값이 현재 db에서 읽은 키, 값과 비교해서
+//존재하지 않거나 다르면 새로운 키,값을 만들고 같을땐 건드리지 않는게 목표
+//아래 함수는 키,값이 같은게 있는지 체크해주는 함수
 const hasKey = (arr, key, value) => {
   let len = arr.length;
   if (!arr[len - 1] || arr[len - 1][key] != value){
@@ -112,6 +117,8 @@ router.get('/yearlycalendar', (req, res) => {
       if (error) throw error;
       let outerArr = [];
       result.map(v => {
+        //제일 바깥 어레이속 마지막 오브젝트의 idName이 현재 v의 idName과 같은지 체크
+        //없으면 새로운 오브젝트 생성, 있으면 패스
         if (!hasKey(outerArr, 'idName', v.idName)){
           let obj1 = {
             'idName' : v.idName,
@@ -121,6 +128,8 @@ router.get('/yearlycalendar', (req, res) => {
           outerArr.push(obj1);
         }
         let middleArr = outerArr[outerArr.length - 1].gisuData;
+        //제일 바깥 어레이속 마지막 오브젝트의 gisu와 현재 v의 gisu가 같은지 체크
+        //없으면 새로운 오브젝트 생성, 있으면 패스
         if (!hasKey(middleArr,'gisu', v.gisu)){
           let obj2 = {
             'gisu' : v.gisu,
@@ -130,6 +139,8 @@ router.get('/yearlycalendar', (req, res) => {
           middleArr.push(obj2);
         }
         let innerArr = middleArr[middleArr.length - 1].step;
+        //제일 바깥 어레이속 마지막 오브젝트의 step과 현재 v의 step이 같은지 체크
+        //없으면 새로운 오브젝트 생성, 있으면 패스
         if (!hasKey(innerArr, 'title', v.stepTitle)){
           let obj3 = {
             'title': v.stepTitle,
