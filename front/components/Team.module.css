@@ -8,6 +8,7 @@
 .team_members {
   transform: rotate(-45deg);
   list-style-type: none;
+  margin: 30px;
 }
 
 .team_members li > div {
@@ -115,8 +116,8 @@
 
 /* Team overview */
 .team_overview {
-  margin-right: 15px;
-  margin-left: -100px;
+  padding-right: 15px;
+  min-width: 320px;
 }
 
 .team_overview h2 {
@@ -145,11 +146,11 @@
 
 /* For centering elements - optional - Can use table,tablecell instead */
 .flex_center {
-  display: flex;
-  margin: auto;
-  flex-direction: row;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
 .flex_center > div:first-child {

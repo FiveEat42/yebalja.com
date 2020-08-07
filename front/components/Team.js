@@ -12,7 +12,7 @@ export default function Team() {
 
                 
                 <div className="col-md-8">
-                  <div className={classNames({[styles.pull_right]: true, [styles.sm_no_float]: true})}>
+                  <div className={styles.sm_no_float}>
                     <ul className={styles.team_members}>
 
                       <li className="clearfix">
@@ -111,7 +111,7 @@ export default function Team() {
                 </div>
 
                 <div className="col-md-4">
-                  <div className={classNames({[styles.pull_left]: true, [styles.sm_text_center]: true})}>
+                  <div className={styles.sm_text_center}>
                     <div className={styles.team_overview}>
                       <h2>헬로우 월드</h2>
                       <p>미혜: 아이스 아메리카노 얼음적게 주세연-<br />성상: (끄응)<br />태혁: 혀기배고팡<br />정아: 오홍<br />대현: 전 처음부터 그렇게 생각했어요</p>    
