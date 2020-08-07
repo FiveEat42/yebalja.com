@@ -130,6 +130,7 @@ router.get('/yearlycalendar', (req, res) => {
         let middleArr = outerArr[outerArr.length - 1].gisuData;
         //제일 바깥 어레이속 마지막 오브젝트의 gisu와 현재 v의 gisu가 같은지 체크
         //없으면 새로운 오브젝트 생성, 있으면 패스
+        console.log(v);
         if (!hasKey(middleArr,'gisu', v.gisu)){
           let obj2 = {
             'gisu' : v.gisu,
@@ -151,8 +152,52 @@ router.get('/yearlycalendar', (req, res) => {
           innerArr.push(obj3);
         }
       })
+      console.log(outerArr);
       res.send(outerArr);
   })
 })
 
+router.get('/faq', (req,res) => {
+  db.query(
+    "select replace(programs.link, '/', '') as program,  categories.title as category,  categories.eventkey as eventKey,  subcategories.title as title,  subcategories.link as href, qnas.q , qnas.a from programs  inner join categories on programs.id = categories.programs_id inner join subcategories on categories.id = subcategories.categories_id  inner join qnas on qnas.subcategories_id = subcategories.id",
+    (error, result) => {
+      if (error) throw error;
+      let obj1 = {}
+      result.map(v => {
+        //obj1(제일바깥 obj)에 program키가 있는지 체크
+        if (!obj1[v.program]){
+          obj1[v.program] = [];
+        }
+        let arr1 = obj1[v.program]
+        if (!hasKey(arr1, 'category', v.category)){
+          let obj2 = {
+            'category': v.category,
+            'eventKey': v.eventKey,
+            'subCategory': [],
+          }
+          arr1.push(obj2);
+        }
+        let arr2 = arr1[arr1.length - 1].subCategory;
+        if (!hasKey(arr2, 'title', v.title)){
+          let obj3 = {
+            'title': v.title,
+            'href': v.href,
+            'qna': []
+          }
+          arr2.push(obj3);
+        }
+        let arr3 = arr2[arr2.length - 1].qna;
+        if (!hasKey(arr3, 'q', v.q)){
+          let obj4 = {
+            'q': v.q,
+            'a': v.a,
+          }
+          arr3.push(obj4);
+        }
+      })
+
+      console.log(obj1);
+      res.send(obj1);
+    })
+})
 module.exports = router;
