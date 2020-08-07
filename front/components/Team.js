@@ -113,7 +113,7 @@ export default function Team() {
                 <div className="col-md-4">
                   <div className={classNames({[styles.pull_left]: true, [styles.sm_text_center]: true})}>
                     <div className={styles.team_overview}>
-                      <h2>인삿말</h2>
+                      <h2>헬로우 월드</h2>
                       <p>미혜: 아이스 아메리카노 얼음적게 주세연-<br />성상: (끄응)<br />태혁: 혀기배고팡<br />정아: 오홍<br />대현: 전 처음부터 그렇게 생각했어요</p>    
                       <a target="_blank" rel="noopener noreferrer" href="https://github.com/FiveEat42/yebalja.com">
                         예발자닷컴 개발 히스토리
