@@ -5,7 +5,7 @@ export default function TeamIllu() {
   return (
     <>
       <div className={styles.section}>
-        <img  src={require('../src/image/teamtest.png')} />
+        <img  src={require('../src/image/teamdrawing.png')} />
       </div>
     </>
 );

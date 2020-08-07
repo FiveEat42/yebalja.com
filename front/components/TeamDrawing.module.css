@@ -6,4 +6,5 @@
 .section img {
     width: 75%;
     min-width: 300px;
+    max-width: 1000px;
 }
