@@ -153,7 +153,7 @@ export default function TimelineList({program}) {
         edu: `false`,
         name: '심층면접',
         description: '오프라인 심층면접',
-        startdate: '2020-05-08',
+        startdate: '2020-05-08 00:00:00',
         enddate: '2020-05-09',
       },
       {

@@ -25,11 +25,9 @@ export default function TimelineListItem({data, id}) {
   {/* 시작일, 마감일, 시작시간, 마감시간 구하기 */}
   let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
   let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
-
-
   let starttime;
   let endtime;
-  {/* 00:00 형태로 시작시간과 마감시간 뽑아내 */}
+  {/* 00:00 형태로 시작시간과 마감시간 뽑아내기 */}
   if (new Date(data.startdate).getMinutes() < '10') {
     starttime = `${new Date(data.startdate).getHours()}:0${new Date(data.startdate).getMinutes()}`;
   } else {
@@ -100,40 +98,38 @@ export default function TimelineListItem({data, id}) {
 
   {/* 날짜 및 시간을 period에 넣어 알려주는 부분 */}
 
-  if (startdate == enddate) {
-    {/* 시작일과 마감일이 같을 때 */}
-    if (starttime == '0:00' && endtime == '0:00') {       {/* 시간이 둘 다 명시 안되어있을 때 */}
+  if (startdate == enddate) {                               {/* 시작일과 마감일이 같을 때 */}
+    if (starttime == '0:00' && endtime == '0:00') {       {/* startdate */}
       enddate = '';
       starttime = '';
       endtime = '';
-    } else if (starttime == endtime || endtime == '0:00') {                    {/* 시작시간과 마감시간 같고 시간이 명시되어있거나 시작시간만 있을  */}
-      `${startdate} ${starttime}`;
+    } else if (starttime == endtime || endtime == '0:00') {           {/* startdate starttime */}
       enddate = '';
       endtime = '';
       starttime = ` ${starttime}`;
-    } else if (starttime == '0:00') {                         {/* 마감시간만 있을  */}
+    } else if (starttime == '0:00') {                         {/* startdate ~ endtime */}
       enddate = '';
       starttime = '';
       endtime = ` ~ ${endtime}`;
-    } else {
+    } else {                                                  {/* startdate starttime ~ endtime */}
       enddate = '';
       endtime = ` ~ ${endtime}`;
       starttime = ` ${starttime}`;
     }
   } else {                                              {/* 시작일과 마감일이 다를 때 */}
-    if (starttime == '0:00' && endtime == '0:00') {   {/* 시간이 둘 다 명시 안되어있을 때 */}
+    if (starttime == '0:00' && endtime == '0:00') {   {/* startdate ~ enddate */}
       starttime = '';
       endtime = '';
       enddate = ` ~ ${enddate}`;
-    } else if (starttime == '0:00') {                 {/* 시작시간이 없 때*/}
+    } else if (starttime == '0:00') {                 {/* startdate ~ enddate endtime */}
       starttime = '';
       enddate = ` ~ ${enddate}`;
       endtime = ` ${endtime}`;
-    } else if (endtime == '0:00') {
+    } else if (endtime == '0:00') {                   {/* startdate starttime ~ enddate */}
       endtime = '';
       enddate = ` ~ ${enddate}`;
       starttime = ` ${starttime}`;
-    } else {
+    } else {                                           {/* startdate starttime ~ enddate endtime */}
       starttime = ` ${starttime}`;
       enddate = ` ~ ${enddate} `;
     }
