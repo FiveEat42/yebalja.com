@@ -1,0 +1,220 @@
+.section {
+  display: block;
+  margin : 100px 0 150px 0;
+  font-family: 'NanumBarunGothic';
+}
+/*  Team Starts */
+.team_members {
+  transform: rotate(-45deg);
+  list-style-type: none;
+}
+.team_members li > div {
+float: left;
+width: 30%;
+}
+
+.team_members li:nth-child(2) > div:first-child {
+margin-left: 30%;
+}
+
+.team_members li:last-child > div:first-child {
+margin-left: 60%;
+}
+
+.member_details > div {
+background-color: #ddd;
+margin: 5px;
+}
+.member_details img {
+transform: rotate(45deg) translate(0, 17px) scale(1.1);
+display: block;
+width: 100%;
+height: 100%;
+}
+
+/* hover content - style */
+.member_details > div {
+position: relative;
+overflow: hidden;
+}
+
+.member_info {
+position: absolute;
+top: 50%;
+transform: rotate(45deg) translate(-12px, 15px);
+left: 0;
+right: 0;
+z-index: 2;
+text-align: center;
+}
+
+.member_info h3, .member_info p {
+margin: 0;
+color: #fff;
+position: relative;
+opacity: 0;
+visibility: hidden;
+}
+
+.member_info h3 {
+font-size: 0.8em;
+font-weight: 600;
+top: -100px;
+}
+
+.member_info p {
+font-weight: 300;
+font-size: 0.75em;
+bottom: -150px;
+}
+
+.member_info img {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  transform: rotate(0deg);
+}
+
+.member_details > div:after {
+content: '';
+background-image: linear-gradient(45deg, rgba(74, 145, 245, .8) 50%, transparent 50%);
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 1;
+opacity: 0;
+visibility: hidden;
+}
+
+/* hover content - onhover */
+.member_details *,
+.member_details > div:after {
+transition: all .4s ease;
+}
+
+.member_details:hover *,
+.member_details:hover > div:after {
+opacity: 1;
+visibility: visible;
+}
+
+.member_details:hover .member_info h3 {
+top: 0;
+}
+
+.member_details:hover .member_info p {
+bottom: 0;
+}
+
+/* Team overview */
+.team_overview {
+padding-right: 15px;
+}
+.team_overview h2 {
+font-size: 1.3em;
+font-weight: 800;
+margin-bottom: 5px;
+}
+
+.team_overview > a {
+margin-bottom: 30px;
+display: block;
+}
+
+.team_overview > a:before {
+content: '';
+width: 10px;
+height: 2px;
+position: relative;
+top: -3px;
+margin-right: 5px;
+background-color: #ccc;
+display: inline-block;
+}
+
+
+/* For centering elements - optional - Can use table,tablecell instead */
+.flex_center {
+display: flex;
+flex-direction: row;
+justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.flex_center > div:first-child {
+order: 2;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width : 769px) {
+.sm_no_flex {
+  display: block;
+}
+.sm_no_float {
+  float: none !important;
+}
+.sm_text_center {
+  text-align: center;
+}
+}
+
+@media only screen and (max-width : 550px) {
+.team_members li {
+  text-align: center;
+}
+.team_members li > div {
+  float: none;
+  display: inline-block;
+  width: 30%;
+  margin: 0 !important;
+}
+.team_members {
+  transform: rotate(0);
+}
+.member_details img {
+  transform: rotate(0) translate(0, 0);
+}
+.team_overview {
+  padding: 15px;
+}
+
+}
+
+@media only screen and (max-width : 399px) {
+.team_members li > div {
+  width: 48%;
+}
+}
+
+/* extra */
+.copyright {
+text-align: center;
+margin-top: 30px;
+font-size: 1.6rem;
+background-color: #eee;
+}
+.copyright a {
+display: inline-block;
+padding: 10px 2px;
+}
+.upwork {
+color: #37a000;
+}
+.upwork:after {
+content: '/';
+margin-left: 10px;
+}
+.fiverr {
+color: #1dbf73;
+}
+.copyright .triplebyte {
+display: block;
+padding-top: 0;
+color: #344759;
+text-decoration: underline;
+} 
