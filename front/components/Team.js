@@ -113,8 +113,10 @@ export default function Team() {
                 <div className="col-md-4">
                   <div className={classNames({[styles.pull_left]: true, [styles.sm_text_center]: true})}>
                     <div className={styles.team_overview}>
-                      <h2>Who Are We?</h2>
-                      <a href="#">그들의 개발 히스토리</a>
+                      <h2>Who We Are</h2>
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/FiveEat42/yebalja.com">
+                        그들의 개발 히스토리
+                      </a>
                       <p><div>솔직히 저희도 이렇게 잘 될줄 몰랐어요</div></p>
                     </div>
                   </div>
