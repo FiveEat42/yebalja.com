@@ -6,12 +6,9 @@ import Head from 'next/head';
 function CommentList({data, id}) {
   return (
     <>
-
       {
-         (id % 2) ? <RightCommentItem data={data}/> : 
-        <LeftCommentItem data={data}/>
+        (id % 2) ? <RightCommentItem data={data}/> : <LeftCommentItem data={data}/>
       }
-
     </>
   )
 }
@@ -261,9 +258,9 @@ export default function Review({program}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
       </Head>
-    <div className={styles.box}>
-      {ProgramData[program].map((v, idx, id) => <CommentList data={v} key={idx} id={idx}/>)}
-    </div>
+      <div className={styles.box}>
+        {ProgramData[program].map((v, idx, id) => <CommentList data={v} key={idx} id={idx}/>)}
+      </div>
     </>
 );
 }
