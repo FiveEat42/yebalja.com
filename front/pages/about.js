@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Team from "../components/Team";
-import TeamDrawing from "../components/TeamIllu";
+import TeamDrawing from "../components/TeamDrawing";
 
 const About = () => {
   return (

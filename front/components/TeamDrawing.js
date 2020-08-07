@@ -1,7 +1,7 @@
 import React from "react";
-import styles from './TeamIllu.module.css';
+import styles from './TeamDrawing.module.css';
 
-export default function TeamIllu() {
+export default function TeamDrawing() {
   return (
     <>
       <div className={styles.section}>
