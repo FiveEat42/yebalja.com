@@ -152,7 +152,7 @@
   text-align: center;
   font-size: 14px;
   height: 25px;
-  padding: 2px 0px;
+  padding: 4px 0px;
   color: #fff;
   overflow: hidden;
   position: relative;
@@ -165,7 +165,7 @@
   text-align: center;
   font-size: 14px;
   height: 25px;
-  padding: 2px 12px;
+  padding: 4px 12px;
   color: #fff;
   overflow: hidden;
   position: relative;
@@ -193,7 +193,6 @@
 
 /* calendar hover  */
 .calendar_entry {
-  padding: 0 4px;
   border-radius: 3px;
   box-sizing: border-box;
   transition: 0.3s;
@@ -202,10 +201,12 @@
   font-size: 13px;
   line-height: 1;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   position: relative;
-  margin: 1px;
 }
+
 .calendar_entry__title {
   font-size: 13px;
   font-weight: 600;
@@ -213,41 +214,27 @@
   padding-bottom: 4px;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.04);
 }
-.calendar_entry__date, .calendar_entry__details {
-  font-size: 13px;
+.calendar_entry__date {
+  font-size: 11px;
   opacity: 0;
   transition: 0.3s;
   height: 0;
   visibility: hidden;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.04);
 }
-.calendar_entry__date a, .calendar_entry__details a {
-  text-decoration: underline;
-}
-.calendar_entry__category {
-  position: absolute;
-  font-weight: 600;
-  padding: 2px 4px;
-  background: rgba(0, 0, 0, 0.16);
-  right: 4px;
-  top: 2px;
-  border-radius: 2px;
-  transition: 0.3s;
-}
+
 .calendar_entry:hover {
-  height: auto;
+  height: 65px;
   width: 200px;
   cursor: pointer;
+  margin: 0;
   padding: 3px;
   -webkit-box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
   -moz-box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
   box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
 }
-.calendar_entry:hover .calendar_entry__category {
-  right: 12px;
-  top: 12px;
-}
-.calendar_entry:hover .calendar_entry__date, .calendar_entry:hover .calendar_entry__details {
+
+.calendar_entry:hover .calendar_entry__date {
   opacity: 1;
   height: 15px;
   visibility: visible;
@@ -256,7 +243,6 @@
 .oversize_list:hover {
   width: auto;
   cursor: pointer;
-  padding: 12px;
   -webkit-box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
   -moz-box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
   box-shadow: 1px 2px 10px 0px rgba(32, 41, 56, 0.4);
@@ -266,7 +252,7 @@
   .calendar_entry__title {
   font-size: 10px;
 }
-.calendar_entry:hover .calendar_entry__date, .calendar_entry__title .calendar_entry:hover .calendar_entry__details {
+.calendar_entry:hover .calendar_entry__date, .calendar_entry__title {
     font-size: 10px;
   }
 }
