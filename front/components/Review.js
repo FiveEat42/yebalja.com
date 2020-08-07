@@ -25,14 +25,14 @@ function LeftCommentItem({data}) {
           <div className={styles.comment_dialog}>
             <div className={classNames({[styles.link]: true, [styles.link_adsila]: true})}>
               <a className={styles.link_item} href={data.link} target="_black">
-                <span className={styles.link_item_name}>{data.title + "   >"} </span>
+                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}>  ></span></span>
               </a>
             </div>
             <div className={styles.comment_body}>
-              <i className="fa fa-quote-left" style={{ color: `white` }} aria-hidden="true"></i>
+              <i className="fa fa-quote-left" aria-hidden="true"></i>
               <p className={styles.text}>{data.content}</p>
               <div className={styles.date}>
-                <i className="fa fa-minus" style={{ color: `#white` }} aria-hidden="true"></i>
+                <i className="fa fa-minus" aria-hidden="true"></i>
                 <span className={styles.text}> {data.posted_date}</span>
               </div>
             </div>
@@ -51,7 +51,7 @@ function RightCommentItem({data}) {
           <div className={styles.comment_dialog_r}>
             <div className={classNames({[styles.link]: true, [styles.link_adsila]: true})}>
               <a className={styles.link_item} href={data.link} target="_black">
-                <span className={styles.link_item_name}>{data.title + "   >"}</span>
+                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}>  ></span></span>
               </a>
             </div>
             <div className={styles.comment_body}>
@@ -108,7 +108,7 @@ export default function Review({program}) {
     ssafy : [
       {
         link: "http://blog.naver.com/PostView.nhn?blogId=suntouch&logNo=221731936322",
-        title: "SSAFY를 추천하는 가장 큰 이유 2가지",
+        title: "사피를 추천하는 가장 큰 이유 2가지",
         content: "대기업에 들어가려면 자소서나 면접도 매끄럽게 진행할 수 있어야 하는데, 취업지원센터에서 내가 부족한 점이나 잡아야 하는 컨셉을 맞춤형으로 잘 피드백 해주셨다.",
         posted_date: "2019-12-09",
       },
@@ -166,7 +166,7 @@ export default function Review({program}) {
     soma : [
       {
         link: "https://tmdahr1245.tistory.com/112?category=732190",
-        title: "SW마에스트로, 경험에서 우러나온 팁",
+        title: "경험에서 우러나온 소마 팁",
         content: "사무국분들은 매우 친절하고 잘 활용해라. 행사 때마다 유용한 굿즈를 많이 준다. 다만 전부 소마 로고가 각인되어있다.",
         posted_date: "2020-01-15",
       },
@@ -178,13 +178,13 @@ export default function Review({program}) {
       },
       {
         link: "https://medium.com/@claudiajkang/소프트웨어-마에스트로-11기-지원-과정-합격-후기-11db193e659a",
-        title: "'SW마에스트로 11기 지원과정 후기",
+        title: "SW마에스트로 11기 지원과정 후기",
         content: "긴 지원 과정을 거치면서 결과에 대한 불안함과 초조함을 이미 겪었기에 최대한 자세히 작성하려고 한다.",
         posted_date: "2020-01-14",
       },
       {
         link: "https://m.blog.naver.com/jhc9639/221853453301",
-        title: "2020 SW마에스트로 11기 코딩테스트 후기",
+        title: "소마 11기 코딩테스트 후기",
         content: "SQL은 어느정도 구글링하면 되는 수준이고 웹은 웹의 기초, html, css, js를 정확히 알고 있어야 풀 수 있는 문제가 출제 되었습니다.",
         posted_date: "2020-03-14",
       },
@@ -230,7 +230,7 @@ export default function Review({program}) {
       },
       {
         link: "https://classicismist.blogspot.com/2017/10/blog-post.html",
-        title: "오랫동안 잊지 못할 멋사 활동을 마무리하며",
+        title: "멋사 활동을 마무리하며",
         content: "실제로 멋쟁이 사자처럼 이후로 코딩에 대한 열정이 많이 커져서 스스로 코딩을 하는 시간이 많이 늘어났다.",
         posted_date: "2017-10-02",
       },
@@ -242,13 +242,13 @@ export default function Review({program}) {
       },
       {
         link: "https://deepinsight.tistory.com/12",
-        title: "멋쟁이사자처럼 중앙 해커톤을 마치며",
+        title: "중앙 해커톤을 마치며",
         content: "어쩌면 이번 멋쟁이사자처럼 활동은 제게 실패였다고 생각합니다. 그런데 왜인지 이번 실패에는 쓴맛이 느껴지지 않습니다.",
         posted_date: "2018-09-08",
       },
       {
         link: "https://brunch.co.kr/magazine/likelionwork",
-        title: "[멋사 직장인] 퇴근하고 코딩 배우는 직장인들",
+        title: "퇴근하고 코딩 배우는 직장인들",
         content: "이 글은 스타트업 인사담당자가 '멋사 직장인'에서 코딩을 배워 해커톤에서 우승하는 작은 성취에 대한 이야기입니다.",
         posted_date: "2019-12-11",
       },
