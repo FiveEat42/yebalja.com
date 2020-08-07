@@ -1,0 +1,9 @@
+.section {
+    margin: 100px 0;
+    text-align: center;
+}
+
+.section img {
+    width: 75%;
+    min-width: 300px;
+}
