@@ -23,7 +23,8 @@ export default function Team() {
                             <div className={styles.member_info}>
                               <h3>김미혜/mihykim</h3>
                               <p>Front-End<br />
-                                <img alt="github" src={require('../src/image/link_github.png')}/>
+                                <a target="_blank" rel="noopener noreferrer" href="https://github.com/365kim">
+                                  <img alt="github" src={require('../src/image/link_github.png')}/></a>
                               </p>
                             </div>
                           </div>
