@@ -1,16 +1,8 @@
-/*@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css); .nanumgothic * { font-family: 'Nanum BarunGothic', sans-serif; }*/
-/*@import url(//fonts.googleapis.com/earlyaccess/nanumBarunGothic.css); .nanumBarunGothic * { font-family: 'Nanum BarunGothic', sans-serif; }*/
-
 @media only screen and (orientation: portrait) {
   .landscape_only  { display: none; }
   .webheader { display: none; }
+  .websubtitle { display: none; }
 }
-
-
-
-
-
-
 
 .header {
   color: #202125;
@@ -46,6 +38,16 @@
   display: grid;
   grid-template-columns: 150px 1fr;
   background-color: #fff;
+}
+
+.current_week {
+  display: block;
+  border-right: 1px solid rgba(236, 15, 15, 0.1);
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  background-color: transparent;
+  grid-template-columns: 150px repeat(12, 1fr); /*경계선 : repeat 함수로 쪼갤 수 있음*/ 
 }
 
 /* 42seoul 배경색 통일 */
@@ -86,9 +88,9 @@
   display: block;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
-.gantt__row__lines span.marker {
-  background-color: rgba(10, 52, 68, 0.13);
-  z-index: 2;
+.gantt__row__lines span.current_marker {
+  grid-template-columns: 150px repeat(52, 1fr);
+  background-color: rgba(0, 0, 0, 0.048);
 }
 .gantt__row__lines:after {
   grid-row: 1;
@@ -257,27 +259,3 @@
     font-size: 10px;
   }
 }
-
-/*!* CTA *!*/
-
-/*.button {*/
-/*	animation: wave-animation 0.4s infinite;*/
-/*}*/
-
-/*.button:hover {*/
-/*  animation: none;*/
-/*}*/
-
-/*@keyframes wave-animation {*/
-/*	0%,*/
-/*	100% {*/
-/*		transform: rotate(0deg);*/
-/*	}*/
-/*	25% {*/
-/*		transform: rotate(5deg);*/
-/*	}*/
-/*	75% {*/
-/*		transform: rotate(-5deg);*/
-/*	}*/
-/*}*/
-

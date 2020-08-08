@@ -4,16 +4,19 @@ import classNames from 'classnames';
 import Header from "./Header";
 import CTA from "./CTA";
 
-function YearByWeekLines() {
+function calendarGrid() {
+  const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  let todayDate = new Date();
+  let CurrentMonth = todayDate.getMonth() + 2;
 
   return (
     <>
       <div className={classNames({ [styles.gantt__row]: true, [styles.gantt__row__months]: true })}>
         <div className={styles.gantt__row__first}></div>
-        {Array(12).fill('').map((v, idx) => <span>{idx + 1}월</span>)}
+        {month.map((v, idx) => <span>{v}월</span>)} 
       </div>
       <div className={classNames({ [styles.gantt__row]: true, [styles.gantt__row__lines]: true })}>
-        {Array(12).fill('').map((v, idx) => <span></span>)}
+        {month.map((v, idx) => (v === CurrentMonth) ? <span className={styles.current_marker}></span> : <span></span>)}
       </div>
     </>
   )
@@ -253,7 +256,7 @@ function GisuList({ data }) {
 
 function StepList({ data, title }) {
 
-  let title_and_gisu = <span>{title}<br/><span className={styles.gisu}>{data.gisu}</span></span>;
+  let title_and_gisu = <span>{title}<br/><br/><span className={styles.gisu}>{data.gisu}</span></span>;
   let title_only = <span>{title}</span>;
   let gisu_only = <span className={styles.gisu}>{data.gisu}</span>;
 
@@ -334,14 +337,14 @@ export default function YearlyCalendar() {
 
   return (
     <>
-      <Header className={styles.webheader}>
-        <h1>2020년 부트캠프</h1>
+      <Header>
+        <h1 className={styles.webheader}>2020년 부트캠프</h1>
         <p className={styles.websubtitle}>무료 부트캠프 일정을 한 눈에 확인하세요</p>
       </Header>
       <div className={classNames({ [styles.wrapper]: true, [styles.landscape_only]: true })}>
         <CTA />
         <div className={styles.gantt}>
-          <YearByWeekLines />
+          <calendarGrid />
           <ProgramList />
         </div>
       </div>
