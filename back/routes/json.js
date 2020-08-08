@@ -149,7 +149,8 @@ router.get('/yearlycalendar', (req, res) => {
             'startDate': v.startDate,
             'endDate': v.endDate,
           }
-          innerArr.push(obj3);
+          if (v.visible < 2)
+           innerArr.push(obj3);
         }
       })
       console.log(outerArr);
