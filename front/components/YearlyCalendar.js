@@ -38,13 +38,13 @@ function ProgramList() {
             },
             {
               title: "라피신",
-              period: "1/23 ~ 2/16",
+              period: "1.23 ~ 2.16",
               startDate: "2020-01-23",
               endDate: "2020-02-16",
             },
             {
               title: "교육",
-              period: "2/27 ~ 최대 2년",
+              period: "2.27 ~ 최대 2년",
               startDate: "2020-02-27",
               endDate: "2020-12-50", //내년으로 넘어가는 일정은 12월50일로 넣어주세요.
             }
@@ -55,20 +55,14 @@ function ProgramList() {
           "visible": 2,
           "step": [
             {
-              title: "지원",
-              period: "상시모집",
-              startDate: "2020-01-01",
-              endDate: "2020-12-31",
-            },
-            {
               title: "라피신",
-              period: "2-1기 : 6/29 ~ 7/24",
+              period: "2-1기 : 6.29 ~ 7.24",
               startDate: "2020-06-29",
               endDate: "2020-07-24",
             },
             {
               title: "라피신",
-              period: "2-2기 : 7/27 ~ 8/24",
+              period: "2-2기 : 7.27 ~ 8.24",
               startDate: "2020-07-27",
               endDate: "2020-08-24",
             },
@@ -85,26 +79,20 @@ function ProgramList() {
           visible: 3,
           step: [
             {
-              title: "지원",
-              period: "상시모집",
-              startDate: "2020-01-01",
-              endDate: "2020-12-31",
-            },
-            {
               title: "라피신",
-              period: "3-1기 : 8/31 ~ 9/27",
+              period: "3-1기 : 8.31 ~ 9.27",
               startDate: "2020-08-31",
               endDate: "2020-09-27",
             },
             {
               title: "라피신",
-              period: "3-2기 : 10/05 ~ 11/01",
+              period: "3-2기 : 10.5 ~ 11.1",
               startDate: "2020-10-05",
               endDate: "2020-11-01",
             },
             {
               title: "교육",
-              period: "11/15 ~ 최대 2년",
+              period: "11.15 ~ 최대 2년",
               startDate: "2020-11-15",
               endDate: "2020-12-50",
             }
@@ -121,19 +109,19 @@ function ProgramList() {
           step: [
             {
               title: "지원",
-              period: "5/11 ~ 5/25",
+              period: "5.11 ~ 5.25",
               startDate: "2020-05-11",
               endDate: "2020-05-25",
             },
             {
               title: "선발",
-              period: "SW적성진단 : 6/06  </br> 현장 인터뷰 : 6/17 ~ 6/19", //최대 2줄 (<br> 한 번만 허용)
+              period: "SW적성진단 : 6.6  </br> 현장 인터뷰 : 6.17 ~ 6.19", //최대 2줄 (<br> 한 번만 허용)
               startDate: "2020-06-06",
               endDate: "2020-06-19",
             },
             {
               title: "교육",
-              period: "7/07 ~ 1년",
+              period: "7.7 ~ 1년",
               startDate: "2020-07-07",
               endDate: "2020-12-50",
             }
@@ -150,25 +138,25 @@ function ProgramList() {
           step: [
             {
               title: "지원",
-              period: "6/01 ~ 6/30",
+              period: "6.1 ~ 6.30",
               startDate: "2020-06-01",
               endDate: "2020-06-30",
             },
             {
               title: "선발",
-              period: "1차 코딩테스트 : 7/04 <br/> 2차 코딩테스트 : 7/20",
+              period: "1차 코딩테스트 : 7.4 <br/> 2차 코딩테스트 : 7.20",
               startDate: "2020-07-04",
               endDate: "2020-07-20",
             },
             {
               title: "챌린지",
-              period: "7/27 ~ 8/21",
+              period: "7.27 ~ 8.21",
               startDate: "2020-07-27",
               endDate: "2020-08-21",
             },
             {
               title: "교육",
-              period: "01/01 ~ 12/31",
+              period: "1.1 ~ 12.31",
               startDate: "2020-09-01",
               endDate: "2020-12-31",
             }
@@ -185,19 +173,19 @@ function ProgramList() {
           step: [
             {
               title: "지원",
-              period: "1/22 ~ 2/21",
+              period: "1.22 ~ 2.21",
               startDate: "2020-01-22",
               endDate: "2020-02-21",
             },
             {
               title: "선발",
-              period: "1차, 2차 코딩테스트 : 3/14, 4/26 <br/>심층면접 : 5/08~09",
+              period: "1차, 2차 코딩테스트 : 3.14, 4/26 <br/>심층면접 : 5.8, 5.9",
               startDate: "2020-03-14",
               endDate: "2020-05-09",
             },
             {
               title: "교육",
-              period: "6/01 ~ 12월",
+              period: "6.1 ~ 12.31",
               startDate: "2020-06-01",
               endDate: "2020-12-31",
             }
@@ -231,7 +219,7 @@ function ProgramList() {
           step: [
             {
               title: "지원",
-              period: "3/17 ~ 대학별 상이",
+              period: "3.17 ~ 대학별 상이",
               startDate: "2020-03-17",
               endDate: "2020-04-10",
               gridColumn: "77/107",
@@ -264,51 +252,32 @@ function GisuList({ data }) {
 }
 
 function StepList({ data, title }) {
+
+  let title_and_gisu = <span>{title}<br/><span className={styles.gisu}>{data.gisu}</span></span>;
+  let title_only = <span>{title}</span>;
+  let gisu_only = <span className={styles.gisu}>{data.gisu}</span>;
+
   return (
     <>
-      {
-        (() => {
-          if (data.visible === 1 && title === "42 Seoul")
-            return (
-              <div className={styles.gantt__row}>
-                <div className={styles.gantt__row__first}>
-                  <span>{title + "/n" + data.gisu} </span>
-                </div>
-                <ul className={styles.gantt__row__bars}>
-                  {data.step.map((v, idx, id) => <StepListItem data={v} key={idx} id={data.step.length - 1 - idx} />)}
-                </ul>
-              </div>
-            );
-          else if (data.visible === 1)
-            return (
-              <div className={styles.gantt__row}>
-                <div className={styles.gantt__row__first}>
-                  <span dangerouslySetInnerHTML={{ __html: title }}></span>
-                </div>
-                <ul className={styles.gantt__row__bars}>
-                  {data.step.map((v, idx, id) => <StepListItem data={v} key={idx} id={data.step.length - 1 - idx} />)}
-                </ul>
-              </div>
-            );
-          else if (data.visible > 1)
-            return (
-              <div className={styles.gantt__row}>
-                <div className={styles.gantt__row__first}>
-                  <span dangerouslySetInnerHTML={{ __html: data.gisu }}></span>
-                </div>
-                <ul className={styles.gantt__row__bars}>
-                  {data.step.map((v, idx, id) => <StepListItem data={v} key={idx} id={data.step.length - 1 - idx} visible={data.visible} />)}
-                </ul>
-              </div>
-            )
-        })()
-      }
-
+      <div className={styles.gantt__row}>
+        <div className={styles.gantt__row__first}>
+          {
+            (() => {
+              if (data.visible === 1 && title === "42 Seoul") return (title_and_gisu);
+              else if (data.visible === 1) return (title_only);
+              else if (data.visible > 1) return (gisu_only);
+            })()
+          }
+        </div>
+        <ul className={styles.gantt__row__bars}>
+          {data.step.map((v, idx, id) => <StepListItem data={v} key={idx} id={data.step.length - 1 - idx} />)}
+        </ul>
+      </div>
     </>
   )
 }
 
-function StepListItem({ data, id, visible }) {
+function StepListItem({ data, id}) {
   let startDate = new Date(data.startDate).setHours(9);
   let endDate = new Date(data.endDate).setHours(9);
   let beginning = new Date('2020-01-01').setHours(9);
@@ -341,7 +310,7 @@ function StepListItem({ data, id, visible }) {
                 <span className={styles.calendar_entry__date} dangerouslySetInnerHTML={{ __html: data.period }}></span>
               </li>
             );
-          else if ((oversize_list === 1 || next_year === 0) && visible === 1)
+          else if (oversize_list === 1 || next_year === 0)
             return (
               <li className={classNames({ [styles.calendar_entry]: true, [styles.oversize_list]: true })} style={{ gridColumn: gridColumn, backgroundColor: backgroundColor, zIndex: zIndex }}>
                 <span className={styles.calendar_entry__title}>{data.title}</span>
