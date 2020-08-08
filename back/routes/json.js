@@ -125,7 +125,7 @@ router.get('/yearlycalendar', (req, res) => {
             'startDate': v.startDate,
             'endDate': v.endDate,
           }
-          if (v.visible < 2)
+          if (!(v.visible >= 2 && v.stepTitle == '지원'))
            innerArr.push(obj3);
         }
       })
