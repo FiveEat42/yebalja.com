@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Header from "./Header";
 import CTA from "./CTA";
 
-function calendarGrid() {
+function CalendarGrid() {
   const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   let todayDate = new Date();
   let CurrentMonth = todayDate.getMonth() + 2;
@@ -13,17 +13,16 @@ function calendarGrid() {
     <>
       <div className={classNames({ [styles.gantt__row]: true, [styles.gantt__row__months]: true })}>
         <div className={styles.gantt__row__first}></div>
-        {month.map((v, idx) => <span>{v}월</span>)} 
+        {month.map((v, idx) => <span>{v}월</span>)}
       </div>
       <div className={classNames({ [styles.gantt__row]: true, [styles.gantt__row__lines]: true })}>
-        {month.map((v, idx) => (v === CurrentMonth) ? <span className={styles.current_marker}></span> : <span></span>)}
+        {month.map((v, idx) => (v === CurrentMonth) ? <span className={styles.current_marker}></span> : <span></span>)} {/* 12칸으로 나누고, 현재 월이면 배경색 칠함. */}
       </div>
     </>
   )
 }
 
 function ProgramList() {
-
   const ProgramData = [
     {
       "idName": "ftseoul",
@@ -254,8 +253,7 @@ function GisuList({ data }) {
   )
 }
 
-function StepList({ data, title }) {
-
+function StepList({ data, title }) { {/* Calendar의 Row */}
   let title_and_gisu = <span>{title}<br/><br/><span className={styles.gisu}>{data.gisu}</span></span>;
   let title_only = <span>{title}</span>;
   let gisu_only = <span className={styles.gisu}>{data.gisu}</span>;
@@ -263,7 +261,7 @@ function StepList({ data, title }) {
   return (
     <>
       <div className={styles.gantt__row}>
-        <div className={styles.gantt__row__first}>
+        <div className={styles.gantt__row__first}> {/* 각 Row의 첫 번째 Column */}
           {
             (() => {
               if (data.visible === 1 && title === "42 Seoul") return (title_and_gisu);
@@ -280,7 +278,7 @@ function StepList({ data, title }) {
   )
 }
 
-function StepListItem({ data, id}) {
+function StepListItem({ data, id}) { {/* 각 Row의 일정 아이템들 */}
   let startDate = new Date(data.startDate).setHours(9);
   let endDate = new Date(data.endDate).setHours(9);
   let beginning = new Date('2020-01-01').setHours(9);
@@ -299,8 +297,8 @@ function StepListItem({ data, id}) {
     backgroundColor = "#DAE4F2";
 
   let zIndex = id;
-  let oversize_list = (end - start > 61) ? 1 : 0;
-  let next_year = (data.endDate === "2020-12-50") ? 1 : 0;
+  let oversize_list = (end - start > 61) ? 1 : 0; {/* 두 달이 넘어가는 일정은 hover 시 자기 자신의 크기를 가짐 */}
+  let next_year = (data.endDate === "2020-12-50") ? 1 : 0; {/* 내년으로 이어지는 일정은 오른쪽 border-radius를 0으로 함 */}
 
   return (
     <>
@@ -344,7 +342,7 @@ export default function YearlyCalendar() {
       <div className={classNames({ [styles.wrapper]: true, [styles.landscape_only]: true })}>
         <CTA />
         <div className={styles.gantt}>
-          <calendarGrid />
+          <CalendarGrid />
           <ProgramList />
         </div>
       </div>
