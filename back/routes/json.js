@@ -20,42 +20,26 @@ router.get('/program', function(req, res, next){
 })
 
 router.get('/table', (req, res) => {
-  db.query(`
-    select json_object(
-      'program', title,
-      'link', link,
-      'number_of_recruits', personnel,
-      'edu_period', edu_period,
-      'grant', benefit,
-      'aptitude', badge_aptitude,
-      'coding', badge_coding,
-      'interview', badge_interview,
-      'tryout', badge_tryout)
-    from programs;`, (error, result) => {
+  db.query(`select json_object('program', title, 'link', link, 'number_of_recruits', personnel, 'edu_period', edu_period, 'grant', benefit, 'aptitude', badge_aptitude, 'coding', badge_coding, 'interview', badge_interview, 'tryout', badge_tryout)  from programs;`,
+    (error, result) => {
       let arr = [];
       if (error) throw error;
       result.map((v) => {
         let parsed =JSON.parse(Object.values(v));
-        console.log(parsed);
         //likelion은 테이블에 안쓰이므로 삭제
         if (parsed.link !== '/likelion'){
           arr.push(parsed);
         }
       })
-    console.log(arr);
-      res.json(arr);
+    // console.log(arr);
+    res.json(arr);
   })
 });
 
 router.get('/timeline', (req, res) => {
   db.query(`
-    select substring(link, 2), json_array((
-      json_object(
-        'heading', heading,
-        'subheading', subheading
-        )
-    ))
-    from programs;`, (error, result) => {
+    select substring(link, 2), json_array((json_object('heading', heading, 'subheading', subheading))) from programs;`,
+    (error, result) => {
       if (error) throw result;
       let obj = {};
       result.map(v => {
@@ -70,16 +54,8 @@ router.get('/timeline', (req, res) => {
 })
 
 router.get('/timelinelist', (req, res) => {
-  db.query(`  select
-    substring(link, 2) as 'program',
-    edu,
-    name,
-    description,
-    start_date as 'startdate',
-    end_date as 'enddate'
-    from steps_timelines
-    inner join gisus on steps_timelines.gisus_id = gisus.id
-    inner join programs on programs.id = gisus.programs_id;`, (error, result) => {
+  db.query(`select substring(link, 2) as 'program', edu, name, description, start_date as 'startdate', end_date as 'enddate' from steps_timelines inner join gisus on steps_timelines.gisus_id = gisus.id inner join programs on programs.id = gisus.programs_id;`,
+    (error, result) => {
       if (error) throw error;
       let obj = {};
       result.map(v => {
@@ -130,7 +106,7 @@ router.get('/yearlycalendar', (req, res) => {
         let middleArr = outerArr[outerArr.length - 1].gisuData;
         //제일 바깥 어레이속 마지막 오브젝트의 gisu와 현재 v의 gisu가 같은지 체크
         //없으면 새로운 오브젝트 생성, 있으면 패스
-        console.log(v);
+        // console.log(v);
         if (!hasKey(middleArr,'gisu', v.gisu)){
           let obj2 = {
             'gisu' : v.gisu,
@@ -153,7 +129,7 @@ router.get('/yearlycalendar', (req, res) => {
            innerArr.push(obj3);
         }
       })
-      console.log(outerArr);
+      // console.log(outerArr);
       res.send(outerArr);
   })
 })
@@ -196,8 +172,7 @@ router.get('/faq', (req,res) => {
           arr3.push(obj4);
         }
       })
-
-      console.log(obj1);
+      // console.log(obj1);
       res.send(obj1);
     })
 })
