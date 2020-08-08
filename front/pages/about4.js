@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import Header from "../components/Header";
-import Team from "../components/Team";
+import Team4 from "../components/Team4";
 import TeamDrawing from "../components/TeamDrawing";
 import Donation from "../components/Donation"
 
@@ -12,7 +11,7 @@ const About = () => {
         <h2>About Us</h2>
       </Header> */}
       <TeamDrawing />
-      <Team />
+      <Team4 />
       <Donation />
     </Layout>
   );
