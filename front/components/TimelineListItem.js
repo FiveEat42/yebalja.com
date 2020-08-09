@@ -24,6 +24,9 @@ export default function TimelineListItem({data, id}) {
 
   {/* 시작일, 마감일, 시작시간, 마감시간 구하기 */}
   let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
+  if (new Date(data.startdate).getFullYear() != new Date().getFullYear()) {
+    startdate = `${new Date(data.startdate).getFullYear()}.${startdate}`;
+  }
   let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
   let starttime;
   let endtime;
@@ -61,16 +64,11 @@ export default function TimelineListItem({data, id}) {
   let status_content;
   if (startdateLeft > 0) {
     status_content = `D-${startdateLeft}`;    {/* 시작일까지 얼마나 남았는지 'D-숫자'로 표시 */}
-  } else if (startdateLeft >= 0) {
-      if (starttimeLeft >= 0) {
+  } else if (starttimeLeft >= 0) {
         status_content = 'D-Day';              {/* 시작일의 시작시간이 지나면 '진행중' */}
-      } else if (starttimeLeft < 0) {
+  } else if (starttimeLeft < 0 && endtimeLeft > 0) {
         status_content = '진행중';               {/* 시작일인데 아직 시작시간이 안됐으면 'D-Day' */}
-      }
-  } else if (enddateLeft >= 0) {
-    if (endtimeLeft > 0) {
-      status_content = '진행중';                 {/* 마감날이 됐는데 마감시간이 안 지났을 때 '진행중' */}
-    } else if (endtimeLeft <= 0) {              {/* 마감날의 마감시간이 지난 경우는 '마감' */}
+  } else if (endtimeLeft <= 0) {              {/* 마감날의 마감시간이 지난 경우는 '마감' */}
       status_content = '마감';
       card_type = 'card_end';
       status = 'status_end';
@@ -79,17 +77,8 @@ export default function TimelineListItem({data, id}) {
       } else {
         updown = 'down_end';
       }
-    }
-  } else {                                   {/* 마감날이 지난 경우는 무조건 '마감' */}
-    status_content = '마감';
-    card_type = 'card_end';
-    status = 'status_end';
-    if (updown == 'up_recruit' || updown == 'up_edu') {
-      updown = 'up_end';
-    } else {
-      updown = 'down_end';
-    }
   }
+
 
 
 
@@ -117,10 +106,10 @@ export default function TimelineListItem({data, id}) {
       starttime = ` ${starttime}`;
     }
   } else {                                              {/* 시작일과 마감일이 다를 때 */}
-    if (starttime == '0:00' && endtime == '0:00') {   {/* startdate ~ enddate */}
+    if (starttime == '0:00' && endtime == '0:00') {     {/* startdate ~ enddate */}
       starttime = '';
       endtime = '';
-      enddate = ` ~ ${enddate}`;
+      enddate = ` ~ ${enddate}`;                        {/*  */}
     } else if (starttime == '0:00') {                 {/* startdate ~ enddate endtime */}
       starttime = '';
       enddate = ` ~ ${enddate}`;
