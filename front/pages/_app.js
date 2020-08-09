@@ -1,6 +1,8 @@
 //react-bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from 'next/head';
+import wrapper from '../store/configureStore';
+
 const MyApp = ({ Component, pageProps}) => {
     return (
       <>
@@ -28,5 +30,7 @@ const MyApp = ({ Component, pageProps}) => {
 }
 
 // This default export is required in a new `pages/_app.js` file.
-export default MyApp;
+
+//redux를 사용하기 위한 wrapper
+export default wrapper.withRedux(MyApp);
 

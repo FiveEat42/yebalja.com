@@ -1,9 +1,13 @@
-import React from 'react';
+import React , { useCallback }from 'react';
 import styles from './Faq.module.css';
 import ListGroup from "react-bootstrap/ListGroup"
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
 import classNames from 'classnames';
+
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { setDataAction } from '../reducers/faq'
 
 
 function QnA ({list}) {
@@ -671,9 +675,17 @@ export default function Faq({program}) {
   }
 
   let dataList = allDataList[program];
-
+//user 데이터값이 바뀌면 해당 컴포넌트가 re-rendering된다.
+  const myData = useSelector((state) => state.dataSet);
+  const dispatch = useDispatch();
+  const id = ['secho']
+  const getFaqData = useCallback(() => {
+    console.log('getFaqData');
+    dispatch(setDataAction( { id  }));
+  }, [])
   return (
     <div className={styles.firstTab}>
+      {console.log(myData)}
       <Tabs defaultActiveKey={dataList[0].eventKey} transition={false}>
         {dataList.map((v, idx) => (
           <Tab eventKey={v.eventKey} title={v.category} key={idx}>
