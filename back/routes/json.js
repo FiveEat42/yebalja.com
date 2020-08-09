@@ -202,4 +202,26 @@ router.get('/reviews', function(req, res, next){
   })
 })
 
+router.get('/navlists', function(req, res, next){
+  let sql;
+
+  sql ="select title as program, link as href from programs";
+  db.query(sql, (error, result) => {
+    if (error) throw error;
+    console.log(result);
+    res.json(result);
+  })
+})
+
+router.get('/noticelists', function(req, res, next){
+  let sql;
+  
+  sql ="select title, href, end_date as enddate from notice_lists";
+  db.query(sql, (error, result) => {
+    if (error) throw error;
+    console.log(result);
+    res.json(result);
+  })
+
+})
 module.exports = router;
