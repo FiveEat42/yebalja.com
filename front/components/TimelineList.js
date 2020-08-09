@@ -71,9 +71,9 @@ export default function TimelineList({program}) {
       {
         edu: 'true',
         name: '교육 시작',
-        description: '입과 및 교육',
+        description: '입과 및 교육 (1년)',
         startdate: '2020-07-07 00:00:00',
-        enddate: '2020-08-08 20:35:00',
+        enddate: '2021-07-07 00:00:00',
       },
     ],
     boostcamp: [
