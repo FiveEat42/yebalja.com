@@ -1,3 +1,4 @@
+import React from "react";
 import styles from './Footer.module.css'
 import Link from 'next/link';
 
@@ -9,19 +10,19 @@ const Footer = () => {
         <ul className={styles.item}>
           <li><p className={styles.wave}>👋</p></li>
           <li>
-            <Link href="/about"><a>1번.일러컷</a></Link>
+            <Link href="/about"><a>1.일러스트_컬러</a></Link>
           </li>
           <li>
-            <Link href="/about2"><a>2번.색O</a></Link>
+            <Link href="/about2"><a>2.일러스트_화이트</a></Link>
+          </li>
+          {/* <li>
+            <Link href="/about3"><a>3.사진_컬러</a></Link>
+          </li> */}
+          <li>
+            <Link href="/about4"><a>4.사진_흑백조</a></Link>
           </li>
           <li>
-            <Link href="/about3"><a>3번.흑백</a></Link>
-          </li>
-          <li>
-            <Link href="/about4"><a>4번.회색조</a></Link>
-          </li>
-          <li>
-            <Link href="/about5"><a>5번.구현전</a></Link>
+            <Link href="/about5"><a>5.사진_회색조</a></Link> 
           </li>
           <li><p className={styles.wave}>👋</p></li>
         </ul>

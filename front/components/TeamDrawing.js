@@ -4,9 +4,10 @@ import styles from './TeamDrawing.module.css';
 export default function TeamDrawing() {
   return (
     <>
-      <div className={styles.section}>
-        <img  src={require('../src/image/teamdrawing.png')} />
+      <div className={styles.container}>
+        <img className={styles.drawing} src={require('../src/image/team_drawing_w.png')} alt="" />
       </div>
+      <img className={styles.speech} src={require('../src/image/team_speech.png')} alt="" />
     </>
 );
 }

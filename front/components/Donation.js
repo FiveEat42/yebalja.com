@@ -4,9 +4,10 @@ import styles from './Donation.module.css';
 export default function Donation() {
   return (
     <>
-      <div className={styles.section}>
-        <img  src={require('../src/image/donation.png')} />
-      </div>
+      <section className={styles.container}>
+          <img className={styles.menu} src={require('../src/image/donation_menu.png')} alt="" />
+          <img className={styles.code} src={require('../src/image/donation_code.png')} alt="" />
+      </section>
     </>
-);
+  );
 }

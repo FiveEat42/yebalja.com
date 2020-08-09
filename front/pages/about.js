@@ -8,11 +8,12 @@ import Donation from "../components/Donation"
 const About = () => {
   return (
     <Layout>
-      {/* <Header>
-        <h2>About Us</h2>
-      </Header> */}
       <TeamDrawing />
       <Team />
+      <Header>
+        <h2>예발자닷컴 응원하기</h2>
+        <p>예발자닷컴에게 간식쏘시고 운수 좋은 하루 보내세요</p>
+      </Header>
       <Donation />
     </Layout>
   );

@@ -1,7 +1,7 @@
 import React from "react";
-import styles from './Team2.module.css';
+import styles from './Team5.module.css';
 
-export default function Team2() {
+export default function Team5() {
   return (
     <>
       <section className={styles.section}>
@@ -15,7 +15,7 @@ export default function Team2() {
 
                         <div className={styles.card}>
                           <div>
-                            <img src={require('../src/image/wh_mihykim.png')} alt="mihykim" />
+                            <img src={require('../src/image/gr_mihykim.png')} alt="mihykim" />
                             <div className={styles.description}>
                               <h3>김미혜/mihykim</h3>
                               <p>Front-End<br />
@@ -28,7 +28,7 @@ export default function Team2() {
 
                         <div className={styles.card}>
                           <div>
-                            <img src={require('../src/image/wh_secho.png')} alt="secho" />
+                            <img src={require('../src/image/gr_secho.png')} alt="secho" />
                             <div className={styles.description}>
                               <h3>조성상/secho</h3>
                               <p>Back-End<br />
@@ -49,7 +49,7 @@ export default function Team2() {
 
                       <div className={styles.card}>
                           <div>
-                            <img src={require('../src/image/wh_taelee.png')} alt="taelee" />
+                            <img src={require('../src/image/gr_taelee.png')} alt="taelee" />
                             <div className={styles.description}>
                                 <h3>이태혁/taelee</h3>
                                 <p>Back-End<br />
@@ -65,7 +65,7 @@ export default function Team2() {
 
                         <div className={styles.card}>
                           <div>
-                            <img src={require('../src/image/wh_jehong.png')} alt="jehong" />
+                            <img src={require('../src/image/gr_jehong.png')} alt="jehong" />
                             <div className={styles.description}>
                                 <h3>홍정아/jehong</h3>
                                 <p>Front-End<br />
@@ -86,7 +86,7 @@ export default function Team2() {
 
                         <div className={styles.card}>
                           <div>
-                            <img src={require('../src/image/wh_daelee.png')} alt="daelee" />
+                            <img src={require('../src/image/gr_daelee.png')} alt="daelee" />
                             <div className={styles.description}>
                               <h3>이대현/daelee</h3>
                               <p>Front-End<br />

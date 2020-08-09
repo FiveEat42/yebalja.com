@@ -14,7 +14,7 @@ export default function Team3() {
 
                   <div className={styles.card}>
                     <div>
-                      <img src={require('../src/image/bw_mihykim.png')} alt="mihykim" />
+                      <img src={require('../src/image/profile_mihykim.png')} alt="mihykim" />
                       <div className={styles.description}>
                         <h3>김미혜/mihykim</h3>
                         <p>Front-End<br />
@@ -27,7 +27,7 @@ export default function Team3() {
 
                   <div className={styles.card}>
                     <div>
-                      <img src={require('../src/image/bw_secho.png')} alt="secho" />
+                      <img src={require('../src/image/profile_secho.png')} alt="secho" />
                       <div className={styles.description}>
                         <h3>조성상/secho</h3>
                         <p>Back-End<br />
@@ -48,7 +48,7 @@ export default function Team3() {
 
                 <div className={styles.card}>
                     <div>
-                      <img src={require('../src/image/bw_taelee.png')} alt="taelee" />
+                      <img src={require('../src/image/profile_taelee.png')} alt="taelee" />
                       <div className={styles.description}>
                           <h3>이태혁/taelee</h3>
                           <p>Back-End<br />
@@ -64,7 +64,7 @@ export default function Team3() {
 
                   <div className={styles.card}>
                     <div>
-                      <img src={require('../src/image/bw_jehong.png')} alt="jehong" />
+                      <img src={require('../src/image/profile_jehong.png')} alt="jehong" />
                       <div className={styles.description}>
                           <h3>홍정아/jehong</h3>
                           <p>Front-End<br />
@@ -85,7 +85,7 @@ export default function Team3() {
 
                   <div className={styles.card}>
                     <div>
-                      <img src={require('../src/image/bw_daelee.png')} alt="daelee" />
+                      <img src={require('../src/image/profile_daelee.png')} alt="daelee" />
                       <div className={styles.description}>
                         <h3>이대현/daelee</h3>
                         <p>Front-End<br />
