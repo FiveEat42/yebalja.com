@@ -14,10 +14,10 @@ export default function Team3() {
 
                   <div className={styles.card}>
                     <div>
-                      <img src={require('../src/image/profile_mihykim.png')} alt="mihykim" />
+                      <img src={require('../src/image/tx_mihykim.png')} alt="mihykim" />
                       <div className={styles.description}>
-                        <h3>김미혜/mihykim</h3>
-                        <p>Front-End<br />
+                        <h3>Front-End</h3>
+                        <p>Developer<br />
                           <a target="_blank" rel="noopener noreferrer" href="https://github.com/365kim">
                             <img alt="github" src={require('../src/image/link_github.png')}/></a>
                         </p>
@@ -27,10 +27,10 @@ export default function Team3() {
 
                   <div className={styles.card}>
                     <div>
-                      <img src={require('../src/image/profile_secho.png')} alt="secho" />
+                      <img src={require('../src/image/tx_secho.png')} alt="secho" />
                       <div className={styles.description}>
-                        <h3>조성상/secho</h3>
-                        <p>Back-End<br />
+                        <h3>Back-End</h3>
+                        <p>Developer<br />
                           <a target="_blank" rel="noopener noreferrer" href="https://github.com/SeongsangCHO">
                             <img alt="github" src={require('../src/image/link_github.png')}/></a>
                             &nbsp;
@@ -48,10 +48,10 @@ export default function Team3() {
 
                 <div className={styles.card}>
                     <div>
-                      <img src={require('../src/image/profile_taelee.png')} alt="taelee" />
+                      <img src={require('../src/image/tx_taelee.png')} alt="taelee" />
                       <div className={styles.description}>
-                          <h3>이태혁/taelee</h3>
-                          <p>Back-End<br />
+                          <h3>Back-End</h3>
+                          <p>Developer<br />
                             <a target="_blank" rel="noopener noreferrer" href="https://github.com/taelee42">
                               <img alt="github" src={require('../src/image/link_github.png')}/></a>
                               &nbsp;
@@ -64,10 +64,10 @@ export default function Team3() {
 
                   <div className={styles.card}>
                     <div>
-                      <img src={require('../src/image/profile_jehong.png')} alt="jehong" />
+                      <img src={require('../src/image/tx_jehong.png')} alt="jehong" />
                       <div className={styles.description}>
-                          <h3>홍정아/jehong</h3>
-                          <p>Front-End<br />
+                          <h3>Front-End</h3>
+                          <p>Developer<br />
                             <a target="_blank" rel="noopener noreferrer" href="https://github.com/kirrikirri42">
                               <img alt="github" src={require('../src/image/link_github.png')}/></a>
                               &nbsp;
@@ -85,10 +85,10 @@ export default function Team3() {
 
                   <div className={styles.card}>
                     <div>
-                      <img src={require('../src/image/profile_daelee.png')} alt="daelee" />
+                      <img src={require('../src/image/tx_daelee.png')} alt="daelee" />
                       <div className={styles.description}>
-                        <h3>이대현/daelee</h3>
-                        <p>Front-End<br />
+                        <h3>Front-End</h3>
+                        <p>Developer<br />
                           <a target="_blank" rel="noopener noreferrer" href="https://github.com/hidaehyunlee">
                             <img alt="github" src={require('../src/image/link_github.png')}/></a>
                             &nbsp;

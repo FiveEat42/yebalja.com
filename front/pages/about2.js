@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import Team2 from "../components/Team3";
+import Team2 from "../components/Team2";
 import TeamDrawing from "../components/TeamDrawing";
 import Donation from "../components/Donation"
 

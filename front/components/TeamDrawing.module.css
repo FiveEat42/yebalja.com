@@ -12,12 +12,12 @@
 }
 
 .speech {
-  padding-top: 210px;
+  padding-top: 120px;
   position: absolute;
   width: 28vw;
   height: auto;
   max-width: 1138px;
-  top: 3vw;
+  top: 10vw;
   left: 36%;
   z-index: 2;
 

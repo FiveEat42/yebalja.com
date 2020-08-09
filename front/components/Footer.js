@@ -10,19 +10,19 @@ const Footer = () => {
         <ul className={styles.item}>
           <li><p className={styles.wave}>👋</p></li>
           <li>
-            <Link href="/about"><a>1.일러스트_컬러</a></Link>
+            <Link href="/about"><a>(일러)컬러  </a></Link>
           </li>
           <li>
-            <Link href="/about2"><a>2.일러스트_화이트</a></Link>
-          </li>
-          {/* <li>
-            <Link href="/about3"><a>3.사진_컬러</a></Link>
-          </li> */}
-          <li>
-            <Link href="/about4"><a>4.사진_흑백조</a></Link>
+            <Link href="/about2"><a>(일러)화이트  </a></Link>
           </li>
           <li>
-            <Link href="/about5"><a>5.사진_회색조</a></Link> 
+            <Link href="/about3"><a>텍스트  </a></Link>
+          </li>
+          <li>
+            <Link href="/about4"><a>(사진)흑백  </a></Link>
+          </li>
+          <li>
+            <Link href="/about5"><a>(사진)회색조  </a></Link> 
           </li>
           <li><p className={styles.wave}>👋</p></li>
         </ul>
