@@ -1,7 +1,7 @@
 //react-bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from 'next/head';
-import wrapper from '../store/configureStore';
+import wrapper from '../redux/store/configureStore';
 
 const MyApp = ({ Component, pageProps}) => {
     return (

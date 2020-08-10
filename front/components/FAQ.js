@@ -7,9 +7,8 @@ import classNames from 'classnames';
 
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { setDataAction } from '../reducers/faq'
-
-
+import faqReducer from '../redux/reducers/faq';
+import { getFaqData } from '../redux/actions/getFaqData';
 function QnA ({list}) {
   return (
     <>
@@ -676,16 +675,20 @@ export default function Faq({program}) {
 
   let dataList = allDataList[program];
 //user 데이터값이 바뀌면 해당 컴포넌트가 re-rendering된다.
-  const myData = useSelector((state) => state.dataSet);
-  const dispatch = useDispatch();
-  const id = ['secho']
-  const getFaqData = useCallback(() => {
-    console.log('getFaqData');
-    dispatch(setDataAction( { id  }));
-  }, [])
+  const myData = useSelector((state) => state.faqReducer);
+  // const dispatch = useDispatch();
+  // const getFaqData = useCallback(() => {
+  //   console.log('getFaqData');
+  //   dispatch({type: "SET_DATA"});
+  // // }, [])
+  let dataList2;
+  const faqData = getFaqData();
+  dataList2 = faqData.data;
+  console.log(dataList2)  
+  // console.log(dataList[0]);
   return (
     <div className={styles.firstTab}>
-      {console.log(myData)}
+      {console.log('랜더링됨')}
       <Tabs defaultActiveKey={dataList[0].eventKey} transition={false}>
         {dataList.map((v, idx) => (
           <Tab eventKey={v.eventKey} title={v.category} key={idx}>
