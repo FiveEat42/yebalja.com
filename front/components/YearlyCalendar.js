@@ -3,6 +3,7 @@ import styles from './YearlyCalendar.module.css'
 import classNames from 'classnames';
 import Header from "./Header";
 import CTA from "./CTA";
+import Link from 'next/link'
 
 function CalendarGrid() {
   const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
