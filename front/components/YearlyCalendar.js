@@ -287,15 +287,22 @@ function StepListItem({ data, id}) { {/* 각 Row의 일정 아이템들 */}
   let end = Math.floor((endDate - beginning) / (1000 * 60 * 60 * 24)) + 1;
 
   let gridColumn = start.toString() + "/" + end.toString();
-  let backgroundColor = "#42A7F1";
-  if (data.title === "지원")
-    backgroundColor = "#4DF0FF";
-  else if (data.title === "선발")
-    backgroundColor = "#54c6f9";
-  else if (data.title === "교육")
-    backgroundColor = "#CBDFFD";
-  else if (data.title === "미정")
-    backgroundColor = "#DAE4F2";
+
+  let backgroundColor = "#42A7F1"
+  switch (data.title) {
+    case "지원":
+      backgroundColor = "#4DF0FF";
+      break;
+    case "선발":
+      backgroundColor = "#54c6f9";
+      break;
+    case "교육":
+      backgroundColor = "#CBDFFD";
+      break;
+    case "미정":
+      backgroundColor = "#DAE4F2";
+      break;
+  }
 
   let zIndex = id;
   let oversize_list = (end - start > 61) ? 1 : 0; {/* 두 달이 넘어가는 일정은 hover 시 자기 자신의 크기를 가짐 */}
