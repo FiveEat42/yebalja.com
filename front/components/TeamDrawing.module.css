@@ -8,16 +8,16 @@
 .drawing {
   width: 60vw;
   height: auto;
-  max-width: 1300px;
+  max-width: 900px;
 }
 
 .speech {
-  padding-top: 120px;
+  padding-top: 125px;
   position: absolute;
-  width: 28vw;
+  width: 27vw;
   height: auto;
-  max-width: 1138px;
-  top: 10vw;
+  max-width: 400px;
+  top: 9vw;
   left: 36%;
   z-index: 2;
 
@@ -43,8 +43,30 @@
   }
 }
 
+@media only screen and (min-width : 1500px) {
+  .speech {
+    padding-top: 260px;
+    position: absolute;
+    width: 27vw;
+    height: auto;
+    max-width: 400px;
+    top: 0;
+    left: 36%;
+  }
+}
+
 @media only screen and (max-width : 550px) {
-  /* .drawing {
-    width: 95vw;
-  } */
+  .drawing {
+    width: 90vw;
+    height: auto;
+  }
+  
+  .speech {
+    padding-top: 125px;
+    position: absolute;
+    width: 36vw;
+    height: auto;
+    top: 12vw;
+    left: 31%;
+  }
 }
