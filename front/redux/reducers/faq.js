@@ -23,9 +23,7 @@ console.log('call - reducer')
       return { ...state, ...action.payload };
 
     case 'GET_FAQ_DATA':
-      const result = getData();
-      result.then(function(result){console.log(result.data)})
-      console.log(result);
+      console.log('GET_FAQ_DATA');
       return {...state, data: {}}
 
     case 'TEST_ACTION':
@@ -56,6 +54,29 @@ export { actionCreators };
 
 export default faqReducer;
 
+// 되긴함
+// async function faqReducer(state = initialState, action) {
+//   console.log('call - reducer')
+//     switch (action.type) {
+//       case HYDRATE:
+//         return { ...state, ...action.payload };
+  
+//       case 'GET_FAQ_DATA':
+//         const result = await getData();
+//         // const resdata = result.then(function(result){
+//         //   // console.log(result.data)
+//         //   return (result)
+//         // })
+//         console.log(result.data);
+//         return {...state, data: result.data}
+  
+//       case 'TEST_ACTION':
+//         console.log('TEST_ACTION')
+//         return {}
+//       default:
+//         return state;
+//     }
+//   };
 
 //case: 'GET_FAQ_DATA'에서 있었던 일
       //promise에서 fulfilled로 이행상태였는데, then으로 promise를 처리해야한다.

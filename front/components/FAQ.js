@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import faqReducer from '../redux/reducers/faq';
+import { fetchTry, dataFetch } from '../redux/actions/getFaqData';
 import axios from 'axios';
 function QnA ({list}) {
   return (
@@ -677,17 +678,23 @@ export default function Faq({program}) {
 //user 데이터값이 바뀌면 해당 컴포넌트가 re-rendering된다.
   const myData = useSelector((state) => state.faqReducer);
 
-  let data;
   const dispatch = useDispatch(); // 디스패치 사용하도록하기
-  useEffect(()=>{
-    data = dispatch({type:'GET_FAQ_DATA'});      
-  },[])
+  // getData();
 
-  console.log(data);
-  // console.log(myData)
+  let [dataList2, setData] = useState([]);
+  useEffect(()=>{
+		async function fetchData(){
+      const result = await axios.get('http://localhost:5000/api/json/faq');
+      setData(result.data);
+      }
+      fetchData();
+  },[]);
+  let dataList3 = dataList2[program];
+
+  console.log(dataList3);
+  
   return (
     <div className={styles.firstTab}>
-      {console.log('랜더링됨')}
       <Tabs defaultActiveKey={dataList[0].eventKey} transition={false}>
         {dataList.map((v, idx) => (
           <Tab eventKey={v.eventKey} title={v.category} key={idx}>
@@ -698,3 +705,17 @@ export default function Faq({program}) {
     </div>
   );
 }
+
+
+
+// let [dataList2, setData] = useState([]);
+// useEffect(()=>{
+//   async function fetchData(){
+//     const result = await axios('http://localhost:5000/api/json/faq');
+//     setData(result.data);
+//     }
+//     fetchData();
+// },[]);
+// let dataList3 = dataList2[program];
+
+// console.log(dataList3[0]);
