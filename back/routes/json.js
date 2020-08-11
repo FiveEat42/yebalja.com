@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var cors = require('cors');
 let db = require('../config/db_config');
 
 
@@ -13,7 +13,7 @@ router.get('/gisu', function(req, res, next) {
 });
 
 router.get('/program', function(req, res, next){
-  db.query('SELECT * FROM program_table', (error, result)=>{
+  db.query('SELECT * FROM programs', (error, result)=>{
     if (error) throw error;
     res.json(result);
   })
@@ -134,7 +134,8 @@ router.get('/yearlycalendar', (req, res) => {
   })
 })
 
-router.get('/faq', (req,res) => {
+//cors에 경로를 명시해야함, 에러발생
+router.get('/faq', cors('http://localhost:3000'), (req,res) => {
   db.query(
     "select replace(programs.link, '/', '') as program,  categories.title as category,  categories.eventkey as eventKey,  subcategories.title as title,  subcategories.link as href, qnas.q , qnas.a from programs  inner join categories on programs.id = categories.programs_id inner join subcategories on categories.id = subcategories.categories_id  inner join qnas on qnas.subcategories_id = subcategories.id",
     (error, result) => {
