@@ -54,6 +54,7 @@
 .gantt__row:nth-child(4) {
   background-color: #F2F8FF;
 }
+
 .gantt__row:nth-child(4) .gantt__row__first {
   background-color: #F2F8FF;
 }
@@ -61,37 +62,48 @@
 .gantt__row:nth-child(odd) {
   background-color: #F2F8FF;
 }
+
 .gantt__row:nth-child(odd) .gantt__row__first {
   background-color: #F2F8FF;
 }
+
 .gantt__row:nth-child(3) .gantt__row__bars {
   border-top: 0;
 }
+
 .gantt__row:nth-child(3) .gantt__row__first {
   border-top: 0;
 }
+
 .gantt__row__empty {
   background-color: #ffd6d2 !important;
   z-index: 1;
 }
+
 .gantt__row__empty .gantt__row__first {
   border-width: 1px 1px 0 0;
 }
+
 .gantt__row__lines {
+  z-index: -100;
   position: absolute;
   height: 200%;
   width: 100%;
   background-color: transparent;
   grid-template-columns: 150px repeat(12, 1fr); /*경계선 : repeat 함수로 쪼갤 수 있음*/ 
 }
+
 .gantt__row__lines span {
+  z-index: -10;
   display: block;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .gantt__row__lines span.current_marker {
   grid-template-columns: 150px repeat(52, 1fr);
   background-color: rgba(0, 0, 0, 0.048);
 }
+
 .gantt__row__lines:after {
   grid-row: 1;
   grid-column: 0;
@@ -99,16 +111,23 @@
   z-index: 2;
   height: 100%;
 }
+
 .gantt__row__months {
   color: #fff;
   background-color: #4A91F5 !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   grid-template-columns: 150px repeat(12, 1fr); /*1~12월 : repeat 함수로 쪼갤 수 있음*/
 }
+
 .gantt__row__months .gantt__row__first {
   border-top: 0 !important;
   background-color: #4A91F5 !important;
 }
+
+.gantt__row__first a:hover {
+  text-decoration: none;
+}
+
 .gantt__row__months span {
   text-align: center;
   font-size: 15px;
@@ -224,6 +243,7 @@
   height: 0;
   visibility: hidden;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.04);
+  z-index: 100000;
 }
 
 .calendar_entry:hover {
@@ -255,8 +275,9 @@
 @media screen and (max-width: 1200px) {
   .calendar_entry__title {
   font-size: 10px;
-}
-.calendar_entry:hover .calendar_entry__date, .calendar_entry__title {
+  }
+
+  .calendar_entry:hover .calendar_entry__date, .calendar_entry__title {
     font-size: 10px;
   }
 }

@@ -26,7 +26,7 @@ function CalendarGrid() {
 function ProgramList() {
   const ProgramData = [
     {
-      "idName": "ftseoul",
+      "link": "/ftseoul",
       "title": "42 Seoul",
       "gisuData": [
         {
@@ -103,7 +103,7 @@ function ProgramList() {
         }
       ],
     }, {
-      "idName": "ssafy",
+      "link": "/ssafy",
       "title": "SSAFY",
       "gisuData": [
         {
@@ -132,7 +132,7 @@ function ProgramList() {
         }
       ]
     }, {
-      "idName": "boostcamp",
+      "link": "/boostcamp",
       "title": "네이버 부스트캠프",
       "gisuData": [
         {
@@ -167,7 +167,7 @@ function ProgramList() {
         }
       ]
     }, {
-      "idName": "soma",
+      "link": "/soma",
       "title": "SW 마에스트로",
       "gisuData": [
         {
@@ -196,7 +196,7 @@ function ProgramList() {
         }
       ]
     }, {
-      "idName": "woowa",
+      "link": "/woowa",
       "title": "우아한테크코스",
       "gisuData": [
         {
@@ -213,7 +213,7 @@ function ProgramList() {
         }
       ]
     }, {
-      "idName": "likelion",
+      "link": "/likelion",
       "title": "멋쟁이사자처럼",
       "gisuData": [
         {
@@ -249,14 +249,14 @@ function ProgramList() {
 function GisuList({ data }) {
   return (
     <>
-      {data.gisuData.map((v, idx) => <StepList data={v} key={idx} title={data.title} />)}
+      {data.gisuData.map((v, idx) => <StepList data={v} key={idx} title={data.title} link={data.link}/>)}
     </>
   )
 }
 
-function StepList({ data, title }) { {/* Calendar의 Row */}
-  let title_and_gisu = <span>{title}<br/><br/><span className={styles.gisu}>{data.gisu}</span></span>;
-  let title_only = <span>{title}</span>;
+function StepList({ data, title, link }) { {/* Calendar의 Row */}
+  let title_and_gisu = <span><Link href={link}><a>{title}</a></Link><br/><br/><span className={styles.gisu}>{data.gisu}</span></span>;
+  let title_only =<span> <Link href={link}><a>{title}</a></Link></span>;
   let gisu_only = <span className={styles.gisu}>{data.gisu}</span>;
 
   return (
