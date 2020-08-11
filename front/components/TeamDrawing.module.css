@@ -47,11 +47,11 @@
   .speech {
     padding-top: 260px;
     position: absolute;
-    width: 27vw;
     height: auto;
     max-width: 400px;
     top: 0;
-    left: 36%;
+    margin-left: -200px;
+    left: 50%;
   }
 }
 
