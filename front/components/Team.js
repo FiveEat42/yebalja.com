@@ -17,7 +17,8 @@ export default function Team() {
                       <img src={require('../src/image/tag_mihykim.png')} alt="mihykim" />
                       <div className={styles.description}>
                         <h3>Front-End</h3>
-                        <p>Devloper<br />
+                        <p className={styles.txt}>Devloper</p>
+                          <p>
                           <a target="_blank" rel="noopener noreferrer" href="https://github.com/365kim">
                             <img alt="github" src={require('../src/image/link_github.png')}/></a>
                         </p>
@@ -30,7 +31,8 @@ export default function Team() {
                       <img src={require('../src/image/tag_secho.png')} alt="secho" />
                       <div className={styles.description}>
                         <h3>Back-End</h3>
-                        <p>Devloper<br />
+                        <p className={styles.txt}>Devloper</p>
+                          <p>
                           <a target="_blank" rel="noopener noreferrer" href="https://github.com/SeongsangCHO">
                             <img alt="github" src={require('../src/image/link_github.png')}/></a>
                             &nbsp;
@@ -51,7 +53,8 @@ export default function Team() {
                       <img src={require('../src/image/tag_taelee.png')} alt="taelee" />
                       <div className={styles.description}>
                           <h3>Back-End</h3>
-                          <p>Devloper<br />
+                          <p className={styles.txt}>Devloper</p>
+                          <p>
                             <a target="_blank" rel="noopener noreferrer" href="https://github.com/taelee42">
                               <img alt="github" src={require('../src/image/link_github.png')}/></a>
                               &nbsp;
@@ -67,7 +70,8 @@ export default function Team() {
                       <img src={require('../src/image/tag_jehong.png')} alt="jehong" />
                       <div className={styles.description}>
                           <h3>Front-End</h3>
-                          <p>Devloper<br />
+                          <p className={styles.txt}>Devloper</p>
+                          <p>
                             <a target="_blank" rel="noopener noreferrer" href="https://github.com/kirrikirri42">
                               <img alt="github" src={require('../src/image/link_github.png')}/></a>
                               &nbsp;
@@ -88,13 +92,14 @@ export default function Team() {
                       <img src={require('../src/image/tag_daelee.png')} alt="daelee" />
                       <div className={styles.description}>
                         <h3>Front-End</h3>
-                        <p>Devloper<br />
-                          <a target="_blank" rel="noopener noreferrer" href="https://github.com/hidaehyunlee">
-                            <img alt="github" src={require('../src/image/link_github.png')}/></a>
-                            &nbsp;
-                          <a target="_blank" rel="noopener noreferrer" href="https://velog.io/@hidaehyunlee">
-                            <img alt="velog" src={require('../src/image/link_velog.png')}/></a>
-                        </p>
+                        <p className={styles.txt}>Devloper</p>
+                        <p>
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/hidaehyunlee">
+                          <img alt="github" src={require('../src/image/link_github.png')}/></a>
+                          &nbsp;
+                        <a target="_blank" rel="noopener noreferrer" href="https://velog.io/@hidaehyunlee">
+                          <img alt="velog" src={require('../src/image/link_velog.png')}/></a>
+                      </p>
                       </div>
                     </div>
                   </div>

@@ -12,11 +12,10 @@
 }
 
 .speech {
-  padding-top: 125px;
   position: absolute;
   width: 27vw;
   height: auto;
-  max-width: 400px;
+  padding-top: 125px;
   top: 9vw;
   left: 36%;
   z-index: 2;
@@ -45,10 +44,8 @@
 
 @media only screen and (min-width : 1500px) {
   .speech {
-    padding-top: 260px;
-    position: absolute;
-    height: auto;
     max-width: 400px;
+    padding-top: 260px;
     top: 0;
     margin-left: -200px;
     left: 50%;

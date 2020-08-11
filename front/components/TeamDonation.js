@@ -1,7 +1,7 @@
 import React from "react";
-import styles from './Donation.module.css';
+import styles from './TeamDonation.module.css';
 
-export default function Donation() {
+export default function TeamDonation() {
   return (
     <>
       <section className={styles.container}>

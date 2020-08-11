@@ -6,7 +6,7 @@
   margin: 150px auto -150px auto;
   width: 60%;
   max-width: 640px;
-  font-family: 'NanumBarunGothic';
+  font-family: "NanumBarunGothic";
 }
 
 /*  Team Starts */
@@ -68,14 +68,14 @@
 }
 
 .description h3 {
-  font-size: 1.25em;
+  font-size: 1.2em;
   font-weight: 600;
   top: -100px;
 }
 
 .description p {
-  font-weight: 300;
-  font-size: 0.9em;
+  font-weight: 200;
+  font-size: 1em;
   bottom: -150px;
 }
 
@@ -133,9 +133,21 @@
   .sm_text_center {
     text-align: center;
   }
+  .description h3 {
+    font-size: 1.1em;
+  }
+
+  .description p {
+    font-size: 0.9em;
+  }
+
+  .description img {
+    width: 17px;
+    height: 17px;
+  }
 }
 
-@media only screen and (max-width : 550px) {
+@media only screen and (max-width : 768px) {
   .section {
     width: 100%;
     margin: 150px auto 0px auto;
@@ -165,19 +177,30 @@
   }
 
   .description h3 {
-    font-size: 0.8em;
-    font-weight: 600;
-    top: -100px;
+    font-size: 1em;
   }
 
   .description p {
-    font-weight: 300;
-    font-size: 0.7em;
-    bottom: -150px;
+    font-size: 0.83em;
   }
 
   .description img {
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media only screen and (max-width : 430px) {
+  .description h3 {
+    font-size: 0.7em;
+  }
+  
+  .txt {
+    display: none;
+  }
+
+  .description img {
+    width: 14px;
+    height: 14px;
   }
 }
