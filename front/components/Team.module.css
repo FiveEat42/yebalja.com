@@ -32,8 +32,8 @@
 
 .card > div {
   background-color: #D9F0FD;
-  margin: 10px;
-  box-shadow: -3px 10px 40px -25px;
+  margin: 5px;
+  box-shadow: -2px 4px 12px -6px;
 }
 
 .card img {
@@ -138,6 +138,7 @@
 @media only screen and (max-width : 550px) {
   .section {
     width: 100%;
+    margin: 150px auto 0px auto;
   }
 
   .cardset li {
