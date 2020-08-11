@@ -1,4 +1,4 @@
-import React , { useCallback }from 'react';
+import React , { useCallback, useEffect, useState }from 'react';
 import styles from './Faq.module.css';
 import ListGroup from "react-bootstrap/ListGroup"
 import Tab from "react-bootstrap/Tab"
@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import faqReducer from '../redux/reducers/faq';
-import { getFaqData } from '../redux/actions/getFaqData';
+import axios from 'axios';
 function QnA ({list}) {
   return (
     <>
@@ -676,16 +676,15 @@ export default function Faq({program}) {
   let dataList = allDataList[program];
 //user 데이터값이 바뀌면 해당 컴포넌트가 re-rendering된다.
   const myData = useSelector((state) => state.faqReducer);
-  // const dispatch = useDispatch();
-  // const getFaqData = useCallback(() => {
-  //   console.log('getFaqData');
-  //   dispatch({type: "SET_DATA"});
-  // // }, [])
-  let dataList2;
-  const faqData = getFaqData();
-  dataList2 = faqData.data;
-  console.log(dataList2)  
-  // console.log(dataList[0]);
+
+  let data;
+  const dispatch = useDispatch(); // 디스패치 사용하도록하기
+  useEffect(()=>{
+    data = dispatch({type:'GET_FAQ_DATA'});      
+  },[])
+
+  console.log(data);
+  // console.log(myData)
   return (
     <div className={styles.firstTab}>
       {console.log('랜더링됨')}
