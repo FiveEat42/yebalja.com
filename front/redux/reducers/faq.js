@@ -6,7 +6,9 @@ import axios from 'axios';
 import { func } from 'prop-types';
 
 
-const initialState = {};
+const initialState = {
+  data: {}
+};
 
 export async function getData (){
   console.log('call getDataAPI');
@@ -22,8 +24,8 @@ console.log('call - reducer')
 
     case 'GET_FAQ_DATA':
       console.log('GET_FAQ_DATA');
-      console.log(action);
-      return {...state, data: action.payload};
+      console.log(action.payload.data);
+      return {...state, data: action.payload.data};
 
     case 'TEST_ACTION':
       console.log('TEST_ACTION')

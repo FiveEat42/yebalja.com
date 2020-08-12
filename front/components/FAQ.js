@@ -59,18 +59,19 @@ function FaqTab({subList}) {
 export default function Faq({program}) {
   //program을 리덕스로 관리해서 받아와야함.
 
-  const myData = useSelector((state) => state.faqReducer);
+  const faqData = useSelector((state) => state.faqReducer);
 
   const dispatch = useDispatch(); // 디스패치 사용하도록하기
 
-  let [dataList2, setData] = useState([]);
+  // let [dataList2, setData] = useState([]);
   useEffect(()=>{
     const result = getData().then(function(result){
       dispatch({type: result.type, payload: result.payload})
-      setData(result.payload.data);
+      // setData(result.payload.data);
     });
   },[]);
-  let dataList = dataList2[program] ?? [];
+  console.log(faqData.data[program]);
+  let dataList = faqData.data[program] ?? [];
   return (
     <div className={styles.firstTab}>
       <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}>
