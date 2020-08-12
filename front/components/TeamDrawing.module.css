@@ -12,12 +12,12 @@
 }
 
 .speech {
-  position: absolute;
+  position: relative;
   width: 27vw;
   height: auto;
-  padding-top: 125px;
-  top: 9vw;
-  left: 36%;
+  top: -29.5vw;
+  margin-left: -13.5vw;
+  left: 50%;
   z-index: 2;
 
   -webkit-transform: scale(0.1);
@@ -45,8 +45,7 @@
 @media only screen and (min-width : 1500px) {
   .speech {
     max-width: 400px;
-    padding-top: 260px;
-    top: 0;
+    top: -435px;
     margin-left: -200px;
     left: 50%;
   }
@@ -55,15 +54,12 @@
 @media only screen and (max-width : 550px) {
   .drawing {
     width: 90vw;
-    height: auto;
   }
   
   .speech {
-    padding-top: 125px;
-    position: absolute;
     width: 36vw;
-    height: auto;
-    top: 12vw;
-    left: 31%;
+    top: -44vw;
+    margin-left: -18vw;
+    left: 50%;
   }
 }

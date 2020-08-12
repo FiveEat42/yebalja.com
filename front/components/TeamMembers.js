@@ -1,10 +1,10 @@
 import React from "react";
-import styles from './Team.module.css';
+import styles from './TeamMembers.module.css';
 
-export default function Team() {
+export default function TeamMembers() {
   return (
     <>
-      <section className={styles.section}>
+      <section className={styles.container}>
         <div className="container">
           <div className={styles.sm_no_flex}>
             <div className={styles.sm_no_float}>
