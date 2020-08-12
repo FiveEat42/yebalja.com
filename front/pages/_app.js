@@ -7,6 +7,7 @@ const MyApp = ({ Component, pageProps}) => {
         <Head>
           <meta charSet="utf-8" />
           <title>예발자닷컴</title>
+          <link rel="icon" type="image/x-icon" href={require("./favicon.ico")} />
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-172016762-1"

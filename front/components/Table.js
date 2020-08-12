@@ -47,7 +47,7 @@ export default function Table() {
       link: '/soma',
       number_of_recruits: '140명',
       edu_period: '6개월',
-      grant: '월 100만원/nIT기기 140만원',
+      grant: '월 100만원<br>IT기기 140만원',
       aptitude: 'true',
       coding: 'true',
       interview: 'true',
