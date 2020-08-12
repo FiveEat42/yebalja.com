@@ -3,6 +3,7 @@ import PropTypes  from 'prop-types';
 import Footer from "./Footer";
 import TextLogo from "./TextLogo";
 import NavBar from "./NavBar"
+import TopButton from "./TopButton"
 
 const Layout = ({children}) => {
   return (
@@ -12,6 +13,7 @@ const Layout = ({children}) => {
         <NavBar />
           {children}
         <Footer />
+        <TopButton />
       </div>
     </div>
   )

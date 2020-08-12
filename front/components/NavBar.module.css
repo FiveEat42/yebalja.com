@@ -133,5 +133,9 @@
  @media screen and (max-width: 991.98px) {
   .noticeRolling, .buttonPopover, .noticePopover {
     display: none;
+    
+    visibility: hidden;
+    width: 0;
+    height: 0;
     }
  }

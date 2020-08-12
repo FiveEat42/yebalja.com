@@ -1,0 +1,72 @@
+.container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+/*가로:세로 = 1578:1099*/
+
+.menu {
+  width: 40vw;
+  height: 27.9vw;
+  max-height: ;
+}
+
+/*가로:세로 = 1044:1099*/
+.code {
+  width: auto;
+  height: 27.9vw;
+}
+
+.menu, .code {
+  -webkit-transform: scale(0.1);
+  transform: scale(0.1);
+  -webkit-animation: popup 0.5s cubic-bezier(1, 0, 0, 1.5) forwards;
+  animation: popup 0.5s cubic-bezier(1, 0, 0, 1.5) forwards;
+}
+
+@-webkit-keyframes popup {
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popup {
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width : 1500px) {
+  .menu {
+    max-width: 600px;
+    height: auto;
+  }
+  .code {
+    max-width: 397px;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu {
+    width: 85vw;
+    height: auto;
+  }
+  .code {
+    width: 85vw;
+    height: auto;
+  }
+}
