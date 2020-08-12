@@ -7,9 +7,8 @@ import classNames from 'classnames';
 
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import faqReducer from '../redux/reducers/faq';
-import { getData } from '../redux/actions/faqAction';
-import axios from 'axios';
+import { getData, getFaqData } from '../redux/actions/faqAction';
+
 function QnA ({list}) {
   return (
     <>
@@ -63,15 +62,15 @@ export default function Faq({program}) {
 
   const dispatch = useDispatch(); // 디스패치 사용하도록하기
 
-  // let [dataList2, setData] = useState([]);
   useEffect(()=>{
     const result = getData().then(function(result){
-      dispatch({type: result.type, payload: result.payload})
+      dispatch(result) // dispatch(액션함수())로 변경? => plain object로 해야한다는 에러메시지
+      // dispatch({type: result.type, payload: result.payload})
       // setData(result.payload.data);
     });
   },[]);
   console.log(faqData.data[program]);
-  let dataList = faqData.data[program] ?? [];
+  const dataList = faqData.data[program] ?? [];
   return (
     <div className={styles.firstTab}>
       <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}>

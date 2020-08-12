@@ -17,7 +17,7 @@ export async function getData (){
 }
 
 const faqReducer = (state = initialState, action) => {
-console.log('call - reducer')
+console.log('faqReducer')
   switch (action.type) {
     case HYDRATE:
       return { ...state, ...action.payload };
