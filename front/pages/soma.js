@@ -15,10 +15,10 @@ const Soma = () => {
       </Header>
       <Faq program="soma"/>
       <Header>
-            <h2>부트캠프 참여후기</h2>
-            <p>솔직담백한 이야기를 공유합니다</p>
-        </Header>
-        <Review program="soma"/>
+        <h2>부트캠프 참여후기</h2>
+        <p>솔직담백한 이야기를 공유합니다</p>
+      </Header>
+      <Review program="soma"/>
     </Layout>
 );
 }
