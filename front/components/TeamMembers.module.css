@@ -191,11 +191,16 @@
 }
 
 @media only screen and (max-width : 430px) {
+  .description {
+    transform: rotate(45deg) translate(-12px, 12px);
+  }
+
   .description h3 {
-    font-size: 0.7em;
+    font-size: 0.75em;
+    font-weight: 400;
   }
   
-  .txt {
+  .description .txt {
     display: none;
   }
 
