@@ -674,7 +674,7 @@ export default function Faq({program}) {
     ]
   }
 
-  let dataList = allDataList[program];
+  // let dataList = allDataList[program];
 //user 데이터값이 바뀌면 해당 컴포넌트가 re-rendering된다.
   const myData = useSelector((state) => state.faqReducer);
 
@@ -682,6 +682,8 @@ export default function Faq({program}) {
   // getData();
 
   let [dataList2, setData] = useState([]);
+  //useEffect는 랜더링 되고나서 수행되는 함수.
+  //랜더
   useEffect(()=>{
 		async function fetchData(){
       const result = await axios.get('http://localhost:5000/api/json/faq');
@@ -689,13 +691,13 @@ export default function Faq({program}) {
       }
       fetchData();
   },[]);
-  let dataList3 = dataList2[program];
-
-  console.log(dataList3);
-  
+  let dataList = dataList2[program] ?? [];
+  if (dataList == undefined)
+    console.log('dataList3 is undefined or null')
+  // console.log(dataList3[0]?.eventKey);
   return (
     <div className={styles.firstTab}>
-      <Tabs defaultActiveKey={dataList[0].eventKey} transition={false}>
+      <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}>
         {dataList.map((v, idx) => (
           <Tab eventKey={v.eventKey} title={v.category} key={idx}>
             <FaqTab subList={v.subCategory} key={idx}/>
