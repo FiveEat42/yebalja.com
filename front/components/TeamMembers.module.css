@@ -1,0 +1,211 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  align-items: center;
+  margin: 50px auto -100px auto;
+  width: 60%;
+  max-width: 640px;
+  font-family: "NanumBarunGothic";
+}
+
+/*  Team Starts */
+.cardset {
+  transform: rotate(-45deg);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cardset li > div {
+  float: left;
+  width: 33%;
+}
+
+.cardset li:nth-child(2) > div:first-child {
+  margin-left: 33%;
+}
+
+.cardset li:last-child > div:first-child {
+  margin-left: 66%;
+}
+
+.card > div {
+  background-color: #D9F0FD;
+  margin: 5px;
+  box-shadow: -2px 4px 12px -6px;
+}
+
+.card img {
+  transform: rotate(45deg) translate(0, 35px) scale(1.1);
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* hover content - style */
+.card > div {
+  position: relative;
+  overflow: hidden;
+}
+
+.description {
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg) translate(-24px, 24px);
+  left: 0;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+}
+
+.description h3, .description p {
+  margin: 0;
+  color: white;
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.description h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  top: -100px;
+}
+
+.description p {
+  font-weight: 200;
+  font-size: 1em;
+  bottom: -150px;
+}
+
+.description img {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  transform: rotate(0deg);
+}
+
+.card > div:after {
+  content: '';
+  background-image: linear-gradient(45deg, rgba(74, 145, 245, .7) 50%, transparent 50%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* hover content - onhover */
+.card *,
+.card > div:after {
+  transition: all .4s ease;
+}
+
+.card:hover *,
+.card:hover > div:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card:hover .description h3 {
+  top: 0;
+}
+
+.card:hover .description p {
+  bottom: 0;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width : 992px) {
+  .sm_no_flex {
+    display: block;
+  }
+  .sm_no_float {
+    float: none !important;
+  }
+  .sm_text_center {
+    text-align: center;
+  }
+  .description h3 {
+    font-size: 1.1em;
+  }
+
+  .description p {
+    font-size: 0.9em;
+  }
+
+  .description img {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .container {
+    width: 100%;
+    margin: 50px auto 0px auto;
+  }
+
+  .cardset li {
+    text-align: center;
+  }
+  
+  .cardset li > div {
+    float: none;
+    display: inline-block;
+    width: 30%;
+    margin: 0 !important;
+  }
+
+  .cardset {
+    transform: rotate(0);
+  }
+
+  .card img {
+    transform: rotate(0) translate(0, 0);
+  }
+
+  .description {
+    transform: rotate(45deg) translate(-16px, 16px);
+  }
+
+  .description h3 {
+    font-size: 1em;
+  }
+
+  .description p {
+    font-size: 0.83em;
+  }
+
+  .description img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media only screen and (max-width : 430px) {
+  .description {
+    transform: rotate(45deg) translate(-12px, 12px);
+  }
+
+  .description h3 {
+    font-size: 0.75em;
+    font-weight: 400;
+  }
+  
+  .description .txt {
+    display: none;
+  }
+
+  .description img {
+    width: 14px;
+    height: 14px;
+  }
+}

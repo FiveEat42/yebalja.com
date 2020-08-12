@@ -5,7 +5,7 @@ const TopButton = () => {
 
   return (
     <div>
-      <a href="#top">
+      <a href="#">
         <div className={styles.button} tabIndex="0" role="button" aria-label="맨 위로" title="맨 위로">
           <div className={styles.icon}>
               <img src={require('../src/image/ToTop.png')} width="16" height="24" />
