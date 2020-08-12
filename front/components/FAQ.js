@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import faqReducer from '../redux/reducers/faq';
-import { fetchTry, dataFetch } from '../redux/actions/getFaqData';
+import { getData } from '../redux/actions/faqAction';
 import axios from 'axios';
 function QnA ({list}) {
   return (
@@ -62,19 +62,15 @@ export default function Faq({program}) {
   const myData = useSelector((state) => state.faqReducer);
 
   const dispatch = useDispatch(); // 디스패치 사용하도록하기
-  console.log(myData);
 
   let [dataList2, setData] = useState([]);
   useEffect(()=>{
-		async function fetchData(){
-      const result = await axios.get('http://localhost:5000/api/json/faq');
-      console.log(result)
-      setData(result.data);
-      }
-      fetchData();
+    const result = getData().then(function(result){
+      dispatch({type: result.type, payload: result.payload})
+      setData(result.payload.data);
+    });
   },[]);
   let dataList = dataList2[program] ?? [];
-
   return (
     <div className={styles.firstTab}>
       <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}>
@@ -89,15 +85,36 @@ export default function Faq({program}) {
 }
 
 
+//axios 설명
 
-// let [dataList2, setData] = useState([]);
-// useEffect(()=>{
-//   async function fetchData(){
-//     const result = await axios('http://localhost:5000/api/json/faq');
-//     setData(result.data);
-//     }
-//     fetchData();
-// },[]);
-// let dataList3 = dataList2[program];
+// export default function Faq({program}) {
+//   //program을 리덕스로 관리해서 받아와야함.
 
-// console.log(dataList3[0]);
+//   const myData = useSelector((state) => state.faqReducer);
+
+//   const dispatch = useDispatch(); // 디스패치 사용하도록하기
+//   console.log(myData);
+
+//   let [dataList2, setData] = useState([]);
+//   useEffect(()=>{
+// 		async function fetchData(){
+//       const result = await axios.get('http://localhost:5000/api/json/faq');
+//       console.log(result)
+//       setData(result.data);
+//       }
+//       fetchData();
+//   },[]);
+//   let dataList = dataList2[program] ?? [];
+
+//   return (
+//     <div className={styles.firstTab}>
+//       <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}>
+//         {dataList.map((v, idx) => (
+//           <Tab eventKey={v.eventKey} title={v.category} key={idx}>
+//             <FaqTab subList={v.subCategory} key={idx}/>
+//           </Tab>
+//         ))}
+//       </Tabs>
+//     </div>
+//   );
+// }
