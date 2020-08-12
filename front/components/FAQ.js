@@ -62,11 +62,13 @@ export default function Faq({program}) {
   const myData = useSelector((state) => state.faqReducer);
 
   const dispatch = useDispatch(); // 디스패치 사용하도록하기
-  
+  console.log(myData);
+
   let [dataList2, setData] = useState([]);
   useEffect(()=>{
 		async function fetchData(){
       const result = await axios.get('http://localhost:5000/api/json/faq');
+      console.log(result)
       setData(result.data);
       }
       fetchData();
