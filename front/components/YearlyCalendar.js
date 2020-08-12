@@ -256,7 +256,7 @@ function GisuList({ data }) {
 
 function StepList({ data, title, link }) { {/* Calendar의 Row */}
   let title_and_gisu = <span><Link href={link}><a>{title}</a></Link><br/><br/><span className={styles.gisu}>{data.gisu}</span></span>;
-  let title_only =<span> <Link href={link}><a>{title}</a></Link></span>;
+  let title_only =<span><Link href={link}><a>{title}</a></Link></span>;
   let gisu_only = <span className={styles.gisu}>{data.gisu}</span>;
 
   return (
@@ -285,7 +285,6 @@ function StepListItem({ data, id}) { {/* 각 Row의 일정 아이템들 */}
   let beginning = new Date('2020-01-01').setHours(9);
   let start = Math.floor((startDate - beginning) / (1000 * 60 * 60 * 24)) + 1;
   let end = Math.floor((endDate - beginning) / (1000 * 60 * 60 * 24)) + 1;
-
   let gridColumn = start.toString() + "/" + end.toString();
 
   let backgroundColor = "#42A7F1"

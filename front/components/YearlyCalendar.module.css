@@ -85,7 +85,6 @@
 }
 
 .gantt__row__lines {
-  z-index: -100;
   position: absolute;
   height: 200%;
   width: 100%;
@@ -93,14 +92,12 @@
   grid-template-columns: 150px repeat(12, 1fr); /*경계선 : repeat 함수로 쪼갤 수 있음*/ 
 }
 
-.gantt__row__lines span {
-  z-index: -10;
+.gantt__row__lines span:nth-child(1) {
   display: block;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .gantt__row__lines span.current_marker {
-  grid-template-columns: 150px repeat(52, 1fr);
   background-color: rgba(0, 0, 0, 0.048);
 }
 
@@ -146,7 +143,6 @@
   font-weight: bold;
   text-align: center;
   font-weight: 800;
-  
 }
 
 .gantt__row__first span{
@@ -157,6 +153,11 @@
 .gantt__row__first .gisu{
   color: #89A1C3;
   font-size: 12px;
+}
+
+.gantt__row__first a{
+  position: relative;
+  z-index: 1;
 }
 
 .gantt__row__bars {
