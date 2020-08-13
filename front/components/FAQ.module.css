@@ -1,6 +1,6 @@
 .container {
   max-width: 800px;
-  min-height: 300px;;
+  min-height: 400px;
   margin: 0 auto;
   padding: 0;
   width: 65%;
@@ -55,17 +55,20 @@
 .question {
   font-size: 1.15em;
   font-weight: 600;
+  color: #1e2329;
 }
 
 .answer {
   font-size: 1em;
   line-height: 1.8;
   margin: 10px 0 40px;
+  color: #627083;
 }
 
 @media screen and (max-width: 728px) {
   .container {
     width: 75%;
+    min-height: 300px;
   }
 
   .mainTab a {
