@@ -5,26 +5,27 @@ import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
 import classNames from 'classnames';
 
-
 function QnA ({list}) {
+
   return (
     <>
-      <strong>Q. {list.q}</strong>
-      <br />A. {list.a}
-      <br /><br />
+      <div className={styles.question}>Q. {list.q}</div>
+      <div className={styles.answer}>{list.a}</div>
     </>
   );
 };
 
-function TabLeft({sub}) {
+function SecondTab({sub}) {
+
   return (
-    <ListGroup.Item action href={sub.href}>
+    <ListGroup.Item href={sub.href} className={styles.listitem}>
       {sub.title}
     </ListGroup.Item>
   )
 }
 
-function TabRight ({sub}) { 
+function ContentBox ({sub}) {
+
   return (
     <Tab.Pane eventKey={sub.href}>
       {sub.qna.map((v, idx) => <QnA list={v} key={idx} />)}
@@ -33,22 +34,16 @@ function TabRight ({sub}) {
 }
 
 function FaqTab({subList}) {
-  return (
-    <div className={classNames({["row"]: true, ["justify-content-md-center"]: true})}>
-      <Tab.Container id="list-group-tabs-example" defaultActiveKey={subList[0].href}>
-        <div className={"col-md-3"}>
-          <ListGroup className={styles.secondTab}>
-            {subList.map((v, idx) => <TabLeft sub={v} key={idx} />)}
-          </ListGroup>
-        </div>
 
-        <div className={classNames({["col-md-9"]: true, [styles.content]: true})}>
-          <Tab.Content>
-            {subList.map((v, idx) => <TabRight sub={v} key={idx} />)}
-          </Tab.Content>
-        </div>
-      </Tab.Container>
-    </div>
+  return (
+    <Tab.Container defaultActiveKey={subList[0].href}>
+      <ListGroup horizontal className={styles.subTab}>
+        {subList.map((v, idx) => <SecondTab sub={v} key={idx} />)}
+      </ListGroup>
+      <Tab.Content className={styles.content}>
+        {subList.map((v, idx) => <ContentBox sub={v} key={idx} />)}
+      </Tab.Content>
+    </Tab.Container>
   );
 }
 
@@ -57,7 +52,7 @@ export default function Faq({program}) {
   const allDataList = {
     "ftseoul" : [
       {
-        "category" : "지원/선발",
+        "category" : "지원선발",
         "eventKey" : "apply",
         "subCategory": [
             {
@@ -144,7 +139,7 @@ export default function Faq({program}) {
             }
         ]
     },{
-        "category": "기타",
+        "category": "기타사항",
         "eventKey": "etc",
         "subCategory": [
             {
@@ -175,7 +170,7 @@ export default function Faq({program}) {
     ],
     "ssafy" : [
       {
-        "category" : "지원/선발",
+        "category" : "지원선발",
         "eventKey" : "apply",
         "subCategory": [
             {
@@ -252,7 +247,7 @@ export default function Faq({program}) {
             }
         ]
     },{
-        "category": "기타",
+        "category": "기타사항",
         "eventKey": "etc",
         "subCategory": [
             {
@@ -270,7 +265,7 @@ export default function Faq({program}) {
     ],
     "boostcamp" : [
       {
-        "category" : "지원/선발",
+        "category" : "지원선발",
         "eventKey" : "apply",
         "subCategory": [
             {
@@ -350,7 +345,7 @@ export default function Faq({program}) {
             }
         ]
     },{
-        "category": "기타",
+        "category": "기타사항",
         "eventKey": "etc",
         "subCategory": [
             {
@@ -378,7 +373,7 @@ export default function Faq({program}) {
     ],
     "soma" : [
       {
-        "category" : "지원/선발",
+        "category" : "지원선발",
         "eventKey" : "apply",
         "subCategory": [
             {
@@ -448,7 +443,7 @@ export default function Faq({program}) {
             }
         ]
     },{
-        "category": "기타",
+        "category": "기타사항",
         "eventKey": "etc",
         "subCategory": [
             {
@@ -479,7 +474,7 @@ export default function Faq({program}) {
     ],
     "woowa" : [
       {
-        "category" : "지원/선발",
+        "category" : "지원선발",
         "eventKey" : "apply",
         "subCategory": [
             {
@@ -562,7 +557,7 @@ export default function Faq({program}) {
             }
         ]
     },{
-        "category": "기타",
+        "category": "기타사항",
         "eventKey": "etc",
         "subCategory": [
             {
@@ -590,7 +585,7 @@ export default function Faq({program}) {
     ],
     "likelion" : [
       {
-        "category" : "지원/선발",
+        "category" : "지원선발",
         "eventKey" : "apply",
         "subCategory": [
             {
@@ -652,7 +647,7 @@ export default function Faq({program}) {
             }
         ]
     },{
-        "category": "기타",
+        "category": "기타사항",
         "eventKey": "etc",
         "subCategory": [
             {
@@ -673,13 +668,14 @@ export default function Faq({program}) {
   let dataList = allDataList[program];
 
   return (
-    <div className={styles.firstTab}>
-      <Tabs defaultActiveKey={dataList[0].eventKey} transition={false}>
-        {dataList.map((v, idx) => (
-          <Tab eventKey={v.eventKey} title={v.category} key={idx}>
-            <FaqTab subList={v.subCategory} key={idx}/>
-          </Tab>
-        ))}
+    <div className={styles.container}>
+      <Tabs defaultActiveKey={dataList[0].eventKey} transition={false}
+        className={classNames({ "justify-content-center": true, [styles.mainTab]: true })}>              
+          {dataList.map((v, idx) => (
+            <Tab eventKey={v.eventKey} title={v.category} key={idx}>
+              <FaqTab subList={v.subCategory} key={idx}/>
+            </Tab>
+          ))}
       </Tabs>
     </div>
   );

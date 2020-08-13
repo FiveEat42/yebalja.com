@@ -1,13 +1,117 @@
-.firstTab {
-  margin-left: 10%;
-  margin-right: 10%;
+.container {
+  max-width: 800px;
+  min-height: 300px;;
+  margin: 0 auto;
+  padding: 0;
+  width: 65%;
+  height: auto;
+  font-family: "NanumBarunGothic";
 }
 
-.secondTab {
-  margin-top: 30px;
-  align-content: center;
+/* MainTab */
+.mainTab a {
+  padding: 10px 0;
+  font-size: 1.2em;
+  min-width: 120px;
+  text-align: center;
+  font-weight: 600;
+  color: #89A1C3;
+  outline: none;
 }
 
+/* SubTab */
+.subTab {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width:100%;
+}
+
+.subTab div {
+  font-size: 1.0em;
+  font-weight: 400;
+  color: rgba(255,255,255,.5);
+  border: none;
+  border-radius: 30px !important;
+  max-width: 400px;
+  margin: 20px 7px !important;
+  padding: 3px 14px;
+  height: 100%;
+  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
+  outline: none;
+  background-color: #4A91F5 !important;
+}
+
+.subTab div:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* Content (Q&A) */
 .content {
-  margin-top: 30px;
+  margin: 30px 10px 0;
+}
+
+.question {
+  font-size: 1.15em;
+  font-weight: 600;
+}
+
+.answer {
+  font-size: 1em;
+  line-height: 1.8;
+  margin: 10px 0 40px;
+}
+
+@media screen and (max-width: 728px) {
+  .container {
+    width: 75%;
+  }
+
+  .mainTab a {
+    font-size: 1.1em;
+    min-width: 90px;
+  }
+
+  .subTab div {
+    font-size: 0.85em;
+    margin: 20px 3px 5px;
+  }
+}
+
+@media screen and (max-width: 588px) {
+  .container {
+    width: 85%;
+  }
+
+  .mainTab a {
+    font-size: 1.1em;
+  }
+
+  .subTab div {
+    font-size: 0.85em;
+    margin: 20px 0px 5px;
+  }
+}
+
+@media screen and (max-width: 348px) {
+  .container {
+    width: 90%;
+  }
+
+  .mainTab a {
+    font-size: 1.0em;
+  }
+
+  .subTab div {
+    font-size: 0.70em;
+  }
+
+  .question {
+    font-size: 0.9em;
+  }
+  
+  .answer {
+    font-size: 0.7em;
+  }
 }
