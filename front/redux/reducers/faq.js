@@ -18,6 +18,7 @@ export async function getData (){
 
 const faqReducer = (state = initialState, action) => {
 console.log('faqReducer')
+console.log(action.type)
   switch (action.type) {
     case HYDRATE:
       return { ...state, ...action.payload };
@@ -25,11 +26,11 @@ console.log('faqReducer')
     case 'GET_FAQ_DATA':
       console.log('GET_FAQ_DATA');
       console.log(action.payload.data);
-      return {...state, data: action.payload.data};
+      return { ...state, data: action.payload.data };
 
     case 'TEST_ACTION':
       console.log('TEST_ACTION')
-      return {}
+      return {...state, data : 'secho'}
     default:
       return state;
   }

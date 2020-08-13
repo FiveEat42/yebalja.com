@@ -14,6 +14,9 @@ import reducer from '../reducers/index';
 import faqReducer from '../reducers/faq';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
+import programsReducer from '../reducers/programs';
+
+
 
 const configureStore = () => {
   const logger = createLogger();
@@ -22,10 +25,12 @@ const configureStore = () => {
   const enhancer = process.env.NODE_ENV === 'production'
   ? compose(applyMiddleware(...middlewares))
   : composeWithDevTools(applyMiddleware(thunk))//middlewares배열을 여기다가 넣음.
+  
   const store = createStore(
     combineReducers({
       reducer,
-      faqReducer}), enhancer);
+      faqReducer,
+      programsReducer}), enhancer);
   return store;
 
 };
