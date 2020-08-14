@@ -1,5 +1,5 @@
 import React , { useCallback, useEffect, useState }from 'react';
-import styles from './Faq.module.css';
+import styles from './FAQ.module.css';
 import ListGroup from "react-bootstrap/ListGroup"
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
@@ -64,7 +64,8 @@ export default function Faq() {
   const dataList = faqData.data[program] ?? [];
   return (
     <div className={styles.firstTab}>
-      <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}>
+      <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}
+      className={classNames({ "justify-content-center": true, [styles.mainTab]: true })}>  
         {dataList.map((v, idx) => (
           <Tab eventKey={v.eventKey} title={v.category} key={idx}>
             <FaqTab subList={v.subCategory} key={idx}/>
