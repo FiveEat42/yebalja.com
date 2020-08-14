@@ -19,7 +19,7 @@ function SecondTab({sub}) {
 
   return (
     <ListGroup.Item href={sub.href} className={styles.listitem}>
-      {sub.title}
+      · {sub.title} ·
     </ListGroup.Item>
   )
 }
