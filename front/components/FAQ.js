@@ -10,24 +10,26 @@ import { useSelector } from 'react-redux';
 import { getData, test } from '../redux/actions/faqAction';
 
 function QnA ({list}) {
+
   return (
     <>
-      <strong>Q. {list.q}</strong>
-      <br />A. {list.a}
-      <br /><br />
+      <div className={styles.question}>{list.q}</div>
+      <div className={styles.answer}>{list.a}</div>
     </>
   );
 };
 
-function TabLeft({sub}) {
+function SecondTab({sub}) {
+
   return (
-    <ListGroup.Item action href={sub.href}>
-      {sub.title}
+    <ListGroup.Item href={sub.href} className={styles.listitem}>
+      · {sub.title} ·
     </ListGroup.Item>
   )
 }
 
-function TabRight ({sub}) { 
+function ContentBox ({sub}) {
+
   return (
     <Tab.Pane eventKey={sub.href}>
       {sub.qna.map((v, idx) => <QnA list={v} key={idx} />)}
@@ -36,22 +38,16 @@ function TabRight ({sub}) {
 }
 
 function FaqTab({subList}) {
-  return (
-    <div className={classNames({["row"]: true, ["justify-content-md-center"]: true})}>
-      <Tab.Container id="list-group-tabs-example" defaultActiveKey={subList[0].href}>
-        <div className={"col-md-3"}>
-          <ListGroup className={styles.secondTab}>
-            {subList.map((v, idx) => <TabLeft sub={v} key={idx} />)}
-          </ListGroup>
-        </div>
 
-        <div className={classNames({["col-md-9"]: true, [styles.content]: true})}>
-          <Tab.Content>
-            {subList.map((v, idx) => <TabRight sub={v} key={idx} />)}
-          </Tab.Content>
-        </div>
-      </Tab.Container>
-    </div>
+  return (
+    <Tab.Container defaultActiveKey={subList[0].href}>
+      <ListGroup horizontal className={styles.subTab}>
+        {subList.map((v, idx) => <SecondTab sub={v} key={idx} />)}
+      </ListGroup>
+      <Tab.Content className={styles.content}>
+        {subList.map((v, idx) => <ContentBox sub={v} key={idx} />)}
+      </Tab.Content>
+    </Tab.Container>
   );
 }
 

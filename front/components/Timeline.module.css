@@ -28,7 +28,7 @@
   background-color: white;
   display: inline-block;
   position: absolute;
-  top: 16px;
+
 }
 
 .status_end {
@@ -67,6 +67,7 @@
 .content {
   font-weight: 400;
   font-size: 13px;
+  line-height: 25px;
 }
 
 
@@ -88,6 +89,7 @@
   position: relative;
   display: inline-block;
   list-style-type: none;
+
 
   /*width: 160px;*/
   /*height: 3px;*/
@@ -420,7 +422,7 @@
     max-width: 400px;
     width: 90%;
     /*height: auto !important;*/
-    height: 100px;
+    height: 110px;
     margin: 0 auto 25px;
     /*font-size: 16px;*/
   }
@@ -433,11 +435,14 @@
     padding: 15px;
     padding-left: 25px;
     font-size: 1.2rem;
+    padding-top: 20px;
+    padding-bottom: 20px
   }
 
   .status_end, .status_recruit, .status_edu{
     top: 12px;
     font-size: 12px;
+    margin-top: 7px;
   }
 
   .timeline ol li .card {
