@@ -12,7 +12,7 @@
 .mainTab a {
   padding: 10px 0;
   font-size: 1.2em;
-  min-width: 120px;
+  min-width: 140px;
   text-align: center;
   font-weight: 600;
   color: #89A1C3;
@@ -32,12 +32,12 @@
   font-weight: 400;
   color: rgba(255,255,255,.5);
   border: none;
-  border-radius: 30px !important;
+  border-radius: 15px !important;
   max-width: 400px;
-  margin: 20px 7px !important;
-  padding: 3px 14px;
+  margin: 35px 8px !important;
+  padding: 2px 17px;
   height: 100%;
-  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.15);
   outline: none;
   background-color: #4A91F5 !important;
 }
@@ -53,15 +53,15 @@
 }
 
 .question {
-  font-size: 1.15em;
+  font-size: 1.2em;
   font-weight: 600;
-  color: #1e2329;
+  color: #3e4955;
 }
 
 .answer {
-  font-size: 1em;
-  line-height: 1.8;
-  margin: 10px 0 40px;
+  font-size: 0.97em;
+  line-height: 2;
+  margin: 10px 20px 45px 20px;
   color: #627083;
 }
 
@@ -73,7 +73,7 @@
 
   .mainTab a {
     font-size: 1.1em;
-    min-width: 90px;
+    min-width: 100px;
   }
 
   .subTab div {
@@ -89,25 +89,30 @@
 
   .mainTab a {
     font-size: 1.1em;
+    min-width: 110px;
   }
 
   .subTab div {
     font-size: 0.85em;
-    margin: 20px 0px 5px;
+    margin: 20px 5px 5px !important;
+    padding: 2px 15px;
   }
 }
 
-@media screen and (max-width: 348px) {
+@media screen and (max-width: 400px) {
   .container {
     width: 90%;
   }
 
   .mainTab a {
     font-size: 1.0em;
+    min-width: 90px;
   }
 
   .subTab div {
     font-size: 0.70em;
+    margin: 20px 3px 0px !important;
+    padding: 2px 13px;
   }
 
   .question {
