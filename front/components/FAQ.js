@@ -56,6 +56,7 @@ export default function Faq() {
   const faqData = useSelector((state) => state.faqReducer);
   const program = useSelector((state) => state.programsReducer.data);
   const dispatch = useDispatch(); // 디스패치 사용하도록하기
+
   useEffect(()=>{
     getData().then(function(result){
       dispatch(result) 
