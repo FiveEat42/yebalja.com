@@ -1,6 +1,6 @@
-export function programChanger (prgramTitle){
+export function programChanger (programTitle){
   return {
     type : 'PROGRAM_CHANGER',
-    data : prgramTitle
+    data : programTitle
   }
 };
