@@ -12,6 +12,7 @@ const ftseoul = () => {
   useEffect(() => {
     dispatch(programChanger('ftseoul'));
   },[])
+  
   return (
     <Layout>
       <Timeline/>
