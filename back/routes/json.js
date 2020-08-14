@@ -130,7 +130,6 @@ router.get('/yearlycalendar', cors(accecptURL), (req, res) => {
            innerArr.push(obj3);
         }
       })
-      // console.log(outerArr);
       res.send(outerArr);
   })
 })
@@ -174,7 +173,6 @@ router.get('/faq', cors(accecptURL), (req,res) => {
           arr3.push(obj4);
         }
       })
-      // console.log(obj1);
       res.send(obj1);
     })
 })
@@ -224,6 +222,6 @@ router.get('/noticelists', cors(accecptURL), function(req, res, next){
     console.log(result);
     res.json(result);
   })
-
 })
+
 module.exports = router;
