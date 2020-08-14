@@ -16,6 +16,7 @@ import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import programsReducer from '../reducers/programs';
 import reviewReducer from '../reducers/review';
+import yearlyCalendarReducer from '../reducers/yearlyCalendar'
 
 
 
@@ -32,7 +33,8 @@ const configureStore = () => {
       reducer,
       faqReducer,
       programsReducer,
-      reviewReducer}), enhancer);
+      reviewReducer,
+      yearlyCalendarReducer}), enhancer);
   return store;
 
 };

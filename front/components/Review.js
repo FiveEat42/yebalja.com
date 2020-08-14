@@ -78,7 +78,8 @@ export default function Review() {
     });
   },[]);
   const programData = reviewData[program] ?? [];
-
+  console.log(reviewData[program])
+  console.log(programData)
   return (
     <>
       <Head>
