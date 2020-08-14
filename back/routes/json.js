@@ -179,7 +179,7 @@ router.get('/faq', cors('http://localhost:3000'), (req,res) => {
 })
 
 
-router.get('/reviews', function(req, res, next){
+router.get('/reviews', cors('http://localhost:3000'), function(req, res, next){
 
   let sql;
 
