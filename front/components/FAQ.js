@@ -64,7 +64,7 @@ export default function Faq() {
   },[]);
   const dataList = faqData.data[program] ?? [];
   return (
-    <div className={styles.firstTab}>
+    <div className={styles.container}>
       <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}
       className={classNames({ "justify-content-center": true, [styles.mainTab]: true })}>  
         {dataList.map((v, idx) => (
