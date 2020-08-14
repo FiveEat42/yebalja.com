@@ -7,8 +7,7 @@ import Timeline from '../components/Timeline';
 import { useDispatch } from 'react-redux';
 
 const ftseoul = () => {
-  const dispatch = useDispatch();
-  dispatch({ type:'PROGRAM_CHANGER', data:'ftseoul'});
+   
 
   return (
     <Layout>

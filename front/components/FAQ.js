@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { getData, getFaqData } from '../redux/actions/faqAction';
+import { getData, test } from '../redux/actions/faqAction';
 
 function QnA ({list}) {
   return (
@@ -58,19 +58,13 @@ function FaqTab({subList}) {
 export default function Faq() {
   //program을 리덕스로 관리해서 받아와야함.boostcamp : 1
   const faqData = useSelector((state) => state.faqReducer);
+  const program = useSelector((state) => state.programsReducer.data);
   const dispatch = useDispatch(); // 디스패치 사용하도록하기
   useEffect(()=>{
-    const result = getData().then(function(result){
-      console.log(result)
-      dispatch(result) // dispatch(액션함수())로 변경? => plain object로 해야한다는 에러메시지
-      // dispatch({type: result.type, payload: result.payload})
-      // setData(result.payload.data);
+    getData().then(function(result){
+      dispatch(result) 
     });
   },[]);
-  const program = useSelector((state) => state.programsReducer.data);
-  console.log(program);
-
-  console.log(faqData.data.program);
   const dataList = faqData.data[program] ?? [];
   return (
     <div className={styles.firstTab}>
