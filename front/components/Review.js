@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Head from 'next/head';
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
-import { getData } from '../redux/actions/reviewAction';
+import { getReviewData } from '../redux/actions/reviewAction';
 
 function CommentList({data, id}) {
   return (
@@ -23,7 +23,7 @@ function LeftCommentItem({data}) {
           <div className={styles.comment_dialog}>
             <div className={classNames({[styles.link]: true, [styles.link_adsila]: true})}>
               <a className={styles.link_item} href={data.link} target="_black">
-                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}>  ></span></span>
+                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}></span></span>
               </a>
             </div>
             <div className={styles.comment_body}>
@@ -49,7 +49,7 @@ function RightCommentItem({data}) {
           <div className={styles.comment_dialog_r}>
             <div className={classNames({[styles.link]: true, [styles.link_adsila]: true})}>
               <a className={styles.link_item} href={data.link} target="_black">
-                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}>  ></span></span>
+                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}></span></span>
               </a>
             </div>
             <div className={styles.comment_body}>
@@ -73,7 +73,7 @@ export default function Review() {
   const reviewData = useSelector((state) => state.reviewReducer.data);
   const dispatch = useDispatch();
   useEffect(()=>{
-    getData().then(function(result){
+    getReviewData().then(function(result){
       dispatch(result)    
     });
   },[]);
