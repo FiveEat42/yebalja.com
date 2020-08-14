@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { getData, test } from '../redux/actions/faqAction';
+import { getFaqData, test } from '../redux/actions/faqAction';
 
 function QnA ({list}) {
 
@@ -58,7 +58,7 @@ export default function Faq() {
   const dispatch = useDispatch(); // 디스패치 사용하도록하기
 
   useEffect(()=>{
-    getData().then(function(result){
+    getFaqData().then(function(result){
       dispatch(result) 
     });
   },[]);
