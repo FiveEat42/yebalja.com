@@ -7,8 +7,11 @@ import Timeline from '../components/Timeline';
 import { useDispatch } from 'react-redux';
 
 const ftseoul = () => {
-   
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(programChanger('ftseoul'));
+  },[])
+  
   return (
     <Layout>
       <Timeline program="ftseoul"/>
