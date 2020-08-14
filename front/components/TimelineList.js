@@ -1,6 +1,7 @@
 import TimelineListItem from "./TimeLineListItem";
+import { useSelector } from 'react-redux';
 
-export default function TimelineList({program}) {
+export default function TimelineList() {
   const timeline = {
       ftseoul: [
       {
@@ -183,10 +184,11 @@ export default function TimelineList({program}) {
       },
     ]
 }
+const program = useSelector((state) => state.programsReducer.data) ?? [];
 
   return (
     <>
-    {timeline[program].map((v, index, id) => <TimelineListItem data={v} key={index} id={index} />)}
+    {timeline[program]?.map((v, index, id) => <TimelineListItem data={v} key={index} id={index} />)}
   </>
 )
 }

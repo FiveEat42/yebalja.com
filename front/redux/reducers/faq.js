@@ -14,8 +14,8 @@ console.log(action.type)
 
     case 'GET_FAQ_DATA':
       console.log('GET_FAQ_DATA');
-      console.log(action.payload.data);
-      return { ...state, data: action.payload.data };
+      console.log(action.payload)
+      return { ...state, data: action.payload };
 
     case 'TEST_ACTION':
       console.log('TEST_ACTION')

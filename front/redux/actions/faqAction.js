@@ -6,6 +6,16 @@ export const getData =  async () => {
   //faqData.data =>로 변경해야함
   return {
     type: 'GET_FAQ_DATA',
-    payload : faqData
+    payload : faqData.data
+  }
+}
+
+
+export const test = async() => {
+  console.log('call getData faqAction');
+  //faqData.data =>로 변경해야함
+  return {
+    type: 'GET_FAQ_DATA',
+    payload : await axios.get('http://localhost:5000/api/json/faq')
   }
 }

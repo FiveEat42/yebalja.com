@@ -2,10 +2,11 @@ import styles from './Timeline.module.css';
 import Header from "./Header";
 import classNames from 'classnames';
 import TimelineList	from './TimelineList';
+import { useSelector } from 'react-redux';
 
 
-const Timeline = ({program}) => {
-
+const Timeline = () => {
+  const program = useSelector((state) => state.programsReducer.data) ?? [];
 	const programHeader = {
 		ftseoul: [
 			{
@@ -45,8 +46,8 @@ const Timeline = ({program}) => {
 		],
 	}
 
-	let h1 = programHeader[program][0].heading;
-	let p = programHeader[program][0].subheading;
+	let h1 = programHeader[program]?.[0].heading;
+	let p = programHeader[program]?.[0].subheading;
 
 	return (
 		<div className={styles.body}>
