@@ -15,6 +15,7 @@ import faqReducer from '../reducers/faq';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import programsReducer from '../reducers/programs';
+import reviewReducer from '../reducers/review';
 
 
 
@@ -30,7 +31,8 @@ const configureStore = () => {
     combineReducers({
       reducer,
       faqReducer,
-      programsReducer}), enhancer);
+      programsReducer,
+      reviewReducer}), enhancer);
   return store;
 
 };
