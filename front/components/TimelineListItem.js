@@ -22,37 +22,121 @@ export default function TimelineListItem({data, id}) {
     updown = `down_${type}`;
   }
 
-  {/* 시작날까지 남은 날짜 && 마감날까지 남은날짜 계산 */}
-  let startdateLeft = Math.floor((new Date(data.startdate).setHours(9) - new Date().setHours(9)) / (1000 * 60 * 60 * 24)) + 1;
-  let enddateLeft = Math.floor((new Date(data.enddate).setHours(9) - new Date().setHours(9)) / (1000 * 60 * 60 * 24)) + 1;
+  {/* 시작일, 마감일, 시작시간, 마감시간 구하기 */}
+  let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
+  if (new Date(data.startdate).getFullYear() != new Date().getFullYear()) {
+    startdate = `${new Date(data.startdate).getFullYear()}.${startdate}`;
+  }
+  let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
+  let starttime;
+  let endtime;
+  {/* 00:00 형태로 시작시간과 마감시간 뽑아내기 */}
+  if (new Date(data.startdate).getMinutes() < '10') {
+    starttime = `${new Date(data.startdate).getHours()}:0${new Date(data.startdate).getMinutes()}`;
+  } else {
+    starttime = `${new Date(data.startdate).getHours()}:${new Date(data.startdate).getMinutes()}`;
+  }
+  if (new Date(data.enddate).getMinutes() < '10') {
+    endtime = `${new Date(data.enddate).getHours()}:0${new Date(data.enddate).getMinutes()}`;
+  } else {
+    endtime = `${new Date(data.enddate).getHours()}:${new Date(data.enddate).getMinutes()}`;
+  }
+
+
+  {/* 시작날까지 남은 날 && 마감날까지 남은 날 && 시작시간까지 남은 시간 && 마감시간까지 남은 시간 */}
+  let startdateLeft = Math.floor((new Date(data.startdate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
+  let enddateLeft = Math.floor((new Date(data.enddate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
+  let starttimeLeft;
+  let endtimeLeft;
+  if (starttime == '0:00') {
+    starttimeLeft = Math.floor((new Date(data.startdate).setHours(23,59,59) - new Date()) / (1000)) + 1;
+  } else {
+    starttimeLeft = Math.floor((new Date(data.startdate) - new Date()) / (1000)) + 1;
+  }
+  if (endtime == '0:00') {
+    endtimeLeft = Math.floor((new Date(data.enddate).setHours(23,59,59) - new Date()) / (1000)) + 1;
+  } else {
+    endtimeLeft = Math.floor((new Date(data.enddate) - new Date()) / (1000)) + 1;
+  }
+
+
   {/* 모집현황으로 D-Day/진행중/마감을 담음 */}
   let status_content;
-
   if (startdateLeft > 0) {
-    status_content = `D-${startdateLeft}`;
-  } else if (startdateLeft == 0) {
-    status_content = 'D-Day';
-  } else if (enddateLeft >= 0) {
-    status_content = '진행중';   {/* 카드 및 모집현황의 클래스네임이 모집(recruit)인지 교육(edu)인지 알려주기 */}
-  } else {
-    status_content = '마감';    {/* 시작날짜 기준으로 DDAY 산정 && 마감날짜 기준으로 진행중/마감 알려주기 */}
-    card_type = 'card_end';
-    status = 'status_end';
-    if (updown == 'up_recruit' || updown == 'up_edu') {
-      updown = 'up_end';
-    } else {
-      updown = 'down_end';
+    status_content = `D-${startdateLeft}`;    {/* 시작일까지 얼마나 남았는지 'D-숫자'로 표시 */}
+  } else if (starttimeLeft >= 0) {
+        status_content = 'D-Day';              {/* 시작일의 시작시간이 지나면 '진행중' */}
+  } else if (starttimeLeft < 0 && endtimeLeft > 0) {
+        status_content = '진행중';               {/* 시작일인데 아직 시작시간이 안됐으면 'D-Day' */}
+  } else if (endtimeLeft <= 0) {              {/* 마감날의 마감시간이 지난 경우는 '마감' */}
+      status_content = '마감';
+      card_type = 'card_end';
+      status = 'status_end';
+      if (updown == 'up_recruit' || updown == 'up_edu') {
+        updown = 'up_end';
+      } else {
+        updown = 'down_end';
+      }
+  }
+
+
+
+
+
+
+
+  {/* 날짜 및 시간을 period에 넣어 알려주는 부분 */}
+
+  if (startdate == enddate) {                               {/* 시작일과 마감일이 같을 때 */}
+    if (starttime == '0:00' && endtime == '0:00') {       {/* startdate */}
+      enddate = '';
+      starttime = '';
+      endtime = '';
+    } else if (starttime == endtime || endtime == '0:00') {           {/* startdate starttime */}
+      enddate = '';
+      endtime = '';
+      starttime = ` ${starttime}`;
+    } else if (starttime == '0:00') {                         {/* startdate ~ endtime */}
+      enddate = '';
+      starttime = '';
+      endtime = ` ~ ${endtime}`;
+    } else {                                                  {/* startdate starttime ~ endtime */}
+      enddate = '';
+      endtime = ` ~ ${endtime}`;
+      starttime = ` ${starttime}`;
+    }
+  } else {                                              {/* 시작일과 마감일이 다를 때 */}
+    if (starttime == '0:00' && endtime == '0:00') {     {/* startdate ~ enddate */}
+      starttime = '';
+      endtime = '';
+      enddate = ` ~ ${enddate}`;                        {/*  */}
+    } else if (starttime == '0:00') {                 {/* startdate ~ enddate endtime */}
+      starttime = '';
+      enddate = ` ~ ${enddate}`;
+      endtime = ` ${endtime}`;
+    } else if (endtime == '0:00') {                   {/* startdate starttime ~ enddate */}
+      endtime = '';
+      enddate = ` ~ ${enddate}`;
+      starttime = ` ${starttime}`;
+    } else {                                           {/* startdate starttime ~ enddate endtime */}
+      starttime = ` ${starttime}`;
+      enddate = ` ~ ${enddate} `;
     }
   }
 
-  {/* 시작일과 마감일로 period 표현하기 */}
-  let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
-  let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
-  let period;
-  if (startdate == enddate) {
-    period = startdate;
-  } else {
-    period = `${startdate} ~ ${enddate}`;
+
+  {/* 기간에서 마감일까지 며칠 남았는지 알려주는 부분 */}
+  let daysLeft = ''
+  if (startdate != enddate) {
+    if (enddateLeft <= 7 && enddateLeft > 0) {
+      daysLeft = ` (${enddateLeft}일 남음)`;
+    } else if (enddateLeft == 0) {
+      if (endtimeLeft <= 0 && endtime != '0:00') {
+        daysLeft = '';
+      } else {
+        daysLeft = ` (마감일)`;
+      }
+    }
   }
 
 
@@ -65,9 +149,12 @@ export default function TimelineListItem({data, id}) {
         </span>
         <div className={styles.content}>
           {data.description} <br/>
-          {period}
+          <b classNames={styles.datestyle}>{startdate}</b>
+  {starttime}
+  <b classNames={styles.datestyle}>{enddate}</b>
+  {endtime}{daysLeft}
         </div>
       </div>
     </li>
-)
+  )
 }
