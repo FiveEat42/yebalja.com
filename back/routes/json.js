@@ -87,7 +87,7 @@ const hasKey = (arr, key, value) => {
   }
 }
 
-router.get('/yearlycalendar', (req, res) => {
+router.get('/yearlycalendar', cors('http://localhost:3000'), (req, res) => {
   db.query(`select substring(link, 2) as 'idName', programs.title as title, gisus.gisu, visible, steps_calendars.title as stepTitle, detail, start_date as startDate, end_date as endDate from steps_calendars inner join gisus on steps_calendars.gisus_id = gisus.id inner join programs on gisus.programs_id = programs.id;`,
     (error, result) => {
       if (error) throw error;

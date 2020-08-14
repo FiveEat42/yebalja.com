@@ -1,7 +1,7 @@
 import React , {useEffect} from 'react';
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
-import { getData } from '../redux/actions/yearlyCalendarAction';
+import { getYearlyCalendarData } from '../redux/actions/yearlyCalendarAction';
 import styles from './YearlyCalendar.module.css'
 import classNames from 'classnames';
 import Header from "./Header";
@@ -30,13 +30,12 @@ function ProgramList() {
   const yearlyCalendarData = useSelector((state) => state.yearlyCalendarReducer.data);
   const dispatch = useDispatch();
   useEffect(() => {
-    getData().then(function(result){
-      dispatch(result)
+    getYearlyCalendarData().then(function(result){
+      dispatch(result);
     });
   },[]);
   const programData = yearlyCalendarData ?? [];
-  console.log(yearlyCalendarData)
-  console.log(programData)
+
   return (
     <>
       {programData?.map((v, idx) => <GisuList data={v} key={idx} />)}
@@ -47,7 +46,7 @@ function ProgramList() {
 function GisuList({ data }) {
   return (
     <>
-      {data.gisuData.map((v, idx) => <StepList data={v} key={idx} title={data.title} link={data.link}/>)}
+      {data.gisuData.map((v, idx) => <StepList data={v} key={idx} title={data.title} link={data.idName}/>)}
     </>
   )
 }
