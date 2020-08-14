@@ -20,11 +20,11 @@ import programsReducer from '../reducers/programs';
 
 const configureStore = () => {
   const logger = createLogger();
-  const middlewares = [thunk , logger]; //saga, thunk를 넣음
+  const middlewares = [thunk, logger]; //saga, thunk를 넣음
   //배포용과 개발용의 미들웨어 차이를 두기 위함
   const enhancer = process.env.NODE_ENV === 'production'
   ? compose(applyMiddleware(...middlewares))
-  : composeWithDevTools(applyMiddleware(thunk))//middlewares배열을 여기다가 넣음.
+  : composeWithDevTools(applyMiddleware(...middlewares))//middlewares배열을 여기다가 넣음.
   
   const store = createStore(
     combineReducers({
