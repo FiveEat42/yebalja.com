@@ -1,13 +1,125 @@
-.firstTab {
-  margin-left: 10%;
-  margin-right: 10%;
+.container {
+  max-width: 800px;
+  min-height: 400px;
+  margin: 0 auto;
+  padding: 0;
+  width: 65%;
+  height: auto;
+  font-family: "NanumBarunGothic";
 }
 
-.secondTab {
-  margin-top: 30px;
-  align-content: center;
+/* MainTab */
+.mainTab a {
+  padding: 10px 0;
+  font-size: 1.2em;
+  min-width: 140px;
+  text-align: center;
+  font-weight: 600;
+  color: #89A1C3;
+  outline: none;
 }
 
+/* SubTab */
+.subTab {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width:100%;
+}
+
+.subTab div {
+  font-size: 1.0em;
+  font-weight: 400;
+  color: rgba(255,255,255,.5);
+  border: none;
+  border-radius: 15px !important;
+  max-width: 400px;
+  margin: 35px 8px !important;
+  padding: 2px 14px;
+  height: 100%;
+  box-shadow: 3px 2px 4px 1px rgba(0, 0, 0, 0.1);
+  outline: none;
+  background-color: #4A91F5 !important;
+}
+
+.subTab div:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* Content (Q&A) */
 .content {
-  margin-top: 30px;
+  margin: 30px 10px 0;
+}
+
+.question {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #3e4955;
+}
+
+.answer {
+  font-size: 0.97em;
+  line-height: 2;
+  margin: 10px 20px 45px 20px;
+  color: #627083;
+}
+
+@media screen and (max-width: 728px) {
+  .container {
+    width: 75%;
+    min-height: 300px;
+  }
+
+  .mainTab a {
+    font-size: 1.1em;
+    min-width: 100px;
+  }
+
+  .subTab div {
+    font-size: 0.85em;
+    margin: 20px 3px 5px;
+  }
+}
+
+@media screen and (max-width: 588px) {
+  .container {
+    width: 85%;
+  }
+
+  .mainTab a {
+    font-size: 1.1em;
+    min-width: 110px;
+  }
+
+  .subTab div {
+    font-size: 0.85em;
+    margin: 20px 5px 5px !important;
+    padding: 2px 12px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .container {
+    width: 90%;
+  }
+
+  .mainTab a {
+    font-size: 1.0em;
+    min-width: 90px;
+  }
+
+  .subTab div {
+    font-size: 0.70em;
+    margin: 20px 3px 0px !important;
+    padding: 2px 8px;
+  }
+
+  .question {
+    font-size: 0.9em;
+  }
+  
+  .answer {
+    font-size: 0.7em;
+  }
 }
