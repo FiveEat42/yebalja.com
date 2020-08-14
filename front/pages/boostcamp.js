@@ -28,7 +28,7 @@ const Boostcamp = () => {
       <h3>자주 묻는 질문</h3>
       <p>항목별로 더 자세한 내용을 알아보세요</p>
     </Header>
-    <Faq program="boostcamp"/>
+    <Faq />
     <Header>
       <h3>부트캠프 참여후기</h3>
       <p>솔직담백한 이야기를 공유합니다</p>
