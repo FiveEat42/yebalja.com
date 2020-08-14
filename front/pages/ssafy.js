@@ -5,12 +5,13 @@ import Timeline from "../components/Timeline";
 import Faq from "../components/Faq"
 import Review from "../components/Review";
 import { useDispatch } from 'react-redux';
+import { programChanger } from '../redux/actions/programChangerAction';
 
 const Ssafy = () => {
   
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch({ type:'PROGRAM_CHANGER', data:'ssafy'});
+    dispatch(programChanger('ssafy'));
   },[])
     return (
     <Layout>

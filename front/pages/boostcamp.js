@@ -5,13 +5,14 @@ import Faq from "../components/Faq"
 import Review from "../components/Review";
 import Timeline from '../components/Timeline';
 import { useDispatch } from 'react-redux'
+import { programChanger } from '../redux/actions/programChangerAction';
 
 const Boostcamp = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch({ type:'PROGRAM_CHANGER', data:'boostcamp'});
+    dispatch(programChanger('boostcamp'));
   },[])
-  
+
   return (
   <Layout>
       <Timeline/>

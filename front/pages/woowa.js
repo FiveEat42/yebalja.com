@@ -5,12 +5,13 @@ import Timeline from "../components/Timeline";
 import Faq from "../components/Faq"
 import Review from "../components/Review";
 import { useDispatch } from 'react-redux';
+import { programChanger } from '../redux/actions/programChangerAction';
 
 const Woowa = () => {
   
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch({ type:'PROGRAM_CHANGER', data:'woowa'});
+    dispatch(programChanger('woowa'));
   },[])
     return (
     <Layout>

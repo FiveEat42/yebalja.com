@@ -5,12 +5,13 @@ import Review from "../components/Review";
 import Timeline from "../components/Timeline";
 import Faq from "../components/Faq"
 import { useDispatch } from 'react-redux';
+import { programChanger } from '../redux/actions/programChangerAction';
 
 const Likelion = () => {
   
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch({ type:'PROGRAM_CHANGER', data:'likelion'});
+    dispatch(programChanger('likelion'));
   },[])
     return (
     <Layout>
