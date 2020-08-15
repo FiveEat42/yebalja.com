@@ -5,8 +5,13 @@
     padding-top: 0.5rem;
 }
 
+.icon {
+    margin-left: 12px;
+    margin-right: 4px;
+    margin-bottom: 12px;
+}
+
 .logo {
-    padding-left: 35px;
     font-family: 'GmarketSansMedium';
     font-size: xx-large;
     color: #4A91F5;
