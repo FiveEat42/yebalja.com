@@ -1,5 +1,5 @@
 import React , { useCallback, useEffect, useState }from 'react';
-import styles from './Faq.module.css';
+import styles from './FAQ.module.css';
 import ListGroup from "react-bootstrap/ListGroup"
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { getData, test } from '../redux/actions/faqAction';
+import { getFaqData, test } from '../redux/actions/faqAction';
 
 function QnA ({list}) {
 
@@ -56,15 +56,17 @@ export default function Faq() {
   const faqData = useSelector((state) => state.faqReducer);
   const program = useSelector((state) => state.programsReducer.data);
   const dispatch = useDispatch(); // 디스패치 사용하도록하기
+
   useEffect(()=>{
-    getData().then(function(result){
+    getFaqData().then(function(result){
       dispatch(result) 
     });
   },[]);
   const dataList = faqData.data[program] ?? [];
   return (
-    <div className={styles.firstTab}>
-      <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}>
+    <div className={styles.container}>
+      <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}
+      className={classNames({ "justify-content-center": true, [styles.mainTab]: true })}>  
         {dataList.map((v, idx) => (
           <Tab eventKey={v.eventKey} title={v.category} key={idx}>
             <FaqTab subList={v.subCategory} key={idx}/>

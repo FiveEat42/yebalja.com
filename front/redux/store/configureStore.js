@@ -11,10 +11,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 //sub리듀서를 하나로 합쳐줌
 import { combineReducers } from 'redux';
 import reducer from '../reducers/index';
-import faqReducer from '../reducers/faq';
+import faqReducer from '../reducers/faqReducer';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import programsReducer from '../reducers/programs';
+import programsReducer from '../reducers/programReducer';
 import reviewReducer from '../reducers/reviewReducer';
 import yearlyCalendarReducer from '../reducers/yearlyCalendarReducer'
 

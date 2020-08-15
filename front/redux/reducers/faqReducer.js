@@ -12,7 +12,7 @@ const faqReducer = (state = initialState, action) => {
       return { ...state, ...action.payload };
 
     case 'GET_FAQ_DATA':
-      return { ...state, data: action.payload };
+      return { ...state, data: {...action.payload} };
 
     default:
       return state;
