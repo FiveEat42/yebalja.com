@@ -6,7 +6,7 @@ import Tabs from "react-bootstrap/Tabs"
 import classNames from 'classnames';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getFaqData, test } from '../redux/actions/faqAction';
+import { getFaqData } from '../redux/actions/faqAction';
 
 function QnA ({list}) {
 
@@ -62,6 +62,7 @@ export default function Faq() {
     });
   },[]);
   const dataList = faqData.data[program] ?? [];
+
   return (
     <div className={styles.container}>
       <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}

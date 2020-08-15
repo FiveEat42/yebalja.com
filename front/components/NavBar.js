@@ -71,20 +71,22 @@ function ListItem ({ data, idx }) {
 
 export default function NavBar() {
 
-  // const navData = useSelector((state) => state.navbarReducer.data);
-  const noticeData = useSelector((state) => state.noticeReducer.data);
+  const navData = useSelector((state) => state.navbarReducer);
+  const noticeData = useSelector((state) => state.noticeReducer);
   const dispatch = useDispatch();
 
   useEffect(() => {
 
-    // getNavbarData().then(function(result){
-    //   dispatch(result),
+    getNavbarData().then(function(result){
+      dispatch(result)});
       getNoticeData().then(function(result){
         dispatch(result)});
-    // });
+    
   }, []);
-  // console.log(navData);
-  console.log(noticeData);
+  console.log('a');
+  console.log(navData.data);
+  console.log(noticeData.data);
+
   // const navList = navData ?? [];
   const noticeList = noticeData ?? [];
   
