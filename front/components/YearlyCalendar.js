@@ -62,7 +62,7 @@ function StepList({ data, title, link }) { {/* Calendar의 Row */}
         <div className={styles.gantt__row__first}> {/* 각 Row의 첫 번째 Column */}
           {
             (() => {
-              if (data.visible === 1 && title === "42 Seoul") return (title_and_gisu);
+              if (data.visible === 1 && title === "42SEOUL ") return (title_and_gisu);
               else if (data.visible === 1) return (title_only);
               else if (data.visible > 1) return (gisu_only);
             })()
@@ -102,7 +102,7 @@ function StepListItem({ data, id}) { {/* 각 Row의 일정 아이템들 */}
 
   let zIndex = id;
   let oversize_list = (end - start > 61) ? 1 : 0; {/* 두 달이 넘어가는 일정은 hover 시 자기 자신의 크기를 가짐 */}
-  let next_year = (data.endDate === "2020-12-50") ? 1 : 0; {/* 내년으로 이어지는 일정은 오른쪽 border-radius를 0으로 함 */}
+  let next_year = (new Date(data.endDate).getFullYear() === 2100) ? 1 : 0; {/* 내년으로 이어지는 일정은 오른쪽 border-radius를 0으로 함 */}
 
   return (
     <>
@@ -115,7 +115,7 @@ function StepListItem({ data, id}) { {/* 각 Row의 일정 아이템들 */}
                 <span className={styles.calendar_entry__date} dangerouslySetInnerHTML={{ __html: data.period }}></span>
               </li>
             );
-          else if (oversize_list === 1 || next_year === 0)
+          else if (oversize_list === 1 && next_year === 0)
             return (
               <li className={classNames({ [styles.calendar_entry]: true, [styles.oversize_list]: true })} style={{ gridColumn: gridColumn, backgroundColor: backgroundColor, zIndex: zIndex }}>
                 <span className={styles.calendar_entry__title}>{data.title}</span>
