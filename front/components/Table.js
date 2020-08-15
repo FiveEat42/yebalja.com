@@ -34,7 +34,7 @@ export default function Table() {
     {
       program: '네이버 부스트캠프',
       link: '/boostcamp',
-      number_of_recruits: '미정-챌린지 과정 수료자',
+      number_of_recruits: '챌린지 기준 250명',
       edu_period: '4개월',
       grant: '-',
       aptitude: 'false',
@@ -77,7 +77,7 @@ export default function Table() {
                 <th className={styles.title}></th>
                 <th className={styles.title}>모집인원</th>
                 <th className={styles.title}>교육기간</th>
-                <th className={styles.title}>혜택</th>
+                <th className={styles.title}>지원</th>
                 <th className={styles.title}>선발과정</th>
               </tr>
             </thead>
