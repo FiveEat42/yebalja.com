@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { useSelector } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { getNoticeData } from '../redux/actions/noticeAction';
 import styles from './NavBar.module.css'
 import Link from 'next/link';
 import Navbar from "react-bootstrap/Navbar";
@@ -9,6 +12,8 @@ import Popover from "react-bootstrap/Popover"
 import classNames from 'classnames';
 import Form from 'react-bootstrap/Form';
 import { useRouter } from "next/router";
+
+
 
 function NavItem ({ data }) {
 
@@ -90,21 +95,30 @@ export default function NavBar() {
       }
   ]
 
-  const noticeList = [
-    {
-      title: "DREAMIN iOS Academy 교육생 모집",
-      href: "https://dreamin.career/academy/ios",
-      enddate: "2020-07-17 18:00:00",
-    },{
-      title: "광주AI사관학교",
-      href: "http://ai.gitct.kr/apply/",
-      enddate: "2020-05-31 18:00:00",
-    },{
-      title: "예발자닷컴 오픈",
-      href: "https://yebalja.com",
-      enddate: "2020-08-07 23:00:00",
-    }
-  ]
+  // const noticeList = [
+  //   {
+  //     title: "DREAMIN iOS Academy 교육생 모집",
+  //     href: "https://dreamin.career/academy/ios",
+  //     enddate: "2020-07-17 18:00:00",
+  //   },{
+  //     title: "광주AI사관학교",
+  //     href: "http://ai.gitct.kr/apply/",
+  //     enddate: "2020-05-31 18:00:00",
+  //   },{
+  //     title: "예발자닷컴 오픈",
+  //     href: "https://yebalja.com",
+  //     enddate: "2020-08-07 23:00:00",
+  //   }
+  // ]
+
+  const noticeData = useSelector((state) => state.noticeReducer.data);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getNoticeData().then(function(result){
+      dispatch(result);
+    });
+  },[]);
+  const noticeList = noticeData ?? [];
 
   return (
     <div>
