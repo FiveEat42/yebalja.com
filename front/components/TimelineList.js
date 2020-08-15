@@ -184,7 +184,7 @@ export default function TimelineList() {
       },
     ]
 }
-const program = useSelector((state) => state.programsReducer.data) ?? [];
+const program = useSelector((state) => state.programReducer.data) ?? [];
 
   return (
     <>

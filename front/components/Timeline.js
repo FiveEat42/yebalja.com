@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 
 const Timeline = () => {
-  const program = useSelector((state) => state.programsReducer.data) ?? [];
+  const program = useSelector((state) => state.programReducer.data) ?? [];
 	const programHeader = {
 		ftseoul: [
 			{

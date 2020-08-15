@@ -102,7 +102,7 @@ function StepListItem({ data, id}) { {/* 각 Row의 일정 아이템들 */}
 
   let zIndex = id;
   let oversize_list = (end - start > 61) ? 1 : 0; {/* 두 달이 넘어가는 일정은 hover 시 자기 자신의 크기를 가짐 */}
-  let next_year = (new Date(data.endDate).getFullYear() === 2100) ? 1 : 0; {/* 내년으로 이어지는 일정은 오른쪽 border-radius를 0으로 함 */}
+  let next_year = (new Date(data.endDate).getFullYear() > new Date().getFullYear()) ? 1 : 0; {/* 내년으로 이어지는 일정은 오른쪽 border-radius를 0으로 함 */}
 
   return (
     <>
