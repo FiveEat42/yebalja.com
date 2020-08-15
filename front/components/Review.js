@@ -69,7 +69,7 @@ function RightCommentItem({data}) {
 }
 
 export default function Review() {
-  const program = useSelector((state) => state.programsReducer.data);
+  const program = useSelector((state) => state.programReducer.data);
   const ProgramData = {
     ftseoul: [
       {

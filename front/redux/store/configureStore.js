@@ -13,6 +13,7 @@ import { combineReducers } from 'redux';
 import faqReducer from '../reducers/faqReducer';
 import timelineReducer from '../reducers/timelineReducer';
 import timelineListReducer from "../reducers/timelineListReducer";
+import tableReducer from "../reducers/tableReducer";
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import programReducer from '../reducers/programReducer';
@@ -32,6 +33,7 @@ const configureStore = () => {
       faqReducer,
       timelineReducer,
       timelineListReducer,
+      tableReducer,
       programReducer}), enhancer);
   return store;
 
