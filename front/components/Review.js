@@ -2,6 +2,7 @@ import React from "react";
 import styles from './Review.module.css';
 import classNames from 'classnames';
 import Head from 'next/head';
+import { useSelector } from "react-redux";
 
 function CommentList({data, id}) {
   return (
@@ -67,8 +68,8 @@ function RightCommentItem({data}) {
   )
 }
 
-export default function Review({program}) {
-  
+export default function Review() {
+  const program = useSelector((state) => state.programsReducer.data);
   const ProgramData = {
     ftseoul: [
       {
@@ -259,7 +260,7 @@ export default function Review({program}) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
       </Head>
       <div className={styles.box}>
-        {ProgramData[program].map((v, idx, id) => <CommentList data={v} key={idx} id={idx}/>)}
+        {ProgramData[program]?.map((v, idx, id) => <CommentList data={v} key={idx} id={idx}/>)}
       </div>
     </>
 );

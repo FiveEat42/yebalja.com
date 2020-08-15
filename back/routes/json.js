@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
+var cors = require('cors');
+const accecptURL = 'http:/localhost:3000'; //배포시 변경
 let db = require('../config/db_config');
 
 
@@ -13,13 +14,13 @@ router.get('/gisu', function(req, res, next) {
 });
 
 router.get('/program', function(req, res, next){
-  db.query('SELECT * FROM program_table', (error, result)=>{
+  db.query('SELECT * FROM programs', (error, result)=>{
     if (error) throw error;
     res.json(result);
   })
 })
 
-router.get('/table', (req, res) => {
+router.get('/table', cors(accecptURL),(req, res) => {
   db.query(`select json_object('program', title, 'link', link, 'number_of_recruits', personnel, 'edu_period', edu_period, 'grant', benefit, 'aptitude', badge_aptitude, 'coding', badge_coding, 'interview', badge_interview, 'tryout', badge_tryout)  from programs;`,
     (error, result) => {
       let arr = [];
@@ -36,7 +37,7 @@ router.get('/table', (req, res) => {
   })
 });
 
-router.get('/timeline', (req, res) => {
+router.get('/timeline', cors(accecptURL), (req, res) => {
   db.query(`
     select substring(link, 2), json_array((json_object('heading', heading, 'subheading', subheading))) from programs;`,
     (error, result) => {
@@ -53,7 +54,7 @@ router.get('/timeline', (req, res) => {
   })
 })
 
-router.get('/timelinelist', (req, res) => {
+router.get('/timelinelist', cors(accecptURL), (req, res) => {
   db.query(`select substring(link, 2) as 'program', edu, name, description, start_date as 'startdate', end_date as 'enddate' from steps_timelines inner join gisus on steps_timelines.gisus_id = gisus.id inner join programs on programs.id = gisus.programs_id;`,
     (error, result) => {
       if (error) throw error;
@@ -87,7 +88,7 @@ const hasKey = (arr, key, value) => {
   }
 }
 
-router.get('/yearlycalendar', (req, res) => {
+router.get('/yearlycalendar', cors(accecptURL), (req, res) => {
   db.query(`select substring(link, 2) as 'idName', programs.title as title, gisus.gisu, visible, steps_calendars.title as stepTitle, detail, start_date as startDate, end_date as endDate from steps_calendars inner join gisus on steps_calendars.gisus_id = gisus.id inner join programs on gisus.programs_id = programs.id;`,
     (error, result) => {
       if (error) throw error;
@@ -129,12 +130,12 @@ router.get('/yearlycalendar', (req, res) => {
            innerArr.push(obj3);
         }
       })
-      // console.log(outerArr);
       res.send(outerArr);
   })
 })
 
-router.get('/faq', (req,res) => {
+//cors에 경로를 명시해야함, 에러발생
+router.get('/faq', cors(accecptURL), (req,res) => {
   db.query(
     "select replace(programs.link, '/', '') as program,  categories.title as category,  categories.eventkey as eventKey,  subcategories.title as title,  subcategories.link as href, qnas.q , qnas.a from programs  inner join categories on programs.id = categories.programs_id inner join subcategories on categories.id = subcategories.categories_id  inner join qnas on qnas.subcategories_id = subcategories.id",
     (error, result) => {
@@ -172,13 +173,12 @@ router.get('/faq', (req,res) => {
           arr3.push(obj4);
         }
       })
-      // console.log(obj1);
       res.send(obj1);
     })
 })
 
 
-router.get('/reviews', function(req, res, next){
+router.get('/reviews', cors(accecptURL), function(req, res, next){
 
   let sql;
 
@@ -199,6 +199,28 @@ router.get('/reviews', function(req, res, next){
     })
     console.log(obj);
      res.json(obj);
+  })
+})
+
+router.get('/navlists', cors(accecptURL), function(req, res, next){
+  let sql;
+
+  sql ="select title as program, link as href from programs";
+  db.query(sql, (error, result) => {
+    if (error) throw error;
+    console.log(result);
+    res.json(result);
+  })
+})
+
+router.get('/noticelists', cors(accecptURL), function(req, res, next){
+  let sql;
+  
+  sql ="select title, href, end_date as enddate from notice_lists";
+  db.query(sql, (error, result) => {
+    if (error) throw error;
+    console.log(result);
+    res.json(result);
   })
 })
 
