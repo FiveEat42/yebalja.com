@@ -13,7 +13,7 @@ function QnA ({list}) {
 
   return (
     <>
-      <div className={styles.question}>{list.q}</div>
+      <div className={styles.question}>✔️ {list.q}</div>
       <div className={styles.answer}>{list.a}</div>
     </>
   );

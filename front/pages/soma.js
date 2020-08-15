@@ -19,7 +19,7 @@ const Soma = () => {
       <Timeline/>
       <Header>
         <h2>자주 묻는 질문</h2>
-        <p>항목별로 더 자세한 내용을 알아보세요</p>
+        <p>더 자세한 내용을 항목별로 알아보세요.</p>
       </Header>
       <Faq/>
       <Header>
