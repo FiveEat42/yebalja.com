@@ -5,8 +5,7 @@ import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
 import classNames from 'classnames';
 
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getFaqData, test } from '../redux/actions/faqAction';
 
 function QnA ({list}) {
@@ -19,7 +18,7 @@ function QnA ({list}) {
   );
 };
 
-function SecondTab({sub}) {
+function SubTab({sub}) {
 
   return (
     <ListGroup.Item href={sub.href} className={styles.listitem}>
@@ -42,7 +41,7 @@ function FaqTab({subList}) {
   return (
     <Tab.Container defaultActiveKey={subList[0].href}>
       <ListGroup horizontal className={styles.subTab}>
-        {subList.map((v, idx) => <SecondTab sub={v} key={idx} />)}
+        {subList.map((v, idx) => <SubTab sub={v} key={idx} />)}
       </ListGroup>
       <Tab.Content className={styles.content}>
         {subList.map((v, idx) => <ContentBox sub={v} key={idx} />)}
@@ -76,38 +75,3 @@ export default function Faq() {
     </div>
   );
 }
-
-
-//axios 설명
-
-// export default function Faq({program}) {
-//   //program을 리덕스로 관리해서 받아와야함.
-
-//   const myData = useSelector((state) => state.faqReducer);
-
-//   const dispatch = useDispatch(); // 디스패치 사용하도록하기
-//   console.log(myData);
-
-//   let [dataList2, setData] = useState([]);
-//   useEffect(()=>{
-// 		async function fetchData(){
-//       const result = await axios.get('http://localhost:5000/api/json/faq');
-//       console.log(result)
-//       setData(result.data);
-//       }
-//       fetchData();
-//   },[]);
-//   let dataList = dataList2[program] ?? [];
-
-//   return (
-//     <div className={styles.firstTab}>
-//       <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}>
-//         {dataList.map((v, idx) => (
-//           <Tab eventKey={v.eventKey} title={v.category} key={idx}>
-//             <FaqTab subList={v.subCategory} key={idx}/>
-//           </Tab>
-//         ))}
-//       </Tabs>
-//     </div>
-//   );
-// }

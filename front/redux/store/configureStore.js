@@ -4,21 +4,20 @@
 
 import { applyMiddleware, compose } from 'redux';
 import { createWrapper} from 'next-redux-wrapper';
-import { createStore } from 'redux';
+//combineReducers: sub리듀서를 하나로 합쳐줌
+import { createStore, combineReducers } from 'redux';
 //history를 쌓아서 보기 위한 익스텐션을 사용하기 위함
 import { composeWithDevTools } from 'redux-devtools-extension';
 //여러 리듀서 등록하기
-//sub리듀서를 하나로 합쳐줌
-import { combineReducers } from 'redux';
-import reducer from '../reducers/index';
-import faqReducer from '../reducers/faqReducer';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import programReducer from '../reducers/programReducer';
-import reviewReducer from '../reducers/reviewReducer';
+
+import navbarReducer from '../reducers/navbarReducer'
+import noticeReducer from '../reducers/noticeReducer'
 import yearlyCalendarReducer from '../reducers/yearlyCalendarReducer'
-
-
+import programReducer from '../reducers/programReducer';
+import faqReducer from '../reducers/faqReducer';
+import reviewReducer from '../reducers/reviewReducer';
 
 const configureStore = () => {
   const logger = createLogger();
@@ -30,13 +29,14 @@ const configureStore = () => {
   
   const store = createStore(
     combineReducers({
-      reducer,
-      faqReducer,
+      navbarReducer,
+      noticeReducer,
+      yearlyCalendarReducer,
       programReducer,
-      reviewReducer,
-      yearlyCalendarReducer}), enhancer);
+      faqReducer,
+      reviewReducer
+      }), enhancer);
   return store;
-
 };
 
 const wrapper = createWrapper(configureStore, {

@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import React,{useEffect} from "react";
+import React, {useEffect} from "react";
 import Faq from "../components/Faq";
 import Review from "../components/Review";
 import Timeline from '../components/Timeline';

@@ -1,10 +1,9 @@
+import React from "react";
 import Layout from '../components/Layout';
 import Jumbotron from "../components/Jumbotron";
 import Table from "../components/Table";
 import YearlyCalendar from '../components/YearlyCalendar';
 import Header from "../components/Header";
-import React, { useEffect, useState } from "react";
-// import axios from 'axios';
 
 const Home = () => {
 
