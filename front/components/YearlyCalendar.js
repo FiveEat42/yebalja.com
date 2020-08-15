@@ -17,10 +17,10 @@ function CalendarGrid() {
     <>
       <div className={classNames({ [styles.gantt__row]: true, [styles.gantt__row__months]: true })}>
         <div className={styles.gantt__row__first}></div>
-        {month.map((v, idx) => <span>{v}월</span>)}
+        {month.map((v, idx) => <span key={idx}>{v}월</span>)}
       </div>
       <div className={classNames({ [styles.gantt__row]: true, [styles.gantt__row__lines]: true })}>
-        {month.map((v, idx) => (v === CurrentMonth) ? <span className={styles.current_marker}></span> : <span></span>)} {/* 12칸으로 나누고, 현재 월이면 배경색 칠함. */}
+        {month.map((v, idx) => (v === CurrentMonth) ? <span className={styles.current_marker} key={idx}></span> : <span key={idx}></span>)} {/* 12칸으로 나누고, 현재 월이면 배경색 칠함. */}
       </div>
     </>
   )
