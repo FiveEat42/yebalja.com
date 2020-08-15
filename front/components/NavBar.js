@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
 import { getNoticeData } from '../redux/actions/noticeAction';
+import { getNavbarData } from '../redux/actions/navbarAction';
 import styles from './NavBar.module.css'
 import Link from 'next/link';
 import Navbar from "react-bootstrap/Navbar";
@@ -71,36 +72,22 @@ function ListItem ({ data, idx }) {
 
 export default function NavBar() {
 
-  const navList = [
-      {
-        program: "42서울",
-        href: "/ftseoul"
-      },{
-        program: "SSAFY",
-        href: "/ssafy"
-      },{
-        program: "부스트캠프",
-        href: "/boostcamp"
-      },{
-        program: "SOMA",
-        href: "/soma"
-      },{
-        program: "우아한테크코스",
-        href: "/woowa"
-      },{
-        program: "멋쟁이사자처럼",
-        href: "/likelion"
-      }
-  ]
-
+  const navbarData = useSelector((state) => state.navbarReducer.data);
   const noticeData = useSelector((state) => state.noticeReducer.data);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    getNoticeData().then(function(result){
-      dispatch(result);
-    });
-  },[]);
+      getNavbarData().then(function(result){
+        dispatch(result)
+      });
+      getNoticeData().then(function(result){
+        dispatch(result)
+      });
+    }, 
+  []);
+
   const noticeList = noticeData ?? [];
+  const navList = navbarData ?? [];
 
   return (
     <div>

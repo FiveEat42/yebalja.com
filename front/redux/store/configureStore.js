@@ -17,8 +17,8 @@ import thunk from 'redux-thunk';
 import programReducer from '../reducers/programReducer';
 import reviewReducer from '../reducers/reviewReducer';
 import yearlyCalendarReducer from '../reducers/yearlyCalendarReducer'
+import navbarReducer from '../reducers/navbarReducer';
 import noticeReducer from '../reducers/noticeReducer';
-
 
 const configureStore = () => {
   const logger = createLogger();
@@ -30,6 +30,7 @@ const configureStore = () => {
   
   const store = createStore(
     combineReducers({
+      navbarReducer,
       noticeReducer,
       faqReducer,
       programReducer,
