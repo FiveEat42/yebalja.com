@@ -1,4 +1,4 @@
-import TimelineListItem from "./TimeLineListItem";
+import TimelineListItem from "./TimelineListItem";
 
 export default function TimelineList({program}) {
   const timeline = {
