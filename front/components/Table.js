@@ -77,7 +77,7 @@ export default function Table() {
                 <th className={styles.title}></th>
                 <th className={styles.title}>모집인원</th>
                 <th className={styles.title}>교육기간</th>
-                <th className={styles.title}>지원</th>
+                <th className={styles.title}>지원금</th>
                 <th className={styles.title}>선발과정</th>
               </tr>
             </thead>
