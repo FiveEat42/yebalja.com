@@ -17,6 +17,7 @@ const changeNickname = {
 //reducer는
 //(이전상태, 액션) => 다음상태
 const rootReducer = (state = initialState, action) => {
+  console.log('root Reducer');
   switch (action.type) {
     case HYDRATE:
       return { ...state, ...action.payload };
