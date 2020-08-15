@@ -97,12 +97,12 @@ export default function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
 
           <Nav className="mr-auto">
-              {navList.map((v) => <NavItem data={v} key={v.program}/>)}
+              {navList?.map((v) => <NavItem data={v} key={v.program}/>)}
           </Nav>
 
           <Form inline className={styles.noticeRolling}>
             <ul>
-              {noticeList.map((v) => <RollingItem data={v} key={v.title}/>)}
+              {noticeList?.map((v) => <RollingItem data={v} key={v.title}/>)}
             </ul>
           </Form>
 
@@ -112,7 +112,7 @@ export default function NavBar() {
                 <Popover.Title className={styles.noticePopoverTitle}> 실시간 모집공고</Popover.Title>
                 <Popover.Content className={styles.noticePopoverList}>
                     <ul id="noticePopoverList">
-                      {noticeList.map((v, idx) => <ListItem data={v} key={v.title} id={idx}/>)}
+                      {noticeList?.map((v, idx) => <ListItem data={v} key={v.title} id={idx}/>)}
                     </ul> 
                   </Popover.Content>
               </Popover>
