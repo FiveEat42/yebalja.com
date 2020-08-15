@@ -13,8 +13,6 @@ import classNames from 'classnames';
 import Form from 'react-bootstrap/Form';
 import { useRouter } from "next/router";
 
-
-
 function NavItem ({ data }) {
 
   const router = useRouter();
@@ -94,22 +92,6 @@ export default function NavBar() {
         href: "/likelion"
       }
   ]
-
-  // const noticeList = [
-  //   {
-  //     title: "DREAMIN iOS Academy 교육생 모집",
-  //     href: "https://dreamin.career/academy/ios",
-  //     enddate: "2020-07-17 18:00:00",
-  //   },{
-  //     title: "광주AI사관학교",
-  //     href: "http://ai.gitct.kr/apply/",
-  //     enddate: "2020-05-31 18:00:00",
-  //   },{
-  //     title: "예발자닷컴 오픈",
-  //     href: "https://yebalja.com",
-  //     enddate: "2020-08-07 23:00:00",
-  //   }
-  // ]
 
   const noticeData = useSelector((state) => state.noticeReducer.data);
   const dispatch = useDispatch();
