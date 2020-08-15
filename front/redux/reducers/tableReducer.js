@@ -12,7 +12,7 @@ const tableReducer = (state = initialState, action) => {
       return { ...state, ...action.payload };
 
     case 'GET_TABLE_DATA':
-      return { ...state, data: {...action.payload} };
+      return { ...state, data: action.payload };
 
     default:
       return state;

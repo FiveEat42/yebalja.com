@@ -79,9 +79,6 @@ export default function Table() {
 }, []);
   const tableList = tableData ?? [];
 
-  console.log('a');
-  console.log(tableData);
-
     return (
       <>
       <div className={styles.wrapper}>
