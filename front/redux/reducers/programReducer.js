@@ -6,7 +6,7 @@ const initialState = {
 };
 
 //Link하는 프로그램페이지에 따라 data(프로그램명)이 달라짐
-const programsReducer = (state = initialState, action) => {
+const programReducer = (state = initialState, action) => {
   switch (action.type){
     case HYDRATE:
       return {...state, ...action.data};
@@ -18,4 +18,4 @@ const programsReducer = (state = initialState, action) => {
   }
 }
 
-export default programsReducer;
+export default programReducer;

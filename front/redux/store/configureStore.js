@@ -14,7 +14,7 @@ import reducer from '../reducers/index';
 import faqReducer from '../reducers/faqReducer';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import programsReducer from '../reducers/programReducer';
+import programReducer from '../reducers/programReducer';
 import reviewReducer from '../reducers/reviewReducer';
 import yearlyCalendarReducer from '../reducers/yearlyCalendarReducer'
 
@@ -32,7 +32,7 @@ const configureStore = () => {
     combineReducers({
       reducer,
       faqReducer,
-      programsReducer,
+      programReducer,
       reviewReducer,
       yearlyCalendarReducer}), enhancer);
   return store;
