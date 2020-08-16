@@ -1,4 +1,5 @@
-import React , { useCallback, useEffect, useState }from 'react';
+import React, { useEffect } from 'react';
+import Head from 'next/head';
 import styles from './FAQ.module.css';
 import ListGroup from "react-bootstrap/ListGroup"
 import Tab from "react-bootstrap/Tab"
@@ -7,19 +8,24 @@ import classNames from 'classnames';
 
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { getFaqData, test } from '../redux/actions/faqAction';
+import { getFaqData } from '../redux/actions/faqAction';
 
 function QnA ({list}) {
 
   return (
     <>
-      <div className={styles.question}>{list.q}</div>
-      <div className={styles.answer}>{list.a}</div>
+      <div className={styles.question}>
+        <i className={"fa fa-check"} style={{ color: `black` }} aria-hidden="true"></i>
+          {list.q}
+      </div>
+      <div className={styles.answer}>
+        {list.a}
+      </div>
     </>
   );
 };
 
-function SecondTab({sub}) {
+function SubTab({sub}) {
 
   return (
     <ListGroup.Item href={sub.href} className={styles.listitem}>
@@ -42,7 +48,7 @@ function FaqTab({subList}) {
   return (
     <Tab.Container defaultActiveKey={subList[0].href}>
       <ListGroup horizontal className={styles.subTab}>
-        {subList.map((v, idx) => <SecondTab sub={v} key={idx} />)}
+        {subList.map((v, idx) => <SubTab sub={v} key={idx} />)}
       </ListGroup>
       <Tab.Content className={styles.content}>
         {subList.map((v, idx) => <ContentBox sub={v} key={idx} />)}
@@ -52,19 +58,21 @@ function FaqTab({subList}) {
 }
 
 export default function Faq() {
-  //program을 리덕스로 관리해서 받아와야함.boostcamp : 1
   const faqData = useSelector((state) => state.faqReducer);
   const program = useSelector((state) => state.programReducer.data);
-  const dispatch = useDispatch(); // 디스패치 사용하도록하기
+  const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect( () => {
     getFaqData().then(function(result){
-      dispatch(result) 
-    });
+      dispatch(result)});
   },[]);
   const dataList = faqData.data[program] ?? [];
   return (
     <div className={styles.container}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+      </Head>
       <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}
       className={classNames({ "justify-content-center": true, [styles.mainTab]: true })}>  
         {dataList.map((v, idx) => (
@@ -76,38 +84,3 @@ export default function Faq() {
     </div>
   );
 }
-
-
-//axios 설명
-
-// export default function Faq({program}) {
-//   //program을 리덕스로 관리해서 받아와야함.
-
-//   const myData = useSelector((state) => state.faqReducer);
-
-//   const dispatch = useDispatch(); // 디스패치 사용하도록하기
-//   console.log(myData);
-
-//   let [dataList2, setData] = useState([]);
-//   useEffect(()=>{
-// 		async function fetchData(){
-//       const result = await axios.get('http://localhost:5000/api/json/faq');
-//       console.log(result)
-//       setData(result.data);
-//       }
-//       fetchData();
-//   },[]);
-//   let dataList = dataList2[program] ?? [];
-
-//   return (
-//     <div className={styles.firstTab}>
-//       <Tabs defaultActiveKey={dataList[0]?.eventKey} transition={false}>
-//         {dataList.map((v, idx) => (
-//           <Tab eventKey={v.eventKey} title={v.category} key={idx}>
-//             <FaqTab subList={v.subCategory} key={idx}/>
-//           </Tab>
-//         ))}
-//       </Tabs>
-//     </div>
-//   );
-// }
