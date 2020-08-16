@@ -205,7 +205,7 @@ router.get('/reviews', cors(accecptURL), function(req, res, next){
 router.get('/navlists', cors(accecptURL), function(req, res, next){
   let sql;
 
-  sql ="select title as program, link as href from programs";
+  sql ="select nav_title as program, link as href from programs";
   db.query(sql, (error, result) => {
     if (error) throw error;
     console.log(result);
