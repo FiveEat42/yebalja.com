@@ -6,6 +6,8 @@
   margin-bottom: 100px;
 }
 
+
+
 .wrapper {
   height: 15rem;
 }
@@ -20,7 +22,7 @@
 .comment_block_r {
   display: inline-block;
   position: absolute;
-  right: 300px;
+  right: 150px;
 }
 
 .comment_block_r .comment_image_r {
@@ -96,7 +98,7 @@
   display: inline-block;
   margin-right: 0;
   position: absolute;
-  left: 300px;
+  left: 150px;
 }
 
 .comment_block .comment_image {
@@ -236,16 +238,30 @@
   transform: scale3d(1, 1, 1);
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (min-width: 1600px) {
   .comment_block {
-    left: 150px;
+    left: 463px;
   }
   .comment_block_r {
-    right: 150px;
+    right: 463px;
+  }
+} */
+
+.comment_list {
+  position: relative;
+  max-width: 3800px;
+}
+
+@media screen and (max-width: 1280px) {
+  .comment_block {
+    left: 100px;
+  }
+  .comment_block_r {
+    right: 100px;
   }
 }
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 940px) {
   .comment_block {
     left: 20px;
   }
@@ -254,7 +270,7 @@
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 770px) {
   .comment_block .comment_dialog {
     max-width: 300px;
     height: 150px;
@@ -282,7 +298,7 @@
   }
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 470px) {
   .comment_block .comment_image {
     display: none;
   }
@@ -293,10 +309,33 @@
 
 @media screen and (max-width: 390px) {
   .comment_block .comment_dialog {
-    max-width: 250px;
+    max-width: 270px;
   }
   .comment_block_r .comment_dialog_r {
-    max-width: 250px;
+    max-width: 270px;
+  }
+  .link_item_name {
+    font-size: 0.8em;
+  }
+  .comment_block .text {
+    font-size: 0.65em;
+  }
+  .comment_block_r .text_r {
+    font-size: 0.65em;
+  }
+  .comment_body {
+    position: absolute;
+    bottom: 3px;
+    margin: 0 10px 0 0;
+  }
+}
+
+@media screen and (max-width: 350px) { /* 아이폰5e */
+  .comment_block .comment_dialog {
+    max-width: 240px;
+  }
+  .comment_block_r .comment_dialog_r {
+    max-width: 240px;
   }
   .link_item_name {
     font-size: 0.8em;

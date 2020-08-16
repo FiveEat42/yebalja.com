@@ -11,7 +11,9 @@ function CommentList({data, id}) {
   let date = `${new Date(data.post_date).getFullYear()}.${new Date(data.post_date).getMonth() + 1}.${new Date(data.post_date).getDate()}`;
   return (
     <>
-      { (id % 2) ? <RightCommentItem data={data} post_date={date}/> : <LeftCommentItem data={data} post_date={date}/> }
+      <div className={styles.comment_list}>
+        { (id % 2) ? <RightCommentItem data={data} post_date={date}/> : <LeftCommentItem data={data} post_date={date}/> }
+      </div>
     </>
   )
 }
