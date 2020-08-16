@@ -26,7 +26,7 @@
 .noticeRolling {
   height: 30px;
   line-height: 200%;
-  max-width: 400px;
+  width: 280px;
   position: relative;
   overflow: hidden;
 }
@@ -38,12 +38,10 @@
 }
 
 .noticeRolling a {
-  font-family: 'NanumBarunGothic';
   font-weight: 400;
   color: #d5e3fc;
   top: 0px;
-  padding-left: 10px;
-  padding-right: 50px;
+  padding: auto 10px;
   width: 100%;
   text-align: left;
   display: inline-block;
@@ -84,13 +82,9 @@
 }
 
 /* 공고 팝오버리스트 */
-.noticePopover {
-  
-}
 
 .noticePopoverTitle {
   padding: 8px 0 5px 30px ;
-  font-family: 'NanumBarunGothic';
   font-size: 0.9em;
   font-weight: 600;
   border-bottom: 1px solid #E5F0FF;
@@ -122,6 +116,10 @@
   display:inline-block;
   color: #696969;
   width: 100%;
+}
+
+.buttonPopover {
+  padding: 0 auto 0 0;
 }
 
 .buttonPopover:focus {
