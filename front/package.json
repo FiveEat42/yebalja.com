@@ -24,6 +24,7 @@
     "@testing-library/user-event": "^12.0.6",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "cors": "^2.8.5",
     "hammerjs": "^2.0.8",
     "next": "^9.4.4",
     "next-images": "^1.4.0",

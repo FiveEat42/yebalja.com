@@ -15,7 +15,7 @@ useEffect(() => {
 
   return (
     <>
-    {timelineListData[program]?.map((v, index, id) => <TimelineListItem data={v} key={index} id={index} />)}
-  </>
-)
+      {timelineListData[program]?.map((v, index, id) => <TimelineListItem data={v} key={index} id={index} />)}
+    </>
+  )
 }

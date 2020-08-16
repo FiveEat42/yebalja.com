@@ -1,11 +1,11 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import React, { useEffect } from "react";
+import React,{useEffect} from "react";
 import Faq from "../components/Faq";
 import Review from "../components/Review";
 import Timeline from '../components/Timeline';
 import { useDispatch } from 'react-redux';
-import { programChanger } from '../redux/actions/programChangerAction';
+import { programChanger } from '../redux/actions/programChangerAction'
 
 const ftseoul = () => {
   const dispatch = useDispatch();
@@ -22,10 +22,10 @@ const ftseoul = () => {
       </Header>
       <Faq/>
       <Header>
-            <h3>부트캠프 참여후기</h3>
-            <p>솔직담백한 이야기를 공유합니다</p>
-          </Header>
-          <Review/>
+        <h2>부트캠프 참여후기</h2>
+        <p>솔직담백한 이야기를 공유합니다</p>
+      </Header>
+      <Review/>
     </Layout>
   );
 }

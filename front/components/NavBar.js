@@ -1,4 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { useSelector } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { getNoticeData } from '../redux/actions/noticeAction';
+import { getNavbarData } from '../redux/actions/navbarAction';
 import styles from './NavBar.module.css'
 import Link from 'next/link';
 import Navbar from "react-bootstrap/Navbar";
@@ -68,43 +72,22 @@ function ListItem ({ data, idx }) {
 
 export default function NavBar() {
 
-  const navList = [
-      {
-        program: "42서울",
-        href: "/ftseoul"
-      },{
-        program: "SSAFY",
-        href: "/ssafy"
-      },{
-        program: "부스트캠프",
-        href: "/boostcamp"
-      },{
-        program: "SOMA",
-        href: "/soma"
-      },{
-        program: "우아한테크코스",
-        href: "/woowa"
-      },{
-        program: "멋쟁이사자처럼",
-        href: "/likelion"
-      }
-  ]
+  const navbarData = useSelector((state) => state.navbarReducer.data);
+  const noticeData = useSelector((state) => state.noticeReducer.data);
+  const dispatch = useDispatch();
 
-  const noticeList = [
-    {
-      title: "DREAMIN iOS Academy 교육생 모집",
-      href: "https://dreamin.career/academy/ios",
-      enddate: "2020-07-17 18:00:00",
-    },{
-      title: "광주AI사관학교",
-      href: "http://ai.gitct.kr/apply/",
-      enddate: "2020-05-31 18:00:00",
-    },{
-      title: "예발자닷컴 오픈",
-      href: "https://yebalja.com",
-      enddate: "2020-08-07 23:00:00",
-    }
-  ]
+  useEffect(() => {
+      getNavbarData().then(function(result){
+        dispatch(result)
+      });
+      getNoticeData().then(function(result){
+        dispatch(result)
+      });
+    }, 
+  []);
+
+  const noticeList = noticeData ?? [];
+  const navList = navbarData ?? [];
 
   return (
     <div>
@@ -114,22 +97,22 @@ export default function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
 
           <Nav className="mr-auto">
-              {navList.map((v) => <NavItem data={v} key={v.program}/>)}
+              {navList?.map((v) => <NavItem data={v} key={v.program}/>)}
           </Nav>
 
           <Form inline className={styles.noticeRolling}>
             <ul>
-              {noticeList.map((v) => <RollingItem data={v} key={v.title}/>)}
+              {noticeList?.map((v) => <RollingItem data={v} key={v.title}/>)}
             </ul>
           </Form>
 
           <OverlayTrigger trigger="click" placement="bottom" 
             overlay={
               <Popover id={`popover-positioned-bottom`} className={styles.noticePopover}>
-                <Popover.Title className={styles.noticePopoverTitle}> 실시간 모집공고</Popover.Title>
+                <Popover.Title className={styles.noticePopoverTitle}>실시간 모집공고</Popover.Title>
                 <Popover.Content className={styles.noticePopoverList}>
                     <ul id="noticePopoverList">
-                      {noticeList.map((v, idx) => <ListItem data={v} key={v.title} id={idx}/>)}
+                      {noticeList?.map((v, idx) => <ListItem data={v} key={v.title} id={idx}/>)}
                     </ul> 
                   </Popover.Content>
               </Popover>

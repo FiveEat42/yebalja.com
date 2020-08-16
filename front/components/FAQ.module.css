@@ -58,10 +58,14 @@
   color: #3e4955;
 }
 
+.question i {
+  margin-right: 3px;
+}
+
 .answer {
   font-size: 0.97em;
   line-height: 2;
-  margin: 10px 20px 45px 20px;
+  margin: 10px 20px 45px 25px;
   color: #627083;
 }
 
