@@ -5,10 +5,13 @@
     padding-top: 0.5rem;
 }
 
-.icon {
-    margin-left: 15px;
-    margin-right: 3px;
-    margin-bottom: 12px;
+.sproutlogo {
+    display: inline;
+    padding-left: 15px;
+    padding-right: 3px;
+    /*top: */
+    position: relative;
+    top: -6px;
 }
 
 .logo {

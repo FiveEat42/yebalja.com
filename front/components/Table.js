@@ -5,8 +5,7 @@ import Header from "./Header";
 import TableRow from './TableRow';
 import BadgeDescription from "./BadgeDescription";
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getTableData } from '../redux/actions/tableAction';
 
 

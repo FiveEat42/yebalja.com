@@ -81,10 +81,6 @@ export default function TimelineListItem({data, id}) {
 
 
 
-
-
-
-
   {/* 날짜 및 시간을 period에 넣어 알려주는 부분 */}
 
   if (startdate == enddate) {                               {/* 시작일과 마감일이 같을 때 */}
