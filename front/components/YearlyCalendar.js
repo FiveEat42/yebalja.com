@@ -141,7 +141,7 @@ export default function YearlyCalendar() {
     <>
       <Header>
         <h1 className={styles.webheader}>2020년 부트캠프</h1>
-        <p className={styles.websubtitle}>무료 부트캠프 일정을 한 눈에 확인하세요</p>
+        <p className={styles.websubtitle}>무료 부트캠프 일정을 한 눈에 확인하세요.</p>
       </Header>
       <div className={classNames({ [styles.wrapper]: true, [styles.landscape_only]: true })}>
         <CTA />

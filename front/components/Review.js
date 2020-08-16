@@ -2,8 +2,7 @@ import React , {useEffect} from "react";
 import styles from './Review.module.css';
 import classNames from 'classnames';
 import Head from 'next/head';
-import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { getReviewData } from '../redux/actions/reviewAction';
 
 function CommentList({data, id}) {
