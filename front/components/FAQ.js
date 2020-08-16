@@ -5,9 +5,7 @@ import ListGroup from "react-bootstrap/ListGroup"
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
 import classNames from 'classnames';
-
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getFaqData } from '../redux/actions/faqAction';
 
 function QnA ({list}) {

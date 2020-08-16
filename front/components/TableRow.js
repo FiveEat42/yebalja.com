@@ -13,10 +13,10 @@ export default function TableRow({data}) {
         <td className={styles.cell} dangerouslySetInnerHTML={{__html: data.grant}}></td>
         <td className={styles.cell}>
           <div className={styles.cellbadges}>
-            <div className={styles[data.aptitude]}><Badge type="Aptitude"/></div>
-            <div className={styles[data.coding]}><Badge type="Coding"/></div>
-            <div className={styles[data.interview]}><Badge type="Interview"/></div>
-            <div className={styles[data.tryout]}><Badge type="Tryout"/></div>
+            <div className={styles[data.aptitude ? true : false]}><Badge type="Aptitude"/></div>
+            <div className={styles[data.coding ? true : false]}><Badge type="Coding"/></div>
+            <div className={styles[data.interview ? true : false]}><Badge type="Interview"/></div>
+            <div className={styles[data.tryout ? true : false]}><Badge type="Tryout"/></div>
           </div>
         </td>
       </tr>
