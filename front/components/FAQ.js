@@ -54,7 +54,7 @@ function FaqTab({subList}) {
 export default function Faq() {
   //program을 리덕스로 관리해서 받아와야함.boostcamp : 1
   const faqData = useSelector((state) => state.faqReducer);
-  const program = useSelector((state) => state.programsReducer.data);
+  const program = useSelector((state) => state.programReducer.data);
   const dispatch = useDispatch(); // 디스패치 사용하도록하기
 
   useEffect(()=>{

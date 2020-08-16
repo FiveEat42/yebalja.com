@@ -10,8 +10,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 //여러 리듀서 등록하기
 //sub리듀서를 하나로 합쳐줌
 import { combineReducers } from 'redux';
-import reducer from '../reducers/index';
 import faqReducer from '../reducers/faqReducer';
+import timelineReducer from '../reducers/timelineReducer';
+import timelineListReducer from "../reducers/timelineListReducer";
+import tableReducer from "../reducers/tableReducer";
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import programReducer from '../reducers/programReducer';
@@ -28,8 +30,10 @@ const configureStore = () => {
   
   const store = createStore(
     combineReducers({
-      reducer,
       faqReducer,
+      timelineReducer,
+      timelineListReducer,
+      tableReducer,
       programReducer}), enhancer);
   return store;
 

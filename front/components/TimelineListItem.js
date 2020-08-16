@@ -5,7 +5,7 @@ import classNames from 'classnames';
 export default function TimelineListItem({data, id}) {
   {/* edu인지 recruit인지 구분 */}
   let type;
-  if (data.edu == `true`) {
+  if (data.edu == 1) {
     type = 'edu';
   } else {
     type = 'recruit';
@@ -78,10 +78,6 @@ export default function TimelineListItem({data, id}) {
         updown = 'down_end';
       }
   }
-
-
-
-
 
 
 
