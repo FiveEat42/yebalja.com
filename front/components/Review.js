@@ -27,7 +27,7 @@ function LeftCommentItem({data, post_date}) {
           <div className={styles.comment_dialog}>
             <div className={classNames({[styles.link]: true, [styles.link_adsila]: true})}>
               <a className={styles.link_item} href={data.link} target="_black">
-                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}>  ></span></span>
+                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}>  &gt;</span></span>
               </a>
             </div>
             <div className={styles.comment_body}>
@@ -53,7 +53,7 @@ function RightCommentItem({data, post_date}) {
           <div className={styles.comment_dialog_r}>
             <div className={classNames({[styles.link]: true, [styles.link_adsila]: true})}>
               <a className={styles.link_item} href={data.link} target="_black">
-                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}>  ></span></span>
+                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}>  &gt;</span></span>
               </a>
             </div>
             <div className={styles.comment_body}>
