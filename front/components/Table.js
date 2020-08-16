@@ -44,7 +44,7 @@ export default function Table() {
         <div className={styles.mobileheader}>
           <br/>
           <h1>2020년 부트캠프</h1>
-          <p>무료 부트캠프 연간 일정은 웹사이트 혹은 가로모드에서 지원됩니다</p>
+          <p>무료 부트캠프 연간 일정은 웹사이트 혹은 가로모드에서 지원됩니다.</p>
           <br/><br/> <br/>
         </div>
       </Header>
