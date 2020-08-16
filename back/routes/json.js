@@ -89,7 +89,7 @@ const hasKey = (arr, key, value) => {
 }
 
 router.get('/yearlycalendar', cors(accecptURL), (req, res) => {
-  db.query(`select substring(link, 2) as 'idName', programs.title as title, gisus.gisu, visible, steps_calendars.title as stepTitle, detail, start_date as startDate, end_date as endDate from steps_calendars inner join gisus on steps_calendars.gisus_id = gisus.id inner join programs on gisus.programs_id = programs.id;`,
+  db.query(`select steps_calendars.id, substring(link, 2) as 'idName', programs.title as title, gisus.gisu, visible, steps_calendars.title as stepTitle, detail, start_date as startDate, end_date as endDate from steps_calendars inner join gisus on steps_calendars.gisus_id = gisus.id inner join programs on gisus.programs_id = programs.id;`,
     (error, result) => {
       if (error) throw error;
       let outerArr = [];
@@ -119,8 +119,9 @@ router.get('/yearlycalendar', cors(accecptURL), (req, res) => {
         let innerArr = middleArr[middleArr.length - 1].step;
         //제일 바깥 어레이속 마지막 오브젝트의 step과 현재 v의 step이 같은지 체크
         //없으면 새로운 오브젝트 생성, 있으면 패스
-        if (!hasKey(innerArr, 'title', v.stepTitle)){
+        if (!hasKey(innerArr, 'id', v.id)){
           let obj3 = {
+            'id': v.id,
             'title': v.stepTitle,
             'period': v.detail,
             'startDate': v.startDate,
@@ -131,6 +132,7 @@ router.get('/yearlycalendar', cors(accecptURL), (req, res) => {
         }
       })
       res.send(outerArr);
+      // res.send(result);
   })
 })
 
