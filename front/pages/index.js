@@ -14,9 +14,9 @@ const Home = () => {
       <YearlyCalendar />
       <Header>
         <h1>한 눈에 보는 부트캠프</h1>
-        <p>무료 부트캠프 정보를 한 눈에 비교하세요</p>
+        <p>무료 부트캠프 정보를 한 눈에 비교하세요.</p>
       </Header>
-      <Table/>
+      <Table />
     </Layout>
   );
 }

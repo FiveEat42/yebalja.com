@@ -12,7 +12,7 @@ const About = () => {
       <TeamMembers />
       <Header>
         <h2>예발자닷컴 응원하기</h2>
-        <p>후원에 힘입어 더 좋은 사이트로 보답하겠습니다</p>
+        <p>후원에 힘입어 더 좋은 사이트로 보답하겠습니다.</p>
       </Header>
       <TeamDonation />
     </Layout>
