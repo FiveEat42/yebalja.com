@@ -6,14 +6,18 @@ import { useSelector, useDispatch } from "react-redux";
 import { getReviewData } from '../redux/actions/reviewAction';
 
 function CommentList({data, id}) {
+  
+  let date = `${new Date(data.post_date).getFullYear()}.${new Date(data.post_date).getMonth() + 1}.${new Date(data.post_date).getDate()}`;
   return (
     <>
-      { (id % 2) ? <RightCommentItem data={data}/> : <LeftCommentItem data={data}/> }
+      <div className={styles.comment_list}>
+        { (id % 2) ? <RightCommentItem data={data} post_date={date}/> : <LeftCommentItem data={data} post_date={date}/> }
+      </div>
     </>
   )
 }
 
-function LeftCommentItem({data}) {
+function LeftCommentItem({data, post_date}) {
   return (
     <>
       <div className={styles.wrapper}>
@@ -22,7 +26,7 @@ function LeftCommentItem({data}) {
           <div className={styles.comment_dialog}>
             <div className={classNames({[styles.link]: true, [styles.link_adsila]: true})}>
               <a className={styles.link_item} href={data.link} target="_black">
-                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}></span></span>
+                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}>  &gt;</span></span>
               </a>
             </div>
             <div className={styles.comment_body}>
@@ -30,7 +34,7 @@ function LeftCommentItem({data}) {
               <p className={styles.text}>{data.content}</p>
               <div className={styles.date}>
                 <i className="fa fa-minus" aria-hidden="true"></i>
-                <span className={styles.text}> {data.posted_date}</span>
+                <span className={styles.text}> {post_date}</span>
               </div>
             </div>
           </div>
@@ -40,7 +44,7 @@ function LeftCommentItem({data}) {
   )
 }
 
-function RightCommentItem({data}) {
+function RightCommentItem({data, post_date}) {
   return (
     <>
       <div className={styles.wrapper}>
@@ -48,7 +52,7 @@ function RightCommentItem({data}) {
           <div className={styles.comment_dialog_r}>
             <div className={classNames({[styles.link]: true, [styles.link_adsila]: true})}>
               <a className={styles.link_item} href={data.link} target="_black">
-                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}></span></span>
+                <span className={styles.link_item_name}>{data.title}<span className={styles.cta}>  &gt;</span></span>
               </a>
             </div>
             <div className={styles.comment_body}>
@@ -56,7 +60,7 @@ function RightCommentItem({data}) {
               <p className={styles.text_r}>{data.content}</p>
               <div className={styles.date}>
                 <i className={"fa fa-minus"} style={{ color: `#white` }} aria-hidden="true"></i>
-                <span className={styles.text_r}>  {data.posted_date}</span>
+                <span className={styles.text_r}>  {post_date}</span>
               </div>
             </div>
           </div>
