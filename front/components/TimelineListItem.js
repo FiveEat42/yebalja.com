@@ -23,21 +23,28 @@ export default function TimelineListItem({data, id}) {
   }
 
   {/*
-  yebalja.com에서 불러오는 UTC시간에서 9시간을 더해주 KST로 바꿔줍니다.
+  yebalja.com에서 불러오는 UTC시간에서 9시간을 빼주 KST로 바꿔줍니다.
   타임존 변경이 아닌 강제 시간 변경입니다.
   **예시**
   1. dataGrip에서 6월 6일 11시 입력
-  2. localhost:5000/api/json/timelinelist에서 2020-06-06T02:00:00.000Z로 입력된 것을 확인
-    2-1. localhost:3000에서 6월 6일 11시로 출력
-  3. api.yebalja.com/api/json/timelinelist에서 2020-06-06T11:00:00.000Z로 입력된 것을 확인
-    3-1. yebalja.com에서 6월 6일 2시로 출력
-  4. 불러온 데이타의 시간에 강제로 +9시간 해서 2시를 11시로 출력하게 만듦
+  2. api.yebalja.com/api/json/timelinelist에서 2020-06-06T11:00:00.000Z로 입력된 것을 확인
+    2-1. yebalja.com에서 6월 6일 20시로 출력
+    2-2. 11:00:00 UTC로 인식
+    2-3. 20:00:00 GMT+9:00라 20시
+  3. localhost:5000/api/json/timelinelist에서 2020-06-06T02:00:00.000Z로 입력된 것을 확인
+    3-1. localhost:3000에서 6월 6일 11시로 출력
+    3-2. 02:00:00 UTC로 인식
+    3-3. 11:00:00 GMT+9:00라 11시
+  4. 불러온 데이타의 시간에 강제로 -9시간 해서 2시를 11시로 출력하게 만듦
     4-1. yebalja.com에서 6월 6일 11시로 출력
-    4-2. localhost:3000에서 6월 6일 20시로 출력
+    4-2. localhost:3000에서 6월 6일 2시로 출력
 
   */}
-  let startdate_SKT = new Date(new Date(data.startdate).getTime() - 540*60*1000);
-  let enddate_SKT = new Date(new Date(data.enddate).getTime() - 540*60*1000);
+  console.log('data.startdate',data.startdate);
+  let startdate_KST = new Date(new Date(data.startdate).getTime() - 540*60*1000);
+  let enddate_KST = new Date(new Date(data.enddate).getTime() - 540*60*1000);
+
+  console.log('startdate_KST',startdate_KST);
 
   {/* 시작일, 마감일, 시작시간, 마감시간 구하기 */}
   let startdate = `${new Date(startdate_KST).getMonth() + 1}.${new Date(startdate_KST).getDate()}`;
