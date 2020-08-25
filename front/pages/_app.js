@@ -8,6 +8,7 @@ const MyApp = ({ Component, pageProps}) => {
       <>
         <Head>
           <meta charSet="utf-8" />
+          <meta name="naver-site-verification" content="3261dbf8d9a42cb634c194cdde9def3cd111a56d" />
           <title>예발자닷컴</title>
           <link rel="icon" type="image/x-icon" href={require("./favicon.ico")} />
           <script
