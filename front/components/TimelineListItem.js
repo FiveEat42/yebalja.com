@@ -22,41 +22,58 @@ export default function TimelineListItem({data, id}) {
     updown = `down_${type}`;
   }
 
+  {/*
+  yebalja.com에서 불러오는 UTC시간에서 9시간을 더해주 KST로 바꿔줍니다.
+  타임존 변경이 아닌 강제 시간 변경입니다.
+  **예시**
+  1. dataGrip에서 6월 6일 11시 입력
+  2. localhost:5000/api/json/timelinelist에서 2020-06-06T02:00:00.000Z로 입력된 것을 확인
+    2-1. localhost:3000에서 6월 6일 11시로 출력
+  3. api.yebalja.com/api/json/timelinelist에서 2020-06-06T11:00:00.000Z로 입력된 것을 확인
+    3-1. yebalja.com에서 6월 6일 2시로 출력
+  4. 불러온 데이타의 시간에 강제로 +9시간 해서 2시를 11시로 출력하게 만듦
+    4-1. yebalja.com에서 6월 6일 11시로 출력
+    4-2. localhost:3000에서 6월 6일 20시로 출력
+
+  */}
+  let startdate_SKT = new Date(new Date(data.startdate).getTime() - 540*60*1000);
+  let enddate_SKT = new Date(new Date(data.enddate).getTime() - 540*60*1000);
+
   {/* 시작일, 마감일, 시작시간, 마감시간 구하기 */}
-  let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
-  if (new Date(data.startdate).getFullYear() != new Date().getFullYear()) {
-    startdate = `${new Date(data.startdate).getFullYear()}.${startdate}`;
+  let startdate = `${new Date(startdate_KST).getMonth() + 1}.${new Date(startdate_KST).getDate()}`;
+  if (new Date(startdate_KST).getFullYear() != new Date().getFullYear()) {
+    startdate = `${new Date(startdate_KST).getFullYear()}.${startdate}`;
   }
-  let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
+  let enddate = `${new Date(enddate_KST).getMonth() + 1}.${new Date(enddate_KST).getDate()}`;
   let starttime;
   let endtime;
   {/* 00:00 형태로 시작시간과 마감시간 뽑아내기 */}
-  if (new Date(data.startdate).getMinutes() < '10') {
-    starttime = `${new Date(data.startdate).getHours()}:0${new Date(data.startdate).getMinutes()}`;
+  if (new Date(startdate_KST).getMinutes() < '10') {
+    starttime = `${new Date(startdate_KST).getHours()}:0${new Date(startdate_KST).getMinutes()}`;
   } else {
-    starttime = `${new Date(data.startdate).getHours()}:${new Date(data.startdate).getMinutes()}`;
+    starttime = `${new Date(startdate_KST).getHours()}:${new Date(startdate_KST).getMinutes()}`;
   }
-  if (new Date(data.enddate).getMinutes() < '10') {
-    endtime = `${new Date(data.enddate).getHours()}:0${new Date(data.enddate).getMinutes()}`;
+  if (new Date(enddate_KST).getMinutes() < '10') {
+    endtime = `${new Date(enddate_KST).getHours()}:0${new Date(enddate_KST).getMinutes()}`;
   } else {
-    endtime = `${new Date(data.enddate).getHours()}:${new Date(data.enddate).getMinutes()}`;
+    endtime = `${new Date(enddate_KST).getHours()}:${new Date(enddate_KST).getMinutes()}`;
   }
 
 
   {/* 시작날까지 남은 날 && 마감날까지 남은 날 && 시작시간까지 남은 시간 && 마감시간까지 남은 시간 */}
-  let startdateLeft = Math.floor((new Date(data.startdate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
-  let enddateLeft = Math.floor((new Date(data.enddate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
+  let startdateLeft = Math.floor((new Date(startdate_KST).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
+  let enddateLeft = Math.floor((new Date(enddate_KST).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
   let starttimeLeft;
   let endtimeLeft;
   if (starttime == '0:00') {
-    starttimeLeft = Math.floor((new Date(data.startdate).setHours(23,59,59) - new Date()) / (1000)) + 1;
+    starttimeLeft = Math.floor((new Date(startdate_KST).setHours(23,59,59) - new Date()) / (1000)) + 1;
   } else {
-    starttimeLeft = Math.floor((new Date(data.startdate) - new Date()) / (1000)) + 1;
+    starttimeLeft = Math.floor((new Date(startdate_KST) - new Date()) / (1000)) + 1;
   }
   if (endtime == '0:00') {
-    endtimeLeft = Math.floor((new Date(data.enddate).setHours(23,59,59) - new Date()) / (1000)) + 1;
+    endtimeLeft = Math.floor((new Date(enddate_KST).setHours(23,59,59) - new Date()) / (1000)) + 1;
   } else {
-    endtimeLeft = Math.floor((new Date(data.enddate) - new Date()) / (1000)) + 1;
+    endtimeLeft = Math.floor((new Date(enddate_KST) - new Date()) / (1000)) + 1;
   }
 
 
