@@ -23,7 +23,7 @@ export default function TimelineListItem({data, id}) {
   }
 
   {/*
-  yebalja.com에서 불러오는 UTC시간에서 9시간을 빼주 KST로 바꿔줍니다.
+  yebalja.com에서 불러오는 UTC시간에서 9시간을 빼줘 KST로 바꿔줍니다.
   타임존 변경이 아닌 강제 시간 변경입니다.
   **예시**
   1. dataGrip에서 6월 6일 11시 입력
@@ -40,11 +40,8 @@ export default function TimelineListItem({data, id}) {
     4-2. localhost:3000에서 6월 6일 2시로 출력
 
   */}
-  console.log('data.startdate',data.startdate);
   let startdate_KST = new Date(new Date(data.startdate).getTime() - 540*60*1000);
   let enddate_KST = new Date(new Date(data.enddate).getTime() - 540*60*1000);
-
-  console.log('startdate_KST',startdate_KST);
 
   {/* 시작일, 마감일, 시작시간, 마감시간 구하기 */}
   let startdate = `${new Date(startdate_KST).getMonth() + 1}.${new Date(startdate_KST).getDate()}`;
