@@ -22,12 +22,13 @@ export default function TimelineListItem({data, id}) {
     updown = `down_${type}`;
   }
 
+
   {/* 시작일, 마감일, 시작시간, 마감시간 구하기 */}
   let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
   if (new Date(data.startdate).getFullYear() != new Date().getFullYear()) {
     startdate = `${new Date(data.startdate).getFullYear()}.${startdate}`;
   }
-  let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`;
+  let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`
   let starttime;
   let endtime;
   {/* 00:00 형태로 시작시간과 마감시간 뽑아내기 */}
@@ -58,6 +59,7 @@ export default function TimelineListItem({data, id}) {
   } else {
     endtimeLeft = Math.floor((new Date(data.enddate) - new Date()) / (1000)) + 1;
   }
+
 
 
   {/* 모집현황으로 D-Day/진행중/마감을 담음 */}

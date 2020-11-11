@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getYearlyCalendarData =  async () => {
-  const yearlyCalendarData = await axios.get('http://localhost:5000/api/json/yearlycalendar');
+  const yearlyCalendarData = await axios.get('https://api.yebalja.com/api/json/yearlycalendar');
 
   return {
     type: 'GET_YEARLYCALENDAR_DATA',

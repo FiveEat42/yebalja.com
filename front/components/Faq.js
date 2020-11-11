@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import styles from './FAQ.module.css';
+import styles from './Faq.module.css';
 import ListGroup from "react-bootstrap/ListGroup"
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
