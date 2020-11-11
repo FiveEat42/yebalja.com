@@ -24,13 +24,13 @@ import faqReducer from '../reducers/faqReducer';
 import reviewReducer from '../reducers/reviewReducer';
 
 const configureStore = () => {
-  const logger = createLogger();
+  const logger = createLogger();	
   const middlewares = [thunk, logger]; //thunk (비동기작업을 돕는 라이브러리)를 넣음
   
   //배포용과 개발용의 미들웨어 차이를 두기 위함
-  const enhancer = process.env.NODE_ENV === 'production'
-  ? compose(applyMiddleware([]))
-  : composeWithDevTools(applyMiddleware(...middlewares))//middlewares배열을 여기다가 넣음.
+//  const enhancer = process.env.NODE_ENV === 'production'
+//  ? compose(applyMiddleware([]))
+//  : composeWithDevTools(applyMiddleware(...middlewares))//middlewares배열을 여기다가 넣음.
   
   const store = createStore(
     combineReducers({
@@ -42,7 +42,9 @@ const configureStore = () => {
       timelineReducer,
       timelineListReducer,
       faqReducer,
-      reviewReducer}), enhancer);
+      reviewReducer})
+  //    , enhancer
+      );
   return store;
 };
 

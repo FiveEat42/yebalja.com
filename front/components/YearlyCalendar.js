@@ -1,4 +1,4 @@
-import React , {useEffect} from 'react';
+import React , {useEffect, useState} from 'react';
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
 import { getYearlyCalendarData } from '../redux/actions/yearlyCalendarAction';
@@ -10,9 +10,14 @@ import Link from 'next/link'
 
 function CalendarGrid() {
   const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  let todayDate = new Date();
-  let CurrentMonth = todayDate.getMonth() + 2;
+//  let todayDate = new Date();
+//  let CurrentMonth = todayDate.getMonth() + 2;
 
+  const [monthValue, setMonthValue] = useState(0);
+
+  useEffect(() =>{
+    setMonthValue(new Date().getMonth() + 2);
+  },[monthValue]);
   return (
     <>
       <div className={classNames({ [styles.gantt__row]: true, [styles.gantt__row__months]: true })}>
@@ -20,7 +25,7 @@ function CalendarGrid() {
         {month.map((v, idx) => <span key={idx}>{v}월</span>)}
       </div>
       <div className={classNames({ [styles.gantt__row]: true, [styles.gantt__row__lines]: true })}>
-        {month.map((v, idx) => (v === CurrentMonth) ? <span className={styles.current_marker} key={idx}></span> : <span key={idx}></span>)} {/* 12칸으로 나누고, 현재 월이면 배경색 칠함. */}
+        {month.map((v, idx) => (v === monthValue) ? <span className={styles.current_marker} key={idx}></span> : <span key={idx}></span>)} {/* 12칸으로 나누고, 현재 월이면 배경색 칠함. */}
       </div>
     </>
   )
