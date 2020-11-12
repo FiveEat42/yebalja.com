@@ -1,0 +1,167 @@
+@import url(https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css);
+
+
+.body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Nanum Barun Gothic';
+  /* background: #F2F8FF;  */
+  box-sizing: border-box;
+} 
+
+.cards_wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4rem;
+  padding: 4rem;
+  margin: 0 auto;
+  width: max-content;
+}
+
+.card {
+  background: #FFF;
+  font-family: 'Nanum Barun Gothic';
+  height: 22em;
+  width: 15em;
+  font-size: 1.5em;
+  color: black;
+  border-radius: 0.2em;
+  padding: 1em;
+  /*margin: 2em;*/
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  transition: all, 0.5s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  text-decoration: none;
+}
+   
+
+.card .logo {
+  display: block;
+  margin: 0px auto;
+  width: auto; 
+  height: auto;
+  max-width: 4em;
+  max-height: 4em;
+  margin-bottom: 0.5em;
+}
+
+.card .title {
+  margin: 0;
+  font-size: 1.2em;
+  font: bold;
+  line-height: 1.2em;
+  color: #67707D;
+  text-align: center;
+}
+
+.card .sub_title {
+  color: #67707D;
+  font-size: 0.5em;
+  font-family: 'Nanum Barun Gothic';
+  margin-top: 0.1em;
+  line-height: 2em;
+  text-align: center;
+}
+
+.card .tags {
+  display: flex;
+  justify-content: center;
+  margin: 0.6em;
+}
+
+.card .tags .tag {
+  font-size: 0.5em;
+  background: #366D9C;
+  color: #fff;
+  border-radius: 0.3rem;
+  padding: 0.25em 0.5em 0.2em 0.5em;
+  margin-right: 0.5em;
+  transition: all, 0.5s;
+}
+
+
+.card:hover .tags .tag {
+  background: #FFD141;
+  color: white;
+}
+
+.card .contents {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  font-size: 0.5em;
+  height: 240px;
+}
+
+.card .contents .content {
+  flex-wrap: wrap;
+  background: #EEF1F6;
+  width: 26em;
+  border-radius: 0.3rem;
+  padding: 0.8em;
+  margin: 0.2em;
+  color: #67707D;
+  border-left: 5px solid #4A91F5;
+}
+
+.card .date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.75em;
+  padding: 1em;
+  line-height: 1em;
+  opacity: .8;
+}
+
+
+.card_grid_space .medal {
+  width: auto; 
+  height: auto;
+  max-width: 4em;
+  max-height: 4em;
+  margin-bottom: 0.2rem;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1285px) {
+  .cards_wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cards_wrapper {
+    grid-template-columns: 1fr;
+  }
+  .info {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cards_wrapper {
+    padding: 4rem 2rem;
+  }
+  .card {
+    max-width: calc(100vw - 4rem);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .info {
+    display: block;
+    text-align: center;
+  }
+  .info h1 {
+    margin: 0;
+  }
+}
