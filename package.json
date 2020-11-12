@@ -13,9 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "mysql": "^2.18.1",
     "body-parser": "^1.18.3",
+    "canvas": "^2.6.1",
+    "express": "^4.17.1",
+    "extract-colors": "^1.1.16",
+    "mysql": "^2.18.1",
     "yarn": "^1.13.0"
   },
   "devDependencies": {

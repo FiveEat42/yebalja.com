@@ -4,20 +4,13 @@ import classNames from 'classnames';
 import Head from 'next/head';
 import { useSelector, useDispatch } from "react-redux";
 import LikeButton from "./LikeButton";
+import Medal from "./Medal";
 
-export function rank() {
-  return (
-    <>
-      <img className={styles.medal} src="https://user-images.githubusercontent.com/37580034/98777799-b647f300-2434-11eb-8795-baf921335b63.png" />
-    </>
-  )
-}
-
-export function Tags( {tags} ) {
+export function Tags( {tags, i, color} ) {
 
   return (
     <>
-      <div className={styles.tag}>{tags}</div>
+      <div className={styles.tag} style={{backgroundColor : color[i]}}>{tags}</div>
     </>
   )
 }
@@ -42,7 +35,7 @@ export function Card( {data} ) {
           <div className={styles.title}>{data.title}</div>
           <div className={styles.sub_title}>{data.sub_title}</div>
           <div className={styles.tags}>
-            {data.tags.map((v, idx) => <Tags tags={v} key={idx}/>)}
+            {data.tags.map((v, idx, i) => <Tags tags={v} key={idx} i={idx} color={data.tags_color}/>)}
           </div>
           <div className={styles.contents}>
             {data.contents.map((v, idx) => <Contents content={v} key={idx}/>)}
@@ -66,6 +59,7 @@ export function CardList(){
         "튜토리얼검색량 3위",
         "깃헙 1위"
       ],
+      tags_color: ["#387EB8", "#FFE052", "#67707D"],
       contents: [
         {
           highlight: "파이썬",
@@ -95,6 +89,7 @@ export function CardList(){
         "깃헙 1위",
         "채용공고 4위",
       ],
+      tags_color: ["#F7DF1E", "#000", "#67707D"],
       contents: [
         {
           highlight: "자바스크립트",
@@ -124,6 +119,7 @@ export function CardList(){
         "깃헙 1위",
         "채용공고 1위",
       ],
+      tags_color: ["#61DAFB", "#67707D", "#67707D"],
       contents: [
         {
           highlight: "장점",
@@ -131,7 +127,7 @@ export function CardList(){
         },
         {
           highlight: "단점",
-          content: "SPA - SEO(검색엔진 최적화) 문제 존재\nPA - 초기 구동 속도가 상대적으로 느림\nSX 문법 - 비기너에게 복잡하게 느껴질 수 있음",
+          content: "SPA - SEO(검색엔진 최적화) 문제 존재\nSPA - 초기 구동 속도가 상대적으로 느림\nJSX 문법 - 비기너에게 복잡하게 느껴질 수 있음",
         },
         {
           highlight: "Facebook, Instagram, Netflix, Slack",
