@@ -32,8 +32,6 @@
   /*margin: 2em;*/
   display: flex;
   align-items: flex-end;
-  background-size: cover;
-  background-position: center;
   transition: all, 0.5s;
   position: relative;
   overflow: hidden;
