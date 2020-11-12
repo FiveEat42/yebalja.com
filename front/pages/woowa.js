@@ -1,6 +1,6 @@
-import Layout from "../components/Layout";
-import Header from "../components/Header";
 import React, { useEffect } from "react";
+import Layout from "../components/common/Layout";
+import Header from "../components/common/Header";
 import Timeline from "../components/Timeline";
 import Faq from "../components/Faq"
 import Review from "../components/Review";

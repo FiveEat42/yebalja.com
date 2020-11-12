@@ -1,9 +1,9 @@
 import React from "react";
-import Layout from "../components/Layout";
-import Header from "../components/Header";
+import Layout from "../components/common/Layout";
+import Header from "../components/common/Header";
 import TeamMembers from "../components/TeamMembers";
 import TeamDrawing from "../components/TeamDrawing";
-import TeamDonation from "../components/TeamDonation"
+import TeamDonation from "../components/TeamDonation";
 
 const About = () => {
   return (
@@ -17,6 +17,6 @@ const About = () => {
       <TeamDonation />
     </Layout>
   );
-}
+};
 
 export default About;

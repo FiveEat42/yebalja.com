@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
-import Layout from "../components/Layout";
-import Header from "../components/Header";
-import Faq from "../components/Faq"
+import Layout from "../components/common/Layout";
+import Header from "../components/common/Header";
+import Faq from "../components/Faq";
 import Review from "../components/Review";
-import Timeline from '../components/Timeline';
-import { useDispatch } from 'react-redux'
-import { programChanger } from '../redux/actions/programChangerAction';
+import Timeline from "../components/Timeline";
+import { useDispatch } from "react-redux";
+import { programChanger } from "../redux/actions/programChangerAction";
 
 const Boostcamp = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(programChanger('boostcamp'));
-  },[])
+    dispatch(programChanger("boostcamp"));
+  }, []);
 
   return (
     <Layout>
@@ -28,6 +28,6 @@ const Boostcamp = () => {
       <Review />
     </Layout>
   );
-}
+};
 
 export default Boostcamp;

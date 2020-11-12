@@ -1,13 +1,11 @@
-import Layout from '../components/Layout';
+import React, { useEffect, useState } from "react";
+import Layout from "../components/common/Layout";
+import Header from "../components/common/Header";
 import Jumbotron from "../components/Jumbotron";
 import Table from "../components/Table";
-import YearlyCalendar from '../components/YearlyCalendar';
-import Header from "../components/Header";
-import React, { useEffect, useState } from "react";
-// import axios from 'axios';
+import YearlyCalendar from "../components/YearlyCalendar";
 
 const Home = () => {
-
   return (
     <Layout>
       <Jumbotron />
@@ -19,6 +17,6 @@ const Home = () => {
       <Table />
     </Layout>
   );
-}
+};
 
 export default Home;
