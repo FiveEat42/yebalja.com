@@ -27,6 +27,7 @@ const Footer = () => {
         <ul>
           <li><p className={styles.wave}><Logo /></p></li>
           <li><Link href="/about"><a>팀소개</a></Link></li>
+          <li><Link href="/topstacks"><a>Top Stacks</a></Link></li>
           <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/FiveEat42/yebalja.com">깃허브</a></li>
           <li><a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSe48uQfdtv7z6QL18klzsqfnY8I27Q3kOVre-apNLGNyfPTdQ/viewform">공고제보</a></li>
           <li><a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSdfFG9fpzXMP6WqgHsgwiWIQPpqZ44HKUJyQXjSXOmYDWcfNA/viewform">개선제보</a></li>
