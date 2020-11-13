@@ -41,6 +41,9 @@ export function Card( {data} ) {
             {data.contents.map((v, idx) => <Contents content={v} key={idx}/>)}
           </div>
         </div>
+        <div className={styles.footer}>
+          <LikeButton/> 
+        </div>
       </a>
     </>
   );
@@ -153,7 +156,6 @@ export default function Stacks() {
     <div className={styles.body}>
       <section className={styles.cards_wrapper}>
           <CardList/>
-          {/* <LikeButton/>  */}
       </section>
     </div>
     </>

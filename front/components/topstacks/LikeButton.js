@@ -13,12 +13,20 @@ export default function LikeButton() {
 
   return (
     <>
-      <div className={styles.reacts}>
-        <div className={styles.circle}><img src="https://res.cloudinary.com/prvnbist/image/upload/v1492531171/XZOPuv9_eyqlr2.png" alt=""/>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+      </Head>
+      <div className={styles.container}>
+        <div className={styles.button_container}>
+          <div className={styles.a}>
+            <i className={classNames({ ["fa fa-heart"]: true})}/> Like
+          </div>
         </div>
-        <div className={styles.circle}><img src="https://res.cloudinary.com/prvnbist/image/upload/v1492531172/uIjLl6R_cmbnqb.png" alt=""/>
-        </div>
-        <div className={styles.circle}><img src="https://res.cloudinary.com/prvnbist/image/upload/v1492531178/VDM3zOV_qy9fqj.png" alt=""/>
+        <div className={styles.button_container}>
+          <div className={styles.a}>
+            <i className={classNames({ ["fa fa-heart-o"]: true})}/> Dislike
+          </div>
         </div>
       </div>
     </>
