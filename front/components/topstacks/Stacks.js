@@ -30,7 +30,10 @@ export function Card( {data} ) {
   return(
     <>
       <a className={styles.card}>
-        <div>
+        <div className={styles.header}>
+          <LikeButton/> 
+        </div>
+        <div className={styles.section}>
           <img className={styles.logo} src={data.logo} />
           <div className={styles.title}>{data.title}</div>
           <div className={styles.sub_title}>{data.sub_title}</div>
@@ -40,9 +43,6 @@ export function Card( {data} ) {
           <div className={styles.contents}>
             {data.contents.map((v, idx) => <Contents content={v} key={idx}/>)}
           </div>
-        </div>
-        <div className={styles.footer}>
-          <LikeButton/> 
         </div>
       </a>
     </>

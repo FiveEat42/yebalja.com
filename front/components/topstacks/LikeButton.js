@@ -5,10 +5,15 @@ import Head from 'next/head';
 import { useSelector, useDispatch } from "react-redux";
 
 export default function LikeButton() {
-  const [num, setNum] = useState(0);
+  const [likeNum, setLikeNum] = useState(0);
+  const [dislikeNum, setDislikeNum] = useState(0);
 
-  const onIncrease = () => {
-    setNum(num + 1);
+  const likeIncrease = () => {
+    setLikeNum(likeNum + 1);
+  }
+
+  const dislikeIncrease = () => {
+    setDislikeNum(dislikeNum + 1);
   }
 
   return (
@@ -18,14 +23,14 @@ export default function LikeButton() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
       </Head>
       <div className={styles.container}>
-        <div className={styles.button_container}>
-          <div className={styles.a}>
-            <i className={classNames({ ["fa fa-heart"]: true})}/> Like
+        <div onClick={likeIncrease} className={styles.button_container}>
+          <div className={styles.count}>
+            <i className={classNames({ ["fa fa-heart"]: true})}/> Like {likeNum}
           </div>
         </div>
-        <div className={styles.button_container}>
-          <div className={styles.a}>
-            <i className={classNames({ ["fa fa-heart-o"]: true})}/> Dislike
+        <div onClick={dislikeIncrease} className={styles.button_container}>
+          <div className={styles.count}>
+            <i className={classNames({ ["fa fa-heart-o"]: true})}/> Dislike {dislikeNum}
           </div>
         </div>
       </div>

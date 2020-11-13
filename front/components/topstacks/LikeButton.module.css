@@ -1,24 +1,22 @@
 .container {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
+  margin-left: 10px;
 }
 .container .button_container {
-  margin-left: 20px;
+  margin-left: 5px;
 }
-.container .button_container .a {
+.container .button_container .count {
+  cursor: pointer;
   background-color: #fff;
   color: #2199e8;
-  border: 2px solid #2199e8;
-  padding: 3px 10px;
-  border-radius: 4px;
+  border: 1px solid #2199e8;
+  padding: 5px 13px;
+  border-radius: 5px;
   font-size: 5px;
 }
 
-.container .button_container .a:hover {
+.container .button_container:hover .count {
   background-color: #2199e8;
   color: #fff;
 }

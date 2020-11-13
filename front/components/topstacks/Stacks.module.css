@@ -1,13 +1,7 @@
 @import url(https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css);
 
 
-.body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Nanum Barun Gothic';
-  /* background: #F2F8FF;  */
-  box-sizing: border-box;
-} 
+
 
 .cards_wrapper {
   display: grid;
@@ -23,7 +17,7 @@
 .card {
   background: #FFF;
   font-family: 'Nanum Barun Gothic';
-  height: 13em;
+  height: 12em;
   width: 15em;
   font-size: 1.5em;
   color: black;
@@ -46,6 +40,10 @@
 
 .card:hover .contents {
   visibility: visible;
+}
+
+.card .section {
+  margin-top: 2em;
 }
 
 .card .logo {
@@ -135,21 +133,14 @@
   margin-bottom: 0.2rem;
 }
 
-.footer {
-  pointer-events: none;
+.header {
   position: absolute;
   right:0px; 
-  bottom:0px;
+  top:0px;
   background-color: #4A91F5;
   height: 55px;
   width: 100%;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
-  
 }
 
 /* MEDIA QUERIES */
