@@ -1,9 +1,9 @@
 import React from "react";
 import Layout from "../components/common/Layout";
 import Header from "../components/common/Header";
-import TeamMembers from "../components/TeamMembers";
-import TeamDrawing from "../components/TeamDrawing";
-import TeamDonation from "../components/TeamDonation";
+import TeamMembers from "../components/team/TeamMembers";
+import TeamDrawing from "../components/team/TeamDrawing";
+import TeamDonation from "../components/team/TeamDonation";
 
 const About = () => {
   return (
