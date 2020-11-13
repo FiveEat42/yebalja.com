@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./TextLogo.module.css";
 import Link from "next/link";
-import Logo from "./Logo";
+import Logo from "../common/Logo";
 
 const TextLogo = () => {
   return (

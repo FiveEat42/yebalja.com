@@ -1,139 +1,174 @@
-/* 내비게이션바 배경 */
-.navbarBg {
-  text-align: right;
-  line-height: 30px;
-  background-color: #4A91F5;
-  box-shadow: 3px 3px 24px -11px;
-  font-family: 'NanumBarunGothic';
-}
-
-/* 내비게이션바 아이템 */
-.navbarBg a:hover {
-  text-decoration: none;
-}
-
-.active {
-  color: #F2F8FF;
-}
-
-/* 햄버거 */
-.navbarBg button:focus {
-  outline: none;
-}
-
-/* 공고 롤링텍스트 */
-
-.noticeRolling {
-  height: 30px;
-  line-height: 200%;
-  width: 280px;
-  position: relative;
-  overflow: hidden;
-}
-
-.noticeRolling ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.noticeRolling a {
-  font-weight: 400;
-  color: #d5e3fc;
-  top: 0px;
-  padding: auto 10px;
-  width: 100%;
-  text-align: left;
-  display: inline-block;
-  transform: translateY(0px);
-  animation: roll 5s infinite;
-}
-
-.noticeRolling .date {
-  font-size: 10px;
-  background-color: #5C4DFF;
-  padding: 2px 7px 2px 7px;
-  border-radius: 5px;
-}
-
-.noticeRolling .notice {
-  font-size: 13px;
-  margin-left: 10px;
-  text-align: left;
-}
-
-.noticeRolling a:hover {
-  text-decoration: none;
-  color: #ECF2FE;
-}
-
-@keyframes roll {
-  0%   { transform: translateY(+20%); }
-  10%  { transform: translateY(0%);}
-  20%  { transform: translateY(0%); }
-  30%  { transform: translateY(0%); }
-  40%  { transform: translateY(-100%); }
-  50%  { transform: translateY(-100%); }
-  60%  { transform: translateY(-100%); }
-  70%  { transform: translateY(-200%); }
-  80%  { transform: translateY(-200%); }
-  90%  { transform: translateY(-200%); }
-  100% { transform: translateY(-280%); }
-}
-
-/* 공고 팝오버리스트 */
-
-.noticePopoverTitle {
-  padding: 8px 0 5px 30px ;
-  font-size: 0.9em;
-  font-weight: 600;
-  border-bottom: 1px solid #E5F0FF;
-}
-
-.noticePopoverList ul {
-  list-style-type: none;
-  margin: 0;
+/* 박스 */
+.box {
+  --blue: #4a91f5;
+  --skyblue: #4df0ff;
+  background-color: var(--blue);
+  margin: 0 auto;
   padding: 0;
-}
-
-.noticePopoverItem a {
-  font-family: 'NanumBarunGothic';
-  font-size: 0.9em;
-  font-weight: 400;
-  line-height: 240%;
-  padding: 0 10px;
-  text-align: left;
-  color: #404040;
-  height: 33px;
-}
-
-.noticePopoverItem a:hover{
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.noticePopoverItem span {
-  display:inline-block;
-  color: #696969;
+  position: fixed;
+  z-index: 100;
   width: 100%;
+  box-shadow: 3px 3px 17px -11px black, 0px 3px 24px -11px #4a91f5;
+  font-family: "NanumBarunGothic";
 }
 
-.buttonPopover {
-  padding: 0 auto 0 0;
+/* 내비게이션 바 공통속성 */
+.navbar {
+  left: 0;
+  top: 0;
+  line-height: 1rem;
+  padding: 20px 10px 12px 24px;
+  display: flex;
 }
 
-.buttonPopover:focus {
-  box-shadow: none;
+.logo,
+.nav,
+.notice {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+/* 로고 */
+.logo a {
+  vertical-align: middle;
+  font-family: "GmarketSansMedium";
+  font-size: 1.8rem;
+  color: white;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* 내비게이션 아이템 */
+.nav {
+  margin: 6px 0 0 50px;
+}
+
+.nav a {
+  font-family: "GmarketSansMedium";
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: var(--skyblue);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  transform: scale(0, 1);
+  transition: transform ease 200ms;
+}
+
+.nav a:hover::after {
+  transform: scale(0.8, 1);
+}
+
+.nav li {
+  display: inline-block;
+  list-style: none;
+  padding: 0 8px 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* 공고 */
+.notice {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: black;
+}
+
+/* 토글메뉴 */
+.toggle {
+  display: none;
+  position: absolute;
+  top: 29px;
+  right: 24px;
+  /* display: none; */
+}
+
+.toggle span,
+.toggle span::before,
+.toggle span::after {
+  position: relative;
+  display: block;
+  background-color: white;
+  width: 24px;
+  height: 1.5px;
+}
+
+.toggle span::after {
+  content: "";
+  top: 8px;
+}
+
+.toggle button:focus {
+  outline: none;
 }
 
 /* 반응형 */
 
- @media screen and (max-width: 991.98px) {
-  .noticeRolling, .buttonPopover, .noticePopover {
+@media screen and (max-width: 800px) {
+  .nav,
+  .notice {
     display: none;
-    
     visibility: hidden;
     width: 0;
     height: 0;
-    }
- }
+  }
+}
+
+/* 폰트 */
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 700;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 300;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf")
+      format("truetype");
+}
+.nanumbarungothic * {
+  font-family: "NanumBarunGothic", sans-serif;
+}

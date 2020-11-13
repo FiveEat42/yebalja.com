@@ -61,7 +61,7 @@ export default function RollingNotice() {
   const noticeList = noticeData ?? [];
 
   return (
-    <div>
+    <div className={styles.notice}>
       <Form inline className={styles.noticeRolling}>
         <ul>
           {noticeList?.map((v) => (

@@ -1,6 +1,27 @@
-.notice {
-  display: inline-block;
+/* 내비게이션바 배경 */
+.navbarBg {
+  text-align: right;
+  line-height: 30px;
+  background-color: #4a91f5;
+  box-shadow: 3px 3px 24px -11px white;
+  font-family: "NanumBarunGothic";
 }
+
+/* 내비게이션바 아이템 */
+.navbarBg a:hover {
+  text-decoration: none;
+}
+
+.active {
+  color: #f2f8ff;
+}
+
+/* 햄버거 */
+.navbarBg button:focus {
+  outline: none;
+}
+
+/* 공고 롤링텍스트 */
 
 .noticeRolling {
   height: 30px;
@@ -8,8 +29,6 @@
   width: 280px;
   position: relative;
   overflow: hidden;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 .noticeRolling ul {
