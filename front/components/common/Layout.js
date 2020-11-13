@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Footer from "./Footer";
-import Navbar from "./Navbar";
+import NavBar from "./NavBar";
 import TopButton from "./TopButton";
 
 const Layout = ({ children }) => {
   return (
     <div>
       <div>
-        <Navbar />
+        <NavBar />
         {children}
         <Footer />
         <TopButton />

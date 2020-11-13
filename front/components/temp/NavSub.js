@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getNavbarData } from "../../redux/actions/navbarAction";
-import styles from "./NavBar.module.css";
+import styles from "./NavSub.module.css";
 import Link from "next/link";
 import classNames from "classnames";
 import { useRouter } from "next/router";
-import LogoWhite from "./LogoWhite";
-import RollingNotice from "./RollingNotice";
 
 const navListDummy = {
   bootcamp: [
@@ -72,10 +70,10 @@ function NavItem({ data }) {
   const router = useRouter();
   return (
     <>
-      <li className={styles.subitem}>
+      <li>
         <Link href={data.href}>
           <a
-            className={router.pathname == data.href ? "active" : ""}
+            className={router.pathname == [data.href] ? "active" : ""}
           >
             {data.title}
           </a>
@@ -85,67 +83,20 @@ function NavItem({ data }) {
   );
 }
 
-export default function NavBar() {
-  const navbarData = useSelector((state) => state.navbarReducer.data);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    getNavbarData().then(function (result) {
-      dispatch(result);
-    });
-  }, []);
-
-  const navList = navbarData ?? [];
+export default function NavSub({ category }) {
 
   return (
-    <div className={styles.box}>
-      <div className={styles.navbar}>
-        {/* 로고 */}
-        <div className={styles.logo}>
-          <Link href="/">
-            <a>
-              <LogoWhite /> 예발자닷컴
-            </a>
-          </Link>
-        </div>
-
-        {/* 내비 main */}
-        <ul className={styles.nav_main}>
-          <li>
-            <Link href="/">
-              <a>부트캠프</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>탑스택스</a>
-            </Link>
-          </li>
-        </ul>
-
-        {/* 내비 sub */}
-        <div className={styles.nav_sub}>
+        <div className={styles.box}>
           <ul>
-            {navListDummy.bootcamp?.map((v) => (
+            {navListDummy[category]?.map((v) => (
               <NavItem data={v} key={v.title} />
             ))}
           </ul>
-          <ul>
+          {/* <ul className={styles.topstacks}>
             {navListDummy.topstacks?.map((v) => (
               <NavItem data={v} key={v.title} />
             ))}
-          </ul>
+          </ul> */}
         </div>
-
-        <div className={styles.toggle}>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div className={styles.notice}>
-          <RollingNotice />
-        </div>
-      </div>
-    </div>
   );
 }

@@ -1,110 +1,43 @@
-/* 박스 */
 .box {
-  --blue: #4a91f5;
+    --blue: #4a91f5;
   --skyblue: #4df0ff;
-  background-color: var(--blue);
-  margin: 0 auto;
-  padding: 0;
-  position: fixed;
-  z-index: 100;
-  width: 100%;
-  box-shadow: 3px 3px 17px -11px rgba(0, 0, 0, 0.9);
-  font-family: "NanumBarunGothic";
-}
-
-/* 내비게이션 바 공통속성 */
-.navbar {
-  left: 0;
-  top: 0;
-  line-height: 1rem;
-  padding: 20px 10px 12px 24px;
-  display: flex;
-}
-
-.logo,
-.nav_main,
-.notice {
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-}
-
-/* 로고 */
-.logo a {
-  vertical-align: middle;
-  font-family: "GmarketSansMedium";
-  font-size: 1.8rem;
-  color: white;
-  padding: 0;
-  text-decoration: none;
-}
-
-/* 내비 main */
-.nav_main {
-  margin: 6px 0 0 50px;
-}
-
-.nav_main a {
-  font-family: "GmarketSansMedium";
-  font-weight: 400;
-  font-size: 1.2rem;
-  color: aliceblue;
-  text-decoration: none;
-}
-
-.nav_main a::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background: var(--skyblue);
-  position: absolute;
-  bottom: -2px;
-  left: 10%;
-  right: 0;
-  transform: scale(0, 1);
-  transition: transform ease 200ms;
-}
-
-.nav_main a:hover::after {
-  transform: scale(0.8, 1);
-}
-
-.nav_main li {
-  display: inline-block;
-  list-style: none;
-  padding: 0 20px 4px 8px;
-  cursor: pointer;
+  --violet: #7A4DFF;
+  --violet2: #5C4DFF;
   position: relative;
+  background: #F2F8FF;
+  margin: 0;
+  padding: 100px 0 0 0;
+  font-family: "NanumBarunGothic";
+  text-align: center;
 }
 
-.nav_sub {
-  position: absolute;
-  background: var(--blue);
-  opacity: 0.9;
-  top: 60px;
-  left: 0;
-  padding-left: 220px;
-  width: 100%;
+.box ul {
+  background: transparent;
+  list-style: none;
 }
 
-.nav_sub ul {
-  list-style-type: none;
+.box li {
   display: inline-block;
 }
 
-.nav_sub li {
-  margin-top: 10px;
+.box a {
+  background-color: var(--blue);
+  color: white;
+  border-radius: 30px;
+  padding: 3px 10px;
+  text-decoration: none;
 }
 
-.nav_sub a {
-  color: white;
-  font-size: 0.8rem;
-  text-decoration: none;
+.box a:hover {
+  opacity: 1;
+  background-color: var(--violet);
+  font-weight: 600;
 }
 
 .active {
-  color: var(--violet);
-  font-weight: 1000;
+  opacity: 1;
+  background-color: var(--violet);
+  font-weight: 600;
 }
 
 .bootcamp {
@@ -116,42 +49,6 @@
 .topstacks {
   position: relative;
   left: 410px;
-}
-
-/* 공고 */
-.notice {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: black;
-}
-
-/* 토글메뉴 */
-.toggle {
-  display: none;
-  position: absolute;
-  top: 29px;
-  right: 24px;
-  /* display: none; */
-}
-
-.toggle span,
-.toggle span::before,
-.toggle span::after {
-  position: relative;
-  display: block;
-  background-color: white;
-  width: 24px;
-  height: 1.5px;
-}
-
-.toggle span::after {
-  content: "";
-  top: 8px;
-}
-
-.toggle button:focus {
-  outline: none;
 }
 
 /* 반응형 */

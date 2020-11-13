@@ -2,13 +2,10 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getNoticeData } from "../../redux/actions/noticeAction";
 import styles from "./RollingNotice.module.css";
-import Link from "next/link";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Button from "react-bootstrap/Button";
 import Popover from "react-bootstrap/Popover";
-import classNames from "classnames";
 import Form from "react-bootstrap/Form";
-import { useRouter } from "next/router";
 
 function RollingItem({ data }) {
   /* 남은 날짜, 시간에 따라 D-Day 표현방식(status) 결정 */
