@@ -22,6 +22,7 @@
     "@testing-library/jest-dom": "^5.10.1",
     "@testing-library/react": "^10.3.0",
     "@testing-library/user-event": "^12.0.6",
+    "@zeit/next-css": "^1.0.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "cors": "^2.8.5",
@@ -43,6 +44,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^4.3.3",
     "eslint": "^7.3.1",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-react": "^7.20.0",
