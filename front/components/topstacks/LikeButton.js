@@ -4,9 +4,9 @@ import classNames from 'classnames';
 import Head from 'next/head';
 import { useSelector, useDispatch } from "react-redux";
 
-export default function LikeButton() {
-  const [likeNum, setLikeNum] = useState(0);
-  const [dislikeNum, setDislikeNum] = useState(0);
+export default function LikeButton( {like, dislike} ) {
+  let [likeNum, setLikeNum] = useState(like);
+  let [dislikeNum, setDislikeNum] = useState(dislike);
 
   const likeIncrease = () => {
     setLikeNum(likeNum + 1);
