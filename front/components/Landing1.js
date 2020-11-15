@@ -44,7 +44,7 @@ const BootCampReviewsSection = () => {
         <div className={styles.bootcamp_card_wrapper}>
           <div className={styles.bootcamp_card}>
             <div className={styles.bootcamp_card_image_wrapper}>
-            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/ftLOGO.png")}></img>
             </div>
             <div className={styles.bootcamp_card_contents_wrapper}>
               <span>42 SEOUL<br/></span>
@@ -53,7 +53,7 @@ const BootCampReviewsSection = () => {
           </div>
           <div className={styles.bootcamp_card}>
             <div className={styles.bootcamp_card_image_wrapper}>
-            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/somaLOGO.png")}></img>
             </div>
             <div className={styles.bootcamp_card_contents_wrapper}>
               <span>소프트웨어 마에스트로<br/></span>
@@ -61,7 +61,7 @@ const BootCampReviewsSection = () => {
             </div>
           </div>          <div className={styles.bootcamp_card}>
             <div className={styles.bootcamp_card_image_wrapper}>
-            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/utecoLOGO.png")}></img>
             </div>
             <div className={styles.bootcamp_card_contents_wrapper}>
               <span>우아한 테크코스<br/></span>
@@ -69,7 +69,7 @@ const BootCampReviewsSection = () => {
             </div>
           </div>          <div className={styles.bootcamp_card}>
             <div className={styles.bootcamp_card_image_wrapper}>
-            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/boostcampLOGO.png")}></img>
             </div>
             <div className={styles.bootcamp_card_contents_wrapper}>
               <span>네이버 부스트캠프<br/></span>
@@ -77,7 +77,7 @@ const BootCampReviewsSection = () => {
             </div>
           </div>          <div className={styles.bootcamp_card}>
             <div className={styles.bootcamp_card_image_wrapper}>
-            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/ssafyLOGO.png")}></img>
             </div>
             <div className={styles.bootcamp_card_contents_wrapper}>
               <span>삼성 SSAFY<br/></span>
@@ -85,7 +85,7 @@ const BootCampReviewsSection = () => {
             </div>
           </div>          <div className={styles.bootcamp_card}>
             <div className={styles.bootcamp_card_image_wrapper}>
-            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/likelionLOGO.png")}></img>
             </div>
             <div className={styles.bootcamp_card_contents_wrapper}>
               <span>멋쟁이 사자처럼<br/></span>
