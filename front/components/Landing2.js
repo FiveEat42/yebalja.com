@@ -9,7 +9,7 @@ import { useRef, useEffect, useState } from 'react';
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
-import Power1 from 'gsap';
+import React from 'react';
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -19,10 +19,14 @@ export default function Landing2() {
   let job, coding, python, top_sample = useRef(null);
   let topstacks2, wrapper2, upper_area, header2, text2, more2 = useRef(null);
   let rankings2, gold_sample, silver_sample, bronze_sample = useRef(null);
-  let gold, silver, bronze, one, two, three, like = useRef(null);
+  let gold, silver, bronze, one, two, three = useRef(null);
+  let like, like1, like2 = useRef(null);
 
 
   useEffect(() => {
+    /*
+    topstacks1 animation
+     */
     let tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: left1,
@@ -64,6 +68,10 @@ export default function Landing2() {
       {y: 50, opacity: 0},
       {duration: 1.5, y: 0, opacity: 1}
       )
+
+    /*
+    topstacks2 animation
+     */
     let tl2_header = gsap.timeline({
       scrollTrigger: {
         trigger: upper_area,
@@ -91,6 +99,10 @@ export default function Landing2() {
       {duration:1.5, y: 0, opacity: 1},
       )
 
+
+    /*
+    likes
+     */
     let tl2_like = gsap.timeline(
       {
         scrollTrigger: {
@@ -100,15 +112,20 @@ export default function Landing2() {
         }
       }
     );
-    for (let i = 0; i < 50; i++) {
-      let size = Math.random();
-      let speed = Math.ceil(size * 3);
-      tl2_like.fromTo(like,
-      {x: (Math.random() * 40 + 30), y: 90, opacity: 1},
-      {duration: speed * 0.6, y: -10, opacity: 0, scale: size}
+
+    let hearts = [like, like1, like2]
+    for (let i = 0; i < 30; i++) {
+      let size = Math.random() * 0.7 + 0.3;
+      let heart = hearts[i%3];
+      tl2_like.fromTo(heart,
+      {x: Math.random() * 140 - 70, y: 90, opacity: 1},
+      {duration: 1, y: -10, opacity: 0, scale: size}, Math.random()*2
       )
     }
 
+    /*
+    rankings change
+     */
     let tl2_rankings = gsap.timeline({
       scrollTrigger: {
         trigger: wrapper2,
@@ -127,7 +144,7 @@ export default function Landing2() {
       motionPath: {
         path: [{x: -200, y: -10}, {x: -263, y: 70}]
       },
-      delay: 4
+      delay: 2
      })
     .to(silver_sample, {
       duration: 2,
@@ -201,7 +218,11 @@ export default function Landing2() {
 
                   <div className={styles.rankings} ref={el => rankings2 = el}>
                       <div className={styles.silver} ref={el => silver = el}>
-                          <img className={styles.like} ref={el => like = el} src={require('../src/image/like.png')}/>
+                          <div className={styles.likes}>
+                            <img ref={el => like = el} src={require('../src/image/like.png')}/>
+                            <img ref={el => like1 = el} src={require('../src/image/like.png')}/>
+                            <img ref={el => like2 = el} src={require('../src/image/like.png')}/>
+                          </div>
                           <img className={styles.two} ref={el => two = el} src={require('../src/image/2.png')}/>
                           <img className={styles.silver_sample} ref={el => silver_sample = el} src={require('../src/image/silver_sample.png')}/>
                           <img className={styles.silver_frame} src={require('../src/image/2frame.png')}/>

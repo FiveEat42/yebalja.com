@@ -213,9 +213,20 @@ topstacks2
     position: absolute;
     transform: translate(-1px,40px);
 }
-.like{
-    /*z-index: 900;*/
-    /*opacity: 0;*/
+.small_like{
+    width: 17px;
+}
+.medium_like{
+    width: 20px;
+}
+.large_like{
+    width: 23px;
+}
+.likes{
+    display: inline-block;
+}
+.silver_frame{
+    z-index: 1;
 }
 .gold{
     transform: translateY(-30px);
