@@ -4,7 +4,7 @@ import styles from "./Landing1.module.css";
 const BootCampsSection = () => {
   return (
     <section className={styles.section_wrapper}>
-      <div className={styles.max_width_wrapper}>
+      <div className={styles.max_width_bootcamp_wrapper}>
         <div className={styles.bootCamps_image_section}>
           <img src={require("../src/image/InfoImage.png")}></img>
           {/* 핸드폰 이미지 넣어서 768크기 이하일 때 display, 위에건 none */}
@@ -32,7 +32,7 @@ const BootCampsSection = () => {
 const BootCampReviewsSection = () => {
   return (
     <section className={styles.reviews_wrapper}>
-      <div className={styles.max_width_wrapper}>
+      <div className={styles.max_width_card_wrapper}>
         <div className={styles.reviews_contents_wrapper}>
           <h1 className={styles.reviews_title}>
             참여후기 읽고
@@ -40,6 +40,58 @@ const BootCampReviewsSection = () => {
             내게 맞는 부트캠프 선택하기
           </h1>
           <span className={styles.reviews_subtitle}>예발자들의 생생한 후기를 읽고<br/>미리 경험해보세요.</span>
+        </div>
+        <div className={styles.bootcamp_card_wrapper}>
+          <div className={styles.bootcamp_card}>
+            <div className={styles.bootcamp_card_image_wrapper}>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            </div>
+            <div className={styles.bootcamp_card_contents_wrapper}>
+              <span>42 SEOUL<br/></span>
+              <a href="#">자세히 보기 ></a>
+            </div>
+          </div>
+          <div className={styles.bootcamp_card}>
+            <div className={styles.bootcamp_card_image_wrapper}>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            </div>
+            <div className={styles.bootcamp_card_contents_wrapper}>
+              <span>소프트웨어 마에스트로<br/></span>
+              <a href="#">자세히 보기 ></a>
+            </div>
+          </div>          <div className={styles.bootcamp_card}>
+            <div className={styles.bootcamp_card_image_wrapper}>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            </div>
+            <div className={styles.bootcamp_card_contents_wrapper}>
+              <span>우아한 테크코스<br/></span>
+              <a href="#">자세히 보기 ></a>
+            </div>
+          </div>          <div className={styles.bootcamp_card}>
+            <div className={styles.bootcamp_card_image_wrapper}>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            </div>
+            <div className={styles.bootcamp_card_contents_wrapper}>
+              <span>네이버 부스트캠프<br/></span>
+              <a href="#">자세히 보기 ></a>
+            </div>
+          </div>          <div className={styles.bootcamp_card}>
+            <div className={styles.bootcamp_card_image_wrapper}>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            </div>
+            <div className={styles.bootcamp_card_contents_wrapper}>
+              <span>삼성 SSAFY<br/></span>
+              <a href="#">자세히 보기 ></a>
+            </div>
+          </div>          <div className={styles.bootcamp_card}>
+            <div className={styles.bootcamp_card_image_wrapper}>
+            <img className={styles.bootcamp_card_image}src={require("../src/image/InfoImage.png")}></img>
+            </div>
+            <div className={styles.bootcamp_card_contents_wrapper}>
+              <span>멋쟁이 사자처럼<br/></span>
+              <a href="#">자세히 보기 ></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,97 +1,209 @@
-@font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype'); } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype') } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype'); } .nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
-
-.max_width_wrapper{
-	width: 92%;
-	max-width: 1024px;
-	display: flex;
-	flex-direction: row;
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+      format("truetype");
 }
-.temp{
-	background-color: khaki;
-	width: 100%;
-	height: 100vh;
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 700;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 300;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf")
+      format("truetype");
+}
+.nanumbarungothic * {
+  font-family: "NanumBarunGothic", sans-serif;
+}
+
+.max_width_bootcamp_wrapper {
+  width: 92%;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: row;
+}
+.temp {
+  background-color: khaki;
+  width: 100%;
+  height: 100vh;
 }
 
 /* 전체 래퍼 100%, 100vh */
-.section_wrapper{
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	background-color: #EAF3FE;
+.section_wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #eaf3fe;
 }
 
 /* 이미지 섹션 768px 미만이면 변경되도록 */
-.bootCamps_image_section{
-	width: 100%;
-	overflow: hidden;
-	flex: 1;
+.bootCamps_image_section {
+  width: 100%;
+  overflow: hidden;
+  flex: 1;
 }
-.bootCamps_image_section > img{
-	border-radius: 10px;
-	width: 100%;
-	height: 100%;
+.bootCamps_image_section > img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
-.bootCamps_contents_sector{
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex: 1;
+.bootCamps_contents_sector {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1;
 }
-.bootCamps_contents_wrapper{
-	width: 100%;
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	font-family: 'NanumBarunGothic'; 
-	justify-content: center;
-	padding: 0 0 0 100px;
-	line-height: 26px;
-}
-
-.bootCamps_title{
-
+.bootCamps_contents_wrapper {
+  width: 100%;
+  word-break: keep-all;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: "NanumBarunGothic";
+  justify-content: center;
+  padding: 0 0 0 100px;
+  line-height: 26px;
 }
 
-.more_info_link{
-	line-height: 50px;
+.bootCamps_title {
 }
 
-.reviews_wrapper{
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	background-color: #4574DD;
+.more_info_link {
+  line-height: 50px;
 }
 
-.reviews_contents_wrapper{
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	color: #fff;
+.reviews_wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #4574dd;
+}
+.max_width_card_wrapper {
+  font-family: "NanumBarunGothic";
+
+  width: 92%;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: row;
 }
 
-.reviews_title{
-
+.reviews_contents_wrapper {
+  word-break: keep-all;
+  font-family: "NanumBarunGothic";
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
 }
-.reviews_subtitle{
 
+.reviews_title {
 }
+.reviews_subtitle {
+}
+
+.bootcamp_card_wrapper {
+  justify-content: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 90px;
+}
+
+.bootcamp_card {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px 0px black;
+  margin-bottom: 21px;
+}
+.bootcamp_card_image_wrapper {
+  flex: 2;
+  height: 100%;
+  margin: 5px;
+}
+.bootcamp_card_image {
+  width: 100%;
+  height: 100%;
+}
+.bootcamp_card_contents_wrapper {
+  flex: 5;
+  margin: 17px 0px 0px 50px;
+  height: 100%;
+  line-height: 18px;
+}
+.bootcamp_card_contents_wrapper > span{
+	font-size: 14px;
+  }
+.bootcamp_card_contents_wrapper > a{
+	font-size: 12px;
+  }
 @media only screen and (max-width: 820px) {
-	.max_width_wrapper{
-		flex-direction: column-reverse;
-	}
-	.bootCamps_image_section > img{
-		display: none;
-	}
-	.bootCamps_contents_wrapper{
-		text-align: center;
-		padding: 0;
-	}
+  .max_width_bootcamp_wrapper {
+    flex-direction: column-reverse;
+  }
+  .max_width_card_wrapper {
+    flex-direction: column;
+  }
+  .bootCamps_image_section > img {
+    display: none;
+  }
+  .bootCamps_contents_wrapper {
+    text-align: center;
+    padding: 0;
+  }
 
-	.reviews_contents_wrapper{
-		text-align: center;
-	}
+  .reviews_contents_wrapper {
+    text-align: center;
+    flex: 2;
+  }
+  .bootcamp_card_wrapper {
+    margin-top: 20px;
+    justify-content: start;
+    padding: 0px;
+    flex: 3;
+    align-items: center;
+  }
+  .bootcamp_card {
+    width: 60%;
+    height: 54px;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+.bootcamp_card_contents_wrapper > span{
+	font-size: 7px;
+  }
+.bootcamp_card_contents_wrapper > a{
+	font-size: 6px;
+  }
 }
