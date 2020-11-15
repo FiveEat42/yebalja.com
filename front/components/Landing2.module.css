@@ -205,11 +205,18 @@ topstacks2
     margin-bottom: 20px;
 }
 
-.gold_sample, .silver_sample, .bronze_sample{
+.gold_sample, .bronze_sample{
     position: absolute;
     transform: translate(-1px, 30px);
 }
-
+.silver_sample{
+    position: absolute;
+    transform: translate(-1px,40px);
+}
+.like{
+    /*z-index: 900;*/
+    /*opacity: 0;*/
+}
 .gold{
     transform: translateY(-30px);
 }
