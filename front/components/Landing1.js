@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./Landing1.module.css";
 import useScrollFadeIn from "./hooks/useScrollFadeIn.js";
 import useScrollClipPath from "./hooks/useScrollClipPath";
+import { useEffect } from "react";
 
 const BootCampsSection = () => {
   const fadeInAnimation = useScrollFadeIn();
@@ -37,6 +38,9 @@ const BootCampReviewsSection = () => {
   const fadeInAnimation = useScrollFadeIn();
   const initPositionX = 0;
   const clipPathAnimation = useScrollClipPath(initPositionX);
+  useEffect(() => {
+    console.log('Rendering');
+  },[])
   return (
     <section className={styles.reviews_wrapper}>
       <div className={styles.max_width_card_wrapper}>
