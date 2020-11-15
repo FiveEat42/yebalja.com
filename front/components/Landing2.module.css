@@ -151,6 +151,12 @@ topstacks2
     padding-right: 40px;
 }
 
+.uppper_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .topstacks2 h1{
     font-size: var(--header-font-size);
     font-weight: var(--header-font-weight);
@@ -213,28 +219,28 @@ topstacks2
  */
 
 
-.one{
-    animation: updown 3s infinite;
-}
+/*.one{*/
+/*    animation: updown 3s infinite;*/
+/*}*/
 
-.two {
-    animation: updown 3s infinite;
-    animation-delay: .5s;
-}
+/*.two {*/
+/*    animation: updown 3s infinite;*/
+/*    animation-delay: .5s;*/
+/*}*/
 
-.three {
-    animation: updown 3s infinite;
-    animation-delay: 1s;
-}
+/*.three {*/
+/*    animation: updown 3s infinite;*/
+/*    animation-delay: 1s;*/
+/*}*/
 
-@keyframes updown {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
+/*@keyframes updown {*/
+/*    0%, 100% {*/
+/*        transform: translateY(0px);*/
+/*    }*/
+/*    50% {*/
+/*        transform: translateY(-10px);*/
+/*    }*/
+/*}*/
 
 
 /*
