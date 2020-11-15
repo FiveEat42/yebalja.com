@@ -35,11 +35,11 @@ export function Card( {data} ) {
     <div>
       <div className={styles.header}>
         <LikeButton like={data.like} dislike={data.dislike}/> 
-        <ShareButton/>
+        {/* <ShareButton/> */}
       </div>
+      <Medal/>
       <a className={styles.card}>
         <div className={styles.section}>
-          <Medal data={data}/>
           <img className={styles.logo} src={data.logo}/>
           <div className={styles.title}>{data.title}</div>
           <div className={styles.sub_title}>{data.sub_title}</div>

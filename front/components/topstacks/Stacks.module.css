@@ -27,6 +27,7 @@
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   text-decoration: none;
+  z-index: 1;
 }
 
 .card .section {
@@ -34,8 +35,8 @@
 }
 
 .card .logo {
-  display: inline-block;
-  margin: 0px 80px;
+  display: block;
+  margin: 0px auto;
   width: auto; 
   height: auto;
   max-width: 4em;
@@ -115,10 +116,12 @@
 .medal {
   width: auto; 
   height: auto;
-  max-width: 2em;
-  max-height: 2em;
-  margin-top: -5rem;
-  margin-left: -0.8rem;
+  max-width: 3em;
+  max-height: 3em;
+  margin-top: -5.6rem;
+  position: relative;
+  left:10px; top: 44px;
+  z-index: 2;
 }
 
 .header {
@@ -126,7 +129,8 @@
   height: 40px;
   width: 100%;
   display: flex;
-  margin-bottom: 0.5em;
+  margin-left: 14em;
+  margin-bottom: -1.1em;
 }
 
 /* MEDIA QUERIES */
