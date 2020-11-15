@@ -141,10 +141,11 @@
   background-color: #fff;
   justify-content: center;
   align-items: center;
-  height: 54px;
+  height: 65px;
   border-radius: 10px;
   box-shadow: 2px 2px 4px 0px black;
   margin-bottom: 21px;
+  padding-top: 7px;
 }
 .bootcamp_card_image_wrapper {
   flex: 2;
@@ -164,10 +165,10 @@
 }
 .bootcamp_card_contents_wrapper > span{
   font-size: 14px;
-  letter-spacing: 2px;
+  letter-spacing: .2px;
   }
 .bootcamp_card_contents_wrapper > a{
-	font-size: 12px;
+	font-size: 10px;
   }
 @media only screen and (max-width: 820px) {
   .max_width_bootcamp_wrapper {
@@ -175,6 +176,7 @@
   }
   .max_width_card_wrapper {
     flex-direction: column;
+    padding-top: 0;
   }
   .bootCamps_image_section > img {
     display: none;
@@ -183,30 +185,49 @@
     text-align: center;
     padding: 0;
   }
-
+  .bootcamp_card_contents_wrapper > span{
+    font-size: 12px;
+    letter-spacing: .2px;
+    }
+  .bootcamp_card_contents_wrapper > a{
+    font-size: 10px;
+    }
   .reviews_contents_wrapper {
     text-align: center;
     flex: 2;
   }
   .bootcamp_card_wrapper {
-    margin-top: 20px;
     justify-content: start;
     padding: 0px;
     flex: 3;
     align-items: center;
   }
   .bootcamp_card {
-    width: 60%;
-    height: 54px;
+    width: 50%;
+    margin: 10px 0px 0px 0px;
+    height: 48px;
+    padding-top: 0;
   }
 }
 
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 465px) {
+  .bootcamp_card_contents_wrapper{
+  margin: 17px 0px 0px 34px;
+  }
 .bootcamp_card_contents_wrapper > span{
-	font-size: 7px;
+	font-size: 4px;
   }
 .bootcamp_card_contents_wrapper > a{
-	font-size: 6px;
+	font-size: 3px;
+}
+  .bootcamp_card {
+    width: 60%;
+    height: 48px;
+    margin: 12px 0px 0px 0px;
+    padding-top: 0;
+  }
+  .max_width_card_wrapper {
+    padding-top: 0;
   }
 }
