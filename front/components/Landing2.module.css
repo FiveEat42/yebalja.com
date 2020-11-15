@@ -16,6 +16,7 @@
     --secondary-color: #F2F8FF;
     --background-dark-color: #17193C;
     --accent-color: #32C1FF;
+    overflow: hidden;
 }
 
 .illustration{
