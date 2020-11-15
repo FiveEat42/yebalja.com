@@ -5,6 +5,8 @@ import Head from 'next/head';
 import { useSelector, useDispatch } from "react-redux";
 import LikeButton from "./LikeButton";
 import Medal from "./Medal";
+import Header from "../Header";
+
 
 export function Tags( {tags, i, color} ) {
 
@@ -29,10 +31,11 @@ export function Contents( {content} ) {
 export function Card( {data} ) {
   return(
     <>
+    <div>
+      <div className={styles.header}>
+        <LikeButton like={data.like} dislike={data.dislike}/> 
+      </div>
       <a className={styles.card}>
-        <div className={styles.header}>
-          <LikeButton like={data.like} dislike={data.dislike}/> 
-        </div>
         <div className={styles.section}>
           <img className={styles.logo} src={data.logo} />
           <div className={styles.title}>{data.title}</div>
@@ -45,6 +48,7 @@ export function Card( {data} ) {
           </div>
         </div>
       </a>
+    </div>
     </>
   );
 }
@@ -153,15 +157,15 @@ export default function Stacks() {
     },
   ]
 
-  console.log(cardList[2].score);
-
   return (
     <>
-    <div className={styles.body}>
-      <section className={styles.cards_wrapper}>
+    <Header>
+        <h1>프로그래밍 언어 인기 TOP3</h1>
+        <p>가장 인기있는 프로그래밍 언어를 예발자닷컴에서 확인해보세요</p>
+    </Header>
+      <section className={styles.cardList_wrapper}>
           <CardList cardList={cardList}/>
       </section>
-    </div>
     </>
   );
 }

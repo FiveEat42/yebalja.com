@@ -25,12 +25,12 @@ export default function LikeButton( {like, dislike} ) {
       <div className={styles.container}>
         <div onClick={likeIncrease} className={styles.button_container}>
           <div className={styles.count}>
-            <i className={classNames({ ["fa fa-heart"]: true})}/> Like {likeNum}
+            <i className={classNames({ ["fa fa-thumbs-up"]: true})}/> {likeNum}
           </div>
         </div>
         <div onClick={dislikeIncrease} className={styles.button_container}>
           <div className={styles.count}>
-            <i className={classNames({ ["fa fa-heart-o"]: true})}/> Dislike {dislikeNum}
+            <i className={classNames({ ["fa fa-thumbs-down"]: true})}/> {dislikeNum}
           </div>
         </div>
       </div>

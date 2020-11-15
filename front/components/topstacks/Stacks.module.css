@@ -1,9 +1,6 @@
 @import url(https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css);
 
-
-
-
-.cards_wrapper {
+.cardList_wrapper {
   display: grid;
   justify-content: center;
   align-items: center;
@@ -17,7 +14,7 @@
 .card {
   background: #FFF;
   font-family: 'Nanum Barun Gothic';
-  height: 12em;
+  height: 21.2em;
   width: 15em;
   font-size: 1.5em;
   color: black;
@@ -33,17 +30,8 @@
   text-decoration: none;
 }
 
-.card:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  height: 23em;
-}
-
-.card:hover .contents {
-  visibility: visible;
-}
-
 .card .section {
-  margin-top: 2em;
+  margin-top: 1px;
 }
 
 .card .logo {
@@ -100,7 +88,6 @@
   margin-top: 1em;
   font-size: 0.5em;
   height: 240px;
-  visibility: hidden;
 }
 
 .card .contents .content {
@@ -134,24 +121,39 @@
 }
 
 .header {
-  position: absolute;
-  right:0px; 
-  top:0px;
-  background-color: #4A91F5;
-  height: 55px;
+  /* background-color: #4A91F5; */
+  height: 40px;
   width: 100%;
   display: flex;
+  border-radius: 10px;
+  margin-bottom: 0.5em;
 }
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1285px) {
-  .cards_wrapper {
+  .cardList_wrapper {
     grid-template-columns: 1fr 1fr;
+  }
+  .card {
+    height: 10.5em;
+  }
+  
+  .card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    height: 23em;
+  }
+  
+  .card:hover .contents {
+    visibility: visible;
+  }
+
+  .card .contents {
+    visibility: hidden;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .cards_wrapper {
+  .cardList_wrapper {
     grid-template-columns: 1fr;
   }
   .info {
@@ -160,7 +162,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .cards_wrapper {
+  .cardList_wrapper {
     padding: 4rem 2rem;
   }
   .card {

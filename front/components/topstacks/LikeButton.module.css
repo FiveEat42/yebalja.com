@@ -2,21 +2,25 @@
   display: flex;
   align-items: center;
   margin-left: 10px;
+  margin-top: 5px;
 }
 .container .button_container {
-  margin-left: 5px;
+  border-bottom: 2px solid #DAE4F2;
 }
+
 .container .button_container .count {
   cursor: pointer;
   background-color: #fff;
-  color: #2199e8;
-  border: 1px solid #2199e8;
-  padding: 5px 13px;
-  border-radius: 5px;
-  font-size: 5px;
+  color: #8f9aa7;
+  width: 60px;
+  text-align: center;
+  padding: 4px;
+  font-size: 15px;
+  font-weight: bolder;
+  border-radius: 2px;
 }
 
 .container .button_container:hover .count {
-  background-color: #2199e8;
+  background-color: #5C4DFF;
   color: #fff;
 }
