@@ -1,0 +1,62 @@
+
+  .share_button{
+    width: 200px; height: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: .3s linear;
+    margin-top: 8px;
+    margin-left: 20px;
+    
+  }
+  .share_button:hover{
+    background: #ffffff;
+    transform: scale(1.1);
+  }
+  .share_button span{
+    font-family: 'NanumBarunGothic';
+    position: absolute;
+    width: 100%; height: 100%;
+    background: #ffffff;
+    color: #67707D;
+    text-align: right;
+    z-index: 999;
+    transition: .6s linear;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  .share_button:hover span{
+    transform: translate(-100%);
+    transition-delay: .2s;
+  }
+  .share_button a{
+    background: #ffffff;
+    flex: 1;
+    font-size: 21px;
+    color: #67707D;
+    text-align: center;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: .3s linear;
+  }
+  .share_button:hover a{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .share_button a:nth-of-type(1){
+    transition-delay: .1s;
+  }
+  .share_button a:nth-of-type(2){
+    transition-delay: .8s;
+  }
+  .share_button a:nth-of-type(3){
+    transition-delay: .6s;
+  }
+  .share_button a:nth-of-type(4){
+    transition-delay: .4s;
+  }

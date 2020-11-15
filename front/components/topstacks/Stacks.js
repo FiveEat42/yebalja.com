@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Head from 'next/head';
 import { useSelector, useDispatch } from "react-redux";
 import LikeButton from "./LikeButton";
+import ShareButton from "./ShareButton";
 import Medal from "./Medal";
 import Header from "../Header";
 
@@ -34,10 +35,12 @@ export function Card( {data} ) {
     <div>
       <div className={styles.header}>
         <LikeButton like={data.like} dislike={data.dislike}/> 
+        <ShareButton/>
       </div>
       <a className={styles.card}>
         <div className={styles.section}>
-          <img className={styles.logo} src={data.logo} />
+          <Medal data={data}/>
+          <img className={styles.logo} src={data.logo}/>
           <div className={styles.title}>{data.title}</div>
           <div className={styles.sub_title}>{data.sub_title}</div>
           <div className={styles.tags}>
