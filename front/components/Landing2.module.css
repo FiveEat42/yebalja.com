@@ -82,11 +82,15 @@ topstacks1
     margin: 40px 15px 15px 0px;
 }
 
-.more1{
+.more1, .more1_portrait{
     font-size: 1rem;
     color: var(--primary-color);
     font-weight: 600;
     margin: 30px 0px 30px 0px;
+}
+
+.more1_portrait{
+    display: none;
 }
 
 .cards_text{
@@ -282,6 +286,7 @@ media portrait
         margin: 10px 0 2px 0;
     }
     .more1_portrait{
+        display: block;
         font-size: 2.0vh;
         color: var(--primary-color);
         font-weight: 600;
