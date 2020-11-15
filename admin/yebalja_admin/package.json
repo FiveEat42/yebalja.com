@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./server.js"
+    "start": "node ./server.js",
+	"deploy": "pm2 start server.js",
+	"stop": "pm2 kill"
+
   },
   "dependencies": {
     "body-parser": "1.19.0",
