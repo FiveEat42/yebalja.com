@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var cors = require('cors');
-const accecptURL = 'http:/localhost:3000'; //배포시 변경
+const accecptURL = 'http:/34.64.120.191'; //배포시 변경
 let db = require('../config/db_config');
 
 
