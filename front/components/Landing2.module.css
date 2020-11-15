@@ -16,6 +16,13 @@
     --secondary-color: #F2F8FF;
     --background-dark-color: #17193C;
     --accent-color: #32C1FF;
+    --header-font-size: 3rem;
+    --subheader-font-size: 1.1rem;
+    --header-font-weight: 700;
+    --subheader-font-weight: 300;
+    --header-font-size-portrait: 2.5rem;
+    --subheader-font-size-portrait: 2.2vh;
+    --text-font-size: 1rem;
     overflow: hidden;
 }
 
@@ -62,15 +69,15 @@ topstacks1
 }
 
 .topstacks1 h1{
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: var(--header-font-size);
+    font-weight: var(--header-font-weight);
     letter-spacing: 2px;
     color: var(--font-color-dark);
 }
 
 .text1{
-    font-size: 1.1rem;
-    font-weight: 300;
+    font-size: var(--subheader-font-size);
+    font-weight: var(--subheader-font-weight);
     color: var(--font-color-dark);
     margin: 40px 15px 15px 0px;
 }
@@ -83,8 +90,8 @@ topstacks1
 }
 
 .cards_text{
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: var(--text-font-size);
+    font-weight: var(--subheader-font-weight);
     color: var(--font-color-dark);
 }
 
@@ -141,8 +148,8 @@ topstacks2
 }
 
 .topstacks2 h1{
-    font-size: 3rem;
-    font-weight: 600;
+    font-size: var(--header-font-size);
+    font-weight: var(--header-font-weight);
     letter-spacing: 2px;
     color: var(--secondary-color);
     margin: 0 10px 0 10px;
@@ -155,8 +162,8 @@ topstacks2
 }
 
 .text2{
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: var(--subheader-font-size);
+    font-weight: var(--subheader-font-weight);
     color: var(--secondary-color);
     margin: 15px 0 0 0;
     letter-spacing: 1px;
@@ -260,14 +267,14 @@ media portrait
         padding-right: 0;
     }
     .topstacks1 h1{
-        font-size: 2.5rem;
+        font-size: var(--header-font-size-portrait);
     }
     .text1{
         margin-top: 5vh;
         margin-bottom: 2vh;
     }
     .text1, .cards_text{
-        font-size: 2.2vh;
+        font-size: var(--subheader-font-size-portrait);
     }
     .job, .coding, .python{
         width: 85vw;
@@ -304,9 +311,6 @@ media portrait
     .one, .two, .three{
         width: 30px;
     }
-    .gold, .silver, .bronze{
-        positoin: absolute;
-    }
     .gold{
         z-index: 900;
     }
@@ -317,11 +321,11 @@ media portrait
         transform: translateX(-60px);
     }
     .topstacks2 h1{
-        font-size: 2.5rem;
+        font-size: var(--header-font-size-portrait);
     }
     .text2{
         margin-top: 5vh;
-        font-size: 2.2vh;
+        font-size: var(--subheader-font-size-portrait);
         margin-bottom: 2vh;
     }
 }

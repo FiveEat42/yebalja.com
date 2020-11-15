@@ -23,20 +23,6 @@ export default function Landing2() {
       x: 400,
       duration: 3
     });
-
-    // TweenMax.fromTo(
-    //   text0,
-    //   0.8,
-    //   {
-    //     opacity: 0,
-    //     y: 0
-    //   },
-    //   {
-    //     opacity: 1,
-    //     y: -20,
-    //     ease: Power3.easeOut,
-    //   }
-    // )
   },[])
 
 
