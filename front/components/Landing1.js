@@ -20,7 +20,7 @@ const BootCampsSection = () => {
             <br />
             한번에, 한눈에 확인하기
           </h1>
-          <span>
+          <span className={styles.bootCamps_subtitle}>
             일정, 규모, 선발과정, 혜택
             <br />
             예발자닷컴에서 확인하세요.
