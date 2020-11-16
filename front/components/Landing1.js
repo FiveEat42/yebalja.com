@@ -10,8 +10,8 @@ const BootCampsSection = () => {
   return (
     <section className={styles.section_wrapper}>
       <div className={styles.max_width_bootcamp_wrapper}>
-        <div className={styles.bootCamps_image_section} {...fadeInAnimation}>
-          <img src={require("../src/image/InfoImage.png")}></img>
+        <div className={styles.bootCamps_image_section} >
+          <img src={require("../src/image/InfoImage.png")} {...fadeInAnimation}></img>
           {/* 핸드폰 이미지 넣어서 768크기 이하일 때 display, 위에건 none */}
         </div>
         <div className={styles.bootCamps_contents_wrapper}>
