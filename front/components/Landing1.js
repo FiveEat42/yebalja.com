@@ -69,7 +69,7 @@ const BootCampReviewsSection = () => {
                 42 SEOUL
                 <br />
               </span>
-              <a href="#">자세히 보기 ></a>
+              <Link href="/ftseoul">자세히 보기 ></Link>
             </div>
           </div>
           <div className={styles.bootcamp_card}>
@@ -84,7 +84,7 @@ const BootCampReviewsSection = () => {
                 소프트웨어 마에스트로
                 <br />
               </span>
-              <a href="#">자세히 보기 ></a>
+              <Link href="/soma">자세히 보기 ></Link>
             </div>
           </div>{" "}
           <div className={styles.bootcamp_card}>
@@ -99,7 +99,7 @@ const BootCampReviewsSection = () => {
                 우아한 테크코스
                 <br />
               </span>
-              <a href="#">자세히 보기 ></a>
+              <Link href="/woowa">자세히 보기 ></Link>
             </div>
           </div>{" "}
           <div className={styles.bootcamp_card}>
@@ -114,7 +114,7 @@ const BootCampReviewsSection = () => {
                 네이버 부스트캠프
                 <br />
               </span>
-              <a href="#">자세히 보기 ></a>
+              <Link href="/boostcamp">자세히 보기 ></Link>
             </div>
           </div>{" "}
           <div className={styles.bootcamp_card}>
@@ -129,7 +129,7 @@ const BootCampReviewsSection = () => {
                 삼성 SSAFY
                 <br />
               </span>
-              <a href="#">자세히 보기 ></a>
+              <Link href="ssafy">자세히 보기 ></Link>
             </div>
           </div>{" "}
           <div className={styles.bootcamp_card}>
@@ -144,7 +144,7 @@ const BootCampReviewsSection = () => {
                 멋쟁이 사자처럼
                 <br />
               </span>
-              <a href="#">자세히 보기 ></a>
+              <Link href="likelion">자세히 보기 ></Link>
             </div>
           </div>
         </div>
