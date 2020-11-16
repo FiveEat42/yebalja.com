@@ -1,10 +1,10 @@
 import styles from './Timeline.module.css';
-import Header from "./Header";
+import Header from "../Header";
 import classNames from 'classnames';
 import TimelineList	from './TimelineList';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTimelineData } from "../redux/actions/timelineAction";
+import { getTimelineData } from "../../redux/actions/timelineAction";
 
 
 const Timeline = () => {

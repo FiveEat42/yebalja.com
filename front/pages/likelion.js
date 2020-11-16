@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import Header from "../components/Header";
 import React, {useEffect} from "react";
 import Review from "../components/Review";
-import Timeline from "../components/Timeline";
+import Timeline from "../components/bootcamp/Timeline";
 import Faq from "../components/Faq"
 import { useDispatch } from 'react-redux';
 import { programChanger } from '../redux/actions/programChangerAction';

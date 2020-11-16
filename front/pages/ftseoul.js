@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import React,{useEffect} from "react";
 import Faq from "../components/Faq";
 import Review from "../components/Review";
-import Timeline from '../components/Timeline';
+import Timeline from '../components/bootcamp/Timeline';
 import { useDispatch } from 'react-redux';
 import { programChanger } from '../redux/actions/programChangerAction'
 

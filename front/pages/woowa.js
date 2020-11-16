@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import React, { useEffect } from "react";
-import Timeline from "../components/Timeline";
+import Timeline from "../components/bootcamp/Timeline";
 import Faq from "../components/Faq"
 import Review from "../components/Review";
 import { useDispatch } from 'react-redux';

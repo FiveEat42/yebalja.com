@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import Jumbotron from "../components/Jumbotron";
-import Table from "../components/Table";
+import Table from "../components/bootcamp/Table";
 import YearlyCalendar from '../components/YearlyCalendar';
 import Header from "../components/Header";
 import React, { useEffect, useState } from "react";

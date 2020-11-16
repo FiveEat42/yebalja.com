@@ -1,12 +1,12 @@
 import styles from './Table.module.css';
 import classNames from 'classnames';
 import Link from 'next/link';
-import Header from "./Header";
+import Header from "../Header";
 import TableRow from './TableRow';
 import BadgeDescription from "./BadgeDescription";
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTableData } from '../redux/actions/tableAction';
+import { getTableData } from '../../redux/actions/tableAction';
 
 
 export default function Table() {

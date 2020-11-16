@@ -1,0 +1,124 @@
+@font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype'); } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype') } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype'); } .nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
+
+ .box {
+    overflow: auto;
+    background-color: #4A91F5;
+    display: block;
+}
+
+.container {
+    diaplay: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    border-width: 0;
+}
+
+.nav {
+    display: inline;
+    line-height: 3;
+    font-family: 'NanumBarunGothic';
+    font-size: 16px;
+    font-weight: 500;
+    width: 100px;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.a {
+    color: #F2F8FF;
+}
+
+.a:hover {
+    text-decoration: none;
+}
+
+.element {
+    display: inline;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.title, .content {
+    color: #F2F8FF;
+}
+
+
+.text {
+    float: left;
+    vertical-align: left;
+    position: relative;
+    font-family: 'NanumBarunGothic';
+    max-width: 80%;
+    padding-top: 130px;
+    padding-bottom: 40px;
+ }
+
+.content {
+    font-size: 1rem;
+    font-weight: 100px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    width: 92%;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1009px) {
+    .text {
+        position: static;
+        float: bottom;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        padding-left: 2rem;
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+
+    .title {
+        font-size: 1.7rem;
+    }
+    .content {
+        font-size: 1rem;
+    }
+    .text {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .container {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+
+
+ @media screen and (max-width: 415px) {
+     .text {
+         padding-right: 0;
+     }
+     .title {
+         font-size: 1.3rem;
+     }
+     .content {
+         font-size: 0.8rem;
+     }
+ }

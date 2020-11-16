@@ -1,7 +1,7 @@
 import TimelineListItem from "./TimelineListItem";
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTimelineListData } from "../redux/actions/timelineListAction";
+import { getTimelineListData } from "../../redux/actions/timelineListAction";
 
 export default function TimelineList({program}) {
 
