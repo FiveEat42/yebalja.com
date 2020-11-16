@@ -83,13 +83,13 @@
   list-style-type: none;
   position: absolute;
   top: 22px;
-  left: -18px;
-  padding: 15px 10px 3px 10px;
-  border-radius: 0 0 7px 7px;
+  left: -32px;
+  padding: 15px 10px 3px 20px;
+  border-radius: 0 0 10px 10px;
   background: rgba(74, 145, 245, 0.9);
-  transform: scale(1,0.7);
+  transform: scale(1,0.8);
   transform-origin: top;
-  transition: transform 300ms ease;
+  transition: transform 200ms ease;
 }
 
 .nav_main li:hover > .nav_sub {
@@ -102,9 +102,9 @@
 }
 
 .nav_sub li {
-  width: 150px;
+  width: 160px;
   padding: 16px 4px;
-  border-bottom: 1px solid rgba(74,145,245,0.4);
+  border-bottom: 1px solid rgba(74,145,245,0.7);
 }
 
 .nav_sub li:last-child {
@@ -127,7 +127,7 @@
   height: 0px;
 }
 
-.active {
+nav_sub .active {
   color: var(--violet);
   font-weight: 1000;
 }
