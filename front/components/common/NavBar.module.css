@@ -79,34 +79,35 @@
 
 /* 내비 sub */
 .nav_sub {
-  position: absolute;
-  background: rgba(74, 145, 245, 0.8);
-  top: 22px;
-  left: -15px;
-  padding: 15px 10px 5px 10px;
-  list-style-type: none;
-  display: inline-block;
-  border-radius: 0 0 6px 6px;
   visibility: hidden;
+  list-style-type: none;
+  position: absolute;
+  top: 22px;
+  left: -18px;
+  padding: 15px 10px 3px 10px;
+  border-radius: 0 0 7px 7px;
+  background: rgba(74, 145, 245, 0.9);
+  transform: scale(1,0.7);
+  transform-origin: top;
+  transition: transform 300ms ease;
 }
 
 .nav_main li:hover > .nav_sub {
   visibility: visible;
+  transform: scale(1,1);
 }
 
 .nav_sub li:first-child {
-    /* border-top: 4px solid rgba(0, 0, 0, 0.05); */
-  border-top: 1px solid rgba(74,145,245,0.4);
+  border-top: 3px solid rgba(0, 0, 0, 0.04);
 }
 
 .nav_sub li {
-  width: 140px;
-  padding: 16px 2px;
+  width: 150px;
+  padding: 16px 4px;
   border-bottom: 1px solid rgba(74,145,245,0.4);
 }
 
 .nav_sub li:last-child {
-    /* border-top: 4px solid rgba(0, 0, 0, 0.05); */
   border-bottom: none
 }
 
@@ -136,7 +137,6 @@
   position: absolute;
   top: 15px;
   right: 10px;
-  color: black;
 }
 
 /* 토글메뉴 */

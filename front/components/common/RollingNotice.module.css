@@ -131,12 +131,11 @@
 
 /* 반응형 */
 
-@media screen and (max-width: 991.98px) {
+@media screen and (max-width: 800px) {
   .noticeRolling,
   .buttonPopover,
   .noticePopover {
     display: none;
-
     visibility: hidden;
     width: 0;
     height: 0;

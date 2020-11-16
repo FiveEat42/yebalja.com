@@ -13,7 +13,7 @@ const navListDummy = [
     href: "/bootcamp", 
     sublist : [
       {
-        title: "42서울",
+        title: "42SEOUL",
         href: "/ftseoul",
       },
       {

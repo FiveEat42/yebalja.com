@@ -33,7 +33,7 @@ function RollingItem({ data }) {
   );
 }
 
-function List({ data, idx }) {
+function List({ data }) {
   return (
     <>
       <li className={styles.noticePopoverItem}>
