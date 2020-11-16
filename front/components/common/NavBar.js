@@ -125,13 +125,13 @@ export default function NavBar() {
     <div className={styles.box}>
       <div className={styles.navbar}>
         {/* 로고 */}
-        <div className={styles.logo}>
+        <h1 className={styles.logo}>
           <Link href="/">
             <a>
-              <LogoWhite /> 예발자닷컴
+              <LogoWhite /><span>예발자닷컴</span>
             </a>
           </Link>
-        </div>
+        </h1>
 
         {/* 내비 main */}
         <ul className={styles.nav_main}>

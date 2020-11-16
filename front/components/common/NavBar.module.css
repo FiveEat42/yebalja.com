@@ -6,7 +6,7 @@
   position: fixed;
   z-index: 10;
   margin: 0 auto;
-  padding: 22px 10px 18px 24px;
+  padding: 12px 10px 8px 24px;
   width: 100%;
   box-shadow: 3px 3px 17px -11px rgba(0, 0, 0, 0.9);
   font-family: "NanumBarunGothic";
@@ -17,8 +17,8 @@
   left: 0;
   top: 0;
   line-height: 1rem;
-  padding: 0;
   margin: 0;
+  padding: 0;
   display: flex;
 }
 
@@ -41,9 +41,13 @@
   color: white;
 }
 
+.logo span {
+  padding-left: 5px;
+}
+
 /* 내비 main */
 .nav_main {
-  margin: 6px 0 0 50px;
+  margin: 17px 0 0 50px;
 }
 
 .nav_main li {
