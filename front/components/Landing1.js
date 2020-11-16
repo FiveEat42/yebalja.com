@@ -3,6 +3,24 @@ import styles from "./Landing1.module.css";
 import useScrollFadeIn from "./hooks/useScrollFadeIn.js";
 import useScrollClipPath from "./hooks/useScrollClipPath";
 import { useEffect } from "react";
+import Tabs from "react-bootstrap/Tabs";
+import Tab from "react-bootstrap/Tab";
+
+const PageControlledTab = () => {
+  return (
+    <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
+      <Tab eventKey="home" title="Home">
+       123
+      </Tab>
+      <Tab eventKey="profile" title="Profile">
+      456
+      </Tab>
+      <Tab eventKey="contact" title="Contact" disabled>
+       678
+      </Tab>
+    </Tabs>
+  );
+};
 
 const BootCampsSection = () => {
   const fadeInAnimation = useScrollFadeIn();
@@ -10,8 +28,15 @@ const BootCampsSection = () => {
   return (
     <section className={styles.section_wrapper}>
       <div className={styles.max_width_bootcamp_wrapper}>
-        <div className={styles.bootCamps_image_section} >
-          <img src={require("../src/image/InfoImage.png")} {...fadeInAnimation}></img>
+        <div className={styles.bootCamps_image_section}>
+          <img
+            className={styles.wholePageImage}
+            src={require("../src/image/InfoImage.png")}
+            {...fadeInAnimation}
+          ></img>
+          <PageControlledTab className={styles.pageControlledTab} />
+
+          <img src={require("../src/image/ftLOGO.png")}></img>
           {/* 핸드폰 이미지 넣어서 768크기 이하일 때 display, 위에건 none */}
         </div>
         <div className={styles.bootCamps_contents_wrapper}>
@@ -39,8 +64,8 @@ const BootCampReviewsSection = () => {
   const initPositionX = 0;
   const clipPathAnimation = useScrollClipPath(initPositionX);
   useEffect(() => {
-    console.log('Rendering');
-  },[])
+    console.log("Rendering");
+  }, []);
   return (
     <section className={styles.reviews_wrapper}>
       <div className={styles.max_width_card_wrapper}>
@@ -56,8 +81,8 @@ const BootCampReviewsSection = () => {
             미리 경험해보세요.
           </span>
         </div>
-        <div className={styles.bootcamp_card_wrapper}  {...clipPathAnimation}>
-          <div className={styles.bootcamp_card} >
+        <div className={styles.bootcamp_card_wrapper} {...clipPathAnimation}>
+          <div className={styles.bootcamp_card}>
             <div className={styles.bootcamp_card_image_wrapper}>
               <img
                 className={styles.bootcamp_card_image}
@@ -156,7 +181,9 @@ const BootCampReviewsSection = () => {
 const Landing1 = () => {
   return (
     <div>
-      <section className={styles.temp}></section>
+      <section className={styles.temp}>
+        <div>hello</div>
+      </section>
       <BootCampsSection />
       <BootCampReviewsSection />
     </div>
