@@ -88,12 +88,12 @@
   position: absolute;
   top: 22px;
   left: -32px;
-  padding: 15px 10px 3px 20px;
+  padding: 15px 10px 8px 20px;
   border-radius: 0 0 10px 10px;
   background: rgba(74, 145, 245, 0.9);
-  transform: scale(1,0.8);
+  transform: scale(1, 0.8);
   transform-origin: top;
-  transition: transform 200ms ease;
+  transition: transform 150ms ease;
 }
 
 .nav_main li:hover > .nav_sub {
@@ -107,7 +107,8 @@
 
 .nav_sub li {
   width: 160px;
-  padding: 16px 4px;
+  padding-left: 4px;
+  line-height: 46px;
   border-bottom: 1px solid rgba(74,145,245,0.7);
 }
 
@@ -117,7 +118,7 @@
 
 .nav_sub a {
   padding-left: 4px;
-  color: aliceblue;
+  color: white;
   font-size: 0.9rem;
   text-decoration: none;
 }
@@ -172,8 +173,7 @@ nav_sub .active {
 }
 
 /* 반응형 */
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 880px) {
   .nav_main,
   .notice {
     display: none;

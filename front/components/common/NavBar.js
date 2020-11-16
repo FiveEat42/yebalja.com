@@ -124,7 +124,6 @@ export default function NavBar() {
   return (
     <div className={styles.box}>
       <div className={styles.navbar}>
-        {/* 로고 */}
         <h1 className={styles.logo}>
           <Link href="/">
             <a>
@@ -133,7 +132,6 @@ export default function NavBar() {
           </Link>
         </h1>
 
-        {/* 내비 main */}
         <ul className={styles.nav_main}>
           {navListDummy?.map((v) => (
                 <MainItem data={v} key={v.title} />
