@@ -8,7 +8,7 @@
 /*    box-sizing: border-box;*/
 /*}*/
 
-.illustration, .topstacks1, .topstacks2{
+.topstacks1, .topstacks2{
     --title-font: 'NanumBarunGothic';
     --font-color-light: #F2F8FF;
     --font-color-dark: #515C6A;
@@ -24,21 +24,6 @@
     --subheader-font-size-portrait: 2.2vh;
     --text-font-size: 1rem;
     overflow: hidden;
-}
-
-.illustration{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    position: relative;
-    background-color: var(--primary-color);
-}
-
-.illustration h1{
-    color: white;
 }
 
 

@@ -1,0 +1,17 @@
+.logos{
+    max-width: 650px;
+    width: 100%;
+}
+
+.image {
+    max-width: 830px;
+		width: 100%;
+}
+
+
+@media screen and (max-width: 930px){
+    .image {
+        width: 100%;
+
+    }
+}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from './Illustration.module.css';
+import styles from './IllustrationLogo.module.css';
 
 const Illustration = () => {
   return (
@@ -8,11 +8,9 @@ const Illustration = () => {
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 1300 1000"
-        width="70%"
-        height="70%"
         fill="none"
-        className={styles.image}
       >
+
       <g clipPath="url(#clip0)">
         <path fill="#4A91F5" d="M-2 0h1328v984H-2z"></path>
         <g filter="url(#filter0_f)" opacity="0.6">
@@ -836,7 +834,6 @@ const Illustration = () => {
             d="M675.5 314c6.5-4.5 6.333-17.667 5.5-25.5-6.4-8.8-11.833-10.833-15.5-10.5-6.4 2.4-9.833 16.333-10 23.5-3.5-3.5-7.5-2.5-6 1.5 1.493 3.981 6 5 7.5 5 6.5 5 15 6.167 18.5 6z"
           ></path>
         </g>
-
 
 
 
