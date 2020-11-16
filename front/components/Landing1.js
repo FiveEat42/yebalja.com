@@ -8,15 +8,18 @@ import Tab from "react-bootstrap/Tab";
 
 const PageControlledTab = () => {
   return (
-    <Tabs id="controlled-tab-example" activeKey={key} onSelect={k => setKey(k)}>
-      <Tab eventKey="home" title="Home">
-       123
+    <Tabs id="controlled_tabs"defaultActiveKey="yealry" transition={false} className={styles.tabs}>
+      <Tab className={styles.tab} eventKey="yealry" title="연간일정">
+        <img
+        className={styles.tab_image}
+          src={require("../src/image/yearly.png")}
+        ></img>
       </Tab>
-      <Tab eventKey="profile" title="Profile">
-      456
+      <Tab className={styles.tab} eventKey="compareTable" title="비교테이블">
+        456
       </Tab>
-      <Tab eventKey="contact" title="Contact" disabled>
-       678
+      <Tab className={styles.tab} eventKey="detail" title="상세일정">
+        789
       </Tab>
     </Tabs>
   );
@@ -36,7 +39,6 @@ const BootCampsSection = () => {
           ></img>
           <PageControlledTab className={styles.pageControlledTab} />
 
-          <img src={require("../src/image/ftLOGO.png")}></img>
           {/* 핸드폰 이미지 넣어서 768크기 이하일 때 display, 위에건 none */}
         </div>
         <div className={styles.bootCamps_contents_wrapper}>
