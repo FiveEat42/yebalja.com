@@ -20,12 +20,29 @@ export default function Landing2() {
   let topstacks2, wrapper2, upper_area, header2, text2, more2 = useRef(null);
   let rankings2, gold_sample, silver_sample, bronze_sample = useRef(null);
   let gold, silver, bronze, one, two, three = useRef(null);
-  let like, like1, like2 = useRef(null);
+  let like, like1, like2, like3, like4, like5 = useRef(null);
 
 
   useEffect(() => {
     /*
     topstacks1 animation
+     */
+    /*
+    topstacks1 header
+     */
+    let tl1_header = gsap.timeline({
+      scrollTrigger: {
+        trigger: header1,
+        start: 'top bottom',
+      }
+    });
+
+    tl1_header.fromTo(left1,
+      {y: 50, opacity: 0},
+      {duration: 1.5, y: 0, opacity: 1}
+      )
+    /*
+    topstakcs1 text, cards, sample => restart
      */
     let tl1 = gsap.timeline({
       scrollTrigger: {
@@ -36,15 +53,7 @@ export default function Landing2() {
         toggleActions: 'restart none restart none'
       }
     });
-
-    let tl1_header = gsap.timeline({
-      scrollTrigger: {
-        trigger: header1,
-        start: 'top bottom',
-      }
-    });
-
-    tl1.fromTo(top_sample,
+        tl1.fromTo(top_sample,
       {y: 50, opacity: 0},
       {duration: 1.5, y: 0, opacity: 1},
       )
@@ -64,24 +73,16 @@ export default function Landing2() {
       '-=1'
     )
 
-    tl1_header.fromTo(left1,
-      {y: 50, opacity: 0},
-      {duration: 1.5, y: 0, opacity: 1}
-      )
 
     /*
     topstacks2 animation
      */
-    let tl2_header = gsap.timeline({
-      scrollTrigger: {
-        trigger: upper_area,
-        start: 'top bottom'
-      }
-    });
-
+    /*
+    topstacks2 subheader and more => restart
+     */
     let tl2 = gsap.timeline({
       scrollTrigger: {
-        trigger: upper_area,
+        trigger: text2,
         start: 'top bottom',
         end: 'bottom top',
         markers: true,
@@ -89,71 +90,122 @@ export default function Landing2() {
       }
     });
 
-    tl2_header.fromTo(header2,
-      {y: 50, opacity: 0},
-      {duration: 1.5, y: 0, opacity: 1}
-      )
-
     tl2.fromTo([text2, more2],
-      {y: 30, opacity: 0},
-      {duration:1.5, y: 0, opacity: 1},
+      {y: 50, opacity: 0},
+      {duration:1.5, y: 0, opacity: 1}
       )
-
 
     /*
-    likes
+    topstacks2 header
+     */
+    let tl2_header = gsap.timeline({
+      scrollTrigger: {
+        trigger: topstacks2,
+        start: 'top bottom'
+      }
+    });
+
+    tl2_header
+    // .fromTo(topstacks2,
+    //   {opacity: 0},
+    //   {opacity: 1, duration: 1.5}
+    //   )
+    .fromTo(header2,
+      {y: 50, opacity: 0},
+      {duration: 1.5, y: 0, opacity: 1},
+      '-=1.5'
+      )
+
+    /*
+    topstacks2 likes => restart
      */
     let tl2_like = gsap.timeline(
       {
         scrollTrigger: {
-          trigger: wrapper2,
+          trigger: rankings2,
           start: 'top bottom',
           toggleActions: 'restart none restart none'
-        }
+        },
       }
     );
-
-    let hearts = [like, like1, like2]
-    for (let i = 0; i < 30; i++) {
-      let size = Math.random() * 0.7 + 0.3;
-      let heart = hearts[i%3];
-      tl2_like.fromTo(heart,
-      {x: Math.random() * 140 - 70, y: 90, opacity: 1},
-      {duration: 1, y: -10, opacity: 0, scale: size}, Math.random()*2
-      )
+    // let hearts = [like, like1, like2, like3, like4, like5]
+    // for (let i = 0; i < 600; i++) {
+    //     let size = Math.random() * 0.8 + 0.2;
+    //     let heart = hearts[i % 6];
+    //     let x = (i % 100 == 0) ? Math.random() * 15 + 270 : Math.random() * 5 + 10;
+    //     let y = (i % 100 == 0) ? 50 : 90;
+    //     let duration = (i % 100 == 0) ? 4 : 1;
+    //     let y_to = (i % 100 == 0) ? -120 : -80;
+    //     tl2_like
+    //     .fromTo(heart,
+    //       {x: x, y: y, opacity: 1},
+    //       {duration: duration, x: x, y: y_to, opacity: 0, scale: size}, Math.random() * 2
+    //     )
+    // }
+    let hearts = [like, like1, like2, like3]
+    for (let i = 0; i < 60; i++) {
+        let size = Math.random() * 0.8 + 0.2;
+        let heart = hearts[i % 4];
+        tl2_like
+        .fromTo(heart,
+          {x: Math.random() * 5 + 10, y: 90, opacity: 1},
+          {duration: 1, y: -80, opacity: 0, scale: size}, Math.random() * 2
+        )
     }
+    let tl2_like_gold = gsap.timeline(
+      {
+        scrollTrigger: {
+          trigger: rankings2,
+          start: 'top bottom',
+          toggleActions: 'restart none restart none'
+        },
+      }
+    );
+    tl2_like_gold
+      .fromTo(like4,
+      {x: Math.random() * 15 + 250, y: 50, opacity: 1},
+      {duration: 2, y: -120, scale: 0.7, opacity: 0, repeatDelay: 0, repeat: 1}
+      )
+      .fromTo(like5,
+        {x: Math.random() * 15 + 250, y: 50, opacity: 1},
+        {duration: 2, y: -120, scale: 0.7, opacity: 0}, '-=3.5'
+      )
 
     /*
-    rankings change
+    topstacks2 rankings & change in rankings => restart
      */
     let tl2_rankings = gsap.timeline({
       scrollTrigger: {
-        trigger: wrapper2,
+        trigger: rankings2,
         start: 'top bottom',
         end: 'bottom top',
         toggleActions: 'restart none restart none',
       }
     });
-
     tl2_rankings.fromTo(rankings2,
       {y: 50, opacity: 0},
       {duration: 1.5, y: 0, opacity: 1}
     )
+    .add(tl2_like, '-=0.5')
+    .add(tl2_like_gold)
     .to(gold_sample, {
       duration: 2,
       motionPath: {
-        path: [{x: -200, y: -10}, {x: -263, y: 70}]
+        path: [{x: -130, y: 170}, {x: -263, y: 73}],
       },
-      delay: 2
+      delay: 3
      })
     .to(silver_sample, {
       duration: 2,
       motionPath: {
-        path: [{x: 120, y: 60}, {x: 260, y: 0}]
+        path: [{x: 120, y: -70}, {x: 261, y: -1}],
       },
       delay: -2
     })
 
+    /*
+    topstacks2 one, two, three hanging tween
+     */
     gsap.to(one, {y: -10, duration: 0.5, repeat: -1, yoyo: true});
     gsap.to(two, {y: -10, duration: 0.5, repeat: -1, yoyo: true, delay: 0.2});
     gsap.to(three, {y: -10, duration: 0.5, repeat: -1, yoyo: true, delay: 0.4});
@@ -222,6 +274,9 @@ export default function Landing2() {
                             <img ref={el => like = el} src={require('../src/image/like.png')}/>
                             <img ref={el => like1 = el} src={require('../src/image/like.png')}/>
                             <img ref={el => like2 = el} src={require('../src/image/like.png')}/>
+                            <img ref={el => like3 = el} src={require('../src/image/like.png')}/>
+                            <img ref={el => like4 = el} src={require('../src/image/like.png')}/>
+                            <img ref={el => like5 = el} src={require('../src/image/like.png')}/>
                           </div>
                           <img className={styles.two} ref={el => two = el} src={require('../src/image/2.png')}/>
                           <img className={styles.silver_sample} ref={el => silver_sample = el} src={require('../src/image/silver_sample.png')}/>
