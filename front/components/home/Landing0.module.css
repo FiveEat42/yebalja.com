@@ -32,6 +32,7 @@
     display: flex;
     justify-content: flex-end;
     transform: translateY(-120px);
+
 }
 
 
@@ -44,7 +45,7 @@
 .text{
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1;
 }
 .title {
     color: var(--secondary-color);
@@ -58,7 +59,7 @@
 }
 
 .image_container{
-    flex:2;
+    flex:2 1;
     display: flex;
     justify-content: center;
 }
@@ -67,7 +68,7 @@
 @media screen and (max-width: 1040px) {
     .down{
         flex-direction: column-reverse;
-        transform: translateY(-170px);
+        transform: translateY(-20vh);
         flex-wrap: nowrap;
         align-content: flex-end;
     }
@@ -79,39 +80,26 @@
     }
     .image_container{
         flex:1;
+        justify-content: flex-end;
     }
 }
 
 
-
-
-
-@media screen and (max-width: 700px) {
-    .title {
-        font-size: 1.7rem;
-    }
-    .content {
-        font-size: 0.9rem;
-    }
-    .down{
-        transform: translateY(-30vh);
-        align-content: flex-start;
-    }
+@media screen and (max-width: 662px) {
     .text{
-        /*margin-top: 10vh;*/
+        margin-top: 8vh;
     }
 }
 
 
-
-/* @media screen and (max-width: 415px) {*/
-/*     .text {*/
-/*         padding-right: 0;*/
-/*     }*/
-/*     .title {*/
-/*         font-size: 1.3rem;*/
-/*     }*/
-/*     .content {*/
-/*         font-size: 0.8rem;*/
-/*     }*/
-/* }*/
+ @media screen and (max-width: 380px) {
+     .title {
+         font-size: 1.5rem;
+     }
+     .content {
+         font-size: 0.9rem;
+     }
+     .text{
+         margin-top: 13vh;
+     }
+ }
