@@ -14,7 +14,7 @@ const Home = () => {
       <TextLogo/>
       <NavBar />
       <Landing0/>
-
+      <Landing2/>
       <Footer />
       <TopButton />
     </>

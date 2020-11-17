@@ -72,6 +72,12 @@ export default function Landing2() {
       {duration: 1.5, x: 0, opacity: 1},
       '-=1'
     )
+      .fromTo(more1,
+      {x: -20, opacity: 0},
+      {duration: 1.5, x: 0, opacity: 1},
+      '-=1'
+    )
+
 
     /*
     topstacks2 animation
@@ -244,11 +250,11 @@ export default function Landing2() {
           <div className={styles.wrapper2} ref={el => wrapper2 = el}>
             <div className={styles.uppper_area} ref={el => upper_area = el}>
               <div className={styles.header2} ref={el => header2 = el}>
-                <div><h1>탑스택스에서</h1></div>
-                <div><h1>투표해주세요</h1></div>
+                <div><h1>좋아요를</h1></div>
+                <div><h1>눌러주세요</h1></div>
               </div>
-              <div className={styles.text2} ref={el => text2 = el}>당신의 스택을 투표해주세요</div>
-              <div className={styles.more2} ref={el => more2 = el}><Link href='#'><a>투표하러 가기  ></a></Link></div>
+              <div className={styles.text2} ref={el => text2 = el}>마음에 드는 스택에 좋아요를 눌러주세요</div>
+              <div className={styles.more2} ref={el => more2 = el}><Link href='#'><a>좋아요하러 가기  ></a></Link></div>
               </div>
 
               <div className={styles.rankings} ref={el => rankings2 = el}>
