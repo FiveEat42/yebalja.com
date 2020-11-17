@@ -9,11 +9,11 @@ const Landing0 = () => {
         <div className={styles.wrapper}>
           <div className={styles.up}>
             <div className={styles.logos_container}>
-              <IllustrationLogo/>
-            </div>
+              <IllustrationLogo className={styles.illustration_logo}/>
             <div className={styles.image_container}>
-              <Illustration/>
-            </div>
+              <Illustration className={styles.illustration_image}/>
+           </div>
+          </div>
           </div>
           <div className={styles.down}>
             <div className={styles.text}>
