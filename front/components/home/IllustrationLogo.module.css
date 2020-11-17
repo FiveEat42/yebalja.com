@@ -6,12 +6,13 @@
 .image {
     max-width: 830px;
 		width: 100%;
+    margin: 0;
 }
 
 
-@media screen and (max-width: 930px){
+@media screen and (max-width: 1040px){
     .image {
-        width: 100%;
+        max-width: 700px;
 
     }
 }

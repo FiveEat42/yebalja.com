@@ -3,16 +3,15 @@ import styles from './IllustrationLogo.module.css';
 
 const Illustration = () => {
   return (
-    <div className={styles.image}>
-      <svg
+      <svg className={styles.image}
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 1300 1000"
+        viewBox="0 80 1300 900"
         fill="none"
       >
 
       <g clipPath="url(#clip0)">
-        <path fill="#4A91F5" d="M-2 0h1328v984H-2z"></path>
+
         <g filter="url(#filter0_f)" opacity="0.6">
           <circle cx="608" cy="503" r="187" fill="#fff"></circle>
         </g>
@@ -1237,8 +1236,6 @@ const Illustration = () => {
         </defs>
       </svg>
 
-
-    </div>
   );
 }
 

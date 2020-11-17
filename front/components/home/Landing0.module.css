@@ -21,19 +21,17 @@
     justify-content: center;
 }
 .wrapper {
-    diaplay: inline-flex;
-    flex-direction: column;
     max-width: 1024px;
     width: 92%;
 }
 .up{
-    display: flex;
-    justify-content: flex-end;
-    transform: translateY(-110px);
+    /*position: absolute;*/
+    overflow: hidden;
 }
 .logos_container{
     display: flex;
-    align-items: flex-end;
+    justify-content: flex-end;
+    transform: translateY(-120px);
 }
 
 
@@ -60,54 +58,60 @@
 }
 
 .image_container{
-    flex:1.5;
+    flex:2;
+    display: flex;
+    justify-content: center;
 }
 
 
-
-
-
-
-@media screen and (max-width: 1009px) {
-    .text {
-        position: static;
-        float: bottom;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-        padding-left: 2rem;
-        margin: 0;
+@media screen and (max-width: 1040px) {
+    .down{
+        flex-direction: column-reverse;
+        transform: translateY(-170px);
+        flex-wrap: nowrap;
+        align-content: flex-end;
     }
-
+    .text{
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        margin: 0 10px 30px 10px;
+    }
+    .image_container{
+        flex:1;
+    }
 }
 
-@media screen and (max-width: 650px) {
 
+
+
+
+@media screen and (max-width: 700px) {
     .title {
         font-size: 1.7rem;
     }
     .content {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
-    .text {
-        padding-right: 1rem;
-        padding-left: 1rem;
+    .down{
+        transform: translateY(-30vh);
+        align-content: flex-start;
     }
-    .wrapper {
-        margin: 0;
-        width: 100%;
+    .text{
+        /*margin-top: 10vh;*/
     }
 }
 
 
 
- @media screen and (max-width: 415px) {
-     .text {
-         padding-right: 0;
-     }
-     .title {
-         font-size: 1.3rem;
-     }
-     .content {
-         font-size: 0.8rem;
-     }
- }
+/* @media screen and (max-width: 415px) {*/
+/*     .text {*/
+/*         padding-right: 0;*/
+/*     }*/
+/*     .title {*/
+/*         font-size: 1.3rem;*/
+/*     }*/
+/*     .content {*/
+/*         font-size: 0.8rem;*/
+/*     }*/
+/* }*/
