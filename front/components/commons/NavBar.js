@@ -13,6 +13,71 @@ import classNames from 'classnames';
 import Form from 'react-bootstrap/Form';
 import { useRouter } from "next/router";
 
+const navListDummy = [
+   {
+      "title":"어디서 배울까",
+      "sublist":[
+         {
+            "title":"비교하기",
+            "href":"/bootcamps"
+         },
+         {
+            "title":"42SEOUL",
+            "href":"/ftseoul"
+         },
+         {
+            "title":"삼성 SSAFY",
+            "href":"/ssafy"
+         },
+         {
+            "title":"네이버 부스트캠프",
+            "href":"/boostcamp"
+         },
+         {
+            "title":"SW마에스트로",
+            "href":"/soma"
+         },
+         {
+            "title":"우아한테크코스",
+            "href":"/woowa"
+         },
+         {
+            "title":"멋쟁이사자처럼",
+            "href":"/likelion"
+         }
+      ]
+   },
+   {
+      "title":"무엇을 배울까",
+      "sublist":[
+         {
+            "title":"프로그래밍 언어",
+            "href":"/language"
+         },
+         {
+            "title":"웹 프론트엔드",
+            "href":"/frontend"
+         },
+         {
+            "title":"웹 백엔드",
+            "href":"/backend"
+         },
+         {
+            "title":"DBMS",
+            "href":"/dbms"
+         },
+         {
+            "title":"딥러닝",
+            "href":"/deeplearning"
+         },
+         {
+            "title":"에디터/IDE",
+            "href":"/editor"
+         }
+      ]
+   }
+]
+
 function NavItem ({ data }) {
 
   const router = useRouter();
