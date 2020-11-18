@@ -1,5 +1,5 @@
-import Layout from "../components/Layout";
-import Header from "../components/Header";
+import Layout from "../components/commons/Layout";
+import Header from "../components/commons/Header";
 import React,{useEffect} from "react";
 import Faq from "../components/Faq";
 import Review from "../components/Review";

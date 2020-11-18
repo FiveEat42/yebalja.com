@@ -1,0 +1,39 @@
+.header {
+  margin: 160px 20px 50px;
+  display: block;
+  text-align: center;
+  font-family: "NanumBarunGothic";;
+}
+
+.header h1, .header h2, .header h3 {
+  font-weight: 600;
+  color: #4A91F5;
+}
+
+.header p {
+  font-weight: 400;
+  color: #89A1C3;
+}
+
+@media only screen and (max-width : 430px) {
+
+  .header h1 {
+    font-size: 1.85em;
+  }
+
+  .header h2 {
+    font-size: 1.4em;
+  }
+
+  .header h3 {
+    font-size: 1.1em;
+  }
+}
+
+/*
+HTML element	rank	default stylesheet
+<h1> </h1>	1	font-size: 2em font-weight: bolder
+<h2> </h2>	2	font-size: 1.5em font-weight: bolder
+<h3> </h3>	3	font-size: 1.17em font-weight: bolder
+<h4> </h4>	4	font-size: 1em font-weight: bolder
+*/

@@ -1,6 +1,7 @@
-import styles from '../components/TextLogo.module.css'
-import Link from 'next/link';
+import {  } from 'react-redux';
+import styles from './TextLogo.module.css'
 import Logo from './Logo';
+import Link from 'next/link';
 
 const TextLogo = () =>{
   return (

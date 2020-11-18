@@ -5,9 +5,9 @@ export default function TeamDrawing() {
   return (
     <>
       <div className={styles.container}>
-        <img className={styles.drawing} src={require('../src/image/team_drawing.png')} alt="" />
+        <img className={styles.drawing} src={require('../../srcs/teams/team_drawing.png')} alt="" />
       </div>
-      <img className={styles.speech} src={require('../src/image/team_speech.png')} alt="" />
+      <img className={styles.speech} src={require('../../srcs/teams/team_speech.png')} alt="" />
     </>
 );
 }

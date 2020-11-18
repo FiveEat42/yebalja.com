@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
-import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
-import { getNoticeData } from '../redux/actions/noticeAction';
-import { getNavbarData } from '../redux/actions/navbarAction';
+import { useSelector, useDispatch } from "react-redux";
+import { getNoticeData } from '../../redux/actions/noticeAction';
+import { getNavbarData } from '../../redux/actions/navbarAction';
 import styles from './NavBar.module.css'
 import Link from 'next/link';
 import Navbar from "react-bootstrap/Navbar";
@@ -118,7 +117,7 @@ export default function NavBar() {
               </Popover>
             }>
             <Button variant="link" className={styles.buttonPopover}>
-              <img src={require('../src/image/Expand.png')} width="24" height="24" />
+              <img src={require('../../srcs/commons/Expand.png')} width="24" height="24" />
             </Button>
           </OverlayTrigger>
 

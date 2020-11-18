@@ -1,8 +1,8 @@
-import Layout from '../components/Layout';
+import Layout from '../components/commons/Layout';
 import Jumbotron from "../components/Jumbotron";
 import Table from "../components/Table";
 import YearlyCalendar from '../components/YearlyCalendar';
-import Header from "../components/Header";
+import Header from "../components/commons/Header";
 import React, { useEffect, useState } from "react";
 // import axios from 'axios';
 
