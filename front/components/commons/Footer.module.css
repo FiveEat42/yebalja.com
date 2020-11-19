@@ -5,7 +5,7 @@
   min-height: 180px;
   width: 100%;
   text-align: center;
-  background-color: #4A91F5;
+  background-color: #4a91f5;
   line-height: 1.3;
 }
 
@@ -25,14 +25,14 @@
 }
 
 .footer a {
-  font-family: 'NanumBarunGothic';
+  font-family: "NanumBarunGothic";
   font-size: medium;
   color: white;
 }
 
 .footer a:hover {
   text-decoration: none;
-  color: #A0C5FA;
+  color: #a0c5fa;
 }
 
 .footer p:hover {
