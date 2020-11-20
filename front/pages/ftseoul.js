@@ -1,18 +1,18 @@
-import Layout from "../components/Layout";
-import Header from "../components/Header";
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
+import Layout from "../components/commons/Layout";
+import Header from "../components/commons/Header";
 import Faq from "../components/Faq";
 import Review from "../components/Review";
-import Timeline from '../components/Timeline';
-import { useDispatch } from 'react-redux';
-import { programChanger } from '../redux/actions/programChangerAction'
+import Timeline from "../components/Timeline";
+import { useDispatch } from "react-redux";
+import { programChanger } from "../redux/actions/programChangerAction";
 
 const ftseoul = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(programChanger('ftseoul'));
-  },[])
-  
+    dispatch(programChanger("ftseoul"));
+  }, []);
+
   return (
     <Layout>
       <Timeline />
@@ -28,6 +28,6 @@ const ftseoul = () => {
       <Review />
     </Layout>
   );
-}
+};
 
 export default ftseoul;

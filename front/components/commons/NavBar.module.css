@@ -1,0 +1,79 @@
+.nav_background {
+  --blue: #4a91f5;
+  --skyblue: #4df0ff;
+  --indigo: #5c4dff;
+  --violet: #7a4dff;
+  text-align: right;
+  line-height: 17px;
+  background-color: var(--blue);
+  box-shadow: 3px 3px 24px -11px;
+  font-family: "NanumBarunGothic";
+  padding: 7px 0 4px;
+}
+
+.nav_background a:hover {
+  text-decoration: none;
+}
+
+.nav_background ul {
+  display: block;
+  text-align: left;
+  padding: 0 0 0 26px;
+  margin: 0;
+}
+
+.nav_main {
+  display: flex;
+}
+
+.nav_main h3 {
+  position: relative;
+  top: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  font-size: 1rem;
+  padding: 4px 34px 0 0;
+  cursor: default;
+}
+
+.nav_main h3::after {
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  width: 1px;
+  height: 0.95rem;
+  content: "";
+}
+
+/* 햄버거 */
+.nav_background button {
+  border-color: var(--blue) !important;
+}
+
+.nav_background button:focus {
+  outline: none;
+}
+
+/* 반응형 */
+@media screen and (max-width: 991.98px) {
+  .nav_background ul {
+    display: inline-block;
+    text-align: right;
+    padding: 0 0 14px 0;
+  }
+
+  .nav_main {
+    display: inline-block;
+    padding: 0 20px 0 20px;
+    vertical-align: top;
+  }
+
+  .nav_main h3 {
+    padding: 10px 0;
+  }
+
+  .nav_main h3::after {
+    display: none;
+  }
+}

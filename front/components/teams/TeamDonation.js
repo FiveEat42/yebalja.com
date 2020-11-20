@@ -5,8 +5,8 @@ export default function TeamDonation() {
   return (
     <>
       <section className={styles.container}>
-          <img className={styles.menu} src={require('../src/image/donation_menu.png')} alt="" />
-          <img className={styles.code} src={require('../src/image/donation_code.png')} alt="" />
+          <img className={styles.menu} src={require('../../srcs/teams/donation_menu.png')} alt="" />
+          <img className={styles.code} src={require('../../srcs/teams/donation_code.png')} alt="" />
       </section>
     </>
   );
