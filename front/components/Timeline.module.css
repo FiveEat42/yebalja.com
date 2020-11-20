@@ -1,9 +1,37 @@
 /*@import url(//fonts.googleapis.com/earlyaccess/nanumBarunGothic.css); .nanumBarunGothic * { font-family: 'Nanum BarunGothic', sans-serif; }*/
-@font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype'); } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype') } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype'); } .nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix") format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff") format("woff"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 700;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix") format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff") format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 300;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix") format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff") format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf") format("truetype");
+}
+.nanumbarungothic * {
+  font-family: "NanumBarunGothic", sans-serif;
+}
 
 .body {
   font: normal 16px/1.5 "NanumBarunGothic";
-  background: #F2F8FF;
+  background: #f2f8ff;
   margin: 0 auto;
   width: 100%;
   margin-top: 0px;
@@ -15,9 +43,10 @@
   font-family: "NanumBarunGothic";
 }
 
-
 /*D-Day part*/
-.status_end, .status_recruit, .status_edu{
+.status_end,
+.status_recruit,
+.status_edu {
   border-radius: 5px;
   width: 50px;
   padding: 3px;
@@ -28,22 +57,20 @@
   background-color: white;
   display: inline-block;
   position: absolute;
-
 }
 
 .status_end {
-  color: #89A1C3;
+  color: #89a1c3;
 }
 
 .status_recruit {
-  color: #66D1FF;
+  color: #66d1ff;
 }
 
 .status_edu {
-  color: #4A91F5;
+  color: #4a91f5;
 }
 /*-----------------------------------------------------------------------*/
-
 
 /*timeline margin*/
 .timeline {
@@ -70,10 +97,6 @@
   line-height: 25px;
 }
 
-
-
-
-
 /*timeline line*/
 .line {
   position: absolute;
@@ -81,15 +104,13 @@
   width: 100%;
   height: 7px;
   background: white;
-  top: 603.5px;
+  top: 621px;
 }
-
 
 .timeline ol li {
   position: relative;
   display: inline-block;
   list-style-type: none;
-
 
   /*width: 160px;*/
   /*height: 3px;*/
@@ -97,13 +118,9 @@
 }
 /*-----------------------------------------------------------------------*/
 
-
-
-
-
 /*dot*/
 .timeline ol li .card::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   /*left: calc(100% + 1px);*/
@@ -118,27 +135,31 @@
   background: white;
 }
 
-.timeline ol li .up_recruit::after, .timeline ol li .up_edu::after, .timeline ol li .up_end::after {
+.timeline ol li .up_recruit::after,
+.timeline ol li .up_edu::after,
+.timeline ol li .up_end::after {
   transform: translateY(82px);
 }
 
-.timeline ol li .down_recruit::after, .timeline ol li .down_edu::after, .timeline ol li .down_end::after {
+.timeline ol li .down_recruit::after,
+.timeline ol li .down_edu::after,
+.timeline ol li .down_end::after {
   transform: translateY(-90px);
 }
 
-.timeline ol li .up_end::after, .timeline ol li .down_end::after {
-  border-color: #DFE8F4;
+.timeline ol li .up_end::after,
+.timeline ol li .down_end::after {
+  border-color: #dfe8f4;
 }
-.timeline ol li .up_recruit::after, .timeline ol li .down_recruit::after {
-  border-color: #66D1FF;
+.timeline ol li .up_recruit::after,
+.timeline ol li .down_recruit::after {
+  border-color: #66d1ff;
 }
-.timeline ol li .up_edu::after, .timeline ol li .down_edu::after {
-  border-color: #4A91F5;
+.timeline ol li .up_edu::after,
+.timeline ol li .down_edu::after {
+  border-color: #4a91f5;
 }
 /*-----------------------------------------------------------------------*/
-
-
-
 
 /*card*/
 .timeline ol li .card {
@@ -151,7 +172,7 @@
   font-size: 1.1rem;
   white-space: normal;
   font-weight: 600;
-  font-family: 'NanumBarunGothic';
+  font-family: "NanumBarunGothic";
   /*box-shadow: 2px 2px 3px 1px #DBE4EE;*/
   box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.1);
 }
@@ -165,22 +186,20 @@
 }
 
 .card_end {
-  background: #DFE8F4;
-  color: #89A1C3;
+  background: #dfe8f4;
+  color: #89a1c3;
 }
 
 .card_recruit {
-  background: #66D1FF;
+  background: #66d1ff;
   color: white;
 }
 
 .card_edu {
-  background: #4A91F5;
+  background: #4a91f5;
   color: white;
 }
 /*-----------------------------------------------------------------------*/
-
-
 
 /*card position*/
 .timeline ol li:nth-child(1) {
@@ -203,21 +222,16 @@
 }
 /*-----------------------------------------------------------------------*/
 
-
-
-
-
 /*arrow*/
 .timeline ol li .card::before {
-   content: '';
-   position: absolute;
-   top: 100%;
-   left: 0;
-   width: 0;
-   height: 0;
-   border-style: solid;
- }
-
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
 
 /* ODD */
 .timeline ol li:nth-child(odd) .card {
@@ -231,15 +245,14 @@
 }
 
 .timeline ol li:nth-child(odd) .up_end::before {
-  border-color: #DFE8F4 transparent transparent transparent;
+  border-color: #dfe8f4 transparent transparent transparent;
 }
 .timeline ol li:nth-child(odd) .up_recruit::before {
-  border-color: #66D1FF transparent transparent transparent;
+  border-color: #66d1ff transparent transparent transparent;
 }
 .timeline ol li:nth-child(odd) .up_edu::before {
-  border-color: #4A91F5 transparent transparent transparent;
+  border-color: #4a91f5 transparent transparent transparent;
 }
-
 
 /* EVEN */
 
@@ -249,29 +262,22 @@
 }
 
 .timeline ol li:nth-child(even) .down_end::before {
-  border-color: transparent transparent transparent #DFE8F4;
+  border-color: transparent transparent transparent #dfe8f4;
 }
 .timeline ol li:nth-child(even) .down_recruit::before {
-  border-color: transparent transparent transparent #66D1FF;
+  border-color: transparent transparent transparent #66d1ff;
 }
 .timeline ol li:nth-child(even) .down_edu::before {
-  border-color: transparent transparent transparent #4A91F5;
+  border-color: transparent transparent transparent #4a91f5;
 }
 
 /*-----------------------------------------------------------------------*/
-
-
-
 
 /* 라인에서 얼마나 떨어졌는지 */
 .timeline ol li:nth-child(even) .card {
   top: calc(100% + 30px);
 }
 /*-----------------------------------------------------------------------*/
-
-
-
-
 
 /* 카드가 화면 밖으로 삐져나가는 것 방지 */
 @media screen and (max-width: 1300px) {
@@ -280,16 +286,11 @@
   }
 }
 
-
-
 @media screen and (max-width: 1220px) {
   .timeline ol li .card {
     width: 280px;
   }
 }
-
-
-
 
 @media screen and (max-width: 1150px) {
   .timeline ol li .card {
@@ -314,7 +315,6 @@
     left: 65%;
   }
 }
-
 
 /*@media screen and (max-width: 790px) {*/
 /*  .timeline ol li .card {*/
@@ -351,13 +351,7 @@
 /*  }*/
 /*}*/
 
-
-
 /*-----------------------------------------------------------------------*/
-
-
-
-
 
 /* GENERAL MEDIA QUERIES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -382,11 +376,13 @@
     padding: 0;
   }
 
-  .timeline ol li .card:nth-child(odd), .timeline ol li:nth-child(even) .card {
+  .timeline ol li .card:nth-child(odd),
+  .timeline ol li:nth-child(even) .card {
     border-radius: 12px;
   }
 
-  .timeline ol li:nth-child(odd), .timeline ol li:nth-child(even) {
+  .timeline ol li:nth-child(odd),
+  .timeline ol li:nth-child(even) {
     left: 0%;
   }
 
@@ -436,10 +432,12 @@
     padding-left: 25px;
     font-size: 1.2rem;
     padding-top: 20px;
-    padding-bottom: 20px
+    padding-bottom: 20px;
   }
 
-  .status_end, .status_recruit, .status_edu{
+  .status_end,
+  .status_recruit,
+  .status_edu {
     top: 12px;
     font-size: 12px;
     margin-top: 7px;
@@ -459,8 +457,6 @@
   }
 
   .timeline ol li .card::after {
-  display: none;
- }
-
-
+    display: none;
+  }
 }
