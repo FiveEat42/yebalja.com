@@ -3,7 +3,7 @@ import Layout from "../components/commons/Layout";
 import Header from "../components/commons/Header";
 import TeamMembers from "../components/teams/TeamMembers";
 import TeamDrawing from "../components/teams/TeamDrawing";
-import TeamDonation from "../components/teams/TeamDonation"
+import TeamDonation from "../components/teams/TeamDonation";
 
 const About = () => {
   return (
@@ -17,6 +17,6 @@ const About = () => {
       <TeamDonation />
     </Layout>
   );
-}
+};
 
 export default About;

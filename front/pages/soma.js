@@ -1,19 +1,17 @@
+import React, { useEffect } from "react";
 import Layout from "../components/commons/Layout";
 import Header from "../components/commons/Header";
-import React, { useEffect } from "react";
 import Timeline from "../components/Timeline";
-import Faq from "../components/Faq"
+import Faq from "../components/Faq";
 import Review from "../components/Review";
-import { useDispatch } from 'react-redux';
-import { programChanger } from '../redux/actions/programChangerAction';
+import { useDispatch } from "react-redux";
+import { programChanger } from "../redux/actions/programChangerAction";
 
 const Soma = () => {
-  
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(programChanger('soma'));
-
-  },[])
+    dispatch(programChanger("soma"));
+  }, []);
 
   return (
     <Layout>
@@ -30,6 +28,6 @@ const Soma = () => {
       <Review />
     </Layout>
   );
-}
+};
 
 export default Soma;

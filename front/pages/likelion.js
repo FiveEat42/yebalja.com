@@ -1,18 +1,17 @@
-import Layout from "../componentscommons//Layout";
+import React, { useEffect } from "react";
+import Layout from "../components/commons//Layout";
 import Header from "../components/commons/Header";
-import React, {useEffect} from "react";
 import Review from "../components/Review";
 import Timeline from "../components/Timeline";
-import Faq from "../components/Faq"
-import { useDispatch } from 'react-redux';
-import { programChanger } from '../redux/actions/programChangerAction';
+import Faq from "../components/Faq";
+import { useDispatch } from "react-redux";
+import { programChanger } from "../redux/actions/programChangerAction";
 
 const Likelion = () => {
-  
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(programChanger('likelion'));
-  },[])
+    dispatch(programChanger("likelion"));
+  }, []);
 
   return (
     <Layout>
@@ -29,6 +28,6 @@ const Likelion = () => {
       <Review />
     </Layout>
   );
-}
+};
 
 export default Likelion;
