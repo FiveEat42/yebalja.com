@@ -1,8 +1,8 @@
 import styles from './Badge.module.css';
-import Aptitude from '../../src/image/Aptitude.png';
-import Coding from '../../src/image/Coding.png';
-import Interview from '../../src/image/Interview.png';
-import Tryout from '../../src/image/Tryout.png';
+import Aptitude from '../../srcs/Badge/Aptitude.png';
+import Coding from '../../srcs/Badge/Coding.png';
+import Interview from '../../srcs/Badge/Interview.png';
+import Tryout from '../../srcs/Badge/Tryout.png';
 
 const Badge = ({type}) => {
   let img;

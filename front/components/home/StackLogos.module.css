@@ -1,0 +1,48 @@
+.logos{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.logo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 250px;
+	flex-wrap: wrap;
+}
+
+.logo *{
+	width: 35px;
+	margin: 5px;
+}
+
+.box {
+	background-color: var(--primary-color);
+	position: relative;
+}
+
+/*.logo *:before {*/
+/*	padding: 10px;*/
+/*	content: "";*/
+/*	display: block;*/
+/*}*/
+
+
+/*.logo *:hover{*/
+/*	-webkit-transform: scale(1.5);*/
+/*	-webkit-transition: transform 0.3s ease-in-out;*/
+/*	animation-play-state: running;*/
+/*}*/
+
+/*.logo *:active{*/
+	/*animation: margin 0.3s ease;*/
+	/*animation-play-state: paused;*/
+/*}*/
+
+/*@keyframes margin{*/
+/*	0%, 100% {*/
+/*		margin: 20px;*/
+/*	}*/
+/*}*/

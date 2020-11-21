@@ -9,6 +9,7 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
 import React from 'react';
+import StackLogos from './StackLogos';
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -53,10 +54,11 @@ export default function Landing2() {
         toggleActions: 'restart none restart none'
       }
     });
-        tl1.fromTo(top_sample,
-      {y: 50, opacity: 0},
-      {duration: 1.5, y: 0, opacity: 1},
-      )
+        tl1
+      //   .fromTo(top_sample,
+      // {y: 50, opacity: 0},
+      // {duration: 1.5, y: 0, opacity: 1},
+      // )
       .fromTo(job,
     {x: 100, opacity: 0},
     {duration: 1.5, x: 0, opacity: 1},
@@ -207,12 +209,32 @@ export default function Landing2() {
     gsap.to(one, {y: -10, duration: 0.5, repeat: -1, yoyo: true});
     gsap.to(two, {y: -10, duration: 0.5, repeat: -1, yoyo: true, delay: 0.2});
     gsap.to(three, {y: -10, duration: 0.5, repeat: -1, yoyo: true, delay: 0.4});
-
-
-
-
-
   },[])
+
+
+  // const section_data = {
+  //   topstacks1: [
+  //     {
+  //       header: '탑스택에서 알아보세요',
+  //       subheader: '상황 맞는 기술스택을 확인해보세요',
+  //       more: '내게 맞는 기술스택 보러가기  >',
+  //
+  //    },
+  //   ],
+  //   topstacks2: [
+  //     {
+  //       header: '기술스택 랭킹을 확인하세요',
+  //       subheader: '마음에 드는 기술스택에 좋아요해주세요',
+  //       more: '좋아요하러 가기  >'
+  //     }
+  //   ]
+  // }
+  //
+  // const section_cards = {
+  //   card1: '채용시 가장 많이 뽑는 기술스택은?',
+  //   card2: '코딩테스트에 가장 유리한 언어는?',
+  //   card3: '웹사이트 제작에 가장 인기있는 프론트엔드 프레임워크는?'
+  // }
 
 
   return (
@@ -220,66 +242,67 @@ export default function Landing2() {
       <section className={styles.topstacks1} ref={el => topstacks1 = el}>
           <div className={styles.wrapper1} ref={el => wrapper1 = el}>
               <div className={styles.left1} ref={el => left1 = el}>
-                  <h1 ref={el => header1 = el}>탑스택스에서<br/>알아보세요</h1>
-                  <div className={styles.text1} ref={el => text1 = el}>핵심 정보를 한눈에 파악할 수 있습니다.</div>
+                  <h1 ref={el => header1 = el}>무엇을 배울까</h1>
+                  <div className={styles.text1} ref={el => text1 = el}>상황에 맞는 기술스택을 확인해보세요</div>
                   <div className={styles.more1_portrait} ref={el => more1_portrait = el}><Link href='#'><a>자세히 알아보기  ></a></Link></div>
                   <div className={styles.cards}>
                       <div className={styles.job} ref={el => job = el}>
-                          <img className={styles.cards_img} src={require('../../src/image/job.png')}/>
+                          <img className={styles.cards_img} src={require('../../srcs/Landing2/job.png')}/>
                           <span className={styles.cards_text}>채용시 가장 많이 뽑는 언어는?</span>
                       </div>
                       <div className={styles.coding} ref={el => coding = el}>
-                          <img className={styles.cards_img} src={require('../../src/image/codingtestbadge.png')}/>
+                          <img className={styles.cards_img} src={require('../../srcs/Landing2/codingtestbadge.png')}/>
                           <span className={styles.cards_text}>코딩테스트에 가장 유리한 언어는?</span>
                       </div>
                       <div className={styles.python} ref={el => python = el}>
-                          <img className={styles.cards_img} src={require('../../src/image/python.png')}/>
+                          <img className={styles.cards_img} src={require('../../srcs/Landing2/python.png')}/>
                           <span className={styles.cards_text}>파이썬의 용도는?</span>
                       </div>
                       <div className={styles.more1} ref={el => more1 = el}><Link href='#'><a>자세히 알아보기  ></a></Link></div>
-
                   </div>
               </div>
               <div className={styles.right1}>
-                <img className={styles.top_sample} ref={el => top_sample = el} src={require('../../src/image/topstacks_sample.png')}/>
+                <StackLogos />
               </div>
           </div>
       </section>
+
+
 
       <section className={styles.topstacks2} ref={el => topstacks2 = el}>
           <div className={styles.wrapper2} ref={el => wrapper2 = el}>
             <div className={styles.uppper_area} ref={el => upper_area = el}>
               <div className={styles.header2} ref={el => header2 = el}>
-                <div><h1>좋아요를</h1></div>
-                <div><h1>눌러주세요</h1></div>
+                <div><h1>기술스택 랭킹을</h1></div>
+                <div><h1>확인하세요</h1></div>
               </div>
-              <div className={styles.text2} ref={el => text2 = el}>마음에 드는 스택에 좋아요를 눌러주세요</div>
+              <div className={styles.text2} ref={el => text2 = el}>마음에 드는 기술스택에 좋아요해주세요</div>
               <div className={styles.more2} ref={el => more2 = el}><Link href='#'><a>좋아요하러 가기  ></a></Link></div>
               </div>
 
               <div className={styles.rankings} ref={el => rankings2 = el}>
                   <div className={styles.silver} ref={el => silver = el}>
                       <div className={styles.likes}>
-                        <img ref={el => like = el} src={require('../../src/image/like.png')}/>
-                        <img ref={el => like1 = el} src={require('../../src/image/like.png')}/>
-                        <img ref={el => like2 = el} src={require('../../src/image/like.png')}/>
-                        <img ref={el => like3 = el} src={require('../../src/image/like.png')}/>
-                        <img ref={el => like4 = el} src={require('../../src/image/like.png')}/>
-                        <img ref={el => like5 = el} src={require('../../src/image/like.png')}/>
+                        <img ref={el => like = el} src={require('../../srcs/Landing2/like.png')}/>
+                        <img ref={el => like1 = el} src={require('../../srcs/Landing2/like.png')}/>
+                        <img ref={el => like2 = el} src={require('../../srcs/Landing2/like.png')}/>
+                        <img ref={el => like3 = el} src={require('../../srcs/Landing2/like.png')}/>
+                        <img ref={el => like4 = el} src={require('../../srcs/Landing2/like.png')}/>
+                        <img ref={el => like5 = el} src={require('../../srcs/Landing2/like.png')}/>
                       </div>
-                      <img className={styles.two} ref={el => two = el} src={require('../../src/image/2.png')}/>
-                      <img className={styles.silver_sample} ref={el => silver_sample = el} src={require('../../src/image/silver_sample.png')}/>
-                      <img className={styles.silver_frame} src={require('../../src/image/2frame.png')}/>
+                      <img className={styles.two} ref={el => two = el} src={require('../../srcs/Landing2/2.png')}/>
+                      <img className={styles.silver_sample} ref={el => silver_sample = el} src={require('../../srcs/Landing2/silver_sample.png')}/>
+                      <img className={styles.silver_frame} src={require('../../srcs/Landing2/2frame.png')}/>
                   </div>
                   <div className={styles.gold} ref={el => gold = el}>
-                     <img className={styles.one} ref={el => one = el} src={require('../../src/image/1.png')}/>
-                     <img className={styles.gold_sample} ref={el => gold_sample = el} src={require('../../src/image/gold_sample.png')}/>
-                     <img className={styles.gold_frame} src={require('../../src/image/1frame.png')}/>
+                     <img className={styles.one} ref={el => one = el} src={require('../../srcs/Landing2/1.png')}/>
+                     <img className={styles.gold_sample} ref={el => gold_sample = el} src={require('../../srcs/Landing2/gold_sample.png')}/>
+                     <img className={styles.gold_frame} src={require('../../srcs/Landing2/1frame.png')}/>
                   </div>
                   <div className={styles.bronze} ref={el => bronze = el}>
-                      <img className={styles.three} ref={el => three = el} src={require('../../src/image/3.png')}/>
-                      <img className={styles.bronze_sample} ref={el => bronze_sample = el} src={require('../../src/image/bronze_sample.png')}/>
-                      <img className={styles.bronze_frame} src={require('../../src/image/3frame.png')}/>
+                      <img className={styles.three} ref={el => three = el} src={require('../../srcs/Landing2/3.png')}/>
+                      <img className={styles.bronze_sample} ref={el => bronze_sample = el} src={require('../../srcs/Landing2/bronze_sample.png')}/>
+                      <img className={styles.bronze_frame} src={require('../../srcs/Landing2/3frame.png')}/>
                   </div>
               </div>
           </div>
