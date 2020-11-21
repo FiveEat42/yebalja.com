@@ -29,6 +29,9 @@ export default function TimelineListItem({data, id}) {
     startdate = `${new Date(data.startdate).getFullYear()}.${startdate}`;
   }
   let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`
+  if (new Date(data.enddate).getFullYear() != new Date().getFullYear()) {
+    enddate = `${new Date(data.enddate).getFullYear()}.${enddate}`;
+  }
   let starttime;
   let endtime;
   {/* 00:00 형태로 시작시간과 마감시간 뽑아내기 */}
