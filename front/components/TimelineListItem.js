@@ -13,7 +13,6 @@ export default function TimelineListItem({data, id}) {
   let card_type = `card_${type}`;
   let status = `status_${type}`;
 
-
   let updown;
   {/* 카드가 위/아래 중 어디에 위치할지 && edu/recruit구분 */}
   if (id % 2 == 0) {
@@ -22,30 +21,34 @@ export default function TimelineListItem({data, id}) {
     updown = `down_${type}`;
   }
 
-
   {/* 시작일, 마감일, 시작시간, 마감시간 구하기 */}
-  let startdate = `${new Date(data.startdate).getMonth() + 1}.${new Date(data.startdate).getDate()}`;
-  if (new Date(data.startdate).getFullYear() != new Date().getFullYear()) {
-    startdate = `${new Date(data.startdate).getFullYear()}.${startdate}`;
-  }
-  let enddate = `${new Date(data.enddate).getMonth() + 1}.${new Date(data.enddate).getDate()}`
-  if (new Date(data.enddate).getFullYear() != new Date().getFullYear()) {
-    enddate = `${new Date(data.enddate).getFullYear()}.${enddate}`;
-  }
-  let starttime;
-  let endtime;
-  {/* 00:00 형태로 시작시간과 마감시간 뽑아내기 */}
-  if (new Date(data.startdate).getMinutes() < '10') {
-    starttime = `${new Date(data.startdate).getHours()}:0${new Date(data.startdate).getMinutes()}`;
-  } else {
-    starttime = `${new Date(data.startdate).getHours()}:${new Date(data.startdate).getMinutes()}`;
-  }
-  if (new Date(data.enddate).getMinutes() < '10') {
-    endtime = `${new Date(data.enddate).getHours()}:0${new Date(data.enddate).getMinutes()}`;
-  } else {
-    endtime = `${new Date(data.enddate).getHours()}:${new Date(data.enddate).getMinutes()}`;
-  }
+  const getDate = (date) => {
+    let [yyyy, mm, dd] = [
+      new Date(date).getFullYear(),
+      new Date(date).getMonth() + 1,
+      new Date(date).getDate()
+      ];
+    if (yyyy == new Date().getFullYear())
+      return `${mm}.${dd}`;
+    else
+      return `${yyyy}.${mm}.${dd}`;
+  };
+  let startdate = getDate(data.startdate);
+  let enddate = getDate(data.enddate);
 
+  {/* 00:00 형태로 시작시간과 마감시간 뽑아내기 */}
+  const getTime = (timedata) => {
+    let [hh, mm] = [
+      new Date(timedata).getHours(),
+      new Date(timedata).getMinutes()
+    ];
+    if (mm < '10')
+      return `${hh}:0${mm}`;
+    else
+      return `${hh}:${mm}`;
+  };
+  let starttime = getTime(data.startdate);
+  let endtime = getTime(data.enddate);
 
   {/* 시작날까지 남은 날 && 마감날까지 남은 날 && 시작시간까지 남은 시간 && 마감시간까지 남은 시간 */}
   let startdateLeft = Math.floor((new Date(data.startdate).setHours(0, 0, 0) - new Date().setHours(0)) / (1000 * 60 * 60 * 24)) + 1;
@@ -62,8 +65,6 @@ export default function TimelineListItem({data, id}) {
   } else {
     endtimeLeft = Math.floor((new Date(data.enddate) - new Date()) / (1000)) + 1;
   }
-
-
 
   {/* 모집현황으로 D-Day/진행중/마감을 담음 */}
   let status_content;
@@ -84,10 +85,7 @@ export default function TimelineListItem({data, id}) {
       }
   }
 
-
-
   {/* 날짜 및 시간을 period에 넣어 알려주는 부분 */}
-
   if (startdate == enddate) {                               {/* 시작일과 마감일이 같을 때 */}
     if (starttime == '0:00' && endtime == '0:00') {       {/* startdate */}
       enddate = '';
@@ -125,7 +123,6 @@ export default function TimelineListItem({data, id}) {
     }
   }
 
-
   {/* 기간에서 마감일까지 며칠 남았는지 알려주는 부분 */}
   let daysLeft = ''
   if (startdate != enddate) {
@@ -139,7 +136,6 @@ export default function TimelineListItem({data, id}) {
       }
     }
   }
-
 
   return (
     <li className={styles.list}>
