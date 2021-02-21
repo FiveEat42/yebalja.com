@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
     "start": "NODE_ENV=production next start",
     "build": "next build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "NODE_ENV=production pm2 start npx --name 'front-server' -- next start",
+    "stop": "pm2 kill"
   },
   "eslintConfig": {
     "extends": "react-app"
