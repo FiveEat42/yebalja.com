@@ -84,7 +84,8 @@ function StepList({ data, title, link }) { {/* Calendar의 Row */}
 function StepListItem({ data, id}) { {/* 각 Row의 일정 아이템들 */}
   let startDate = new Date(data.startDate).setHours(9);
   let endDate = new Date(data.endDate).setHours(9);
-  let beginning = new Date('2020-01-01').setHours(9);
+  let currentYear = new Date().getFullYear();
+  let beginning = new Date(`${currentYear}-01-01`).setHours(9);
   let start = Math.floor((startDate - beginning) / (1000 * 60 * 60 * 24)) + 1;
   let end = Math.floor((endDate - beginning) / (1000 * 60 * 60 * 24)) + 1;
   let gridColumn = start.toString() + "/" + end.toString();
@@ -145,7 +146,7 @@ export default function YearlyCalendar() {
   return (
     <>
       <Header>
-        <h1 className={styles.webheader}>2020년 부트캠프</h1>
+        <h1 className={styles.webheader}>{new Date().getFullYear()}년 부트캠프</h1>
         <p className={styles.websubtitle}>무료 부트캠프 일정을 한 눈에 확인하세요.</p>
       </Header>
       <div className={classNames({ [styles.wrapper]: true, [styles.landscape_only]: true })}>
