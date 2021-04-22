@@ -90,6 +90,7 @@ function StepListItem({ data, id}) { {/* 각 Row의 일정 아이템들 */}
   let end = Math.floor((endDate - beginning) / (1000 * 60 * 60 * 24)) + 1;
   let gridColumn = start.toString() + "/" + end.toString();
 
+  console.log(data);
   let backgroundColor = "#42A7F1"
   switch (data.title) {
     case "지원":
