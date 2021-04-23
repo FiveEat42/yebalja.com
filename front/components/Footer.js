@@ -34,7 +34,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className={styles.copyright}>
-        Copyright 2020. 예발자닷컴 All Rights Reserved.
+        Copyright {new Date().getFullYear()}. 예발자닷컴 All Rights Reserved.
       </div>
     </div>
   );
