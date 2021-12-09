@@ -29,7 +29,7 @@
     "cors": "^2.8.5",
     "hammerjs": "^2.0.8",
     "moment-timezone": "^0.5.31",
-    "next": "^9.4.4",
+    "next": "^11.1.3",
     "next-images": "^1.4.0",
     "next-redux-wrapper": "^6.0.2",
     "prop-types": "^15.7.2",
